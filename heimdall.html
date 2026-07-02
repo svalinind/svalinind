@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svalin Industries - Proyecto Heimdall</title>
+
+    <!-- Preconnect for faster font loading (PUT THIS FIRST!) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="assets/images/dibujo_svalin.ico">
+
+    <!-- Google Fonts (deferred) -->
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+    <!-- Load Font Awesome CSS asynchronously -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" media="print" onload="this.media='all'">
+
+    <!-- fontello font css -->
+    <link rel="stylesheet" href="assets/css/plugins/fontello-enqueue.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/plugins/fontello-icons.css" media="print" onload="this.media='all'">
+
+    <!-- others css -->
+
+
+    <!-- Make these ASYNC (less critical) -->
+    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css">
+    </noscript>
+
+    <link rel="stylesheet" href="assets/css/plugins/lightgallery-bundle.min.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="assets/css/plugins/lightgallery-bundle.min.css">
+    </noscript>
+
+
+    <!-- Keep these NORMAL (no async) - needed for preloader and initial layout -->
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <button id="themeBtn"><i class="far fa-moon"></i></button>
+
+        <!-- New Mobile Menu -->
+        <div data-menu="mobileMenu" class="side-menu2">
+            <div class="menu-btns">
+                <button id="mobileCloseBtn2" class="close-btn"></button>
+            </div>
+            <ul>
+                <li><a href="#divisiones">Divisiones</a></li>
+                <li><a href="#pilares">Pilares</a></li>
+                <li><a href="#identidad">Identidad</a></li>
+                <li><a href="#numeros">Números</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="menu-links">
+                <span>Follow us:</span>
+                <ul class="social-icon">
+                    <li><a href="https://x.com/svalinind" title=""><i class="fab fa-x-twitter"></i></a></li>
+                    <li><a href="https://linkedin.com/company/svalinind" title=""><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+                <a href="heimdall.html" title="" class="ibt-btn ibt-btn-outline-3 ibt-btn-rounded">
+                    <span>Heimdall</span>
+                </a>
+            </div>
+        </div>
+        <!-- Overlay for Mobile Menu -->
+        <div class="overlay2"></div>
+
+        <!-- sticky header -->
+        <header class="sticky-active">
+            <div class="header-menu-area">
+                <div class="row gx-20 align-items-center justify-content-between">
+                    <div class="col-auto">
+                        <div class="header-logo">
+                            <a href="#">
+                                <img src="assets/images/logo_svalin-removebg.png" alt="logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <nav class="main-menu menu-style1">
+                            <ul>
+                                <li>
+                                    <a href="index.html#divisiones" class="active">
+                                        <span class="menu-item">Divisiones</span>
+                                        <span class="menu-item2">Divisiones</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html#pilares" class="active">
+                                        <span class="menu-item">Pilares</span>
+                                        <span class="menu-item2">Pilares</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html#identidad" class="active">
+                                        <span class="menu-item">Identidad</span>
+                                        <span class="menu-item2">Identidad</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html#numeros" class="active">
+                                        <span class="menu-item">Números</span>
+                                        <span class="menu-item2">Números</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#contacto" class="active">
+                                        <span class="menu-item">Contacto</span>
+                                        <span class="menu-item2">Contacto</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-auto d-none d-xl-block">
+                        <div class="btn-box">
+                            <a href="heimdall.html" title="" class="ibt-btn ibt-btn-outline-3 ibt-btn-rounded">
+                                <span>Heimdall</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <button class="hamburger popup-menu" data-menu="mobileMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+        <!-- End sticky header -->
+        <!--======== / Header ========-->
+
+    <!-- page-banner6 -->
+    <section class="page-banner6">
+        <div class="shape"></div>
+        <div class="shape3"></div>
+        <div class="staff-text">Svalin</div>
+        <div class="container">
+            <div class="page-content">
+                <h1 class="title">/ Heimdall /</h1>
+            </div>
+        </div>
+            <ul class="breadcrumbs">
+                <li><a href="index.html" title="">Svalin</a></li>
+                <li>/</li>
+                <li>Proyecto Heimdall</li>
+            </ul>
+    </section>
+    <!-- End page-banner6 -->
+
+    <!-- project-single -->
+    <section class="project-single ibt-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-4">
+                    <div class="project-img7">
+                        <img src="assets/images/dibujo_svalin-removebg-preview.png" alt="AI Agency & Technology HTML Template">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-8">
+                    <div class="project-content7">
+                        <div class="sec-title mb-0">
+                            <h2 class="title animated-heading">El Cerebro de la Autonomía</h2>
+                            <p>Heimdall es el sistema operativo de mando unificado que dota de conciencia situacional y autonomía radical a cada vector del ecosistema Svalin. No es una simple aplicación; es el núcleo inteligente que orquestra la defensa moderna.</p>
+                            <p class="paragraph">En un entorno donde la velocidad de decisión determina el éxito, Heimdall procesa petabytes de información proveniente de sensores heterogéneos para ofrecer una visión táctica única. Es el nexo que permite a los sistemas autónomos observar, pensar y actuar sin intervención humana constante, asegurando que la tecnología esté siempre en la vanguardia operativa.</p>
+                        </div>
+                        <ul class="ser-detail-list">
+                            <li><i class="fontello icon-button-arrow-down"></i>Fusión de sensores multiespectrales en tiempo real.</li>
+                            <li><i class="fontello icon-button-arrow-down"></i>Procesamiento de IA en el borde (Edge Computing) para respuesta instantánea.</li>
+                            <li><i class="fontello icon-button-arrow-down"></i>Navegación autónoma en entornos GPS-denegados mediante visión computacional.</li>
+                            <li><i class="fontello icon-button-arrow-down"></i>Interfaz de conciencia situacional común integrada (Common Operational Picture).</li>
+                        </ul>
+                        <div class="project-post-meta">
+                            <div class="post-meta-item">
+                                <h4 class="title">Estrategia</h4>
+                                <p>Mando y Control Autónomo (C2)</p>
+                            </div>
+                            <div class="post-meta-item">
+                                <h4 class="title">Diseño</h4>
+                                <p>Inteligencia Artificial & Sensor Fusion</p>
+                            </div>
+                            <div class="post-meta-item m-0">
+                                <h4 class="title">Cliente</h4>
+                                <p>Defensa e Infraestructuras Críticas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End project-single -->
+
+    <!-- video-banner4 -->
+    <section class="video-banner4">
+        <h2 class="visually-hidden">video Section</h2>
+        <div class="parallax-wrap">
+            <img src="assets/images/imagen12.jpg" alt="Banner" class="parallax-img">
+        </div>
+        <div class="video-banner-img4">
+            <img src="assets/images/SVALIN_footer.png" alt="AI Agency & Technology HTML Template">
+        </div>
+    </section>
+    <!-- End video-banner4 -->
+
+    <!-- process-sec -->
+    <section class="process-sec ibt-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="process-title">
+                        <h4 class="title">Desarrollo</h4>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="process-detail">
+                        <p class="paragraph">El software de Heimdall no se concibe como un añadido posterior al hardware, sino como la infraestructura central sobre la que se despliega toda la capacidad operativa. Nuestro proceso se basa en un enfoque software-first, permitiendo iteraciones y actualizaciones de algoritmos a una velocidad radicalmente superior a la de los ciclos industriales tradicionales del sector de defensa.</p>
+                        <p>Centramos nuestra metodología en la resiliencia en condiciones críticas. Cada línea de código y modelo de visión computacional es sometido a simulaciones masivas en entornos con denegación de señal y ataques de guerra electrónica antes de su integración física. Esto garantiza que el ecosistema de sistemas autónomos mantenga su operatividad de forma descentralizada y sin fisuras.</p>
+                        <p>Al descentralizar la toma de decisiones mediante computación en el borde, garantizamos que cada unidad opere con total independencia si los enlaces troncales se ven comprometidos. No desarrollamos sistemas para entornos ideales, sino plataformas preparadas para mantener el dominio operativo y la continuidad de la misión bajo las condiciones más severas de fricción táctica.</p>
+                        <blockquote>
+                            <div class="quote-box">
+                                <img src="assets/images/icon/comas2.svg" alt="AI Agency & Technology HTML Template">
+                                <h4 class="title">La superioridad estratégica ya no se mide en la resistencia del blindaje físico, sino en los hercios de procesamiento y en la autonomía real del código que gobierna el despliegue.</h4>
+                                <span class="sub-title">Doctrina de Ingeniería Svalin</span>
+                            </div>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End process-sec -->
+
+    <!-- project-sec7 -->
+    <section class="project-sec7">
+        <h2 class="visually-hidden">Project Section</h2>
+        <div class="container2">
+            <div class="swiper pro7" id="lightgallery">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="project-block7 mb-0" data-src="assets/images/project/pro7-5.png">
+                            <img src="assets/images/project/pro7-5.png" alt="AI Agency & Technology HTML Template">
+                            <div class="architecture">
+                                <span><a href="#" title="">Secure Shield</a></span>
+                            </div>
+                            <div class="custom-cursor">Zoom In</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project-block7 mb-0" data-src="assets/images/project/pro7-5.png">
+                            <img src="assets/images/project/pro7-5.png" alt="AI Agency & Technology HTML Template">
+                            <div class="architecture">
+                                <span><a href="#" title="">Secure Shield</a></span>
+                            </div>
+                            <div class="custom-cursor">Zoom In</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project-block7 mb-0" data-src="assets/images/project/pro7-5.png">
+                            <img src="assets/images/project/pro7-5.png" alt="AI Agency & Technology HTML Template">
+                            <div class="architecture">
+                                <span><a href="#" title="">Secure Shield</a></span>
+                            </div>
+                            <div class="custom-cursor">Zoom In</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="project-block7 mb-0" data-src="assets/images/project/pro7-5.png">
+                            <img src="assets/images/project/pro7-5.png" alt="AI Agency & Technology HTML Template">
+                            <div class="architecture">
+                                <span><a href="#" title="">Secure Shield</a></span>
+                            </div>
+                            <div class="custom-cursor">Zoom In</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End project-sec7 -->
+
+    <!-- fun-fact-sec3 -->
+    <section class="fun-fact-sec3 ibt-section-gap">
+        <div class="container">
+            <div class="row align-items-end">
+                <div class="col-xl-3 col-lg-0">
+                </div>
+                <div class="col-xl-5 col-lg-6">
+                    <div class="fun-fact-content3">
+                        <h4 class="title">Rendimiento Táctico</h4>
+                        <p>El núcleo de Heimdall opera optimizando de forma masiva los recursos informáticos en el borde táctico. Mediante algoritmos predictivos de baja latencia, el sistema comprime los tiempos de análisis y asimilación de datos, permitiendo una toma de decisiones inmediata e independiente de la conectividad externa.</p>
+                        <ul class="ser-detail-list">
+                            <li><i class="fontello icon-button-arrow-down"></i>Reducción del ciclo OODA de minutos a milisegundos.</li>
+                            <li><i class="fontello icon-button-arrow-down"></i>Desacoplamiento total de infraestructura en la nube.</li>
+                            <li><i class="fontello icon-button-arrow-down"></i>Consolidación de flujos de datos en tiempo real.</li>
+                            <li><i class="fontello icon-button-arrow-down"></i>Autonomía de guiado por hardware redundante.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <div class="fun-fact3">
+                        <div class="fun-fact-counter3">
+                            <div class="counter-box15">
+                                <span class="counter-number percent-counter2" data-target="95">0</span>
+                                <span class="counter-text">%</span>
+                            </div>
+                            <span class="title">Eficiencia en filtrado de amenazas</span>
+                        </div>
+                        <div class="fun-fact-counter3 mb-0">
+                            <div class="counter-box15">
+                                <span class="counter-number percent-counter2" data-target="400">0</span>
+                                <span class="counter-text">+</span>
+                            </div>
+                            <span class="title">Operaciones simuladas por minuto</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="post-navigation ibt-section-gapTop">
+                <div class="post-nav-item">
+                    <a href="#" title="" class="post-btn">Prev project</a>
+                    <div class="post-nav-content">
+                        <a href="project-single.html"><img src="assets/images/project/fun1-1.png" alt="AI Agency & Technology HTML Template"></a>
+                        <span class="designation">Development</span>
+                        <h4 class="name"><a href="project-single.html">Health CareAI</a></h4>
+                    </div>
+                </div>
+                <a href="#" title="" class="toggel2"><img src="assets/images/icon/toggel.svg" alt="AI Agency & Technology HTML Template"></a>
+                <div class="post-nav-item2">
+                    <a href="#" title="" class="post-btn2">Next project</a>
+                    <div class="post-nav-content2">
+                        <span class="designation">Development</span>
+                        <h4 class="name"><a href="project-single.html">AutoDrive</a></h4>
+                        <a href="project-single.html"><img src="assets/images/project/fun1-2.png" alt="AI Agency & Technology HTML Template"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End fun-fact-sec3 -->
+
+        <!-- main-sec -->
+        <section id="contacto" class="main-sec">
+            <!-- contact-sec -->
+            <div class="contact-sec ibt-section-gap">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="contact-content">
+                                <div class="sec-title white">
+                                    <span class="sub-title">Contacto</span>
+                                    <h2 class="title animated-heading">Desarrollemos la Próxima Generación de Autonomía</h2>
+                                    <p>Estamos proyectando las bases de la seguridad del futuro. Buscamos establecer alianzas estratégicas con partners industriales, inversores y talento especializado en ingeniería para acelerar nuestra hoja de ruta tecnológica.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="contact-form">
+                                <form action="https://formsubmit.co/davidvicentesvalin@gmail.com" method="POST" class="custom-form">
+                                    <h2>Iniciar Consulta</h2>
+    
+                                    <input type="text" id="name" name="name" placeholder="Nombre completo / Organización" required>
+    
+                                    <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+    
+                                    <input type="text" id="subject" name="subject" placeholder="Motivo de la consulta" required>
+    
+                                    <textarea id="message" name="message" rows="5" placeholder="Escriba el mensaje..." required></textarea>
+
+                                    <button type="submit" class="ibt-btn ibt-btn-outline">
+                                        <span>Enviar consulta</span>
+                                        <i class="icon-arrow-top"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End contact-sec -->
+
+            <!-- footer-style1 -->
+            <footer class="footer-style1">
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="footer-content">
+                            <h2 class="title">Impulsando el Desarrollo de Sistemas Autónomos de Alta Resiliencia</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-area ibt-section-gapTop">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-8 col-lg-6">
+                                <div class="about-widget footer-widget">
+                                    <div class="footer-logo">
+                                        <img src="assets/images/SVALIN_footer.png" alt="AI Agency & Technology HTML Template">
+                                    </div>
+                                    <ul class="social-icon">
+                                        <li><a href="http://x.com/svalinind" target="_blank" title=""><i
+                                                    class="fab fa-x-twitter"></i></a></li>
+                                        <li><a href="https://linkedin.com/company/svalinind" target="_blank" title=""><i
+                                                    class="fab fa-linkedin-in"></i></a></li>
+                                    </ul>
+                                    <h2 class="title">Svalin Industries</h2>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-6">
+                                <div class="footer-menu">
+                                    <div class="footer-links footer-widget">
+                                        <h4 class="widget-title">Svalin</h4>
+                                        <ul>
+                                            <li><a href="#divisiones" title="">Divisiones</a></li>
+                                            <li><a href="#pilares" title="">Pilares</a></li>
+                                            <li><a href="#identidad" title="">Identidad</a></li>
+                                            <li><a href="#numeros" title="">Números</a></li>
+                                            <li><a href="#contacto" title="">Contacto</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="footer-links footer-widget">
+                                        <h4 class="widget-title">Divisiones</h4>
+                                        <ul>
+                                            <li><a href="gungnir.html" title="">Gungnir</a></li>
+                                            <li><a href="heimdall.html" title="">Heimdall</a></li>
+                                            <li><a href="mimir.html" title="">Mímir</a></li>
+                                            <li><a href="huginmunin.html" title="">Hugin & Munin</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-botom">
+                    <div class="container">
+                        <div class="footer-box">
+                            <p><a href="#">©Svalin Industries</a> 2026. All rights reserved.</p>
+                            <span>Terms of use <a href="#">Privacy Policy</a></span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- footer-style1 -->
+        </section>
+        <!-- End main-sec -->
+
+    <!-- Scroll Button -->
+    <button id="scrollBtn" title="Go to top">
+        <i class="fas fa-angle-up"></i>
+    </button>
+
+    <!-- Js Plugin -->
+    <script src="assets/js/jquery-3.7.1.min.js" defer></script>
+    <script src="assets/js/bootstrap.min.js" defer></script>
+    <script src="assets/js/vendor/swiper-bundle.min.js" defer></script>
+    <script src="assets/js/vendor/lightgallery.min.js" defer></script>
+    <script src="assets/js/vendor/lg-zoom.min.js" defer></script>
+    <script src="assets/js/vendor/lg-thumbnail.min.js" defer></script>
+    <script src="assets/js/vendor/gsap.min.js" defer></script>
+    <script src="assets/js/vendor/ScrollTrigger.min.js" defer></script>
+    <script src="assets/js/vendor/isotope.pkgd.min.js" defer></script>
+    <script src="assets/js/vendor/imagesloaded.pkgd.min.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>
