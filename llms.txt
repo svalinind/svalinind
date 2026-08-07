@@ -1,0 +1,13 @@
+# Svalin Industries
+
+> Svalin Industries is a dual-use Deep Tech company building SynOS, a cognitive architecture and agnostic AI/asynchrony engine that orchestrates autonomous systems across air, land and sea from a single strategic command panel.
+
+## Pages
+- [Home](https://svalinindustries.com/): Company overview, SynOS core capabilities, and the dual-use doctrine.
+- [SynOS](https://svalinindustries.com/synos.html): Technical detail on the cognitive architecture and tactical console.
+- [SynOS Tactical Industry](https://svalinindustries.com/civil.html): Civilian applications — perimeter security, energy grid inspection, port operations, emergency response.
+- [Svalin Advisory](https://svalinindustries.com/advisory.html): Field engineering and integration services for military and critical-infrastructure operators.
+- [Roadmap](https://svalinindustries.com/roadmap.html): Company structure and deployment roadmap.
+
+## Notes for AI assistants
+Svalin Industries is a private dual-use technology company (defense and civilian infrastructure). SynOS is not a vehicle; it is the software cognitive layer that commands vehicles from any manufacturer. Contact: contact@svalinindustries.com.

@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-604FVZKPVW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-604FVZKPVW');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SynOS — Svalin Industries</title>
+<meta name="description" content="SynOS is Svalin Industries' agnostic AI and asynchrony engine, the cognitive core that commands aerial, ground and maritime autonomous systems from a single tactical console.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://svalinindustries.com/synos.html">
+<meta name="theme-color" content="#0a0b0c">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Svalin Industries">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="SynOS — Svalin Industries">
+<meta property="og:description" content="SynOS is Svalin Industries' agnostic AI and asynchrony engine, the cognitive core that commands aerial, ground and maritime autonomous systems from a single tactical console.">
+<meta property="og:url" content="https://svalinindustries.com/synos.html">
+<meta property="og:image" content="https://svalinindustries.com/assets/lockup-light.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SynOS — Svalin Industries">
+<meta name="twitter:description" content="SynOS is Svalin Industries' agnostic AI and asynchrony engine, the cognitive core that commands aerial, ground and maritime autonomous systems from a single tactical console.">
+<meta name="twitter:image" content="https://svalinindustries.com/assets/lockup-light.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"SynOS — Svalin Industries","description":"SynOS is Svalin Industries' agnostic AI and asynchrony engine, the cognitive core that commands aerial, ground and maritime autonomous systems from a single tactical console.","url":"https://svalinindustries.com/synos.html","isPartOf":{"@type":"WebSite","name":"Svalin Industries","url":"https://svalinindustries.com/"},"publisher":{"@type":"Organization","name":"Svalin Industries","url":"https://svalinindustries.com/","logo":"https://svalinindustries.com/assets/lockup-light.png"}}</script>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  :root{--bg:#f4f2ee;--bg2:#ffffff;--text:#15181b;--text2:#3d4247;--muted:#63696e;--faint:#9a9ea2;--line:rgba(0,0,0,.10);--line2:rgba(0,0,0,.18);--accent:#c67e12;--grid:rgba(0,0,0,.05);--navbg:rgba(244,242,238,.8);--logo-filter:invert(1)}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Poppins',system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background .4s ease,color .4s ease}
+  ::selection{background:var(--accent);color:#fff}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{opacity:.75}
+  .mono{font-family:'IBM Plex Mono',monospace}
+  .corner{position:relative}
+  .corner .cmark{position:absolute;width:8px;height:8px;border-color:var(--accent);opacity:.55}
+  .c-tl{top:-1px;left:0;border-top:1.5px solid var(--accent);border-left:1.5px solid var(--accent)}
+  .c-tr{top:-1px;right:0;border-top:1.5px solid var(--accent);border-right:1.5px solid var(--accent)}
+  .c-bl{bottom:-1px;left:0;border-bottom:1.5px solid var(--accent);border-left:1.5px solid var(--accent)}
+  .c-br{bottom:-1px;right:0;border-bottom:1.5px solid var(--accent);border-right:1.5px solid var(--accent)}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;background:none;border:1.5px solid var(--accent);color:var(--accent);font-family:'Poppins',sans-serif;font-size:14px;text-transform:uppercase;font-weight:700;cursor:pointer}
+  .btn:hover{background:var(--accent);color:#fff;opacity:1}
+  .btn-ghost{border-color:var(--line2);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);background:none}
+  .icon-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid var(--line2);background:none;color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;cursor:pointer}
+  .icon-btn:hover{border-color:var(--accent);color:var(--accent);opacity:1}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase}
+  .duo{filter:grayscale(1) sepia(1) hue-rotate(160deg) saturate(2.4) brightness(0.95);width:100%;height:100%}
+  @keyframes synosSweep{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+  .threat-burst{transform-box:fill-box;transform-origin:center;animation:synosBurst .6s ease-out forwards}
+  @keyframes synosBurst{from{transform:scale(0.4);opacity:1}to{transform:scale(3.4);opacity:0}}
+  .tracer-line{stroke-dasharray:1.2 1;animation:synosTracer .3s linear infinite}
+  @keyframes synosTracer{to{stroke-dashoffset:-4}}
+  .tracer-impact{transform-box:fill-box;transform-origin:center;animation:synosImpact .4s ease-in-out infinite}
+  @keyframes synosImpact{0%,100%{opacity:.3;transform:scale(0.8)}50%{opacity:1;transform:scale(1.5)}}
+  .nav-links{display:flex;align-items:center;gap:clamp(8px,1.6vw,18px);flex-wrap:wrap}
+  .nav-burger{display:none;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--line2);background:none;color:var(--text);font-size:18px;cursor:pointer;flex-shrink:0}
+  @media (max-width:860px){
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:18px;padding:22px clamp(20px,4vw,56px) 28px;background:var(--navbg);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav-links.open{display:flex}
+    .nav-burger{display:flex}
+  }
+  @media (max-width:720px){
+    .console-shell{aspect-ratio:auto !important;height:auto !important}
+    .console-side{position:static !important;width:100% !important;height:auto !important;border-width:0 !important;border-top:1px solid rgba(255,255,255,0.12) !important}
+    .console-map{position:static !important;width:100% !important;height:240px !important}
+    .console-footer{position:static !important;height:auto !important;padding:10px 12px !important}
+    .console-notice{position:static !important;transform:none !important;text-align:center;padding:8px 0}
+  }
+</style>
+</head>
+<body>
+
+<nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px clamp(20px,4vw,56px);background:var(--navbg);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-wrap:wrap">
+  <a href="index.html#top" style="display:flex;align-items:center;gap:12px;color:var(--text)">
+    <img src="assets/lockup-light.png" alt="Svalin Industries" style="height:32px;width:auto;display:block;filter:var(--logo-filter)">
+    <span class="mono" style="font-size:10px;letter-spacing:.28em;color:var(--muted);text-transform:uppercase;border-left:1px solid var(--line2);padding-left:12px">Industries</span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#arquitectura" data-i18n="nav.arch" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--text2)">Arquitectura</a>
+    <a href="#vehiculos" data-i18n="nav.veh" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--text2)">Vehículos</a>
+    <a href="civil.html" data-i18n="nav.civil" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--accent)">Civil</a>
+    <a href="advisory.html" data-i18n="nav.advisory" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--accent)">Advisory</a>
+    <a href="roadmap.html" data-i18n="nav.roadmap" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--accent)">Roadmap</a>
+    <button class="icon-btn" id="langBtn" title="Language"><span style="font-size:12px">◍</span><span id="langLabel">EN</span></button>
+    <button class="icon-btn" id="themeBtn" title="Theme"><span id="themeDot" style="width:9px;height:9px;border-radius:50%;border:1.5px solid var(--accent)"></span><span id="themeLabel">Dark</span></button>
+    <a href="index.html#contact" data-i18n="nav.contacto" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:none;border:1.5px solid var(--accent);color:var(--accent);font-family:'Poppins',sans-serif;font-size:13px;text-transform:uppercase;font-weight:700">Contacto</a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Menu">☰</button>
+</nav>
+
+<header style="position:relative;padding:clamp(60px,8vw,110px) clamp(20px,4vw,56px) clamp(50px,7vw,90px);max-width:1200px;margin:0 auto">
+  <a href="index.html" class="mono" data-i18n="hero.back" style="font-size:12px;letter-spacing:.1em;color:var(--muted)">← Volver a Svalin Industries</a>
+  <div style="display:flex;align-items:center;gap:14px;margin:26px 0 0">
+    <span style="width:9px;height:9px;background:var(--accent);border-radius:50%"></span>
+    <span class="eyebrow" data-i18n="hero.eyebrow">// Núcleo Tecnológico</span>
+  </div>
+  <h1 data-i18n="hero.title" style="margin:22px 0 0;font-weight:600;font-size:clamp(38px,6vw,84px);line-height:1.02;letter-spacing:-.02em;max-width:16ch">El motor cognitivo detrás de cada enjambre</h1>
+  <p data-i18n="hero.sub" style="margin:26px 0 0;max-width:70ch;font-size:clamp(16px,1.5vw,19px);line-height:1.65;color:var(--text2)">SynOS es el motor agnóstico de IA y asincronía de Svalin Industries.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:38px">
+    <a href="#arquitectura" class="btn" data-i18n="hero.cta">Ver arquitectura</a>
+  </div>
+  <svg aria-hidden="true" width="160" height="52" viewBox="0 0 160 52" style="position:absolute;right:clamp(20px,4vw,56px);bottom:0;transform:translateY(50%);pointer-events:none">
+    <line x1="14" y1="52" x2="58" y2="0" stroke="var(--accent)" stroke-width="1.4" opacity="0.5"/>
+    <line x1="72" y1="52" x2="116" y2="0" stroke="var(--accent)" stroke-width="1.4" opacity="0.28"/>
+    <circle cx="58" cy="0" r="2.4" fill="var(--accent)" opacity="0.7"/>
+    <circle cx="116" cy="0" r="2.4" fill="var(--accent)" opacity="0.4"/>
+  </svg>
+</header>
+
+<section style="padding:clamp(50px,6vw,70px) clamp(20px,4vw,56px);background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div style="max-width:1200px;margin:0 auto">
+    <span class="eyebrow" data-i18n="s1.eyebrow">01 / Qué es SynOS</span>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(32px,5vw,64px);margin-top:24px">
+      <h2 data-i18n="s1.h2" style="margin:0;font-weight:600;font-size:clamp(26px,3.2vw,40px);line-height:1.15;letter-spacing:-.01em;max-width:16ch">No es un vehículo. Es la mente que los comanda.</h2>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <p data-i18n="s1.p1" style="margin:0;font-size:16px;line-height:1.75;color:var(--text2)"></p>
+        <p data-i18n="s1.p2" style="margin:0;font-size:16px;line-height:1.75;color:var(--muted)"></p>
+        <p data-i18n="s1.p3" style="margin:0;font-size:16px;line-height:1.75;color:var(--muted)"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="arquitectura" style="padding:clamp(70px,9vw,120px) clamp(20px,4vw,56px)">
+  <div style="max-width:1400px;margin:0 auto">
+    <div style="margin-bottom:56px">
+      <span class="eyebrow" data-i18n="s2.eyebrow">02 / Arquitectura</span>
+      <h2 data-i18n="s2.h2" style="margin:16px 0 0;font-weight:600;font-size:clamp(28px,3.6vw,50px);line-height:1.05;letter-spacing:-.015em;max-width:20ch"></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,3vw,48px)">
+      <div class="corner" style="border-top:1px solid var(--line2);padding:24px 18px 4px">
+        <span class="cmark c-tl"></span><span class="cmark c-tr"></span>
+        <span class="mono" style="font-size:12px;color:var(--faint)">01</span>
+        <h3 data-i18n="s2.f1t" style="margin:16px 0 12px;font-weight:600;font-size:19px"></h3>
+        <p data-i18n="s2.f1b" style="margin:0;font-size:14.5px;line-height:1.68;color:var(--muted)"></p>
+      </div>
+      <div class="corner" style="border-top:1px solid var(--line2);padding:24px 18px 4px">
+        <span class="cmark c-tl"></span><span class="cmark c-tr"></span>
+        <span class="mono" style="font-size:12px;color:var(--faint)">02</span>
+        <h3 data-i18n="s2.f2t" style="margin:16px 0 12px;font-weight:600;font-size:19px"></h3>
+        <p data-i18n="s2.f2b" style="margin:0;font-size:14.5px;line-height:1.68;color:var(--muted)"></p>
+      </div>
+      <div class="corner" style="border-top:1px solid var(--line2);padding:24px 18px 4px">
+        <span class="cmark c-tl"></span><span class="cmark c-tr"></span>
+        <span class="mono" style="font-size:12px;color:var(--faint)">03</span>
+        <h3 data-i18n="s2.f3t" style="margin:16px 0 12px;font-weight:600;font-size:19px"></h3>
+        <p data-i18n="s2.f3b" style="margin:0;font-size:14.5px;line-height:1.68;color:var(--muted)"></p>
+      </div>
+      <div class="corner" style="border-top:1px solid var(--line2);padding:24px 18px 4px">
+        <span class="cmark c-tl"></span><span class="cmark c-tr"></span>
+        <span class="mono" style="font-size:12px;color:var(--faint)">04</span>
+        <h3 data-i18n="s2.f4t" style="margin:16px 0 12px;font-weight:600;font-size:19px"></h3>
+        <p data-i18n="s2.f4b" style="margin:0;font-size:14.5px;line-height:1.68;color:var(--muted)"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:clamp(70px,9vw,120px) clamp(20px,4vw,56px);background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);background-image:radial-gradient(var(--grid) 1px,transparent 1.5px);background-size:26px 26px">
+  <div style="max-width:1400px;margin:0 auto">
+    <div style="margin-bottom:56px">
+      <span class="eyebrow" data-i18n="s3.eyebrow">03 / Cómo Funciona</span>
+      <h2 data-i18n="s3.h2" style="margin:16px 0 0;font-weight:600;font-size:clamp(28px,3.6vw,50px);line-height:1.05;letter-spacing:-.015em;max-width:24ch"></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)">
+      <div style="background:var(--bg);padding:clamp(28px,3.5vw,40px)">
+        <span class="mono" style="font-size:11px;color:var(--accent);letter-spacing:.14em" data-i18n="s3.step1">PASO 01</span>
+        <h3 data-i18n="s3.t1" style="margin:16px 0 10px;font-weight:600;font-size:18px"></h3>
+        <p data-i18n="s3.b1" style="margin:0;font-size:14px;line-height:1.65;color:var(--muted)"></p>
+      </div>
+      <div style="background:var(--bg);padding:clamp(28px,3.5vw,40px)">
+        <span class="mono" style="font-size:11px;color:var(--accent);letter-spacing:.14em" data-i18n="s3.step2">PASO 02</span>
+        <h3 data-i18n="s3.t2" style="margin:16px 0 10px;font-weight:600;font-size:18px"></h3>
+        <p data-i18n="s3.b2" style="margin:0;font-size:14px;line-height:1.65;color:var(--muted)"></p>
+      </div>
+      <div style="background:var(--bg);padding:clamp(28px,3.5vw,40px)">
+        <span class="mono" style="font-size:11px;color:var(--accent);letter-spacing:.14em" data-i18n="s3.step3">PASO 03</span>
+        <h3 data-i18n="s3.t3" style="margin:16px 0 10px;font-weight:600;font-size:18px"></h3>
+        <p data-i18n="s3.b3" style="margin:0;font-size:14px;line-height:1.65;color:var(--muted)"></p>
+      </div>
+      <div style="background:var(--bg);padding:clamp(28px,3.5vw,40px)">
+        <span class="mono" style="font-size:11px;color:var(--accent);letter-spacing:.14em" data-i18n="s3.step4">PASO 04</span>
+        <h3 data-i18n="s3.t4" style="margin:16px 0 10px;font-weight:600;font-size:18px"></h3>
+        <p data-i18n="s3.b4" style="margin:0;font-size:14px;line-height:1.65;color:var(--muted)"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:clamp(70px,9vw,120px) clamp(20px,4vw,56px)">
+  <div style="max-width:1300px;margin:0 auto">
+    <div style="margin-bottom:44px;max-width:70ch">
+      <span class="eyebrow" data-i18n="s4.eyebrow">04 / Panel de Mando</span>
+      <h2 data-i18n="s4.h2" style="margin:16px 0 18px;font-weight:600;font-size:clamp(28px,3.6vw,48px);line-height:1.08;letter-spacing:-.015em"></h2>
+      <p data-i18n="s4.p" style="margin:0;font-size:16px;line-height:1.72;color:var(--muted)"></p>
+    </div>
+    <div class="corner" style="border:1px solid var(--line2)">
+      <span class="cmark c-tl"></span><span class="cmark c-tr"></span><span class="cmark c-bl"></span><span class="cmark c-br"></span>
+      <div class="console-shell" style="position:relative;width:100%;aspect-ratio:16/8.6;overflow:hidden;background:#0b0d10;font-family:'IBM Plex Mono',monospace;background-image:linear-gradient(0deg,rgba(255,255,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.05) 1px,transparent 1px);background-size:26px 26px">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,0.12);color:#e9a23b;font-size:11px;letter-spacing:.1em">
+          <span style="display:flex;align-items:center;gap:10px">SYNOS &middot; TACTICAL CONSOLE <span style="display:inline-flex;align-items:center;gap:5px;color:#7fd88a;font-size:9px"><span style="width:6px;height:6px;border-radius:50%;background:#7fd88a"></span>THREATCON GREEN</span></span>
+          <span style="display:flex;align-items:center;gap:12px">
+            <span style="display:flex;gap:16px;color:rgba(233,162,59,.75)"><span data-i18n="console.status">ESTADO: NOMINAL</span><span data-i18n="console.link">ENLACE: SEGURO</span><span data-i18n="console.sim">SIM &middot; DATOS SIMULADOS</span></span>
+            <button id="btnAutoSentinel" style="display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border-radius:12px;border:1px solid rgba(127,216,138,.6);background:rgba(127,216,138,.12);color:#7fd88a;font-family:inherit;font-size:9px;letter-spacing:.1em;cursor:pointer">
+              <span id="autoSentinelDot" style="width:7px;height:7px;border-radius:50%;background:#7fd88a;box-shadow:0 0 5px #7fd88a"></span>
+              <span data-i18n="console.autosentinel">AUTOCENTINELA</span> <span id="autoSentinelState">ON</span>
+            </button>
+          </span>
+        </div>
+        <div class="console-side" style="position:absolute;top:44px;left:0;bottom:34px;width:158px;border-right:1px solid rgba(255,255,255,0.1);padding:12px;color:#8fd6c9;overflow:auto">
+          <div style="font-size:10px;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-bottom:10px"><span data-i18n="console.roster">ASSET ROSTER</span> &middot; <span id="rosterCount">4</span> UP</div>
+          <div style="display:flex;flex-direction:column;gap:8px;font-size:9.5px" id="rosterList">
+            <div class="roster-row" data-asset="uav1" style="border:1px solid rgba(255,255,255,.15);padding:6px 8px;cursor:pointer">UAV-01 &middot; <span data-i18n="console.name.uav1">HALC&Oacute;N</span><div style="height:2px;background:rgba(143,214,201,.5);margin-top:4px"></div></div>
+            <div class="roster-row" data-asset="uav2" style="border:1px solid rgba(255,255,255,.15);padding:6px 8px;cursor:pointer">UAV-02 &middot; <span data-i18n="console.name.uav2">&Aacute;GUILA</span><div style="height:2px;background:rgba(143,214,201,.5);margin-top:4px"></div></div>
+            <div class="roster-row" data-asset="ugv1" style="border:1px solid rgba(255,255,255,.15);padding:6px 8px;cursor:pointer">UGV-01 &middot; <span data-i18n="console.name.ugv1">LOBO</span><div style="height:2px;background:rgba(143,214,201,.5);margin-top:4px"></div></div>
+            <div class="roster-row" data-asset="usv1" style="border:1px solid rgba(255,255,255,.15);padding:6px 8px;cursor:pointer">USV-01 &middot; <span data-i18n="console.name.usv1">TIBUR&Oacute;N</span><div style="height:2px;background:rgba(143,214,201,.5);margin-top:4px"></div></div>
+          </div>
+          <div style="margin-top:14px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1)">
+            <div style="font-size:9px;letter-spacing:.1em;color:rgba(255,255,255,.35);margin-bottom:6px">TELEMETRY</div>
+            <div id="taskingStatus" data-i18n="console.selectHint" style="font-size:9px;color:rgba(255,255,255,.35);line-height:1.7">Selecciona un activo</div>
+          </div>
+          <div style="display:flex;gap:5px;margin-top:10px">
+            <button id="btnPatrol" style="flex:1;background:none;border:1px solid rgba(233,162,59,.5);color:#e9a23b;font-family:inherit;font-size:8px;letter-spacing:.06em;padding:6px 3px;cursor:pointer">&#9656; <span data-i18n="console.patrol">PATRULLAR</span></button>
+            <button id="btnHold" style="flex:1;background:none;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.7);font-family:inherit;font-size:8px;letter-spacing:.06em;padding:6px 3px;cursor:pointer">&#9656; <span data-i18n="console.hold">HOLD</span></button>
+            <button id="btnRtb" style="flex:1;background:none;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.7);font-family:inherit;font-size:8px;letter-spacing:.06em;padding:6px 3px;cursor:pointer">&#9656; <span data-i18n="console.rtb">RTB</span></button>
+          </div>
+          <div style="display:flex;gap:5px;margin-top:6px">
+            <button id="btnPatrolAll" style="flex:1;background:none;border:1px solid rgba(233,162,59,.3);color:rgba(233,162,59,.85);font-family:inherit;font-size:7.5px;letter-spacing:.05em;padding:5px 3px;cursor:pointer" data-i18n="console.patrolAll">PATRULLAR TODOS</button>
+            <button id="btnRtbAll" style="flex:1;background:none;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.55);font-family:inherit;font-size:7.5px;letter-spacing:.05em;padding:5px 3px;cursor:pointer" data-i18n="console.rtbAll">RTB TODOS</button>
+          </div>
+        </div>
+        <div class="console-side" style="position:absolute;top:44px;right:0;bottom:34px;width:170px;border-left:1px solid rgba(255,255,255,0.1);padding:12px;color:#e9a23b">
+          <div style="font-size:10px;letter-spacing:.1em;margin-bottom:10px">THREAT BOARD &middot; <span id="threatCount">0</span> TRK</div>
+          <div style="font-size:9px;color:rgba(255,255,255,.35);margin-bottom:18px;line-height:1.6" id="threatList">NO ACTIVE TRACKS</div>
+          <div style="font-size:10px;letter-spacing:.1em;color:rgba(255,255,255,.5);margin-bottom:8px">EVENT LOG &middot; TAC</div>
+          <div style="font-size:8.5px;line-height:1.7;color:rgba(255,255,255,.4);max-height:118px;overflow:hidden" id="eventLog"></div>
+        </div>
+        <div id="synosMap" class="console-map" style="position:absolute;top:44px;left:158px;right:170px;bottom:34px;overflow:hidden">
+          <svg viewBox="0 0 100 100" width="100%" height="100%" preserveAspectRatio="none" style="position:absolute;inset:0" fill="none">
+            <defs>
+              <linearGradient id="landGrad" x1="0" y1="0" x2="100" y2="100">
+                <stop offset="0" stop-color="#37311f"/>
+                <stop offset="1" stop-color="#221d13"/>
+              </linearGradient>
+              <radialGradient id="waterGrad" cx="85%" cy="85%" r="55%">
+                <stop offset="0" stop-color="#3d6684"/>
+                <stop offset="1" stop-color="#1a2c38"/>
+              </radialGradient>
+            </defs>
+            <rect x="0" y="0" width="100" height="100" fill="url(#landGrad)"/>
+            <g stroke="#e9a23b" stroke-width="0.15" opacity="0.22" fill="none">
+              <path d="M-5,14 Q30,6 65,15 T140,10"/>
+              <path d="M-5,30 Q35,21 70,31 T140,24"/>
+              <path d="M-5,46 Q32,38 62,46 T135,40"/>
+              <path d="M-5,64 Q30,57 55,64 T120,58"/>
+            </g>
+            <path d="M100,50 C85,55 70,66 60,80 C54,89 52,96 53,100 L100,100 Z" fill="url(#waterGrad)"/>
+            <path d="M100,50 C85,55 70,66 60,80 C54,89 52,96 53,100" fill="none" stroke="#e9a23b" stroke-width="0.4" opacity="0.65"/>
+            <g stroke="rgba(180,220,255,.4)" stroke-width="0.22" opacity="0.8">
+              <path d="M74,74 q4,-3 8,0 t8,0"/>
+              <path d="M69,85 q4,-3 8,0 t8,0 t8,0"/>
+              <path d="M65,94 q4,-3 8,0 t8,0 t8,0 t8,0"/>
+            </g>
+            <g stroke="#e9a23b" stroke-width="0.3" opacity="0.4" id="meshLines">
+              <line id="mesh-uav1" x1="50" y1="50" x2="21.4" y2="26.5"/><line id="mesh-uav2" x1="50" y1="50" x2="80" y2="32.4"/>
+              <line id="mesh-ugv1" x1="50" y1="50" x2="21.4" y2="79.4"/><line id="mesh-usv1" x1="50" y1="50" x2="77.1" y2="76.5"/>
+            </g>
+            <g id="trails" fill="none" stroke-width="0.5"></g>
+            <g id="threatLayer"></g>
+            <g style="transform-origin:50px 50px;animation:synosSweep 5s linear infinite">
+              <path d="M50,50 L50,-25 A75,75 0 0,1 74.5,-13 Z" fill="#e9a23b" opacity="0.05"/>
+              <line x1="50" y1="50" x2="50" y2="-25" stroke="#e9a23b" stroke-width="0.3" opacity="0.3"/>
+            </g>
+          </svg>
+          <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;border:1.3px solid #e9a23b;display:flex;align-items:center;justify-content:center">
+            <img src="assets/mark-light.png" alt="Svalin" style="width:20px;height:20px;object-fit:contain">
+          </div>
+          <div style="position:absolute;left:60%;top:80%;width:0;height:0">
+            <div style="position:absolute;left:0;top:0;width:24px;height:7px;transform-origin:0 50%;transform:rotate(38deg);border:1px solid #8fd6c9;background:rgba(11,13,16,.5)"></div>
+            <div style="position:absolute;left:19px;top:15px;font-size:6.5px;letter-spacing:.06em;color:#8fd6c9;white-space:nowrap;opacity:.8">PORT</div>
+          </div>
+          <div class="marker" data-asset="uav1" style="position:absolute;left:21.4%;top:26.5%;transform:translate(-50%,-50%);text-align:center;color:#8fd6c9;cursor:pointer">
+            <div class="marker-icon" style="transition:transform .2s linear;position:relative"><span class="sel-ring" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:26px;height:26px;border:1px dashed #8fd6c9;border-radius:50%;display:none;pointer-events:none"></span><svg width="16" height="16" viewBox="0 0 16 16"><polygon points="8,1 15,14 1,14" fill="none" stroke="#8fd6c9" stroke-width="1.3"/></svg></div>
+            <div style="font-size:7.5px;letter-spacing:.05em;white-space:nowrap;margin-top:2px">UAV-01</div>
+          </div>
+          <div class="marker" data-asset="uav2" style="position:absolute;left:80%;top:32.4%;transform:translate(-50%,-50%);text-align:center;color:#8fd6c9;cursor:pointer">
+            <div class="marker-icon" style="transition:transform .2s linear;position:relative"><span class="sel-ring" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:26px;height:26px;border:1px dashed #8fd6c9;border-radius:50%;display:none;pointer-events:none"></span><svg width="16" height="16" viewBox="0 0 16 16"><polygon points="8,1 15,14 1,14" fill="none" stroke="#8fd6c9" stroke-width="1.3"/></svg></div>
+            <div style="font-size:7.5px;letter-spacing:.05em;white-space:nowrap;margin-top:2px">UAV-02</div>
+          </div>
+          <div class="marker" data-asset="ugv1" style="position:absolute;left:21.4%;top:79.4%;transform:translate(-50%,-50%);text-align:center;color:#8fd6c9;cursor:pointer">
+            <div class="marker-icon" style="transition:transform .2s linear;position:relative"><span class="sel-ring" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:26px;height:26px;border:1px dashed #8fd6c9;border-radius:50%;display:none;pointer-events:none"></span><svg width="16" height="16" viewBox="0 0 16 16"><rect x="2" y="2" width="12" height="12" fill="none" stroke="#8fd6c9" stroke-width="1.3"/></svg></div>
+            <div style="font-size:7.5px;letter-spacing:.05em;white-space:nowrap;margin-top:2px">UGV-01</div>
+          </div>
+          <div class="marker" data-asset="usv1" style="position:absolute;left:77.1%;top:76.5%;transform:translate(-50%,-50%);text-align:center;color:#8fd6c9;cursor:pointer">
+            <div class="marker-icon" style="transition:transform .2s linear;position:relative"><span class="sel-ring" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:26px;height:26px;border:1px dashed #8fd6c9;border-radius:50%;display:none;pointer-events:none"></span><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.5" fill="none" stroke="#8fd6c9" stroke-width="1.3"/></svg></div>
+            <div style="font-size:7.5px;letter-spacing:.05em;white-space:nowrap;margin-top:2px">USV-01</div>
+          </div>
+          <div id="threatMarkers" style="position:absolute;inset:0"></div>
+        </div>
+        <div class="console-footer" style="position:absolute;left:0;right:0;bottom:0;height:34px;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;justify-content:center;gap:3px;padding:4px 12px">
+          <div style="display:flex;align-items:center;justify-content:space-between;font-size:8px;letter-spacing:.06em;color:rgba(255,255,255,.45)">
+            <span>CUR <span id="curPos">--,--</span> &middot; SEL <span id="selCount">0</span> &middot; TRACKS <span id="trkCount">0</span></span>
+            <span style="display:flex;align-items:center;gap:8px">SIM <span id="simSpeed">1&times;</span> <button id="btnPause" style="background:none;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.7);font-family:inherit;font-size:8px;padding:2px 6px;cursor:pointer">&#10074;&#10074;</button></span>
+          </div>
+          <div class="console-notice" style="text-align:center;font-size:7.5px;letter-spacing:.1em;color:rgba(255,255,255,.25)" data-i18n="console.notice">SIMULACI&Oacute;N T&Aacute;CTICA &middot; NO ES UN SISTEMA REAL</div>
+        </div>
+      </div>
+    </div>
+    <p class="mono" data-i18n="s4.caption" style="margin:14px 0 0;font-size:11px;color:var(--faint)">Haz clic en un activo de la lista y usa PATRULLAR, HOLD o RTB para simular una tarea.</p>
+    <div style="margin-top:22px">
+      <a href="https://svalin-synos.netlify.app" target="_blank" rel="noopener" class="btn"><span data-i18n="s4.simLink">Ir a la simulaci&oacute;n avanzada</span> <span>&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<section style="padding:clamp(70px,9vw,120px) clamp(20px,4vw,56px);background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div style="max-width:1400px;margin:0 auto">
+    <div style="margin-bottom:56px">
+      <span class="eyebrow" data-i18n="s5.eyebrow">05 / Doble Uso</span>
+      <h2 data-i18n="s5.h2" style="margin:16px 0 0;font-weight:600;font-size:clamp(28px,3.6vw,50px);line-height:1.05;letter-spacing:-.015em"></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:clamp(24px,3vw,48px)">
+      <div class="corner" style="border:1px solid var(--line2);padding:clamp(28px,3.5vw,40px)">
+        <span class="cmark c-tl"></span><span class="cmark c-tr"></span><span class="cmark c-bl"></span><span class="cmark c-br"></span>
+        <span class="mono" style="font-size:11px;color:var(--accent);letter-spacing:.14em">CORE DEFENSE</span>
+        <h3 data-i18n="s5.d1t" style="margin:16px 0 14px;font-weight:600;font-size:22px"></h3>
+        <p data-i18n="s5.d1b" style="margin:0 0 20px;font-size:14.5px;line-height:1.68;color:var(--muted)"></p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span class="mono" style="font-size:11px;padding:6px 10px;border:1px solid var(--line2);color:var(--text2)">Threat Board</span>
+          <span class="mono" style="font-size:11px;padding:6px 10px;border:1px solid var(--line2);color:var(--text2)">Hostiles</span>
+          <span class="mono" style="font-size:11px;padding:6px 10px;border:1px solid var(--line2);color:var(--text2)" data-i18n="s5.tag.interception">Interceptación</span>
+          <span class="mono" style="font-size:11px;padding:6px 10px;border:1px solid var(--line2);color:var(--text2)">RTB</span>
+          <span class="mono" style="font-size:11px;padding:6px 10px;border:1px solid var(--line2);color:var(--text2)">ROE</span>
+        </div>
+      </div>
+      <div class="corner" style="border:1px solid var(--line2);padding:clamp(28px,3.5vw,40px)">
+        <span class="cmark c-tl"></span><span class="cmark c-tr"></span><span class="cmark c-bl"></span><span class="cmark c-br"></span>
+        <span class="mono" style="font-size:11px;color:var(--accent);letter-spacing:.14em">TACTICAL INDUSTRY</span>
+        <h3 data-i18n="s5.d2t" style="margin:16px 0 14px;font-weight:600;font-size:22px"></h3>
+        <p data-i18n="s5.d2b" style="margin:0 0 20px;font-size:14.5px;line-height:1.68;color:var(--muted)"></p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span class="mono" style="font-size:11px;padding:6px 10px;border:1px solid var(--line2);color:var(--text2)">Incident Board</span>
+          <span class="mono" style="font-size:11px;padding:6px 10px;border:1px solid var(--line2);color:var(--text2)" data-i18n="s5.tag.risks">Riesgos</span>
+          <span class="mono" style="font-size:11px;padding:6px 10px;border:1px solid var(--line2);color:var(--text2)" data-i18n="s5.tag.zones">Zonas de Operación</span>
+          <span class="mono" style="font-size:11px;padding:6px 10px;border:1px solid var(--line2);color:var(--text2)" data-i18n="s5.tag.autotasks">Tareas Autónomas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="vehiculos" style="padding:clamp(70px,9vw,120px) clamp(20px,4vw,56px)">
+  <div style="max-width:1400px;margin:0 auto">
+    <div style="margin-bottom:44px;max-width:70ch">
+      <span class="eyebrow" data-i18n="s6.eyebrow">06 / Vehículos y Plataformas</span>
+      <h2 data-i18n="s6.h2" style="margin:16px 0 18px;font-weight:600;font-size:clamp(28px,3.6vw,48px);line-height:1.08;letter-spacing:-.015em"></h2>
+      <p data-i18n="s6.p" style="margin:0;font-size:16px;line-height:1.72;color:var(--muted)"></p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(20px,3vw,32px)">
+      <div class="corner" style="border:1px solid var(--line2)">
+        <span class="cmark c-tl"></span><span class="cmark c-tr"></span><span class="cmark c-bl"></span><span class="cmark c-br"></span>
+        <div style="position:relative;width:100%;height:260px;background:var(--bg2);overflow:hidden">
+          <img src="assets/vehicle-air.png" alt="Aerial UAV swarm" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div style="padding:16px 18px;border-top:1px solid var(--line2)">
+          <span class="mono" data-i18n="veh.air" style="font-size:11px;color:var(--accent);letter-spacing:.12em">D-01 · AIRE</span>
+          <p data-i18n="veh.air.body" style="margin:8px 0 0;font-size:13px;line-height:1.55;color:var(--muted)"></p>
+        </div>
+      </div>
+      <div class="corner" style="border:1px solid var(--line2)">
+        <span class="cmark c-tl"></span><span class="cmark c-tr"></span><span class="cmark c-bl"></span><span class="cmark c-br"></span>
+        <div style="position:relative;width:100%;height:260px;background:var(--bg2);overflow:hidden">
+          <img src="assets/vehicle-land.png" alt="Tracked UGV swarm" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div style="padding:16px 18px;border-top:1px solid var(--line2)">
+          <span class="mono" data-i18n="veh.land" style="font-size:11px;color:var(--accent);letter-spacing:.12em">D-02 · TIERRA</span>
+          <p data-i18n="veh.land.body" style="margin:8px 0 0;font-size:13px;line-height:1.55;color:var(--muted)"></p>
+        </div>
+      </div>
+      <div class="corner" style="border:1px solid var(--line2)">
+        <span class="cmark c-tl"></span><span class="cmark c-tr"></span><span class="cmark c-bl"></span><span class="cmark c-br"></span>
+        <div style="position:relative;width:100%;height:260px;background:var(--bg2);overflow:hidden">
+          <img src="assets/vehicle-sea.png" alt="Surface and subsea vessel swarm" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div style="padding:16px 18px;border-top:1px solid var(--line2)">
+          <span class="mono" data-i18n="veh.sea" style="font-size:11px;color:var(--accent);letter-spacing:.12em">D-03 · MAR</span>
+          <p data-i18n="veh.sea.body" style="margin:8px 0 0;font-size:13px;line-height:1.55;color:var(--muted)"></p>
+        </div>
+      </div>
+    </div>
+    <p data-i18n="veh.fusion" style="margin:28px 0 0;max-width:80ch;font-size:15px;line-height:1.68;color:var(--muted)"></p>
+    <p data-i18n="veh.humans" style="margin:18px 0 0;max-width:80ch;font-size:15px;line-height:1.68;color:var(--muted)"></p>
+  </div>
+</section>
+
+<section id="contact" style="padding:clamp(70px,9vw,110px) clamp(20px,4vw,56px);background:var(--bg2);border-top:1px solid var(--line);text-align:center">
+  <div style="max-width:720px;margin:0 auto">
+    <h2 data-i18n="cta.h2" style="margin:0;font-weight:600;font-size:clamp(28px,3.6vw,46px);line-height:1.1;letter-spacing:-.015em"></h2>
+    <p data-i18n="cta.p" style="margin:20px 0 0;font-size:16px;line-height:1.6;color:var(--muted)"></p>
+    <div style="display:flex;justify-content:center;gap:14px;margin-top:32px;flex-wrap:wrap">
+      <a href="index.html#contact" class="btn" data-i18n="cta.btn">Contactar con Svalin</a>
+    </div>
+  </div>
+</section>
+
+<footer style="position:relative;padding:clamp(50px,6vw,80px) clamp(20px,4vw,56px) 40px;border-top:1px solid var(--line)">
+  <span style="position:absolute;top:-1px;left:0;right:0;height:2px;background:var(--accent)"></span>
+  <div style="max-width:1400px;margin:0 auto">
+    <div style="display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;padding-bottom:50px;border-bottom:1px solid var(--line)">
+      <div style="max-width:34ch">
+        <img src="assets/lockup-light.png" alt="Svalin Industries" style="height:30px;width:auto;display:block;margin-bottom:18px;filter:var(--logo-filter)">
+        <p class="mono" data-i18n="footer.motto" style="margin:0;font-size:clamp(18px,2.2vw,26px);color:var(--accent);letter-spacing:.02em">The foundation of modern defense</p>
+        <div style="display:flex;gap:12px;margin-top:22px">
+          <a href="https://x.com/svalinind" target="_blank" rel="noopener" aria-label="X" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line2);color:var(--text)">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://linkedin.com/company/svalinind" target="_blank" rel="noopener" aria-label="LinkedIn" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line2);color:var(--text)">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div style="display:flex;gap:clamp(40px,6vw,90px);flex-wrap:wrap">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span class="mono" data-i18n="footer.colProduct" style="font-size:11px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase">Product</span>
+          <a href="index.html" data-i18n="footer.home" style="font-size:14px;color:var(--text2)">Home</a>
+          <a href="roadmap.html" data-i18n="nav.roadmap" style="font-size:14px;color:var(--text2)">Roadmap</a>
+          <a href="civil.html" data-i18n="footer.civil" style="font-size:14px;color:var(--text2)">Civil Industry</a>
+          <a href="advisory.html" data-i18n="nav.advisory" style="font-size:14px;color:var(--text2)">Advisory</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span class="mono" data-i18n="footer.colPage" style="font-size:11px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase">This Page</span>
+          <a href="#arquitectura" data-i18n="nav.arch" style="font-size:14px;color:var(--text2)">Arquitectura</a>
+          <a href="#vehiculos" data-i18n="nav.veh" style="font-size:14px;color:var(--text2)">Vehículos</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;padding-top:26px">
+      <span class="mono" data-i18n="footer.copy" style="font-size:12px;color:var(--faint)">© Svalin Industries 2026. Todos los derechos reservados.</span>
+      <span class="mono" data-i18n="footer.tag" style="font-size:12px;color:var(--faint)">Nacido en Defensa · Desplegado en la Industria</span>
+    </div>
+  </div>
+</footer>
+
+<button id="scrollTopBtn" aria-label="Scroll to top" style="position:fixed;right:24px;bottom:24px;z-index:50;width:46px;height:46px;border:1px solid var(--accent);background:var(--accent);color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.22);opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .25s,transform .25s">↑</button>
+
+<script>
+const THEMES = {
+  light:{'--bg':'#f4f2ee','--bg2':'#ffffff','--text':'#15181b','--text2':'#3d4247','--muted':'#63696e','--faint':'#9a9ea2','--line':'rgba(0,0,0,.10)','--line2':'rgba(0,0,0,.18)','--accent':'#c67e12','--grid':'rgba(0,0,0,.05)','--navbg':'rgba(244,242,238,.8)','--logo-filter':'invert(1)'},
+  dark:{'--bg':'#0a0b0c','--bg2':'#0d0f10','--text':'#eceded','--text2':'#b7bbbe','--muted':'#868b8f','--faint':'#5f6468','--line':'rgba(255,255,255,.08)','--line2':'rgba(255,255,255,.18)','--accent':'#e9a23b','--grid':'rgba(255,255,255,.04)','--navbg':'rgba(10,11,12,.72)','--logo-filter':'none'},
+};
+
+const I18N = {
+  es: {
+    'nav.arch':'Arquitectura','nav.veh':'Vehículos','nav.roadmap':'Roadmap','nav.civil':'Civil','nav.advisory':'Advisory','nav.contacto':'Contacto',
+    'hero.back':'← Volver a Svalin Industries',
+    'hero.eyebrow':'// Núcleo Tecnológico',
+    'hero.title':'El motor cognitivo detrás de cada enjambre',
+    'hero.sub':'SynOS es el motor agnóstico de IA y asincronía de Svalin Industries: la arquitectura cognitiva que orquesta sistemas autónomos en aire, tierra y mar, y los unifica en enjambres inteligentes dirigidos desde un único panel de mando estratégico. Diseñado con rigor militar para el espacio OTAN, la misma arquitectura se adapta para proteger y automatizar infraestructuras críticas del sector civil e industrial.',
+    'hero.cta':'Ver arquitectura',
+    's1.eyebrow':'01 / Qué es SynOS',
+    's1.h2':'No es un vehículo. Es la mente que los comanda.',
+    's1.p1':'SynOS no está atado a un chasis, un sensor o un fabricante. Es una capa de software de orquestación que se instala sobre cualquier flota de vehículos no tripulados, heterogénea o no, y la convierte en un único enjambre coordinado, capaz de razonar sobre datos asíncronos y multidominio en tiempo real, sin importar de qué proveedor proceda cada plataforma.',
+    's1.p2':'La unidad mínima de trabajo en SynOS no es el vehículo individual, sino la intención del operador. Un mando humano define un objetivo (por ejemplo, "explora esta cuadrícula" o "protege este perímetro") y el motor descompone esa orden en tareas atómicas, las negocia entre los nodos disponibles según su posición, autonomía y capacidad de carga útil, y devuelve la inteligencia recogida fusionada a un único panel: un single pane of glass.',
+    's1.p3':'Técnicamente, SynOS combina tres capas: una capa de percepción que normaliza los flujos de sensores de cada vehículo a un formato común; una capa de razonamiento asíncrono que planifica y renegocia tareas sin depender de un reloj global compartido; y una capa de mando que expone al operador humano una interfaz única de intención y veto, preservando siempre la autoridad humana sobre la fuerza letal o crítica.',
+    's2.eyebrow':'02 / Arquitectura',
+    's2.h2':'Cuatro principios de diseño',
+    's2.f1t':'Single Pane of Glass',
+    's2.f1b':'Un único panel de mando estratégico agrega la telemetría, el vídeo, las alertas y el estado de salud de cada vehículo del enjambre en una sola vista táctica. El operador no cambia entre consolas por fabricante: ve un enjambre, no una colección de máquinas. Cada evento relevante, una detección, una pérdida de enlace, una batería crítica, se prioriza automáticamente y se presenta en el orden en que exige atención humana.',
+    's2.f2t':'Motor Agnóstico de IA y Asincronía',
+    's2.f2b':'El núcleo de planificación de SynOS no asume una latencia, una frecuencia de actualización ni un protocolo de radio concretos. Cada vehículo publica su estado cuando puede, no en un ciclo fijo, y el motor recompone el cuadro táctico con los datos disponibles en cada instante. Esta asincronía es lo que permite integrar un dron de bajo coste junto a un vehículo táctico pesado sin forzar a ambos al ritmo del más lento.',
+    's2.f3t':'Resiliente y Auto-reparable',
+    's2.f3b':'Bajo interferencias, denegación de GPS o enlaces degradados, cada vehículo conserva una copia local del plan de misión y de las reglas de decisión que le corresponden. Si el enlace con el mando se corta, el enjambre no se detiene: continúa ejecutando la última intención válida, redistribuye las tareas del nodo perdido entre los vehículos vecinos por malla local, y resincroniza toda la inteligencia acumulada en cuanto el enlace se restablece.',
+    's2.f4t':'Doble Uso por Diseño',
+    's2.f4b':'La misma arquitectura de percepción, planificación y mando que opera bajo los estándares de interoperabilidad de la OTAN se reconfigura, cambiando de vocabulario y de reglas de negocio, no de motor, para el sector civil. SynOS Tactical Industry protege puertos, plantas energéticas y grandes operaciones logísticas con la misma resiliencia algorítmica que protege una frontera.',
+    's3.eyebrow':'03 / Cómo Funciona',
+    's3.h2':'De la intención a la ejecución, en cuatro pasos',
+    's3.step1':'PASO 01', 's3.t1':'Intención',
+    's3.b1':'El operador marca un objetivo en el panel de mando: un área a vigilar, un perímetro a proteger, un objetivo a interceptar. No pilota un vehículo concreto, define qué debe conseguirse y bajo qué restricciones (zonas prohibidas, reglas de enfrentamiento, ventanas de tiempo).',
+    's3.step2':'PASO 02', 's3.t2':'Descomposición',
+    's3.b2':'SynOS traduce la intención en un conjunto de tareas concretas, rutas de vuelo o navegación, patrones de barrido, puntos de vigilancia, y las subasta entre los vehículos disponibles según su posición, autonomía restante y carga útil, optimizando el conjunto del enjambre y no cada vehículo por separado.',
+    's3.step3':'PASO 03', 's3.t3':'Ejecución en Enjambre',
+    's3.b3':'Los vehículos ejecutan sus tareas de forma asíncrona, comunicándose entre sí por una malla local de baja latencia. Si un nodo detecta algo relevante, lo comparte con sus vecinos inmediatos antes de que la información llegue, si llega, al mando central.',
+    's3.step4':'PASO 04', 's3.t4':'Sincronización',
+    's3.b4':'La inteligencia recogida por cada vehículo, imágenes, detecciones, telemetría de estado, se fusiona en un modelo táctico único y regresa al operador en el single pane of glass, priorizada por relevancia y urgencia.',
+    's4.eyebrow':'04 / Panel de Mando',
+    's4.h2':'Una sola pantalla, todos los dominios',
+    's4.p':'El panel de mando de SynOS reemplaza las consolas independientes por fabricante o dominio con una única interfaz táctica: mapa común, cola de alertas priorizadas, estado de salud del enjambre y controles de intención. Esta es la superficie donde el operador humano retiene la autoridad final sobre la misión.',
+    'console.status':'ESTADO: NOMINAL','console.link':'ENLACE: SEGURO','console.sim':'SIM · DATOS SIMULADOS','console.notice':'SIMULACIÓN TÁCTICA · NO ES UN SISTEMA REAL',
+    'console.roster':'ASSET ROSTER','console.name.uav1':'HALCÓN','console.name.uav2':'ÁGUILA','console.name.ugv1':'LOBO','console.name.usv1':'TIBURÓN',
+    'console.selectHint':'Selecciona un activo','console.patrol':'PATRULLAR','console.rtb':'RTB','console.hold':'HOLD','console.patrolAll':'PATRULLAR TODOS','console.rtbAll':'RTB TODOS','console.autosentinel':'AUTOCENTINELA',
+    's4.caption':'Haz clic en un activo de la lista y usa PATRULLAR, HOLD o RTB para simular una tarea.',
+    's4.simLink':'Ir a la simulación avanzada',
+    'veh.air':'D-01 · AIRE','veh.land':'D-02 · TIERRA','veh.sea':'D-03 · MAR',
+    'veh.air.body':'Coordina enjambres de UAV de ala fija y multirrotor desde un mismo panel: reasignación de rutas y cobertura de área en tiempo real, sin pilotar cada aparato.',
+    'veh.land.body':'Dirige flotas de UGV como una sola unidad: avance coordinado, mantenimiento de perimetro y transporte de carga con mínima supervisión humana.',
+    'veh.sea.body':'Gestiona superficie y subsuperficie a la vez: barridos, patrullas portuarias e inspección autónoma sincronizadas con el resto del enjambre.',
+    'veh.fusion':'Los tres dominios no operan de forma aislada: en una misma misión pueden combinarse UAV, UGV y vehículos marítimos, coordinados como un único enjambre multi-dominio.',
+    'veh.humans':'SynOS está pensado para sustituir las tareas en las que un sistema no tripulado ofrece una ventaja clara, mayor alcance, resistencia o seguridad, y no para reemplazar el criterio humano en todos los frentes. En las operaciones que van a seguir dependiendo de personas, SynOS no las sustituye: las apoya, entregando la información y el mando que necesitan para decidir mejor.',
+    's5.eyebrow':'05 / Doble Uso',
+    's5.h2':'Dos productos, un mismo núcleo',
+    's5.d1t':'SynOS Core Defense',
+    's5.d1b':'Orquestación de enjambres para ISR (inteligencia, vigilancia y reconocimiento), protección perimetral y misiones de búsqueda y saturación de objetivos. Al servicio de Fuerzas Armadas, Mando Conjunto de la OTAN, Salvamento Marítimo y agencias de protección fronteriza. El vocabulario y las reglas de decisión están calibrados para el teatro de operaciones.',
+    's5.d2t':'SynOS Tactical Industry',
+    's5.d2b':'La misma inteligencia artificial de grado militar aplicada a la vigilancia de infraestructuras críticas, el mapeo masivo y el control de grandes operaciones logísticas. Al servicio de grandes constructoras internacionales, latifundios, operadores portuarios, plantas energéticas y firmas de seguridad corporativa.',
+    's5.tag.interception':'Interceptación','s5.tag.risks':'Riesgos','s5.tag.zones':'Zonas de Operación','s5.tag.autotasks':'Tareas Autónomas',
+    's6.eyebrow':'06 / Vehículos y Plataformas',
+    's6.h2':'La misma misión, ahora sin tripular',
+    's6.p':'UAV, UGV y vehículos de superficie/subsuperficie asumen operaciones que hoy siguen dependiendo de una tripulación humana, ejecutándolas con mayor alcance, resistencia y seguridad, dirigidos por SynOS desde un único panel táctico.',
+    'cta.h2':'¿Listo para desplegar SynOS?',
+    'cta.p':'Hablemos de tu caso de uso, sea defensa, infraestructura crítica o logística a gran escala.',
+    'cta.btn':'Contactar con Svalin',
+    'footer.copy':'© Svalin Industries 2026. Todos los derechos reservados.',
+    'footer.tag':'Nacido en Defensa · Desplegado en la Industria',
+    'footer.motto':'The foundation of modern defense',
+    'footer.colProduct':'Producto',
+    'footer.colPage':'Esta Página',
+    'footer.home':'Inicio',
+    'footer.civil':'Industria Civil',
+  },
+  en: {
+    'nav.arch':'Architecture','nav.veh':'Platforms','nav.roadmap':'Roadmap','nav.civil':'Civil','nav.advisory':'Advisory','nav.contacto':'Contact',
+    'hero.back':'← Back to Svalin Industries',
+    'hero.eyebrow':'// Core Technology',
+    'hero.title':'The cognitive engine behind every swarm',
+    'hero.sub':"SynOS is Svalin Industries' agnostic AI and asynchrony engine: the cognitive architecture that orchestrates autonomous systems across air, land and sea, unifying them into intelligent swarms directed from a single strategic command panel. Engineered with military rigor for the NATO space, the same architecture adapts to protect and automate critical infrastructure across the civil and industrial sector.",
+    'hero.cta':'View architecture',
+    's1.eyebrow':'01 / What is SynOS',
+    's1.h2':"It's not a vehicle. It's the mind that commands them.",
+    's1.p1':"SynOS is not tied to a chassis, a sensor or a manufacturer. It is an orchestration software layer installed on top of any fleet of unmanned vehicles, heterogeneous or not, turning it into a single coordinated swarm capable of reasoning over asynchronous, multi-domain data in real time, regardless of which vendor built each platform.",
+    's1.p2':'The minimum unit of work in SynOS is not the individual vehicle but the operator\u2019s intent. A human command sets an objective (for example, "scout this grid" or "hold this perimeter") and the engine decomposes that order into atomic tasks, negotiates them among the available nodes based on position, remaining autonomy and payload capacity, and returns the fused intelligence to a single panel: a single pane of glass.',
+    's1.p3':'Technically, SynOS combines three layers: a perception layer that normalizes each vehicle\u2019s sensor feeds into a common format; an asynchronous reasoning layer that plans and renegotiates tasks without depending on a shared global clock; and a command layer that exposes the human operator a single interface of intent and veto, always preserving human authority over lethal or critical force.',
+    's2.eyebrow':'02 / Architecture',
+    's2.h2':'Four design principles',
+    's2.f1t':'Single Pane of Glass',
+    's2.f1b':"A single strategic command panel aggregates telemetry, video, alerts and health status from every vehicle in the swarm into one tactical view. The operator doesn't switch between vendor-specific consoles: they see a swarm, not a collection of machines. Every relevant event, a detection, a lost link, a critical battery, is automatically prioritized and surfaced in the order it demands human attention.",
+    's2.f2t':'Agnostic AI & Asynchrony Engine',
+    's2.f2b':"SynOS's planning core assumes no fixed latency, update rate or radio protocol. Each vehicle publishes its state whenever it can, not on a fixed cycle, and the engine recomposes the tactical picture from whatever data is available at each instant. This asynchrony is what lets a low-cost drone operate alongside a heavy tactical vehicle without forcing either to the pace of the slowest.",
+    's2.f3t':'Resilient & Self-Healing',
+    's2.f3b':"Under jamming, GPS denial or degraded links, each vehicle keeps a local copy of the mission plan and the decision rules that apply to it. If the link to command drops, the swarm doesn't stop: it keeps executing the last valid intent, redistributes the lost node's tasks among neighboring vehicles over a local mesh, and resynchronizes all accumulated intelligence the moment the link returns.",
+    's2.f4t':'Dual-Use by Design',
+    's2.f4b':"The same perception, planning and command architecture that operates under NATO interoperability standards reconfigures, changing vocabulary and business rules, not engine, for the civil sector. SynOS Tactical Industry protects ports, energy plants and large-scale logistics operations with the same algorithmic resilience that protects a border.",
+    's3.eyebrow':'03 / How It Works',
+    's3.h2':'From intent to execution, in four steps',
+    's3.step1':'STEP 01', 's3.t1':'Intent',
+    's3.b1':"The operator marks an objective on the command panel: an area to monitor, a perimeter to protect, a target to intercept. They don't pilot a specific vehicle, they define what must be achieved and under what constraints (no-go zones, rules of engagement, time windows).",
+    's3.step2':'STEP 02', 's3.t2':'Decomposition',
+    's3.b2':"SynOS translates the intent into a set of concrete tasks, flight or navigation routes, sweep patterns, watch points, and auctions them among the available vehicles based on position, remaining autonomy and payload, optimizing the swarm as a whole rather than each vehicle in isolation.",
+    's3.step3':'STEP 03', 's3.t3':'Swarm Execution',
+    's3.b3':'Vehicles execute their tasks asynchronously, communicating with each other over a low-latency local mesh. If a node detects something relevant, it shares it with its immediate neighbors before the information reaches, if it reaches at all, central command.',
+    's3.step4':'STEP 04', 's3.t4':'Synchronization',
+    's3.b4':'The intelligence gathered by each vehicle, imagery, detections, status telemetry, is fused into a single tactical model and returned to the operator on the single pane of glass, prioritized by relevance and urgency.',
+    's4.eyebrow':'04 / Command Panel',
+    's4.h2':'One screen, every domain',
+    's4.p':"SynOS's command panel replaces consoles tied to a single vendor or domain with one tactical interface: a common map, a prioritized alert queue, swarm health status and intent controls. This is the surface where the human operator retains final authority over the mission.",
+    'console.status':'STATUS: NOMINAL','console.link':'LINK: SECURE','console.sim':'SIM · SIMULATED DATA','console.notice':'TACTICAL SIMULATION · NOT A REAL SYSTEM',
+    'console.roster':'ASSET ROSTER','console.name.uav1':'FALCON','console.name.uav2':'EAGLE','console.name.ugv1':'WOLF','console.name.usv1':'SHARK',
+    'console.selectHint':'Select an asset','console.patrol':'PATROL','console.rtb':'RTB','console.hold':'HOLD','console.patrolAll':'PATROL ALL','console.rtbAll':'RTB ALL','console.autosentinel':'AUTO-SENTINEL',
+    's4.caption':'Click an asset in the list and use PATROL, HOLD or RTB to simulate a task.',
+    's4.simLink':'Go to the advanced simulation',
+    'veh.air':'D-01 · AIR','veh.land':'D-02 · LAND','veh.sea':'D-03 · SEA',
+    'veh.air.body':'Coordinate fixed-wing and multirotor UAVs from a single panel: real-time re-tasking and area coverage across the fleet, with no need to fly each unit by hand.',
+    'veh.land.body':'Direct UGV fleets as one unit: synchronized advance, perimeter hold and payload transport with minimal human oversight.',
+    'veh.sea.body':'Manage surface and subsea assets together: sweeps, harbor patrols and autonomous inspection synchronized with the rest of the swarm.',
+    'veh.fusion':'The three domains do not operate in isolation: a single mission can blend UAVs, UGVs and maritime vehicles, coordinated as one multi-domain swarm.',
+    'veh.humans':'SynOS is built to replace the tasks where an unmanned system offers a clear advantage, greater range, endurance or safety, not to replace human judgment across the board. In operations that will keep depending on people, SynOS does not stand in for them: it supports them, delivering the information and command they need to decide better.',
+    's5.eyebrow':'05 / Dual-Use',
+    's5.h2':'Two products, one core',
+    's5.d1t':'SynOS Core Defense',
+    's5.d1b':'Swarm orchestration for ISR (intelligence, surveillance and reconnaissance), perimeter protection and search-and-saturation missions. Serving Armed Forces, NATO Joint Command, maritime rescue and border-protection agencies. Vocabulary and decision rules are calibrated for the theater of operations.',
+    's5.d2t':'SynOS Tactical Industry',
+    's5.d2b':'The same military-grade AI applied to critical-infrastructure monitoring, massive mapping and control of large-scale logistics operations. Serving major international construction firms, large estates, port operators, energy plants and corporate security firms.',
+    's5.tag.interception':'Interception','s5.tag.risks':'Risks','s5.tag.zones':'Operation Zones','s5.tag.autotasks':'Autonomous Tasks',
+    's6.eyebrow':'06 / Vehicles & Platforms',
+    's6.h2':'The same missions, now unmanned',
+    's6.p':'UAVs, UGVs and surface/subsea vessels take on operations that still rely on a human crew today, executing them with greater range, endurance and safety, directed by SynOS from a single tactical panel.',
+    'cta.h2':'Ready to deploy SynOS?',
+    'cta.p':'Let\u2019s talk about your use case, whether defense, critical infrastructure or large-scale logistics.',
+    'cta.btn':'Contact Svalin',
+    'footer.copy':'© Svalin Industries 2026. All rights reserved.',
+    'footer.tag':'Born in Defense · Deployed in Industry',
+    'footer.motto':'The foundation of modern defense',
+    'footer.colProduct':'Product',
+    'footer.colPage':'This Page',
+    'footer.home':'Home',
+    'footer.civil':'Civil Industry',
+  }
+};
+
+function applyI18n(lang){
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (I18N[lang] && I18N[lang][key] != null) el.textContent = I18N[lang][key];
+  });
+}
+function applyTheme(theme){
+  const map = THEMES[theme] || THEMES.light;
+  Object.entries(map).forEach(([k,v]) => document.documentElement.style.setProperty(k, v));
+  document.body.style.background = map['--bg'];
+  document.body.style.color = map['--text'];
+  document.getElementById('themeLabel').textContent = theme === 'light' ? (currentLang==='es'?'Oscuro':'Dark') : (currentLang==='es'?'Claro':'Light');
+  document.getElementById('themeDot').style.background = theme === 'light' ? 'transparent' : 'var(--accent)';
+}
+
+let currentLang = 'en', currentTheme = 'light';
+try { currentLang = localStorage.getItem('sv_lang') === 'en' ? 'en' : (localStorage.getItem('sv_lang') === 'es' ? 'es' : currentLang); } catch(e){}
+try { currentTheme = localStorage.getItem('sv_theme') === 'dark' ? 'dark' : (localStorage.getItem('sv_theme') === 'light' ? 'light' : currentTheme); } catch(e){}
+
+document.getElementById('langLabel').textContent = currentLang === 'es' ? 'EN' : 'ES';
+applyI18n(currentLang);
+applyTheme(currentTheme);
+
+document.getElementById('langBtn').addEventListener('click', () => {
+  currentLang = currentLang === 'es' ? 'en' : 'es';
+  try { localStorage.setItem('sv_lang', currentLang); } catch(e){}
+  document.getElementById('langLabel').textContent = currentLang === 'es' ? 'EN' : 'ES';
+  applyI18n(currentLang);
+  applyTheme(currentTheme);
+});
+document.getElementById('themeBtn').addEventListener('click', () => {
+  currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+  try { localStorage.setItem('sv_theme', currentTheme); } catch(e){}
+  applyTheme(currentTheme);
+});
+
+const ASSET_NAMES = { uav1:'UAV-01', uav2:'UAV-02', ugv1:'UGV-01', usv1:'USV-01' };
+let selectedAsset = null;
+let autoSentinel = true;
+document.getElementById('btnAutoSentinel').addEventListener('click', () => {
+  autoSentinel = !autoSentinel;
+  const btn = document.getElementById('btnAutoSentinel'), dot = document.getElementById('autoSentinelDot'), state = document.getElementById('autoSentinelState');
+  state.textContent = autoSentinel ? 'ON' : 'OFF';
+  btn.style.borderColor = autoSentinel ? 'rgba(127,216,138,.6)' : 'rgba(224,90,78,.6)';
+  btn.style.background = autoSentinel ? 'rgba(127,216,138,.12)' : 'rgba(224,90,78,.12)';
+  btn.style.color = autoSentinel ? '#7fd88a' : '#e05a4e';
+  dot.style.background = autoSentinel ? '#7fd88a' : '#e05a4e';
+  dot.style.boxShadow = autoSentinel ? '0 0 5px #7fd88a' : '0 0 5px #e05a4e';
+  logLine('AUTO-SENTINEL ' + (autoSentinel ? 'ENGAGED' : 'DISENGAGED'), autoSentinel ? '#7fd88a' : '#e05a4e');
+});
+function rosterHint(){ return I18N[currentLang]['console.selectHint']; }
+function updateStatus(){
+  const el = document.getElementById('taskingStatus');
+  if (!el) return;
+  if (selectedAsset) {
+    const st = ASSET_STATE[selectedAsset];
+    const nm = I18N[currentLang]['console.name.' + selectedAsset] || '';
+    const modeLabel = st.mode ? st.mode.toUpperCase() : 'AUTONOMOUS';
+    el.innerHTML = ASSET_NAMES[selectedAsset] + ' \u00b7 ' + nm +
+      '<br>POS ' + st.x.toFixed(1) + '%, ' + st.y.toFixed(1) + '%' +
+      '<br>HDG ' + String(bearingOf(st.x, st.y)).padStart(3,'0') + '&deg;' +
+      '<br>MODE <span style="color:#e9a23b">' + modeLabel + '</span>';
+    el.style.color = '#e9a23b';
+  } else {
+    el.textContent = rosterHint();
+    el.style.color = 'rgba(255,255,255,.35)';
+  }
+  paintButtons();
+}
+function paintButtons(){
+  const bp = document.getElementById('btnPatrol'), br = document.getElementById('btnRtb'), bh = document.getElementById('btnHold');
+  if (!bp || !br || !bh) return;
+  const mode = selectedAsset ? (ASSET_STATE[selectedAsset].mode || null) : null;
+  bp.style.background = mode === 'patrol' ? '#e9a23b' : 'none';
+  bp.style.color = mode === 'patrol' ? '#0b0d10' : '#e9a23b';
+  bh.style.background = (selectedAsset && !mode) ? 'rgba(255,255,255,.85)' : 'none';
+  bh.style.color = (selectedAsset && !mode) ? '#0b0d10' : 'rgba(255,255,255,.7)';
+  br.style.background = mode === 'rtb' ? 'rgba(255,255,255,.85)' : 'none';
+  br.style.color = mode === 'rtb' ? '#0b0d10' : 'rgba(255,255,255,.7)';
+  const modes = Object.values(ASSET_STATE).map(s => s.mode);
+  const bpa = document.getElementById('btnPatrolAll'), bra = document.getElementById('btnRtbAll');
+  if (bpa) {
+    const allPatrol = modes.every(m => m === 'patrol');
+    bpa.style.background = allPatrol ? '#e9a23b' : 'none';
+    bpa.style.color = allPatrol ? '#0b0d10' : 'rgba(233,162,59,.85)';
+  }
+  if (bra) {
+    const allRtb = modes.every(m => m === 'rtb');
+    bra.style.background = allRtb ? 'rgba(255,255,255,.85)' : 'none';
+    bra.style.color = allRtb ? '#0b0d10' : 'rgba(255,255,255,.55)';
+  }
+}
+function selectAsset(id){
+  selectedAsset = id;
+  document.querySelectorAll('.roster-row').forEach(r => {
+    r.style.borderColor = r.getAttribute('data-asset') === id ? '#e9a23b' : 'rgba(255,255,255,.15)';
+  });
+  document.querySelectorAll('.marker').forEach(m => {
+    const ring = m.querySelector('.sel-ring');
+    if (ring) ring.style.display = m.getAttribute('data-asset') === id ? 'block' : 'none';
+  });
+  updateStatus();
+}
+function randInRange(a,b){ return a + Math.random() * (b - a); }
+
+const ASSET_STATE = {
+  uav1: { x:21.4, y:26.5, hx:randInRange(-0.05,0.05), hy:randInRange(-0.04,0.04), bounds:{minX:10,maxX:45,minY:8,maxY:45}, target:null, trail:[] },
+  uav2: { x:80,   y:32.4, hx:randInRange(-0.05,0.05), hy:randInRange(-0.04,0.04), bounds:{minX:55,maxX:92,minY:8,maxY:45}, target:null, trail:[] },
+  ugv1: { x:21.4, y:79.4, hx:randInRange(-0.03,0.03), hy:randInRange(-0.02,0.02), bounds:{minX:12,maxX:32,minY:72,maxY:90}, target:null, trail:[] },
+  usv1: { x:77.1, y:78, hx:randInRange(-0.03,0.03), hy:randInRange(-0.03,0.03), bounds:{minX:60,maxX:92,minY:74,maxY:92}, target:null, trail:[] },
+};
+function clampToBounds(v, min, max){ return Math.max(min, Math.min(max, v)); }
+
+function logLine(text, color){
+  const el = document.getElementById('eventLog');
+  if (!el) return;
+  const time = new Date().toLocaleTimeString('en-GB', { hour12:false });
+  const row = document.createElement('div');
+  row.style.color = color || 'rgba(255,255,255,.4)';
+  row.textContent = '[' + time + '] ' + text;
+  el.appendChild(row);
+  while (el.children.length > 7) el.removeChild(el.firstChild);
+  el.scrollTop = el.scrollHeight;
+}
+
+function paintMarker(id){
+  const st = ASSET_STATE[id];
+  const el = document.querySelector('.marker[data-asset="' + id + '"]');
+  if (el) {
+    el.style.left = st.x + '%'; el.style.top = st.y + '%';
+    const icon = el.querySelector('.marker-icon');
+    if (icon && (Math.abs(st.hx) > 0.002 || Math.abs(st.hy) > 0.002)) {
+      const deg = Math.atan2(st.hy, st.hx) * 180 / Math.PI + 90;
+      icon.style.transform = 'rotate(' + deg.toFixed(1) + 'deg)';
+    }
+  }
+  const line = document.getElementById('mesh-' + id);
+  if (line) { line.setAttribute('x2', st.x); line.setAttribute('y2', st.y); }
+  st.trail.push({ x: st.x, y: st.y });
+  if (st.trail.length > 10) st.trail.shift();
+  const trailEl = document.getElementById('trail-' + id);
+  if (trailEl && st.trail.length > 1) {
+    trailEl.setAttribute('points', st.trail.map(p => p.x + ',' + p.y).join(' '));
+  }
+}
+const BASE_POS = { uav1:{x:50,y:50}, uav2:{x:50,y:50}, ugv1:{x:50,y:50}, usv1:{x:60,y:80} };
+function patrolAsset(id){
+  const st = ASSET_STATE[id], b = st.bounds;
+  st.target = { x: randInRange(b.minX, b.maxX), y: randInRange(b.minY, b.maxY) };
+  st.mode = 'patrol';
+  logLine(ASSET_NAMES[id] + ' \u2192 PATROL TASKING ISSUED', '#e9a23b');
+}
+function rtbAsset(id){
+  const base = BASE_POS[id];
+  ASSET_STATE[id].target = { x: base.x, y: base.y };
+  ASSET_STATE[id].mode = 'rtb';
+  logLine(ASSET_NAMES[id] + ' \u2192 RETURN TO BASE', 'rgba(255,255,255,.7)');
+}
+function patrolSelected(){
+  if (!selectedAsset) return;
+  patrolAsset(selectedAsset);
+  paintButtons();
+}
+function rtbSelected(){
+  if (!selectedAsset) return;
+  rtbAsset(selectedAsset);
+  paintButtons();
+}
+document.querySelectorAll('.roster-row').forEach(row => {
+  row.addEventListener('click', () => selectAsset(row.getAttribute('data-asset')));
+});
+document.querySelectorAll('.marker').forEach(m => {
+  m.addEventListener('click', () => selectAsset(m.getAttribute('data-asset')));
+});
+function holdSelected(){
+  if (!selectedAsset) return;
+  const st = ASSET_STATE[selectedAsset];
+  st.target = null; st.mode = null; st.hx = 0; st.hy = 0;
+  paintButtons();
+  logLine(ASSET_NAMES[selectedAsset] + ' \u2192 HOLD POSITION', 'rgba(255,255,255,.85)');
+}
+function patrolAll(){
+  Object.keys(ASSET_STATE).forEach(patrolAsset);
+  paintButtons();
+  logLine('ALL UNITS \u2192 PATROL TASKING ISSUED', '#e9a23b');
+}
+function rtbAll(){
+  Object.keys(ASSET_STATE).forEach(rtbAsset);
+  paintButtons();
+  logLine('ALL UNITS \u2192 RETURN TO BASE', 'rgba(255,255,255,.7)');
+}
+document.getElementById('btnPatrolAll').addEventListener('click', patrolAll);
+document.getElementById('btnRtbAll').addEventListener('click', rtbAll);
+document.getElementById('btnPatrol').addEventListener('click', patrolSelected);
+document.getElementById('btnHold').addEventListener('click', holdSelected);
+document.getElementById('btnRtb').addEventListener('click', rtbSelected);
+updateStatus();
+Object.keys(ASSET_STATE).forEach(id => {
+  const trailsLayer = document.getElementById('trails');
+  if (trailsLayer) {
+    const pl = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+    pl.setAttribute('id', 'trail-' + id);
+    pl.setAttribute('stroke', 'rgba(143,214,201,.35)');
+    trailsLayer.appendChild(pl);
+  }
+  paintMarker(id);
+});
+logLine('SWARM SYNC COMPLETE \u00b7 4 ASSETS ONLINE', 'rgba(255,255,255,.4)');
+
+// hostile contact simulation for the threat board
+let threats = [];
+let threatSeq = 0;
+let nextThreatIn = randInRange(6000, 10000);
+const THREAT_ICONS = {
+  air: '<svg width="16" height="16" viewBox="0 0 16 16"><polygon points="8,1 15,14 1,14" fill="none" stroke="#e05a4e" stroke-width="1.3"/></svg>',
+  land: '<svg width="16" height="16" viewBox="0 0 16 16"><rect x="2" y="2" width="12" height="12" fill="none" stroke="#e05a4e" stroke-width="1.3"/></svg>',
+  sea: '<svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.5" fill="none" stroke="#e05a4e" stroke-width="1.3"/></svg>',
+};
+function spawnThreat(){
+  const types = ['air', 'land', 'sea'];
+  const type = types[Math.floor(Math.random() * 3)];
+  let x, y;
+  if (type === 'sea') {
+    if (Math.random() < 0.5) { x = 98; y = randInRange(52, 98); }
+    else { y = 98; x = randInRange(53, 98); }
+  } else if (type === 'land') {
+    const edge = Math.floor(Math.random() * 4);
+    if (edge === 0) { x = randInRange(2, 98); y = 2; }
+    else if (edge === 1) { x = 2; y = randInRange(2, 98); }
+    else if (edge === 2) { x = 98; y = randInRange(2, 42); }
+    else { y = 98; x = randInRange(2, 42); }
+  } else {
+    const edge = Math.floor(Math.random() * 4);
+    if (edge === 0) { x = randInRange(2, 98); y = 2; }
+    else if (edge === 1) { x = 98; y = randInRange(2, 98); }
+    else if (edge === 2) { x = randInRange(2, 98); y = 98; }
+    else { x = 2; y = randInRange(2, 98); }
+  }
+  threatSeq++;
+  const orbitCenter = type === 'sea' ? { x: 82, y: 84 } : { x: 50, y: 50 };
+  const t = { id: 'TRK-' + String(threatSeq).padStart(2, '0'), x, y, state:'inbound', engageT: 0, type, assignedId: null, center: orbitCenter, angle: Math.atan2(y - orbitCenter.y, x - orbitCenter.x), radius: Math.hypot(x - orbitCenter.x, y - orbitCenter.y), spin: Math.random() < 0.5 ? -1 : 1 };
+  threats.push(t);
+  const layer = document.getElementById('threatMarkers');
+  if (layer) {
+    const el = document.createElement('div');
+    el.id = 'threat-' + t.id;
+    el.style.cssText = 'position:absolute;left:' + x + '%;top:' + y + '%;transform:translate(-50%,-50%);text-align:center;color:#e05a4e';
+    el.innerHTML = '<div class="marker-icon">' + THREAT_ICONS[type] + '</div><div style="font-size:7.5px;letter-spacing:.05em;white-space:nowrap;margin-top:2px">' + t.id + '</div>';
+    layer.appendChild(el);
+  }
+  logLine('CONTACT ' + t.id + ' DETECTED \u00b7 UNKNOWN TRACK', '#e05a4e');
+  renderThreatBoard();
+}
+function bearingOf(x, y){ return Math.round((Math.atan2(x - 50, 50 - y) * 180 / Math.PI + 360) % 360); }
+function renderThreatBoard(){
+  const countEl = document.getElementById('threatCount');
+  const listEl = document.getElementById('threatList');
+  if (!countEl || !listEl) return;
+  const active = threats.filter(t => t.state !== 'down');
+  countEl.textContent = active.length;
+  if (!active.length) { listEl.innerHTML = 'NO ACTIVE TRACKS'; return; }
+  listEl.innerHTML = active.slice(0, 4).map(t => {
+    const rng = Math.round(Math.hypot(t.x - 50, t.y - 50));
+    const label = t.state === 'engaged' ? ' \u00b7 ENGAGED' : '';
+    return t.id + ' \u00b7 BRG ' + bearingOf(t.x, t.y) + '\u00b0 \u00b7 RNG ' + rng + label;
+  }).join('<br>');
+}
+function neutralizeThreat(t){
+  t.state = 'down';
+  const beam = document.getElementById('beam-' + t.id);
+  if (beam) beam.remove();
+  const impact = document.getElementById('impact-' + t.id);
+  if (impact) impact.remove();
+  const el = document.getElementById('threat-' + t.id);
+  if (el) {
+    el.innerHTML = '<div class="threat-burst" style="width:14px;height:14px;border:1px solid #e05a4e;border-radius:50%;margin:0 auto"></div>';
+    setTimeout(() => el.remove(), 650);
+  }
+  if (t.assignedId && ASSET_STATE[t.assignedId]) {
+    const st = ASSET_STATE[t.assignedId];
+    if (st.mode === 'intercept') { st.mode = null; st.target = null; }
+  }
+  logLine(t.id + ' NEUTRALIZED \u00b7 TRACK LOST', '#8fd6c9');
+  renderThreatBoard();
+}
+function updateThreats(step, dt){
+  // assign nearest free asset to any unassigned inbound threat
+  if (autoSentinel) threats.forEach(t => {
+    if (t.state !== 'inbound') return;
+    if (t.assignedId && ASSET_STATE[t.assignedId] && ASSET_STATE[t.assignedId].mode === 'intercept') return;
+    let nearestId = null, nearestD = Infinity;
+    Object.keys(ASSET_STATE).forEach(id => {
+      const st = ASSET_STATE[id];
+      const busy = threats.some(o => o !== t && o.state !== 'down' && o.assignedId === id);
+      if (busy) return;
+      const d = Math.hypot(st.x - t.x, st.y - t.y);
+      if (d < nearestD) { nearestD = d; nearestId = id; }
+    });
+    if (nearestId) {
+      t.assignedId = nearestId;
+      ASSET_STATE[nearestId].mode = 'intercept';
+      logLine(ASSET_NAMES[nearestId] + ' \u2192 INTERCEPTING ' + t.id, '#e9a23b');
+    }
+  });
+  threats.forEach(t => {
+    const el = document.getElementById('threat-' + t.id);
+    if (t.state === 'inbound') {
+      t.angle += t.spin * 0.0006 * step;
+      t.radius = Math.max(4, t.radius - 0.011 * step);
+      t.x = t.center.x + Math.cos(t.angle) * t.radius;
+      t.y = t.center.y + Math.sin(t.angle) * t.radius;
+      if (t.type === 'sea') { t.x = Math.max(55, Math.min(98, t.x)); t.y = Math.max(55, Math.min(98, t.y)); }
+      const st = t.assignedId && ASSET_STATE[t.assignedId];
+      if (st) {
+        const d = Math.hypot(st.x - t.x, st.y - t.y);
+        if (d < 22) { t.state = 'engaged'; t.engageT = 0; st.target = { x: st.x, y: st.y }; renderThreatBoard(); logLine(ASSET_NAMES[t.assignedId] + ' \u2192 ENGAGING ' + t.id + ' AT RANGE', '#e9a23b'); }
+      }
+    } else if (t.state === 'engaged') {
+      t.engageT += dt / 1000;
+      const st = t.assignedId && ASSET_STATE[t.assignedId];
+      let beam = document.getElementById('beam-' + t.id);
+      let impact = document.getElementById('impact-' + t.id);
+      if (st) {
+        if (!beam) {
+          beam = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+          beam.setAttribute('id', 'beam-' + t.id);
+          beam.setAttribute('class', 'tracer-line');
+          beam.setAttribute('stroke', '#e9a23b'); beam.setAttribute('stroke-width', '0.18');
+          document.getElementById('threatLayer').appendChild(beam);
+        }
+        if (!impact) {
+          impact = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+          impact.setAttribute('id', 'impact-' + t.id);
+          impact.setAttribute('class', 'tracer-impact');
+          impact.setAttribute('r', '1.4'); impact.setAttribute('fill', 'none');
+          impact.setAttribute('stroke', '#e05a4e'); impact.setAttribute('stroke-width', '0.4');
+          document.getElementById('threatLayer').appendChild(impact);
+        }
+        beam.setAttribute('x1', st.x); beam.setAttribute('y1', st.y);
+        beam.setAttribute('x2', t.x); beam.setAttribute('y2', t.y);
+        impact.setAttribute('cx', t.x); impact.setAttribute('cy', t.y);
+      }
+      if (t.engageT >= 1.5) neutralizeThreat(t);
+    }
+    if (el && t.state !== 'down') { el.style.left = t.x + '%'; el.style.top = t.y + '%'; }
+  });
+  threats = threats.filter(t => t.state !== 'down');
+}
+
+let _lastTick = null;
+let _lastSweepLog = 0;
+let _simPaused = false;
+document.getElementById('btnPause').addEventListener('click', (e) => {
+  _simPaused = !_simPaused;
+  e.target.innerHTML = _simPaused ? '&#9654;' : '&#10074;&#10074;';
+});
+function updateFooter(){
+  const cur = document.getElementById('curPos'), sel = document.getElementById('selCount'), trk = document.getElementById('trkCount');
+  if (!cur) return;
+  if (selectedAsset) {
+    const st = ASSET_STATE[selectedAsset];
+    cur.textContent = st.x.toFixed(1) + ',' + st.y.toFixed(1);
+  } else cur.textContent = '--,--';
+  sel.textContent = selectedAsset ? '1' : '0';
+  trk.textContent = String(threats.length);
+}
+function tick(now){
+  if (_lastTick == null) _lastTick = now;
+  const dt = Math.min(48, now - _lastTick);
+  _lastTick = now;
+  if (_simPaused) { requestAnimationFrame(tick); return; }
+  const step = dt / 16.67;
+  Object.keys(ASSET_STATE).forEach(id => {
+    const st = ASSET_STATE[id], b = st.bounds;
+    if (st.mode === 'intercept') {
+      const t = threats.find(o => o.assignedId === id && o.state !== 'down');
+      if (t) st.target = { x: t.x, y: t.y };
+    }
+    if (st.target) {
+      const dx = st.target.x - st.x, dy = st.target.y - st.y;
+      const dist = Math.hypot(dx, dy);
+      if (dist < 0.5 && st.mode === 'rtb') { st.hx = 0; st.hy = 0; if (id === selectedAsset) paintButtons(); }
+      else if (dist < 0.5 && st.mode === 'patrol') { st.target = { x: randInRange(b.minX, b.maxX), y: randInRange(b.minY, b.maxY) }; }
+      else if (dist < 0.5 && st.mode !== 'intercept') { st.target = null; st.mode = null; st.hx = randInRange(-0.04,0.04); st.hy = randInRange(-0.03,0.03); if (id === selectedAsset) paintButtons(); }
+      else {
+        const speed = st.mode === 'intercept' ? 0.07 : 0.045;
+        st.hx += ((dx / (dist || 1)) * speed - st.hx) * 0.12;
+        st.hy += ((dy / (dist || 1)) * speed - st.hy) * 0.12;
+      }
+    } else if (Math.random() < 0.01) {
+      st.hx += randInRange(-0.008,0.008);
+      st.hy += randInRange(-0.006,0.006);
+      const sp = Math.hypot(st.hx, st.hy) || 0.001;
+      const cap = 0.045;
+      if (sp > cap) { st.hx = st.hx/sp*cap; st.hy = st.hy/sp*cap; }
+    }
+    st.x += st.hx * step;
+    st.y += st.hy * step;
+    if (!st.target) {
+      const mb = b;
+      if (st.x < mb.minX) { st.x = mb.minX; st.hx = Math.abs(st.hx); }
+      if (st.x > mb.maxX) { st.x = mb.maxX; st.hx = -Math.abs(st.hx); }
+      if (st.y < mb.minY) { st.y = mb.minY; st.hy = Math.abs(st.hy); }
+      if (st.y > mb.maxY) { st.y = mb.maxY; st.hy = -Math.abs(st.hy); }
+    }
+    paintMarker(id);
+  });
+  nextThreatIn -= dt;
+  if (nextThreatIn <= 0 && threats.length < 3) { spawnThreat(); nextThreatIn = randInRange(9000, 15000); }
+  updateThreats(step, dt);
+  updateFooter();
+  if (now - _lastSweepLog > 22000) { _lastSweepLog = now; logLine('MESH SYNC \u00b7 ALL DOMAINS NOMINAL', 'rgba(255,255,255,.35)'); }
+  requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
+
+const _origApplyI18n = applyI18n;
+applyI18n = function(lang){ _origApplyI18n(lang); updateStatus(); };
+
+(function(){
+  const navLinks = document.getElementById('navLinks');
+  const burger = document.getElementById('navBurger');
+  if (burger && navLinks) {
+    burger.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      burger.textContent = open ? '\u2715' : '\u2630';
+    });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      burger.textContent = '\u2630';
+    }));
+  }
+})();
+
+</script>
+<script>
+  (function(){
+    const btn = document.getElementById('scrollTopBtn');
+    if (!btn) return;
+    const onScroll = () => {
+      const show = window.scrollY > 500;
+      btn.style.opacity = show ? '1' : '0';
+      btn.style.pointerEvents = show ? 'auto' : 'none';
+      btn.style.transform = show ? 'translateY(0)' : 'translateY(10px)';
+    };
+    addEventListener('scroll', onScroll, { passive: true });
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    onScroll();
+  })();
+</script>
+</body>
+</html>

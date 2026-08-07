@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-604FVZKPVW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-604FVZKPVW');
+</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Svalin Advisory — Svalin Industries</title>
+<meta name="description" content="Svalin Advisory embeds engineers on site with military and critical-infrastructure operators to integrate C2 systems, audit vulnerabilities, prototype tactical software and transition to autonomous operations.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://svalinindustries.com/advisory.html">
+<meta name="theme-color" content="#0a0b0c">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Svalin Industries">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Svalin Advisory — Svalin Industries">
+<meta property="og:description" content="Svalin Advisory embeds engineers on site with military and critical-infrastructure operators to integrate C2 systems, audit vulnerabilities, prototype tactical software and transition to autonomous operations.">
+<meta property="og:url" content="https://svalinindustries.com/advisory.html">
+<meta property="og:image" content="https://svalinindustries.com/assets/lockup-light.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Svalin Advisory — Svalin Industries">
+<meta name="twitter:description" content="Svalin Advisory embeds engineers on site with military and critical-infrastructure operators to integrate C2 systems, audit vulnerabilities, prototype tactical software and transition to autonomous operations.">
+<meta name="twitter:image" content="https://svalinindustries.com/assets/lockup-light.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Svalin Advisory — Svalin Industries","description":"Svalin Advisory embeds engineers on site with military and critical-infrastructure operators to integrate C2 systems, audit vulnerabilities, prototype tactical software and transition to autonomous operations.","url":"https://svalinindustries.com/advisory.html","isPartOf":{"@type":"WebSite","name":"Svalin Industries","url":"https://svalinindustries.com/"},"publisher":{"@type":"Organization","name":"Svalin Industries","url":"https://svalinindustries.com/","logo":"https://svalinindustries.com/assets/lockup-light.png"}}</script>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<script src="./image-slot.js"></script>
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:'Poppins',sans-serif;-webkit-font-smoothing:antialiased}
+  a{text-decoration:none;color:var(--accent)}
+  a:hover{color:var(--text)}
+  .adv-pillars{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+  .adv-pillars > div:first-child{grid-row:span 1}
+  .adv-node{position:relative;max-width:760px;margin:0 auto}
+  .adv-hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(30px,5vw,64px);align-items:center}
+  .adv-hero-img{position:relative;aspect-ratio:3/4;border:1px solid var(--line2)}
+  @media (max-width:860px){
+    .adv-pillars{grid-template-columns:1fr}
+    .adv-hero-grid{grid-template-columns:1fr}
+    .adv-hero-img{order:-1;aspect-ratio:16/10}
+  }
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="--bg:#0a0b0c;--bg2:#0d0f10;--text:#eceded;--text2:#b7bbbe;--muted:#868b8f;--faint:#5f6468;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.18);--accent:#e9a23b;--grid:rgba(255,255,255,.04);--navbg:rgba(10,11,12,.72);--logo-filter:none;background:var(--bg);color:var(--text);min-height:100vh">
+
+  <!-- ===== NAV ===== -->
+  <nav style="position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px clamp(20px,4vw,56px);background:var(--navbg);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-wrap:wrap">
+    <a href="index.html" style="display:flex;align-items:center;gap:12px;color:var(--text)">
+      <img src="assets/lockup-light.png" alt="Svalin Industries" style="height:32px;width:auto;display:block;filter:var(--logo-filter)">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.28em;color:var(--muted);text-transform:uppercase;border-left:1px solid var(--line2);padding-left:12px">Industries</span>
+    </a>
+    <div style="{{ navLinksStyle }}">
+      <a href="#approach" onClick="{{ closeMenu }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--text2)">{{ t.nav.approach }}</a>
+      <a href="#capabilities" onClick="{{ closeMenu }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--text2)">{{ t.nav.capabilities }}</a>
+      <a href="#model" onClick="{{ closeMenu }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--text2)">{{ t.nav.model }}</a>
+      <a href="synos.html" onClick="{{ closeMenu }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--accent)">{{ t.nav.tech }}</a>
+      <a href="civil.html" onClick="{{ closeMenu }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--accent)">{{ t.nav.civil }}</a>
+      <a href="roadmap.html" onClick="{{ closeMenu }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--accent)">{{ t.nav.roadmap }}</a>
+      <button onClick="{{ toggleLang }}" title="Language" style="display:inline-flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid var(--line2);background:none;color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)"><span style="font-size:12px">◍</span>{{ langBtnLabel }}</button>
+      <button onClick="{{ toggleTheme }}" title="Theme" style="display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid var(--line2);background:none;color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)"><span style="width:9px;height:9px;border-radius:50%;border:1.5px solid var(--accent);background:{{ themeDot }}"></span>{{ themeLabel }}</button>
+      <a href="index.html#contact" onClick="{{ closeMenu }}" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:none;border:1.5px solid var(--accent);color:var(--accent);font-family:'Poppins',sans-serif;font-size:13px;letter-spacing:0;text-transform:uppercase;font-weight:700" style-hover="background:var(--accent);color:#0a0b0c">{{ t.nav.contact }}</a>
+    </div>
+    <button onClick="{{ toggleMenu }}" aria-label="Menu" style="{{ hamburgerStyle }}">{{ menuIcon }}</button>
+  </nav>
+
+  <!-- ===== HERO — image plate above, text on solid ground ===== -->
+  <header style="position:relative;padding:clamp(50px,7vw,80px) clamp(20px,4vw,56px) clamp(60px,8vw,100px);max-width:1400px;margin:0 auto">
+    <div class="adv-hero-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px">
+          <span style="width:9px;height:9px;background:var(--accent);border-radius:50%"></span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase">{{ t.hero.eyebrow }}</span>
+        </div>
+        <h1 style="margin:0;font-weight:600;font-size:clamp(32px,5vw,66px);line-height:1.06;letter-spacing:-.02em;max-width:18ch;color:var(--text)">{{ t.hero.title }}</h1>
+        <p style="margin:26px 0 0;max-width:56ch;font-size:clamp(15px,1.5vw,18px);line-height:1.7;color:var(--text2)">{{ t.hero.subtitle }}</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;margin-top:clamp(36px,5vw,54px);padding-top:24px;border-top:1px solid var(--line)">
+          <sc-for list="{{ t.hero.meta }}" as="m" hint-placeholder-count="4">
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase">{{ m.k }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--accent)">{{ m.v }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div class="adv-hero-img">
+        <img src="assets/advisory-hero-transition.png" alt="Autonomous transition: a coordinated fleet of aerial, ground and industrial systems commanded from a single console" style="width:100%;height:100%;object-fit:cover;display:block"/>
+        <span style="position:absolute;top:-1px;left:-1px;width:16px;height:16px;border-top:1.5px solid var(--accent);border-left:1.5px solid var(--accent)"></span>
+        <span style="position:absolute;top:-1px;right:-1px;width:16px;height:16px;border-top:1.5px solid var(--accent);border-right:1.5px solid var(--accent)"></span>
+        <span style="position:absolute;bottom:-1px;left:-1px;width:16px;height:16px;border-bottom:1.5px solid var(--accent);border-left:1.5px solid var(--accent)"></span>
+        <span style="position:absolute;bottom:-1px;right:-1px;width:16px;height:16px;border-bottom:1.5px solid var(--accent);border-right:1.5px solid var(--accent)"></span>
+        <div style="position:absolute;top:16px;right:16px;padding:10px 13px;border:1px solid rgba(255,255,255,.22);background:rgba(5,7,10,.5);backdrop-filter:blur(4px);display:flex;flex-direction:column;gap:5px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:#e9a23b;text-transform:uppercase">{{ t.hero.hud1 }}</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:#d9d7d0;text-transform:uppercase">{{ t.hero.hud2 }}</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== APPROACH — centered philosophy statement ===== -->
+  <section id="approach" data-screen-label="Approach" style="position:relative;padding:clamp(80px,10vw,150px) clamp(20px,4vw,56px);background:var(--bg2);border-bottom:1px solid var(--line);overflow:hidden;background-image:radial-gradient(var(--grid) 1px,transparent 1.5px);background-size:26px 26px">
+    <div style="max-width:840px;margin:0 auto;text-align:center;position:relative">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase">{{ t.approach.eyebrow }}</span>
+      <h2 style="margin:20px 0 0;font-weight:600;font-size:clamp(30px,4.6vw,58px);line-height:1.1;letter-spacing:-.015em">{{ t.approach.h2 }}</h2>
+      <p style="margin:32px 0 0;font-size:clamp(16px,1.7vw,19px);line-height:1.75;color:var(--text2)">{{ t.approach.p1 }}</p>
+      <p style="margin:22px 0 0;font-size:clamp(16px,1.7vw,19px);line-height:1.75;color:var(--muted)">{{ t.approach.p2 }}</p>
+    </div>
+  </section>
+
+  <!-- ===== CAPABILITIES — three strategic pillars ===== -->
+  <section id="capabilities" data-screen-label="Strategic Capabilities" style="position:relative;padding:clamp(70px,9vw,130px) clamp(20px,4vw,56px)">
+    <div style="max-width:1300px;margin:0 auto">
+      <div style="margin-bottom:clamp(50px,7vw,80px);max-width:70ch">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase">{{ t.capabilities.eyebrow }}</span>
+        <h2 style="margin:16px 0 0;font-weight:600;font-size:clamp(26px,3.4vw,46px);line-height:1.08;letter-spacing:-.015em">{{ t.capabilities.h2 }}</h2>
+      </div>
+      <div class="adv-pillars">
+        <sc-for list="{{ t.capabilities.items }}" as="c" hint-placeholder-count="3">
+          <div style="background:var(--bg2);padding:clamp(32px,4vw,44px) clamp(28px,3.4vw,38px);display:flex;flex-direction:column;gap:16px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint)">{{ c.num }}</span>
+            <h3 style="margin:0;font-weight:600;font-size:clamp(20px,2.2vw,25px);line-height:1.25">{{ c.name }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.68;color:var(--muted)">{{ c.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FORWARD DEPLOYED MODEL — abstract node schematic ===== -->
+  <section id="model" data-screen-label="Forward Deployed Model" style="position:relative;padding:clamp(70px,9vw,140px) clamp(20px,4vw,56px);background:#0a0b0c;color:#eceded;overflow:hidden;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1.5px);background-size:26px 26px">
+    <div style="position:absolute;left:50%;top:0;width:900px;max-width:140%;height:900px;transform:translate(-50%,-45%);background:radial-gradient(circle,rgba(233,162,59,.14) 0%,transparent 65%);pointer-events:none"></div>
+    <div style="max-width:1100px;margin:0 auto;position:relative;text-align:center">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase">{{ t.model.eyebrow }}</span>
+      <h2 style="margin:16px 0 0;font-weight:600;font-size:clamp(26px,3.6vw,48px);line-height:1.08;letter-spacing:-.015em;color:#fff">{{ t.model.h2 }}</h2>
+      <p style="margin:22px auto 0;max-width:62ch;font-size:15.5px;line-height:1.72;color:#b7bbbe">{{ t.model.body }}</p>
+
+      <div class="adv-node" style="margin-top:clamp(56px,7vw,84px);height:clamp(180px,24vw,260px)">
+        <svg viewBox="0 0 760 220" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <line x1="380" y1="110" x2="120" y2="30" stroke="#e9a23b" stroke-width="1.3" opacity="0.5"/>
+          <line x1="380" y1="110" x2="120" y2="190" stroke="#e9a23b" stroke-width="1.3" opacity="0.5"/>
+          <line x1="380" y1="110" x2="640" y2="30" stroke="#e9a23b" stroke-width="1.3" opacity="0.35"/>
+          <line x1="380" y1="110" x2="640" y2="190" stroke="#e9a23b" stroke-width="1.3" opacity="0.35"/>
+          <line x1="120" y1="30" x2="120" y2="190" stroke="#e9a23b" stroke-width="1" opacity="0.18"/>
+          <line x1="640" y1="30" x2="640" y2="190" stroke="#e9a23b" stroke-width="1" opacity="0.18"/>
+          <circle cx="380" cy="110" r="9" fill="#e9a23b"/>
+          <circle cx="380" cy="110" r="18" fill="none" stroke="#e9a23b" stroke-width="1" opacity="0.4"/>
+          <circle cx="120" cy="30" r="5" fill="none" stroke="#e9a23b" stroke-width="1.4"/>
+          <circle cx="120" cy="190" r="5" fill="none" stroke="#e9a23b" stroke-width="1.4"/>
+          <circle cx="640" cy="30" r="5" fill="none" stroke="#eceded" stroke-width="1.4" opacity="0.5"/>
+          <circle cx="640" cy="190" r="5" fill="none" stroke="#eceded" stroke-width="1.4" opacity="0.5"/>
+        </svg>
+        <span style="position:absolute;left:50%;top:calc(50% + 26px);transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;white-space:nowrap">{{ t.model.nodeCenter }}</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(30px,5vw,60px);margin-top:8px">
+        <sc-for list="{{ t.model.legend }}" as="l" hint-placeholder-count="2">
+          <div style="display:flex;align-items:center;gap:10px">
+            <span style="width:7px;height:7px;border-radius:50%;border:1.4px solid {{ l.color }}"></span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;color:#b7bbbe;text-transform:uppercase">{{ l.label }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section data-screen-label="CTA" style="padding:clamp(70px,9vw,130px) clamp(20px,4vw,56px);background:var(--bg2);border-top:1px solid var(--line)">
+    <div style="max-width:1000px;margin:0 auto;text-align:left">
+      <h2 style="margin:0 0 20px;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.1;letter-spacing:-.015em;max-width:26ch">{{ t.cta.h2 }}</h2>
+      <p style="margin:0 0 32px;max-width:56ch;font-size:16px;line-height:1.65;color:var(--muted)">{{ t.cta.body }}</p>
+      <a href="index.html#contact" style="display:inline-flex;align-items:center;gap:10px;padding:15px 28px;background:none;border:1.5px solid var(--accent);color:var(--accent);font-family:'Poppins',sans-serif;font-size:14px;letter-spacing:0;text-transform:uppercase;font-weight:700" style-hover="background:var(--accent);color:#0a0b0c">{{ t.cta.link }} <span style="font-size:15px">&rarr;</span></a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="position:relative;padding:clamp(50px,6vw,80px) clamp(20px,4vw,56px) 40px;border-top:1px solid var(--line)">
+    <span style="position:absolute;top:-1px;left:0;right:0;height:2px;background:var(--accent)"></span>
+    <div style="max-width:1400px;margin:0 auto">
+      <div style="display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;padding-bottom:50px;border-bottom:1px solid var(--line)">
+        <div style="max-width:34ch">
+          <img src="assets/lockup-light.png" alt="Svalin Industries" style="height:30px;width:auto;display:block;margin-bottom:18px;filter:var(--logo-filter)">
+          <p style="margin:0 0 22px;font-family:'IBM Plex Mono',monospace;font-size:clamp(18px,2.2vw,26px);color:var(--accent);letter-spacing:.02em">{{ t.footer.motto }}</p>
+          <div style="display:flex;gap:12px">
+            <a href="https://x.com/svalinind" target="_blank" rel="noopener" aria-label="X" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line2);color:var(--text)" style-hover="border-color:var(--accent);color:var(--accent)">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://linkedin.com/company/svalinind" target="_blank" rel="noopener" aria-label="LinkedIn" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line2);color:var(--text)" style-hover="border-color:var(--accent);color:var(--accent)">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div style="display:flex;gap:clamp(40px,6vw,90px);flex-wrap:wrap">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase">{{ t.footer.colProduct }}</span>
+            <a href="index.html" style="font-size:14px;color:var(--text2)">{{ t.footer.home }}</a>
+            <a href="synos.html" style="font-size:14px;color:var(--text2)">{{ t.nav.tech }}</a>
+            <a href="civil.html" style="font-size:14px;color:var(--text2)">{{ t.nav.civil }}</a>
+            <a href="roadmap.html" style="font-size:14px;color:var(--text2)">{{ t.nav.roadmap }}</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase">{{ t.footer.colPage }}</span>
+            <a href="#approach" style="font-size:14px;color:var(--text2)">{{ t.nav.approach }}</a>
+            <a href="#capabilities" style="font-size:14px;color:var(--text2)">{{ t.nav.capabilities }}</a>
+            <a href="#model" style="font-size:14px;color:var(--text2)">{{ t.nav.model }}</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;padding-top:26px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint)">
+        <span>{{ t.footer.copyright }}</span>
+        <span>{{ t.footer.tagline }}</span>
+      </div>
+    </div>
+  </footer>
+
+  <button onClick="{{ scrollToTop }}" aria-label="Scroll to top" style="{{ scrollTopStyle }}">↑</button>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  state = { theme: 'dark', lang: 'en', menuOpen: false, vw: (typeof window !== 'undefined' ? window.innerWidth : 1200), showScrollTop: false };
+
+  themes() {
+    return {
+      light: {'--bg':'#f4f2ee','--bg2':'#ffffff','--text':'#15181b','--text2':'#3d4247','--muted':'#63696e','--faint':'#9a9ea2','--line':'rgba(0,0,0,.10)','--line2':'rgba(0,0,0,.18)','--accent':'#c67e12','--grid':'rgba(0,0,0,.05)','--navbg':'rgba(244,242,238,.8)','--logo-filter':'invert(1)'},
+      dark: {'--bg':'#0a0b0c','--bg2':'#0d0f10','--text':'#eceded','--text2':'#b7bbbe','--muted':'#868b8f','--faint':'#5f6468','--line':'rgba(255,255,255,.08)','--line2':'rgba(255,255,255,.18)','--accent':'#e9a23b','--grid':'rgba(255,255,255,.04)','--navbg':'rgba(10,11,12,.72)','--logo-filter':'none'},
+    };
+  }
+
+  dict() {
+    const en = {
+      ui: { dark:'Dark', light:'Light' },
+      nav: { approach:'Approach', capabilities:'Capabilities', model:'Model', tech:'SynOS', advisory:'Advisory', civil:'Civil', roadmap:'Roadmap', contact:'Contact' },
+      hero: {
+        eyebrow:'// Svalin Advisory',
+        title:'Deep tech rigor, deployed on the infrastructure that can\u2019t afford to fail.',
+        subtitle:'Svalin Advisory embeds Forward Deployed Engineers inside ports, energy grids and industrial sites to integrate fragmented systems, harden critical operations, and build the architecture that autonomous command will run on.',
+        hud1:'Autonomous Transition',
+        hud2:'Coordinated Fleet Online',
+        meta:[
+          {k:'Focus', v:'Critical Infrastructure'},
+          {k:'Approach', v:'Forward Deployed'},
+          {k:'Coverage', v:'Multi-Sector'},
+          {k:'Status', v:'Engaging Now'},
+        ],
+      },
+      approach: {
+        eyebrow:'01 / The Approach',
+        h2:'We don\u2019t deliver reports. We deploy engineers.',
+        p1:'Every engagement starts the same way: on site, inside the operation, mapping how systems actually behave under real conditions, not how the diagrams say they should.',
+        p2:'We integrate hardware, sensors and software from different manufacturers into a single operational network, remove the friction that stalls automation, and stay until the architecture runs on its own.',
+      },
+      capabilities: {
+        eyebrow:'02 / Strategic Capabilities',
+        h2:'Three capabilities. One outcome: an operation that runs on its own.',
+        items: [
+          { num:'01', name:'Systems Integration & Architecture', body:'Most sites run on systems that were never built to talk to each other. We unify hardware, sensors and software from any manufacturer into a single operational network, closing the gaps between platforms instead of replacing them.' },
+          { num:'02', name:'Critical Infrastructure Resilience', body:'Ports, grids and industrial sites can\u2019t stop for a system failure or a person calling in sick. We harden operations against exactly those risks, automating the monitoring and response that used to depend on someone being in the right place at the right time.' },
+          { num:'03', name:'Autonomous Transition', body:'Infrastructure built for manual operation isn\u2019t ready for autonomous fleets. We prepare the sensors, the network and the operational logic now, so the site is already built to run coordinated autonomous systems when they arrive.' },
+        ],
+      },
+      model: {
+        eyebrow:'03 / The Forward Deployed Model',
+        h2:'Engineers embedded, not consultants dispatched.',
+        body:'Our team embeds directly with yours, on site, inside the operation, until the system runs on its own. No decks, no account layers between the problem and the fix, no engagement that ends before the work does.',
+        nodeCenter:'Embedded Team',
+        legend:[ {label:'Your Systems', color:'#e9a23b'}, {label:'Your Teams', color:'#eceded'} ],
+      },
+      cta: { h2:'When your infrastructure is too critical to fail, this is who you call.', body:'Svalin Advisory works with operators who can\u2019t afford an unresolved gap between the systems they run. Tell us what you\u2019re working with, and where it\u2019s costing you.', link:'Talk to an Engineer' },
+      footer: { copyright:'\u00a9 Svalin Industries 2026. All rights reserved.', tagline:'Born in Defense \u00b7 Deployed in Industry', motto:'The foundation of modern defense', colProduct:'Product', colPage:'This Page', home:'Home' },
+    };
+    const es = {
+      ui: { dark:'Oscuro', light:'Claro' },
+      nav: { approach:'Enfoque', capabilities:'Capacidades', model:'Modelo', tech:'SynOS', advisory:'Advisory', civil:'Civil', roadmap:'Roadmap', contact:'Contacto' },
+      hero: {
+        eyebrow:'// Svalin Advisory',
+        title:'El rigor de la ingenier\u00eda Deep Tech, desplegado sobre la infraestructura que no puede fallar.',
+        subtitle:'Svalin Advisory despliega Forward Deployed Engineers dentro de puertos, redes energ\u00e9ticas y emplazamientos industriales para integrar sistemas fragmentados, blindar las operaciones cr\u00edticas, y construir la arquitectura sobre la que correr\u00e1 el mando aut\u00f3nomo.',
+        hud1:'Transici\u00f3n Aut\u00f3noma',
+        hud2:'Flota Coordinada en L\u00ednea',
+        meta:[
+          {k:'Enfoque', v:'Infraestructura Cr\u00edtica'},
+          {k:'M\u00e9todo', v:'Forward Deployed'},
+          {k:'Alcance', v:'Multisector'},
+          {k:'Estado', v:'Aceptando Encargos'},
+        ],
+      },
+      approach: {
+        eyebrow:'01 / El Enfoque',
+        h2:'No entregamos informes. Desplegamos ingenieros.',
+        p1:'Cada intervenci\u00f3n empieza igual: sobre el terreno, dentro de la operaci\u00f3n, mapeando c\u00f3mo se comportan realmente los sistemas en condiciones reales, no como dicen los diagramas que deber\u00edan comportarse.',
+        p2:'Integramos hardware, sensores y software de distintos fabricantes en una \u00fanica red operativa, eliminamos la fricci\u00f3n que frena la automatizaci\u00f3n, y nos quedamos hasta que la arquitectura funciona por s\u00ed sola.',
+      },
+      capabilities: {
+        eyebrow:'02 / Capacidades Estrat\u00e9gicas',
+        h2:'Tres capacidades. Un solo resultado: una operaci\u00f3n que funciona por s\u00ed sola.',
+        items: [
+          { num:'01', name:'Integraci\u00f3n de Sistemas y Arquitectura', body:'La mayor\u00eda de instalaciones operan con sistemas que nunca se dise\u00f1aron para hablarse entre s\u00ed. Unificamos hardware, sensores y software de cualquier fabricante en una \u00fanica red operativa, cerrando los huecos entre plataformas en lugar de sustituirlas.' },
+          { num:'02', name:'Resiliencia de Infraestructuras Cr\u00edticas', body:'Puertos, redes y emplazamientos industriales no pueden detenerse por un fallo de sistema o una baja de personal. Blindamos las operaciones frente a exactamente esos riesgos, automatizando la monitorizaci\u00f3n y la respuesta que antes depend\u00edan de que alguien estuviera en el lugar correcto en el momento correcto.' },
+          { num:'03', name:'Transici\u00f3n Aut\u00f3noma', body:'La infraestructura dise\u00f1ada para operaci\u00f3n manual no est\u00e1 lista para flotas aut\u00f3nomas. Preparamos ahora los sensores, la red y la l\u00f3gica operativa, para que el emplazamiento ya est\u00e9 construido para operar sistemas aut\u00f3nomos coordinados cuando lleguen.' },
+        ],
+      },
+      model: {
+        eyebrow:'03 / El Modelo Forward Deployed',
+        h2:'Ingenieros incrustados, no consultores enviados.',
+        body:'Nuestro equipo se incrusta directamente con el tuyo, sobre el terreno, dentro de la operaci\u00f3n, hasta que el sistema funciona por s\u00ed solo. Sin presentaciones, sin capas de gesti\u00f3n entre el problema y la soluci\u00f3n, sin una intervenci\u00f3n que termine antes que el trabajo.',
+        nodeCenter:'Equipo Incrustado',
+        legend:[ {label:'Tus Sistemas', color:'#e9a23b'}, {label:'Tus Equipos', color:'#eceded'} ],
+      },
+      cta: { h2:'Cuando tu infraestructura es demasiado cr\u00edtica para fallar, a estos es a quien llamas.', body:'Svalin Advisory trabaja con operadores que no pueden permitirse un hueco sin resolver entre los sistemas que gestionan. Cu\u00e9ntanos con qu\u00e9 trabajas, y d\u00f3nde te est\u00e1 costando.', link:'Habla con un Ingeniero' },
+      footer: { copyright:'\u00a9 Svalin Industries 2026. Todos los derechos reservados.', tagline:'Nacido en Defensa \u00b7 Desplegado en la Industria', motto:'The foundation of modern defense', colProduct:'Producto', colPage:'Esta P\u00e1gina', home:'Inicio' },
+    };
+    return { en, es };
+  }
+
+  componentDidMount() {
+    let th, lg;
+    try { th = localStorage.getItem('sv_theme'); lg = localStorage.getItem('sv_lang'); } catch (e) {}
+    const theme = (th === 'light' || th === 'dark') ? th : 'dark';
+    const lang = (lg === 'en' || lg === 'es') ? lg : 'en';
+    this.setState({ theme, lang });
+    try { document.title = 'Svalin Advisory \u2014 Svalin Industries'; } catch (e) {}
+    this._onWinResize = () => this.setState(s => ({ vw: window.innerWidth, menuOpen: window.innerWidth >= 860 ? false : s.menuOpen }));
+    addEventListener('resize', this._onWinResize);
+    this._onScroll = () => { const show = window.scrollY > 500; this.setState(s => s.showScrollTop === show ? null : { showScrollTop: show }); };
+    addEventListener('scroll', this._onScroll, { passive: true });
+    this.applyTheme();
+  }
+  componentDidUpdate() {
+    if (this.state.theme !== this._lastTheme) { this._lastTheme = this.state.theme; this.applyTheme(); }
+  }
+  componentWillUnmount() {
+    if (this._onWinResize) removeEventListener('resize', this._onWinResize);
+    if (this._onScroll) removeEventListener('scroll', this._onScroll);
+  }
+
+  applyTheme() {
+    const el = this.rootRef.current; if (!el) return;
+    const map = this.themes()[this.state.theme] || this.themes().dark;
+    Object.entries(map).forEach(([k, v]) => el.style.setProperty(k, v));
+    document.body.style.background = map['--bg'];
+    document.body.style.color = map['--text'];
+  }
+
+  toggleTheme() { this.setState(s => { const n = s.theme === 'light' ? 'dark' : 'light'; try { localStorage.setItem('sv_theme', n); } catch (e) {} return { theme: n }; }); }
+  toggleLang() { this.setState(s => { const n = s.lang === 'en' ? 'es' : 'en'; try { localStorage.setItem('sv_lang', n); } catch (e) {} return { lang: n }; }); }
+  toggleMenu() { this.setState(s => ({ menuOpen: !s.menuOpen })); }
+  closeMenu() { if (this.state.menuOpen) this.setState({ menuOpen: false }); }
+  scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+  renderVals() {
+    if (!this._dictCache) this._dictCache = this.dict();
+    const t = this._dictCache[this.state.lang] || this._dictCache.en;
+    const isMobile = this.state.vw < 860;
+    return {
+      rootRef: this.rootRef,
+      t,
+      langBtnLabel: this.state.lang === 'en' ? 'ES' : 'EN',
+      themeLabel: this.state.theme === 'light' ? t.ui.dark : t.ui.light,
+      themeDot: this.state.theme === 'light' ? 'transparent' : 'var(--accent)',
+      toggleTheme: () => this.toggleTheme(),
+      toggleLang: () => this.toggleLang(),
+      closeMenu: () => this.closeMenu(),
+      toggleMenu: () => this.toggleMenu(),
+      scrollToTop: () => this.scrollToTop(),
+      scrollTopStyle: 'position:fixed;right:24px;bottom:24px;z-index:50;width:46px;height:46px;border:1px solid var(--accent);background:var(--accent);color:#0a0b0c;font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.22);transition:opacity .25s,transform .25s;opacity:' + (this.state.showScrollTop ? '1' : '0') + ';pointer-events:' + (this.state.showScrollTop ? 'auto' : 'none') + ';transform:translateY(' + (this.state.showScrollTop ? '0' : '10px') + ')',
+      menuIcon: this.state.menuOpen ? '\u2715' : '\u2630',
+      navLinksStyle: isMobile
+        ? ('position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:20px;padding:24px clamp(20px,4vw,56px) 30px;background:var(--navbg);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);box-shadow:0 20px 40px rgba(0,0,0,.12);display:' + (this.state.menuOpen ? 'flex' : 'none'))
+        : 'display:flex;align-items:center;gap:clamp(10px,2vw,22px)',
+      hamburgerStyle: 'align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--line2);background:none;color:var(--text);font-size:18px;cursor:pointer;display:' + (isMobile ? 'inline-flex' : 'none'),
+    };
+  }
+}
+</script>
+</body>
+</html>

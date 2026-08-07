@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-604FVZKPVW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-604FVZKPVW');
+</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<title>SynOS Tactical Industry — Svalin Industries</title>
+<meta name="description" content="SynOS Tactical Industry applies NATO-grade autonomous command to civilian infrastructure: perimeter security, energy grid inspection, port and maritime operations, and emergency response.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://svalinindustries.com/civil.html">
+<meta name="theme-color" content="#0a0b0c">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Svalin Industries">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="SynOS Tactical Industry — Svalin Industries">
+<meta property="og:description" content="SynOS Tactical Industry applies NATO-grade autonomous command to civilian infrastructure: perimeter security, energy grid inspection, port and maritime operations, and emergency response.">
+<meta property="og:url" content="https://svalinindustries.com/civil.html">
+<meta property="og:image" content="https://svalinindustries.com/assets/lockup-light.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SynOS Tactical Industry — Svalin Industries">
+<meta name="twitter:description" content="SynOS Tactical Industry applies NATO-grade autonomous command to civilian infrastructure: perimeter security, energy grid inspection, port and maritime operations, and emergency response.">
+<meta name="twitter:image" content="https://svalinindustries.com/assets/lockup-light.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"SynOS Tactical Industry — Svalin Industries","description":"SynOS Tactical Industry applies NATO-grade autonomous command to civilian infrastructure: perimeter security, energy grid inspection, port and maritime operations, and emergency response.","url":"https://svalinindustries.com/civil.html","isPartOf":{"@type":"WebSite","name":"Svalin Industries","url":"https://svalinindustries.com/"},"publisher":{"@type":"Organization","name":"Svalin Industries","url":"https://svalinindustries.com/","logo":"https://svalinindustries.com/assets/lockup-light.png"}}</script>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<script src="./image-slot.js"></script>
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:'Poppins',sans-serif;-webkit-font-smoothing:antialiased}
+  a{text-decoration:none;color:var(--accent)}
+  a:hover{color:var(--text)}
+  .doctrine-grid{display:grid;grid-template-columns:minmax(220px,1fr) minmax(0,1.6fr);gap:clamp(30px,5vw,70px)}
+  .doctrine-head{position:sticky;top:110px;align-self:start}
+  @media (max-width:760px){
+    .doctrine-grid{display:flex;flex-direction:column;gap:24px}
+    .doctrine-head{position:static}
+  }
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="--bg:#f4f2ee;--bg2:#ffffff;--text:#15181b;--text2:#3d4247;--muted:#63696e;--faint:#9a9ea2;--line:rgba(0,0,0,.10);--line2:rgba(0,0,0,.18);--accent:#c67e12;--grid:rgba(0,0,0,.05);--navbg:rgba(244,242,238,.8);--logo-filter:invert(1);background:var(--bg);color:var(--text);min-height:100vh">
+
+  <!-- ===== NAV ===== -->
+  <nav style="position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px clamp(20px,4vw,56px);background:var(--navbg);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-wrap:wrap">
+    <a href="index.html" style="display:flex;align-items:center;gap:12px;color:var(--text)">
+      <img src="assets/lockup-light.png" alt="Svalin Industries" style="height:32px;width:auto;display:block;filter:var(--logo-filter)">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.28em;color:var(--muted);text-transform:uppercase;border-left:1px solid var(--line2);padding-left:12px">Industries</span>
+    </a>
+    <div style="{{ navLinksStyle }}">
+      <a href="#doctrine" onClick="{{ closeMenu }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--text2)">{{ t.nav.doctrine }}</a>
+      <a href="#cases" onClick="{{ closeMenu }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--text2)">{{ t.nav.cases }}</a>
+      <a href="#engine" onClick="{{ closeMenu }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--text2)">{{ t.nav.engine }}</a>
+      <a href="synos.html" onClick="{{ closeMenu }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--accent)">{{ t.nav.tech }}</a>
+      <a href="advisory.html" onClick="{{ closeMenu }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--accent)">{{ t.nav.advisory }}</a>
+      <a href="roadmap.html" onClick="{{ closeMenu }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--accent)">{{ t.nav.roadmap }}</a>
+      <button onClick="{{ toggleLang }}" title="Language" style="display:inline-flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid var(--line2);background:none;color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)"><span style="font-size:12px">◍</span>{{ langBtnLabel }}</button>
+      <button onClick="{{ toggleTheme }}" title="Theme" style="display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid var(--line2);background:none;color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)"><span style="width:9px;height:9px;border-radius:50%;border:1.5px solid var(--accent);background:{{ themeDot }}"></span>{{ themeLabel }}</button>
+      <a href="index.html#contact" onClick="{{ closeMenu }}" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:none;border:1.5px solid var(--accent);color:var(--accent);font-family:'Poppins',sans-serif;font-size:13px;letter-spacing:0;text-transform:uppercase;font-weight:700" style-hover="background:var(--accent);color:#fff">{{ t.nav.contact }}</a>
+    </div>
+    <button onClick="{{ toggleMenu }}" aria-label="Menu" style="{{ hamburgerStyle }}">{{ menuIcon }}</button>
+  </nav>
+
+  <!-- ===== HERO — immersive full-bleed ===== -->
+  <header style="position:relative;min-height:86vh;display:flex;align-items:flex-end;overflow:hidden">
+    <div style="position:absolute;inset:0">
+      <img src="assets/civil-hero-blueprint.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block"/>
+    </div>
+    <div style="position:absolute;inset:0;background:linear-gradient(0deg,#05060766 10%,#05060700 55%),linear-gradient(100deg,#050607cc 0%,#05060766 45%,#05060722 75%)"></div>
+    <div style="position:relative;max-width:1200px;padding:0 clamp(20px,4vw,56px) clamp(50px,7vw,90px);color:#fff">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px">
+        <span style="width:9px;height:9px;background:var(--accent);border-radius:50%"></span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.3em;color:#e7e5df;text-transform:uppercase">{{ t.hero.eyebrow }}</span>
+      </div>
+      <h1 style="margin:0;font-weight:600;font-size:clamp(34px,5.8vw,84px);line-height:1.02;letter-spacing:-.02em;max-width:17ch;color:#fff">{{ t.hero.title }}</h1>
+      <p style="margin:26px 0 0;max-width:62ch;font-size:clamp(15px,1.5vw,18px);line-height:1.7;color:#d9d7d0">{{ t.hero.subtitle }}</p>
+    </div>
+  </header>
+
+  <!-- ===== DOCTRINE — sticky heading, running argument ===== -->
+  <section id="doctrine" data-screen-label="Doctrine" style="position:relative;padding:clamp(70px,9vw,130px) clamp(20px,4vw,56px);background:var(--bg2);border-bottom:1px solid var(--line);overflow:hidden;background-image:radial-gradient(var(--grid) 1px,transparent 1.5px);background-size:26px 26px">
+    <span style="position:absolute;top:-.12em;right:clamp(20px,4vw,56px);font-weight:700;font-size:clamp(160px,20vw,320px);line-height:1;letter-spacing:-.03em;color:var(--line);pointer-events:none;user-select:none">01</span>
+    <div style="max-width:1200px;margin:0 auto;position:relative" class="doctrine-grid">
+      <div class="doctrine-head">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase">{{ t.doctrine.eyebrow }}</span>
+        <h2 style="margin:16px 0 0;font-weight:600;font-size:clamp(26px,3.2vw,42px);line-height:1.1;letter-spacing:-.015em">{{ t.doctrine.h2 }}</h2>
+      </div>
+      <div>
+        <p style="margin:0 0 26px;font-size:clamp(16px,1.6vw,19px);line-height:1.75;color:var(--text2)">{{ t.doctrine.p1 }}</p>
+        <p style="margin:0 0 26px;font-size:clamp(16px,1.6vw,19px);line-height:1.75;color:var(--text2)">{{ t.doctrine.p2 }}</p>
+        <div style="position:relative;margin-top:44px;padding:26px 28px;border-left:2px solid var(--accent);background:var(--bg)">
+          <p style="margin:0;font-weight:600;font-size:clamp(18px,2vw,24px);line-height:1.4;letter-spacing:-.01em">{{ t.doctrine.pullquote }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== USE CASES — alternating asymmetric rows ===== -->
+  <section id="cases" data-screen-label="Use Cases" style="position:relative;padding:clamp(70px,9vw,130px) clamp(20px,4vw,56px);overflow:hidden">
+    <span style="position:absolute;top:-.12em;right:clamp(20px,4vw,56px);font-weight:700;font-size:clamp(160px,20vw,320px);line-height:1;letter-spacing:-.03em;color:var(--line);pointer-events:none;user-select:none">02</span>
+    <div style="max-width:1200px;margin:0 auto;position:relative">
+      <div style="margin-bottom:clamp(50px,7vw,90px);max-width:70ch">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase">{{ t.cases.eyebrow }}</span>
+        <h2 style="margin:16px 0 0;font-weight:600;font-size:clamp(26px,3.4vw,46px);line-height:1.08;letter-spacing:-.015em">{{ t.cases.h2 }}</h2>
+      </div>
+      <sc-for list="{{ casesRows }}" as="c" hint-placeholder-count="4">
+        <div style="display:grid;grid-template-columns:{{ c.gridCols }};gap:clamp(30px,5vw,64px);align-items:start;margin-bottom:clamp(70px,9vw,120px)">
+          <div style="order:{{ c.textOrder }}">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent)">{{ c.tag }}</span>
+            <h3 style="margin:12px 0 16px;font-weight:600;font-size:clamp(22px,2.6vw,32px);line-height:1.15;letter-spacing:-.01em">{{ c.name }}</h3>
+            <p style="margin:0 0 20px;font-size:15.5px;line-height:1.7;color:var(--muted);max-width:48ch">{{ c.body }}</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <sc-for list="{{ c.labels }}" as="lb" hint-placeholder-count="3">
+                <span style="white-space:nowrap;flex:0 0 auto;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.01em;color:var(--text2);background:var(--bg2);border:1px solid var(--line2);padding:6px 11px">{{ lb }}</span>
+              </sc-for>
+            </div>
+          </div>
+          <div style="order:{{ c.visualOrder }}">
+            <div style="position:relative;aspect-ratio:16/9;border:1px solid var(--line2);background:#05070a;overflow:hidden">
+              <sc-if value="{{ c.staticImg }}" hint-placeholder-val="{{ false }}">
+                <sc-if value="{{ c.name==='Perimeter Security' }}"><img src="assets/civil-perimeter.png" alt="Perimeter Security" style="width:100%;height:100%;object-fit:cover;display:block"/></sc-if>
+                <sc-if value="{{ c.name==='Seguridad Perimetral' }}"><img src="assets/civil-perimeter.png" alt="Seguridad Perimetral" style="width:100%;height:100%;object-fit:cover;display:block"/></sc-if>
+                <sc-if value="{{ c.name==='Energy Network Inspection' }}"><img src="assets/civil-grid.png" alt="Energy Network Inspection" style="width:100%;height:100%;object-fit:cover;display:block"/></sc-if>
+                <sc-if value="{{ c.name==='Inspección de Redes Energéticas' }}"><img src="assets/civil-grid.png" alt="Inspección de Redes Energéticas" style="width:100%;height:100%;object-fit:cover;display:block"/></sc-if>
+                <sc-if value="{{ c.name==='Port & Maritime Operations' }}"><img src="assets/civil-port.png" alt="Port and Maritime Operations" style="width:100%;height:100%;object-fit:cover;display:block"/></sc-if>
+                <sc-if value="{{ c.name==='Operaciones Portuarias y Marítimas' }}"><img src="assets/civil-port.png" alt="Operaciones Portuarias y Marítimas" style="width:100%;height:100%;object-fit:cover;display:block"/></sc-if>
+                <sc-if value="{{ c.name==='Emergency Response' }}"><img src="assets/civil-emergency.png" alt="Wildfire and natural disaster response" style="width:100%;height:100%;object-fit:cover;display:block"/></sc-if>
+                <sc-if value="{{ c.name==='Respuesta a Emergencias' }}"><img src="assets/civil-emergency.png" alt="Respuesta a incendios y desastres naturales" style="width:100%;height:100%;object-fit:cover;display:block"/></sc-if>
+                <sc-if value="{{ c.name==='Agriculture' }}"><img src="assets/civil-agriculture.png" alt="Precision agriculture" style="width:100%;height:100%;object-fit:cover;display:block"/></sc-if>
+                <sc-if value="{{ c.name==='Agricultura' }}"><img src="assets/civil-agriculture.png" alt="Agricultura de precisión" style="width:100%;height:100%;object-fit:cover;display:block"/></sc-if>
+                <sc-if value="{{ c.name==='Construction Sites' }}"><img src="assets/civil-construction.png" alt="Construction site" style="width:100%;height:100%;object-fit:cover;display:block"/></sc-if>
+                <sc-if value="{{ c.name==='Obras de Construcción' }}"><img src="assets/civil-construction.png" alt="Obra de construcción" style="width:100%;height:100%;object-fit:cover;display:block"/></sc-if>
+              </sc-if>
+              <sc-if value="{{ !c.staticImg }}" hint-placeholder-val="{{ true }}">
+                <image-slot id="{{ c.imgId }}" shape="rect" placeholder="{{ c.imgPlaceholder }}"></image-slot>
+              </sc-if>
+              <span style="position:absolute;top:-1px;left:-1px;width:14px;height:14px;border-top:1.5px solid var(--accent);border-left:1.5px solid var(--accent)"></span>
+              <span style="position:absolute;top:-1px;right:-1px;width:14px;height:14px;border-top:1.5px solid var(--accent);border-right:1.5px solid var(--accent)"></span>
+              <span style="position:absolute;bottom:-1px;left:-1px;width:14px;height:14px;border-bottom:1.5px solid var(--accent);border-left:1.5px solid var(--accent)"></span>
+              <span style="position:absolute;bottom:-1px;right:-1px;width:14px;height:14px;border-bottom:1.5px solid var(--accent);border-right:1.5px solid var(--accent)"></span>
+              <span style="position:absolute;left:14px;bottom:14px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;background:rgba(5,7,10,.55);padding:5px 9px">{{ c.tag }}</span>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+      <div style="max-width:640px;margin:0 auto;text-align:center;padding-top:20px">
+        <p style="margin:0;font-size:clamp(17px,2vw,22px);line-height:1.6;font-weight:500;color:var(--text2)">{{ t.cases.more }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ENGINE — fixed dark panel ===== -->
+  <section id="engine" data-screen-label="The Engine" style="position:relative;padding:clamp(70px,9vw,140px) clamp(20px,4vw,56px);background:#0a0b0c;color:#eceded;overflow:hidden;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1.5px);background-size:26px 26px">
+    <span style="position:absolute;top:-.28em;right:clamp(20px,4vw,56px);font-weight:700;font-size:clamp(110px,12vw,200px);line-height:1;letter-spacing:-.03em;color:rgba(255,255,255,.05);pointer-events:none;user-select:none">03</span>
+    <div style="position:absolute;left:50%;top:0;width:900px;max-width:140%;height:900px;transform:translate(-50%,-45%);background:radial-gradient(circle,rgba(233,162,59,.14) 0%,transparent 65%);pointer-events:none"></div>
+    <div style="max-width:1200px;margin:0 auto;position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(40px,6vw,80px);align-items:start">
+      <div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:#e9a23b;text-transform:uppercase">{{ t.engine.eyebrow }}</span>
+        <h2 style="margin:16px 0 0;font-weight:600;font-size:clamp(28px,3.6vw,50px);line-height:1.08;letter-spacing:-.015em;max-width:15ch;color:#fff">{{ t.engine.h2 }}</h2>
+        <p style="margin:24px 0 0;max-width:52ch;font-size:15.5px;line-height:1.72;color:#b7bbbe">{{ t.engine.p1 }}</p>
+        <p style="margin:22px 0 0;max-width:52ch;font-size:15.5px;line-height:1.72;color:#b7bbbe">{{ t.engine.p2 }}</p>
+      </div>
+      <div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;padding:20px 0;border-top:1px solid rgba(255,255,255,.14)">
+          <sc-for list="{{ t.engine.domains }}" as="dm" hint-placeholder-count="4">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;text-align:center">
+              <sc-if value="{{ dm.shape==='triangle' }}"><span style="width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:9px solid #e9a23b"></span></sc-if>
+              <sc-if value="{{ dm.shape==='square' }}"><span style="width:8px;height:8px;background:#e9a23b"></span></sc-if>
+              <sc-if value="{{ dm.shape==='circle' }}"><span style="width:8px;height:8px;border-radius:50%;background:#e9a23b"></span></sc-if>
+              <sc-if value="{{ dm.shape==='half-circle' }}"><span style="width:8px;height:8px;border-radius:50%;background:linear-gradient(0deg,#e9a23b 50%,transparent 50%)"></span></sc-if>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#eceded;text-transform:uppercase">{{ dm.name }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <p style="margin:24px 0 0;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:#5f6468;text-transform:uppercase">{{ t.engine.domainsCaption }}</p>
+        <h3 style="margin:44px 0 18px;font-weight:600;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:#868b8f;border-top:1px solid rgba(255,255,255,.14);padding-top:24px">{{ t.engine.uiTitle }}</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px">
+          <sc-for list="{{ t.engine.uiItems }}" as="it" hint-placeholder-count="4">
+            <li style="display:flex;gap:12px;font-size:14.5px;line-height:1.55;color:#d9d7d0"><span style="color:#e9a23b;font-family:'IBM Plex Mono',monospace">→</span><span>{{ it }}</span></li>
+          </sc-for>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section data-screen-label="CTA" style="padding:clamp(70px,9vw,130px) clamp(20px,4vw,56px);background:var(--bg2);border-top:1px solid var(--line)">
+    <div style="max-width:1000px;margin:0 auto;text-align:left">
+      <h2 style="margin:0 0 20px;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.1;letter-spacing:-.015em;max-width:22ch">{{ t.cta.h2 }}</h2>
+      <p style="margin:0 0 32px;max-width:56ch;font-size:16px;line-height:1.65;color:var(--muted)">{{ t.cta.body }}</p>
+      <a href="index.html#contact" style="display:inline-flex;align-items:center;gap:10px;padding:15px 28px;background:none;border:1.5px solid var(--accent);color:var(--accent);font-family:'Poppins',sans-serif;font-size:14px;letter-spacing:0;text-transform:uppercase;font-weight:700" style-hover="background:var(--accent);color:#fff">{{ t.cta.link }} <span style="font-size:15px">&rarr;</span></a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="position:relative;padding:clamp(50px,6vw,80px) clamp(20px,4vw,56px) 40px;border-top:1px solid var(--line)">
+    <span style="position:absolute;top:-1px;left:0;right:0;height:2px;background:var(--accent)"></span>
+    <div style="max-width:1400px;margin:0 auto">
+      <div style="display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;padding-bottom:50px;border-bottom:1px solid var(--line)">
+        <div style="max-width:34ch">
+          <img src="assets/lockup-light.png" alt="Svalin Industries" style="height:30px;width:auto;display:block;margin-bottom:18px;filter:var(--logo-filter)">
+          <p style="margin:0 0 22px;font-family:'IBM Plex Mono',monospace;font-size:clamp(18px,2.2vw,26px);color:var(--accent);letter-spacing:.02em">{{ t.footer.motto }}</p>
+          <div style="display:flex;gap:12px">
+            <a href="https://x.com/svalinind" target="_blank" rel="noopener" aria-label="X" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line2);color:var(--text)" style-hover="border-color:var(--accent);color:var(--accent)">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://linkedin.com/company/svalinind" target="_blank" rel="noopener" aria-label="LinkedIn" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line2);color:var(--text)" style-hover="border-color:var(--accent);color:var(--accent)">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div style="display:flex;gap:clamp(40px,6vw,90px);flex-wrap:wrap">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase">{{ t.footer.colProduct }}</span>
+            <a href="index.html" style="font-size:14px;color:var(--text2)">{{ t.footer.home }}</a>
+            <a href="synos.html" style="font-size:14px;color:var(--text2)">{{ t.nav.tech }}</a>
+            <a href="advisory.html" style="font-size:14px;color:var(--text2)">{{ t.nav.advisory }}</a>
+            <a href="roadmap.html" style="font-size:14px;color:var(--text2)">{{ t.nav.roadmap }}</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase">{{ t.footer.colPage }}</span>
+            <a href="#doctrine" style="font-size:14px;color:var(--text2)">{{ t.nav.doctrine }}</a>
+            <a href="#cases" style="font-size:14px;color:var(--text2)">{{ t.nav.cases }}</a>
+            <a href="#engine" style="font-size:14px;color:var(--text2)">{{ t.nav.engine }}</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;padding-top:26px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint)">
+        <span>{{ t.footer.copyright }}</span>
+        <span>{{ t.footer.tagline }}</span>
+      </div>
+    </div>
+  </footer>
+
+  <button onClick="{{ scrollToTop }}" aria-label="Scroll to top" style="{{ scrollTopStyle }}">↑</button>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  state = { theme: 'light', lang: 'en', menuOpen: false, vw: (typeof window !== 'undefined' ? window.innerWidth : 1200), showScrollTop: false };
+
+  themes() {
+    return {
+      light: {'--bg':'#f4f2ee','--bg2':'#ffffff','--text':'#15181b','--text2':'#3d4247','--muted':'#63696e','--faint':'#9a9ea2','--line':'rgba(0,0,0,.10)','--line2':'rgba(0,0,0,.18)','--accent':'#c67e12','--grid':'rgba(0,0,0,.05)','--navbg':'rgba(244,242,238,.8)','--logo-filter':'invert(1)'},
+      dark: {'--bg':'#0a0b0c','--bg2':'#0d0f10','--text':'#eceded','--text2':'#b7bbbe','--muted':'#868b8f','--faint':'#5f6468','--line':'rgba(255,255,255,.08)','--line2':'rgba(255,255,255,.18)','--accent':'#e9a23b','--grid':'rgba(255,255,255,.04)','--navbg':'rgba(10,11,12,.72)','--logo-filter':'none'},
+    };
+  }
+
+  dict() {
+    const en = {
+      ui: { dark:'Dark', light:'Light' },
+      nav: { doctrine:'Doctrine', cases:'Applications', engine:'The Engine', tech:'SynOS', advisory:'Advisory', roadmap:'Roadmap', contact:'Contact' },
+      hero: {
+        eyebrow:'// SynOS Tactical Industry',
+        title:'Battlefield rigor. Deployed on civilian ground.',
+        subtitle:'SynOS was forged to command NATO-grade swarms under fire. That same cognitive core now runs the infrastructure that keeps a nation running: ports, energy grids, borders and industrial sites too critical to leave undefended.',
+      },
+      doctrine: {
+        eyebrow:'01 / The Dual-Use Doctrine',
+        h2:'Civilian infrastructure now faces military-grade threats.',
+        p1:'Ports, energy plants, nuclear facilities and national borders are no longer protected by commercial software with a defense veneer. The threats against them, coordinated intrusion, sabotage, swarms of low-cost drones, were designed on the battlefield first. Meeting them with anything less is a liability no operator can still accept.',
+        p2:'SynOS was not adapted for this problem; it was built for it. Every capability now guarding civilian ground, resilience under jamming, autonomous reasoning under a single operator, asynchronous coordination across hundreds of units, was proven under NATO-grade conditions before it ever reached a port or a plant. This is defense technology extended to civilian assets, not civilian technology dressed up as defense.',
+        pullquote:'One operator. Every fleet. Every domain.',
+      },
+      cases: {
+        eyebrow:'02 / Applications',
+        h2:'Where the same core holds the line',
+        items: [
+          { tag:'CRITICAL PERIMETER DEFENSE', name:'Perimeter Security', imgId:'img-civil-perimeter', staticImg:'assets/civil-perimeter.png', imgPlaceholder:'Perimeter security photo', body:'A single operator holds the perimeter of a site that would once have required dozens. SynOS fuses aerial and ground sensors into one threat picture, dispatches autonomous patrols to investigate anomalies, and keeps holding the line even when communications degrade.', labels:['Autonomous patrol','Multi-sensor fusion','Degraded-link resilience'] },
+          { tag:'GRID INSPECTION AT SCALE', name:'Energy Network Inspection', imgId:'img-civil-grid', staticImg:'assets/civil-grid.png', imgPlaceholder:'Energy grid inspection photo', body:'Thousands of kilometers of lines, pipelines and substations get inspected without waiting for a helicopter or a crew. SynOS tasks heterogeneous drones across the grid, flags degradation before it becomes failure, and reports in the language operators already use.', labels:['Automated grid sweep','Predictive fault detection','Cross-fleet tasking'] },
+          { tag:'MULTI-DOMAIN MARITIME COMMAND', name:'Port & Maritime Operations', imgId:'img-civil-port', staticImg:'assets/civil-port.png', imgPlaceholder:'Port and maritime operations photo', body:'A port runs in three dimensions at once: cargo on the ground, vessels in the water, airspace above. SynOS commands aerial, surface and underwater units from the same view, tracking vessel movement and flagging what does not belong.', labels:['Multi-domain tracking','Vessel anomaly detection','Surface & subsea coordination'] },
+          { tag:'NATURAL DISASTER RESPONSE', name:'Emergency Response', imgId:'img-civil-emergency', staticImg:'assets/civil-emergency.png', imgPlaceholder:'Wildfire and natural disaster response photo', body:'Wildfires, floods and storms move faster than any command post can track on foot. SynOS fuses aerial tankers, drones and ground units into one live picture of the fire line or flood front, redirecting assets automatically as the emergency evolves and feeding responders a common operating view instead of a radio relay.', labels:['Wildfire front tracking','Automatic asset re-tasking','Live disaster picture'] },
+          { tag:'PRECISION AGRICULTURE AT SCALE', name:'Agriculture', imgId:'img-civil-agri', staticImg:'assets/civil-agriculture.png', imgPlaceholder:'Precision agriculture photo', body:'Crop health, irrigation and pest monitoring across thousands of hectares, run by drones tasked automatically instead of scouted on foot. SynOS turns a farm’s own imagery into a live map of what needs attention today.', labels:['Automated crop scouting','Yield risk mapping','Irrigation monitoring'] },
+          { tag:'CONSTRUCTION SITE COMMAND', name:'Construction Sites', imgId:'img-civil-construction', staticImg:'assets/civil-construction.png', imgPlaceholder:'Construction site photo', body:'Progress tracking, safety compliance and material logistics across a site that changes daily. SynOS keeps a live model of the build, flags safety violations, and coordinates autonomous surveys without pulling a foreman off the ground.', labels:['Progress mapping','Safety compliance','Material tracking'] },
+        ],
+        more:'These are a sample. SynOS Tactical Industry extends to any operation where the ground outpaces the people watching it.',
+      },
+      engine: {
+        eyebrow:'03 / The Engine',
+        h2:'One cognitive core. Any fleet you already own.',
+        p1:'SynOS does not require Svalin hardware. It is engineered to run as the cognitive layer over drones, ground robots and vessels from any manufacturer, integrating what a site already owns instead of forcing a rebuild.',
+        p2:'Reasoning is asynchronous by design: SynOS does not wait for a clean signal or a synchronized fleet. It holds a live picture across every unit, on every link quality, and keeps commanding through the gaps that would stall lesser systems.',
+        domains:[{name:'Aerial',shape:'triangle'},{name:'Ground',shape:'square'},{name:'Maritime',shape:'circle'},{name:'Subsea',shape:'half-circle'}],
+        domainsCaption:'Hardware-agnostic across every domain',
+        uiTitle:'Interface, tuned for industry',
+        uiItems:['Incident Board','Risk Mapping','Operation Zones','Autonomous Tasks','Multi-Sensor Fusion','Airspace Deconfliction'],
+      },
+      cta: { h2:'Your infrastructure deserves battlefield-grade command.', body:'Trusting anything less with the assets that keep a nation running is a risk no operator should accept. Talk to us about deploying SynOS on your site.', link:'Get in touch' },
+      footer: { copyright:'© Svalin Industries 2026. All rights reserved.', tagline:'Born in Defense · Deployed in Industry', motto:'The foundation of modern defense', colProduct:'Product', colPage:'This Page', home:'Home' },
+    };
+    const es = {
+      ui: { dark:'Oscuro', light:'Claro' },
+      nav: { doctrine:'Doctrina', cases:'Aplicaciones', engine:'El Motor', tech:'SynOS', advisory:'Advisory', roadmap:'Roadmap', contact:'Contacto' },
+      hero: {
+        eyebrow:'// SynOS Tactical Industry',
+        title:'El rigor del campo de batalla, ahora sobre terreno civil.',
+        subtitle:'SynOS se forjó para comandar enjambres de grado OTAN bajo fuego. Ese mismo núcleo cognitivo dirige hoy las infraestructuras que mantienen en marcha a un país: puertos, redes energéticas, fronteras y emplazamientos industriales demasiado críticos para dejarlos sin defensa.',
+      },
+      doctrine: {
+        eyebrow:'01 / La Doctrina del Doble Uso',
+        h2:'Las infraestructuras civiles afrontan hoy amenazas de nivel militar.',
+        p1:'Puertos, centrales de energía, instalaciones nucleares y fronteras nacionales ya no se protegen con software comercial disfrazado de defensa. Las amenazas que enfrentan, intrusión coordinada, sabotaje, enjambres de drones de bajo coste, se diseñaron primero en el campo de batalla. Afrontarlas con algo menos es un riesgo que ningún operador puede seguir asumiendo.',
+        p2:'SynOS no se adaptó a este problema: se construyó para él. Cada capacidad que hoy protege el terreno civil, resiliencia ante interferencias, razonamiento autónomo bajo un único operador, coordinación asíncrona de cientos de unidades, se validó en condiciones de grado OTAN antes de llegar a un puerto o una planta. Esto es tecnología de defensa extendida a activos civiles, no tecnología civil disfrazada de defensa.',
+        pullquote:'Un operador. Cada flota. Cada dominio.',
+      },
+      cases: {
+        eyebrow:'02 / Aplicaciones',
+        h2:'Dónde sostiene la línea el mismo núcleo',
+        items: [
+          { tag:'DEFENSA PERIMETRAL CRÍTICA', name:'Seguridad Perimetral', imgId:'img-civil-perimeter', staticImg:'assets/civil-perimeter.png', imgPlaceholder:'Foto de seguridad perimetral', body:'Un único operador sostiene el perímetro de un emplazamiento que antes exigía decenas de personas. SynOS fusiona sensores aéreos y terrestres en una sola imagen de amenazas, despacha patrullas autónomas para investigar anomalías, y mantiene la línea incluso cuando las comunicaciones se degradan.', labels:['Patrulla autónoma','Fusión multisensor','Resiliencia ante enlaces degradados'] },
+          { tag:'INSPECCIÓN DE RED A ESCALA', name:'Inspección de Redes Energéticas', imgId:'img-civil-grid', staticImg:'assets/civil-grid.png', imgPlaceholder:'Foto de inspección de red energética', body:'Miles de kilómetros de líneas, gasoductos y subestaciones se inspeccionan sin esperar a un helicóptero o una cuadrilla. SynOS asigna tareas a drones heterogéneos en toda la red, detecta el deterioro antes de que se convierta en fallo, y reporta en el idioma que ya usan los operadores.', labels:['Barrido automatizado de red','Detección predictiva de fallos','Asignación multiflota'] },
+          { tag:'MANDO MARÍTIMO MULTIDOMINIO', name:'Operaciones Portuarias y Marítimas', imgId:'img-civil-port', staticImg:'assets/civil-port.png', imgPlaceholder:'Foto de operaciones portuarias y marítimas', body:'Un puerto opera en tres dimensiones a la vez: carga en tierra, buques en el agua, espacio aéreo arriba. SynOS comanda unidades aéreas, de superficie y submarinas desde la misma vista, siguiendo el movimiento de los buques y señalando lo que no encaja.', labels:['Seguimiento multidominio','Detección de anomalías en buques','Coordinación superficie y subsuperficie'] },
+          { tag:'RESPUESTA A DESASTRES NATURALES', name:'Respuesta a Emergencias', imgId:'img-civil-emergency', staticImg:'assets/civil-emergency.png', imgPlaceholder:'Foto de respuesta a incendios y desastres naturales', body:'Incendios forestales, inundaciones y tormentas avanzan más rápido de lo que cualquier puesto de mando puede seguir a pie. SynOS fusiona aviones cisterna, drones y unidades terrestres en una sola imagen viva del frente del incendio o la inundación, redirigiendo activos automáticamente conforme evoluciona la emergencia y entregando a los equipos una vista operativa común en lugar de un relevo por radio.', labels:['Seguimiento del frente de incendio','Reasignación automática de activos','Imagen de desastre en vivo'] },
+          { tag:'AGRICULTURA DE PRECISIÓN A ESCALA', name:'Agricultura', imgId:'img-civil-agri', staticImg:'assets/civil-agriculture.png', imgPlaceholder:'Foto de agricultura de precisión', body:'Salud de cultivos, riego y control de plagas en miles de hectáreas, gestionados por drones asignados automáticamente en lugar de inspeccionados a pie. SynOS convierte las imágenes propias de la explotación en un mapa vivo de lo que necesita atención hoy.', labels:['Inspección automática de cultivos','Mapeo de riesgo de cosecha','Monitorización de riego'] },
+          { tag:'MANDO DE OBRA', name:'Obras de Construcción', imgId:'img-civil-construction', staticImg:'assets/civil-construction.png', imgPlaceholder:'Foto de obra de construcción', body:'Seguimiento de avance, cumplimiento de seguridad y logística de materiales en un emplazamiento que cambia cada día. SynOS mantiene un modelo vivo de la obra, señala incumplimientos de seguridad y coordina inspecciones autónomas sin apartar a un capataz del terreno.', labels:['Mapeo de avance','Cumplimiento de seguridad','Seguimiento de materiales'] },
+        ],
+        more:'Estos son una muestra. SynOS Tactical Industry se extiende a cualquier operación donde el terreno supera a quienes lo vigilan.',
+      },
+      engine: {
+        eyebrow:'03 / El Motor',
+        h2:'Un núcleo cognitivo. Cualquier flota que ya tengas.',
+        p1:'SynOS no requiere hardware de Svalin. Está diseñado para operar como capa cognitiva sobre drones, robots terrestres y embarcaciones de cualquier fabricante, integrando lo que un emplazamiento ya posee en lugar de forzar una sustitución.',
+        p2:'El razonamiento es asíncrono por diseño: SynOS no espera una señal limpia ni una flota sincronizada. Mantiene una imagen viva de cada unidad, con cualquier calidad de enlace, y sigue comandando a través de los huecos que detendrían a sistemas menores.',
+        domains:[{name:'Aéreo',shape:'triangle'},{name:'Terrestre',shape:'square'},{name:'Marítimo',shape:'circle'},{name:'Submarino',shape:'half-circle'}],
+        domainsCaption:'Agnóstico al hardware en cada dominio',
+        uiTitle:'Interfaz, adaptada a la industria',
+        uiItems:['Tablero de Incidentes','Mapeo de Riesgos','Zonas de Operación','Tareas Autónomas','Fusión Multisensor','Deconflicto de Espacio Aéreo'],
+      },
+      cta: { h2:'Tu infraestructura merece mando de grado militar.', body:'Confiar los activos que mantienen a un país en marcha a algo menos es un riesgo que ningún operador debería aceptar. Hablemos sobre desplegar SynOS en tu emplazamiento.', link:'Contacta con nosotros' },
+      footer: { copyright:'© Svalin Industries 2026. Todos los derechos reservados.', tagline:'Nacido en Defensa · Desplegado en la Industria', motto:'The foundation of modern defense', colProduct:'Producto', colPage:'Esta Página', home:'Inicio' },
+    };
+    return { en, es };
+  }
+
+  detectTheme() { const h = new Date().getHours(); return (h >= 19 || h < 7) ? 'dark' : 'light'; }
+
+  componentDidMount() {
+    let th, lg;
+    try { th = localStorage.getItem('sv_theme'); lg = localStorage.getItem('sv_lang'); } catch (e) {}
+    const theme = (th === 'light' || th === 'dark') ? th : this.detectTheme();
+    const lang = (lg === 'en' || lg === 'es') ? lg : 'en';
+    this.setState({ theme, lang });
+    try { document.title = 'SynOS Tactical Industry — Svalin Industries'; } catch (e) {}
+    this._onWinResize = () => this.setState(s => ({ vw: window.innerWidth, menuOpen: window.innerWidth >= 860 ? false : s.menuOpen }));
+    addEventListener('resize', this._onWinResize);
+    this._onScroll = () => { const show = window.scrollY > 500; this.setState(s => s.showScrollTop === show ? null : { showScrollTop: show }); };
+    addEventListener('scroll', this._onScroll, { passive: true });
+    this.applyTheme();
+  }
+  componentDidUpdate() {
+    if (this.state.theme !== this._lastTheme) { this._lastTheme = this.state.theme; this.applyTheme(); }
+  }
+  componentWillUnmount() {
+    if (this._onWinResize) removeEventListener('resize', this._onWinResize);
+    if (this._onScroll) removeEventListener('scroll', this._onScroll);
+  }
+
+  applyTheme() {
+    const el = this.rootRef.current; if (!el) return;
+    const map = this.themes()[this.state.theme] || this.themes().light;
+    Object.entries(map).forEach(([k, v]) => el.style.setProperty(k, v));
+    document.body.style.background = map['--bg'];
+    document.body.style.color = map['--text'];
+  }
+
+  toggleTheme() { this.setState(s => { const n = s.theme === 'light' ? 'dark' : 'light'; try { localStorage.setItem('sv_theme', n); } catch (e) {} return { theme: n }; }); }
+  toggleLang() { this.setState(s => { const n = s.lang === 'en' ? 'es' : 'en'; try { localStorage.setItem('sv_lang', n); } catch (e) {} return { lang: n }; }); }
+  toggleMenu() { this.setState(s => ({ menuOpen: !s.menuOpen })); }
+  closeMenu() { if (this.state.menuOpen) this.setState({ menuOpen: false }); }
+  scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+  renderVals() {
+    if (!this._dictCache) this._dictCache = this.dict();
+    const t = this._dictCache[this.state.lang] || this._dictCache.en;
+    const isMobile = this.state.vw < 860;
+    const casesRows = t.cases.items.map((c, i) => {
+      const flip = i % 2 === 1;
+      return {
+        ...c,
+        gridCols: isMobile ? '1fr' : '1fr 1fr',
+        textOrder: flip ? 2 : 1,
+        visualOrder: flip ? 1 : 2,
+      };
+    });
+    return {
+      rootRef: this.rootRef,
+      t, casesRows,
+      langBtnLabel: this.state.lang === 'en' ? 'ES' : 'EN',
+      themeLabel: this.state.theme === 'light' ? t.ui.dark : t.ui.light,
+      themeDot: this.state.theme === 'light' ? 'transparent' : 'var(--accent)',
+      toggleTheme: () => this.toggleTheme(),
+      toggleLang: () => this.toggleLang(),
+      closeMenu: () => this.closeMenu(),
+      toggleMenu: () => this.toggleMenu(),
+      scrollToTop: () => this.scrollToTop(),
+      scrollTopStyle: 'position:fixed;right:24px;bottom:24px;z-index:50;width:46px;height:46px;border:1px solid var(--accent);background:var(--accent);color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.22);transition:opacity .25s,transform .25s;opacity:' + (this.state.showScrollTop ? '1' : '0') + ';pointer-events:' + (this.state.showScrollTop ? 'auto' : 'none') + ';transform:translateY(' + (this.state.showScrollTop ? '0' : '10px') + ')',
+      menuIcon: this.state.menuOpen ? '✕' : '☰',
+      navLinksStyle: isMobile
+        ? ('position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:20px;padding:24px clamp(20px,4vw,56px) 30px;background:var(--navbg);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);box-shadow:0 20px 40px rgba(0,0,0,.12);display:' + (this.state.menuOpen ? 'flex' : 'none'))
+        : 'display:flex;align-items:center;gap:clamp(10px,2vw,26px)',
+      hamburgerStyle: 'align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--line2);background:none;color:var(--text);font-size:18px;cursor:pointer;display:' + (isMobile ? 'inline-flex' : 'none'),
+    };
+  }
+}
+</script>
+</body>
+</html>

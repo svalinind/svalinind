@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-604FVZKPVW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-604FVZKPVW');
+</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Roadmap — Svalin Industries</title>
+<meta name="description" content="Svalin Industries' company structure and roadmap: Software, Systems, Labs, Media, Ventures, Advisory and Academy divisions, and the phased path to NATO-grade autonomous deployment.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://svalinindustries.com/roadmap.html">
+<meta name="theme-color" content="#0a0b0c">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Svalin Industries">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Roadmap — Svalin Industries">
+<meta property="og:description" content="Svalin Industries' company structure and roadmap: Software, Systems, Labs, Media, Ventures, Advisory and Academy divisions, and the phased path to NATO-grade autonomous deployment.">
+<meta property="og:url" content="https://svalinindustries.com/roadmap.html">
+<meta property="og:image" content="https://svalinindustries.com/assets/lockup-light.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Roadmap — Svalin Industries">
+<meta name="twitter:description" content="Svalin Industries' company structure and roadmap: Software, Systems, Labs, Media, Ventures, Advisory and Academy divisions, and the phased path to NATO-grade autonomous deployment.">
+<meta name="twitter:image" content="https://svalinindustries.com/assets/lockup-light.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Roadmap — Svalin Industries","description":"Svalin Industries' company structure and roadmap: Software, Systems, Labs, Media, Ventures, Advisory and Academy divisions, and the phased path to NATO-grade autonomous deployment.","url":"https://svalinindustries.com/roadmap.html","isPartOf":{"@type":"WebSite","name":"Svalin Industries","url":"https://svalinindustries.com/"},"publisher":{"@type":"Organization","name":"Svalin Industries","url":"https://svalinindustries.com/","logo":"https://svalinindustries.com/assets/lockup-light.png"}}</script>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<script src="./image-slot.js"></script>
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#f4f2ee;color:#15181b;font-family:'Poppins',system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background .5s ease,color .5s ease}
+  ::selection{background:var(--accent,#c67e12);color:#fff}
+  a{color:var(--accent,#c67e12);text-decoration:none}
+  a:hover{opacity:.75}
+  input,textarea,button{font-family:inherit}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="--bg:#f4f2ee;--bg2:#ffffff;--text:#15181b;--text2:#3d4247;--muted:#63696e;--faint:#9a9ea2;--line:rgba(0,0,0,.10);--line2:rgba(0,0,0,.18);--accent:#c67e12;--grid:rgba(0,0,0,.05);--navbg:rgba(244,242,238,.8);--logo-filter:invert(1);position:relative;background:var(--bg);color:var(--text);transition:background .5s ease,color .5s ease">
+
+  <!-- ===== NAV ===== -->
+  <nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px clamp(20px,4vw,56px);background:var(--navbg);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-wrap:wrap">
+    <a href="index.html" style="display:flex;align-items:center;gap:12px;color:var(--text)">
+      <img src="assets/lockup-light.png" alt="Svalin Industries" style="height:32px;width:auto;display:block;filter:var(--logo-filter)">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.28em;color:var(--muted);text-transform:uppercase;border-left:1px solid var(--line2);padding-left:12px">Industries</span>
+    </a>
+    <div style="{{ navLinksStyle }}">
+      <a href="#structure" onClick="{{ closeMenu }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--text2)">{{ t.nav.structure }}</a>
+      <a href="#sequence" onClick="{{ closeMenu }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--text2)">{{ t.nav.sequence }}</a>
+      <a href="synos.html" onClick="{{ closeMenu }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--accent)">{{ t.nav.tech }}</a>
+      <a href="advisory.html" onClick="{{ closeMenu }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--accent)">{{ t.nav.advisory }}</a>
+      <a href="civil.html" onClick="{{ closeMenu }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--accent)">{{ t.nav.civil }}</a>
+      <button onClick="{{ toggleLang }}" title="Language" style="display:inline-flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid var(--line2);background:none;color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)"><span style="font-size:12px">◍</span>{{ langBtnLabel }}</button>
+      <button onClick="{{ toggleTheme }}" title="Theme" style="display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid var(--line2);background:none;color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)"><span style="width:9px;height:9px;border-radius:50%;border:1.5px solid var(--accent);background:{{ themeDot }}"></span>{{ themeLabel }}</button>
+      <a href="index.html#contact" onClick="{{ closeMenu }}" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:none;border:1.5px solid var(--accent);color:var(--accent);font-family:'Poppins',sans-serif;font-size:13px;letter-spacing:0;text-transform:uppercase;font-weight:700" style-hover="background:var(--accent);color:#fff">{{ t.nav.contact }}</a>
+    </div>
+    <button onClick="{{ toggleMenu }}" aria-label="Menu" style="{{ hamburgerStyle }}">{{ menuIcon }}</button>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header style="position:relative;padding:clamp(60px,8vw,110px) clamp(20px,4vw,56px) clamp(50px,7vw,90px);max-width:1200px;margin:0 auto;background-image:radial-gradient(var(--grid) 1px,transparent 1px);background-size:26px 26px">
+    <a href="index.html" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;color:var(--muted)">{{ t.hero.back }}</a>
+    <div style="display:flex;align-items:center;gap:14px;margin:26px 0 0">
+      <span style="width:9px;height:9px;background:var(--accent);border-radius:50%"></span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase">{{ t.hero.eyebrow }}</span>
+    </div>
+    <h1 style="margin:22px 0 0;font-weight:600;font-size:clamp(36px,5.6vw,76px);line-height:1.02;letter-spacing:-.02em;max-width:19ch">{{ t.hero.title }}</h1>
+    <p style="margin:26px 0 0;max-width:68ch;font-size:clamp(15px,1.5vw,18px);line-height:1.7;color:var(--text2)">{{ t.hero.subtitle }}</p>
+    <p style="margin:18px 0 0;max-width:68ch;font-size:clamp(15px,1.5vw,18px);line-height:1.7;color:var(--text2)">{{ t.hero.subtitle2 }}</p>
+    <p style="margin:18px 0 0;max-width:68ch;font-size:clamp(15px,1.5vw,18px);line-height:1.7;color:var(--muted)">{{ t.hero.subtitle3 }}</p>
+  </header>
+
+  <!-- ===== STRUCTURE ===== -->
+  <section id="structure" data-screen-label="Structure" style="padding:0 clamp(20px,4vw,56px) clamp(70px,9vw,130px);max-width:1400px;margin:0 auto">
+    <div style="margin-bottom:44px;max-width:70ch">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase">{{ t.struct.eyebrow }}</span>
+      <h2 style="margin:16px 0 0;font-weight:600;font-size:clamp(26px,3.4vw,44px);line-height:1.06;letter-spacing:-.015em">{{ t.struct.h2 }}</h2>
+      <p style="margin:20px 0 0;font-size:15.5px;line-height:1.65;color:var(--muted)">{{ t.struct.intro }}</p>
+    </div>
+    <sc-for list="{{ t.struct.groups }}" as="g" hint-placeholder-count="3">
+      <div style="margin-bottom:56px">
+        <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:22px;border-bottom:1px solid var(--line2);padding-bottom:16px">
+          <h3 style="margin:0;font-weight:600;font-size:22px">{{ g.title }}</h3>
+          <span style="font-size:14px;color:var(--muted)">{{ g.body }}</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)">
+          <sc-for list="{{ g.divisions }}" as="d" hint-placeholder-count="3">
+            <div style="background:var(--bg2);display:flex;flex-direction:column">
+              <div style="aspect-ratio:1;border-bottom:1px solid var(--line);background:#05070a;display:flex;align-items:center;justify-content:center;overflow:hidden">
+                <sc-if value="{{ d.staticImg }}" hint-placeholder-val="{{ false }}">
+                  <sc-if value="{{ d.name==='Software' }}"><img src="assets/software-blueprint.png" alt="Software" style="width:100%;height:100%;object-fit:contain;display:block"/></sc-if>
+                  <sc-if value="{{ d.name==='Systems' }}"><img src="assets/systems-blueprint.png" alt="Systems" style="width:100%;height:100%;object-fit:contain;display:block"/></sc-if>
+                  <sc-if value="{{ d.name==='Labs' }}"><img src="assets/labs-blueprint.png" alt="Labs" style="width:100%;height:100%;object-fit:contain;display:block"/></sc-if>
+                  <sc-if value="{{ d.name==='Media' }}"><img src="assets/media-blueprint.png" alt="Media" style="width:100%;height:100%;object-fit:contain;display:block"/></sc-if>
+                  <sc-if value="{{ d.name==='Ventures' }}"><img src="assets/ventures-blueprint.png" alt="Ventures" style="width:100%;height:100%;object-fit:contain;display:block"/></sc-if>
+                  <sc-if value="{{ d.name==='Advisory' }}"><img src="assets/advisory-blueprint.png" alt="Advisory" style="width:100%;height:100%;object-fit:contain;display:block"/></sc-if>
+                  <sc-if value="{{ d.name==='Academy' }}"><img src="assets/academy-blueprint.png" alt="Academy" style="width:100%;height:100%;object-fit:contain;display:block"/></sc-if>
+                </sc-if>
+                <sc-if value="{{ !d.staticImg }}" hint-placeholder-val="{{ true }}">
+                  <image-slot id="{{ d.imgId }}" shape="rect" placeholder="{{ d.imgPlaceholder }}"></image-slot>
+                </sc-if>
+              </div>
+              <div style="padding:22px 22px 26px">
+                <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:8px">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent)">{{ d.tag }}</span>
+                  <span style="font-weight:600;font-size:15.5px">{{ d.name }}</span>
+                </div>
+                <sc-if value="{{ d.lead }}"><p style="margin:0 0 6px;font-weight:600;font-size:13.5px;line-height:1.5;color:var(--text)">{{ d.lead }}</p></sc-if>
+                <p style="margin:0;font-size:13.5px;line-height:1.6;color:var(--muted)">{{ d.body }}</p>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+  </section>
+
+  <!-- ===== SEQUENCE ===== -->
+  <section id="sequence" data-screen-label="Sequence" style="padding:clamp(70px,9vw,130px) clamp(20px,4vw,56px);background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden">
+    <div style="max-width:1100px;margin:0 auto">
+      <div style="margin-bottom:56px;max-width:70ch">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase">{{ t.seq.eyebrow }}</span>
+        <h2 style="margin:16px 0 0;font-weight:600;font-size:clamp(26px,3.4vw,44px);line-height:1.06;letter-spacing:-.015em;max-width:26ch">{{ t.seq.h2 }}</h2>
+        <p style="margin:20px 0 0;max-width:58ch;font-size:15.5px;line-height:1.65;color:var(--muted)">{{ t.seq.intro }}</p>
+      </div>
+
+      <sc-if value="{{ isDesktopSeq }}">
+        <div style="position:relative">
+          <div style="position:absolute;left:50%;top:0;bottom:0;border-left:1.5px dashed var(--line2);z-index:0;pointer-events:none"></div>
+          <sc-for list="{{ orderedPhases }}" as="ph" hint-placeholder-count="4">
+            <div style="position:relative;z-index:1;display:grid;grid-template-columns:1fr 88px 1fr;column-gap:28px;align-items:start;padding:26px 0">
+              <div style="grid-column:{{ ph.contentCol }};grid-row:1;text-align:{{ ph.textAlign }}">
+                <div style="display:inline-block;max-width:420px;background:var(--bg);border:1px solid var(--line2);padding:22px 24px;position:relative;{{ ph.cardAlignStyle }}">
+                  <span style="position:absolute;top:-1px;{{ ph.cornerSide }}:-1px;width:9px;height:9px;border-top:1.5px solid var(--accent);{{ ph.cornerBorderSide }}:1.5px solid var(--accent)"></span>
+                  <sc-if value="{{ ph.showCheck }}"><span style="position:absolute;top:10px;{{ ph.badgeSide }}:12px;width:20px;height:20px;border:1px solid var(--accent);background:var(--accent);color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:12px;line-height:1">✓</span></sc-if>
+                  <sc-if value="{{ ph.active }}"><span style="display:inline-block;margin-bottom:8px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--accent);text-transform:uppercase">{{ t.seq.activeTag }}</span></sc-if>
+                  <h3 style="margin:0 0 10px;font-weight:600;font-size:18px;line-height:1.3">{{ ph.title }}</h3>
+                  <p style="margin:0 0 12px;font-size:14px;line-height:1.6;color:var(--text2)">{{ ph.intro }}</p>
+                  <sc-if value="{{ ph.hasSteps }}">
+                    <ul style="margin:0 0 10px;padding:0;list-style:none;display:flex;flex-wrap:wrap;{{ ph.stepsJustify }};gap:6px">
+                      <sc-for list="{{ ph.steps }}" as="st" hint-placeholder-count="5">
+                        <li style="display:block;flex:0 0 auto;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.01em;color:var(--text2);background:var(--line);border:1px solid var(--line2);padding:4px 9px">{{ st }}</li>
+                      </sc-for>
+                    </ul>
+                  </sc-if>
+                  <sc-if value="{{ ph.note }}"><p style="margin:0;font-size:12.5px;line-height:1.55;color:var(--muted);font-style:italic">{{ ph.note }}</p></sc-if>
+                </div>
+              </div>
+              <div style="grid-column:2;grid-row:1;display:flex;justify-content:center;padding-top:2px">
+                <div style="{{ ph.nodeStyle }}">
+                  <span style="position:absolute;top:50%;{{ ph.connectorProp }}:100%;width:26px;height:0;border-top:1.5px dashed var(--accent);opacity:.55;transform:translateY(-50%)"></span>
+                  <span style="position:absolute;top:-1px;left:-1px;width:8px;height:8px;border-top:1.5px solid var(--accent);border-left:1.5px solid var(--accent)"></span>
+                  <span style="position:absolute;top:-1px;right:-1px;width:8px;height:8px;border-top:1.5px solid var(--accent);border-right:1.5px solid var(--accent)"></span>
+                  <span style="position:absolute;bottom:-1px;left:-1px;width:8px;height:8px;border-bottom:1.5px solid var(--accent);border-left:1.5px solid var(--accent)"></span>
+                  <span style="position:absolute;bottom:-1px;right:-1px;width:8px;height:8px;border-bottom:1.5px solid var(--accent);border-right:1.5px solid var(--accent)"></span>
+                  <span style="position:relative;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600">{{ ph.num }}</span>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="margin-top:64px">
+          <span style="display:block;margin-bottom:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--accent);text-transform:uppercase">{{ t.seq.parallelTag }}</span>
+          <p style="margin:0 0 28px;max-width:60ch;font-size:14.5px;line-height:1.6;color:var(--muted)">{{ t.seq.parallelIntro }}</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px">
+            <sc-for list="{{ parallelPhases }}" as="ph" hint-placeholder-count="4">
+              <div style="position:relative;background:var(--bg);border:1px solid var(--line2);padding:22px 24px">
+                <span style="position:absolute;top:-1px;left:-1px;width:8px;height:8px;border-top:1.5px solid var(--accent);border-left:1.5px solid var(--accent)"></span>
+                <span style="position:absolute;top:-1px;right:-1px;width:8px;height:8px;border-top:1.5px solid var(--accent);border-right:1.5px solid var(--accent)"></span>
+                <span style="position:absolute;bottom:-1px;left:-1px;width:8px;height:8px;border-bottom:1.5px solid var(--accent);border-left:1.5px solid var(--accent)"></span>
+                <span style="position:absolute;bottom:-1px;right:-1px;width:8px;height:8px;border-bottom:1.5px solid var(--accent);border-right:1.5px solid var(--accent)"></span>
+                <h3 style="margin:0 0 10px;font-weight:600;font-size:18px;line-height:1.3">{{ ph.title }}</h3>
+                <p style="margin:0 0 12px;font-size:14px;line-height:1.6;color:var(--text2)">{{ ph.intro }}</p>
+                <sc-if value="{{ ph.hasSteps }}">
+                  <ul style="margin:0 0 10px;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px">
+                    <sc-for list="{{ ph.steps }}" as="st" hint-placeholder-count="5">
+                      <li style="display:block;flex:0 1 auto;min-width:0;max-width:100%;white-space:normal;word-break:break-word;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.01em;color:var(--text2);background:var(--line);border:1px solid var(--line2);padding:4px 9px">{{ st }}</li>
+                    </sc-for>
+                  </ul>
+                </sc-if>
+                <sc-if value="{{ ph.note }}"><p style="margin:0;font-size:12.5px;line-height:1.55;color:var(--muted);font-style:italic">{{ ph.note }}</p></sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isMobileSeq }}">
+        <div style="position:relative;display:flex;flex-direction:column">
+          <sc-for list="{{ orderedPhases }}" as="ph" hint-placeholder-count="4">
+            <div style="position:relative;display:grid;grid-template-columns:64px 1fr;gap:24px;padding:26px 0;border-top:1px solid var(--line2)">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:var(--faint)">{{ ph.num }}</span>
+                <sc-if value="{{ ph.active }}">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--accent);text-transform:uppercase">{{ t.seq.activeTag }}</span>
+                </sc-if>
+              </div>
+              <div>
+                <h3 style="margin:0 0 10px;font-weight:600;font-size:19px;line-height:1.3">{{ ph.title }}</h3>
+                <p style="margin:0 0 14px;font-size:14.5px;line-height:1.62;color:var(--text2)">{{ ph.intro }}</p>
+                <sc-if value="{{ ph.hasSteps }}">
+                  <ul style="margin:0 0 12px;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px 0">
+                    <sc-for list="{{ ph.steps }}" as="st" hint-placeholder-count="5">
+                      <li style="display:flex;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted)">
+                        <span>{{ st }}</span>
+                        <span style="color:var(--accent);padding:0 8px">→</span>
+                      </li>
+                    </sc-for>
+                  </ul>
+                </sc-if>
+                <sc-if value="{{ ph.note }}">
+                  <p style="margin:0;font-size:13.5px;line-height:1.6;color:var(--muted);font-style:italic">{{ ph.note }}</p>
+                </sc-if>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="margin-top:44px">
+          <span style="display:block;margin-bottom:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--accent);text-transform:uppercase">{{ t.seq.parallelTag }}</span>
+          <p style="margin:0 0 24px;font-size:14px;line-height:1.6;color:var(--muted)">{{ t.seq.parallelIntro }}</p>
+          <div style="display:flex;flex-direction:column;gap:1px;background:var(--line2)">
+            <sc-for list="{{ parallelPhases }}" as="ph" hint-placeholder-count="4">
+              <div style="background:var(--bg);padding:22px 0">
+                <h3 style="margin:0 0 10px;font-weight:600;font-size:19px;line-height:1.3">{{ ph.title }}</h3>
+                <p style="margin:0 0 14px;font-size:14.5px;line-height:1.62;color:var(--text2)">{{ ph.intro }}</p>
+                <sc-if value="{{ ph.hasSteps }}">
+                  <ul style="margin:0 0 12px;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px 0">
+                    <sc-for list="{{ ph.steps }}" as="st" hint-placeholder-count="5">
+                      <li style="display:flex;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted)">
+                        <span>{{ st }}</span>
+                        <span style="color:var(--accent);padding:0 8px">→</span>
+                      </li>
+                    </sc-for>
+                  </ul>
+                </sc-if>
+                <sc-if value="{{ ph.note }}">
+                  <p style="margin:0;font-size:13.5px;line-height:1.6;color:var(--muted);font-style:italic">{{ ph.note }}</p>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section data-screen-label="CTA" style="padding:clamp(70px,9vw,130px) clamp(20px,4vw,56px);max-width:1000px;margin:0 auto;text-align:left">
+    <h2 style="margin:0 0 20px;font-weight:600;font-size:clamp(26px,3.6vw,46px);line-height:1.1;letter-spacing:-.015em;max-width:22ch">{{ t.cta.h2 }}</h2>
+    <p style="margin:0 0 32px;max-width:56ch;font-size:16px;line-height:1.65;color:var(--muted)">{{ t.cta.body }}</p>
+    <a href="index.html#contact" style="display:inline-flex;align-items:center;gap:10px;padding:15px 28px;background:none;border:1.5px solid var(--accent);color:var(--accent);font-family:'Poppins',sans-serif;font-size:14px;letter-spacing:0;text-transform:uppercase;font-weight:700" style-hover="background:var(--accent);color:#fff">{{ t.cta.link }} <span style="font-size:15px">&rarr;</span></a>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="position:relative;padding:clamp(50px,6vw,80px) clamp(20px,4vw,56px) 40px;border-top:1px solid var(--line)">
+    <span style="position:absolute;top:-1px;left:0;right:0;height:2px;background:var(--accent)"></span>
+    <div style="max-width:1400px;margin:0 auto">
+      <div style="display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;padding-bottom:50px;border-bottom:1px solid var(--line)">
+        <div style="max-width:34ch">
+          <img src="assets/lockup-light.png" alt="Svalin Industries" style="height:30px;width:auto;display:block;margin-bottom:18px;filter:var(--logo-filter)">
+          <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:clamp(18px,2.2vw,26px);color:var(--accent);letter-spacing:.02em">{{ t.footer.motto }}</p>
+          <div style="display:flex;gap:12px;margin-top:22px">
+            <a href="https://x.com/svalinind" target="_blank" rel="noopener" aria-label="X" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line2);color:var(--text)" style-hover="border-color:var(--accent);color:var(--accent)">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://linkedin.com/company/svalinind" target="_blank" rel="noopener" aria-label="LinkedIn" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line2);color:var(--text)" style-hover="border-color:var(--accent);color:var(--accent)">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div style="display:flex;gap:clamp(40px,6vw,90px);flex-wrap:wrap">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase">{{ t.footer.colProduct }}</span>
+            <a href="index.html" style="font-size:14px;color:var(--text2)">{{ t.footer.home }}</a>
+            <a href="synos.html" style="font-size:14px;color:var(--text2)">{{ t.nav.tech }}</a>
+            <a href="advisory.html" style="font-size:14px;color:var(--text2)">{{ t.nav.advisory }}</a>
+            <a href="civil.html" style="font-size:14px;color:var(--text2)">{{ t.footer.civil }}</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase">{{ t.footer.colPage }}</span>
+            <a href="#structure" style="font-size:14px;color:var(--text2)">{{ t.nav.structure }}</a>
+            <a href="#sequence" style="font-size:14px;color:var(--text2)">{{ t.nav.sequence }}</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;padding-top:26px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint)">
+        <span>{{ t.footer.copyright }}</span>
+        <span>{{ t.footer.tagline }}</span>
+      </div>
+    </div>
+  </footer>
+
+  <button onClick="{{ scrollToTop }}" aria-label="Scroll to top" style="{{ scrollTopStyle }}">↑</button>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  state = { theme: 'light', lang: 'en', menuOpen: false, vw: (typeof window !== 'undefined' ? window.innerWidth : 1200), showScrollTop: false };
+
+  themes() {
+    return {
+      light: {'--bg':'#f4f2ee','--bg2':'#ffffff','--text':'#15181b','--text2':'#3d4247','--muted':'#63696e','--faint':'#9a9ea2','--line':'rgba(0,0,0,.10)','--line2':'rgba(0,0,0,.18)','--accent':'#c67e12','--grid':'rgba(0,0,0,.05)','--navbg':'rgba(244,242,238,.8)','--logo-filter':'invert(1)'},
+      dark: {'--bg':'#0a0b0c','--bg2':'#0d0f10','--text':'#eceded','--text2':'#b7bbbe','--muted':'#868b8f','--faint':'#5f6468','--line':'rgba(255,255,255,.08)','--line2':'rgba(255,255,255,.18)','--accent':'#e9a23b','--grid':'rgba(255,255,255,.04)','--navbg':'rgba(10,11,12,.72)','--logo-filter':'none'},
+    };
+  }
+
+  dict() {
+    const en = {
+      ui: { dark:'Dark', light:'Light' },
+      nav: { structure:'Structure', sequence:'Sequence', tech:'SynOS', civil:'Civil', advisory:'Advisory', contact:'Contact' },
+      hero: {
+        back:'← Back to Svalin Industries',
+        eyebrow:'// Roadmap',
+        title:'Where we\u2019re headed',
+        subtitle:'Svalin Industries is not a software company. It is a European defense technology group built to serve as the foundation of modern defense: the base from which allied forces, institutions and industrial partners plan, decide and act across every domain of conflict.',
+        subtitle2:'That foundation is an integrated ecosystem, not a portfolio of products. Deep technology, software and hardware built to hold an edge in contested environments, gives operators the tools. Doctrine, carried through media and training, turns those tools into practice and shared knowledge. Execution, through advisory and field services, puts both to work under real operational conditions. Each division has a distinct mandate, but none stands alone: together they cover the full arc from research to deployment.',
+        subtitle3:'We are not opening all seven divisions at once, and that is by design. Our deployment follows the same logic as any serious operation: hold the immediate objective before committing to the next. Today that means solving the most urgent tactical problems in command, control and mission software through SynOS, while our advisory work generates the revenue, relationships and operational insight to fund what comes after. Only once that ground is held do we commit to hardware, training infrastructure and the capital vehicles that carry the group into its next phase. What follows on this page is that sequence in full: what is operational today, what comes next, and why.',
+      },
+      struct: {
+        eyebrow:'01 / Structure',
+        h2:'Seven divisions, three groups',
+        intro:'One integrated defense ecosystem, not a set of isolated departments: engineered to cover the full spectrum of modern conflict, from research and doctrine to execution on the ground.',
+        groups: [
+          { title:'Technology', body:'Research, software and hardware.', divisions: [
+            { tag:'T-01', name:'Software', imgId:'img-software', staticImg:'assets/software-blueprint.png', imgPlaceholder:'Software / SynOS screen', lead:'The cognitive architecture of modern defense.', body:'Svalin Software builds the digital infrastructure for multi-domain operations: command and control, mission planning, ISR, a common operating picture, simulation and sensor integration. SynOS is the brain that orchestrates asynchronous swarms from a single pane of glass, the strategic command view operators rely on under pressure.' },
+            { tag:'T-02', name:'Systems', imgId:'img-systems', staticImg:'assets/systems-blueprint.png', imgPlaceholder:'Hardware / platform photo', lead:'A deliberate tactical advantage.', body:'Svalin Systems is aggressively pragmatic: we master the integration of agnostic, combat-proven platforms first, securing operational superiority today before advancing to proprietary hardware tomorrow. Payloads, sensors, edge computing, control stations and counter-drone systems are integrated to the same standard the mission demands.' },
+            { tag:'T-03', name:'Labs', imgId:'img-labs', staticImg:'assets/labs-blueprint.png', imgPlaceholder:'Labs photo or diagram', lead:'The vanguard of military intellectual property.', body:'Svalin Labs exists to close the critical bottlenecks of modern conflict, GNSS-denied navigation, electronic warfare, autonomy, before they reach the battlefield. Every program is built to secure survivability in contested environments and to feed the intellectual property that Software and Systems deploy downstream.' },
+          ]},
+          { title:'Ecosystem', body:'The engine that shapes military doctrine and secures Europe\u2019s technology supply chain.', divisions: [
+            { tag:'E-01', name:'Media', imgId:'img-media', staticImg:'assets/media-blueprint.png', imgPlaceholder:'Media / newsroom photo', lead:'Where the doctrine of modern warfare is written.', body:'Svalin Media is not a marketing function; it is our intelligence and doctrine arm. Here we define the debate on asymmetric threats, autonomous systems and the future of multi-domain conflict, shaping the narrative the defense sector operates within and building the authority, access and relationships that follow from setting those terms.' },
+            { tag:'E-02', name:'Ventures', imgId:'img-ventures', staticImg:'assets/ventures-blueprint.png', imgPlaceholder:'Ventures / investment photo', lead:'A geopolitical instrument, not a venture fund.', body:'Svalin Ventures identifies, accelerates and invests in dual-use technology, sensors, AI, advanced materials, to secure European technological sovereignty and capture the innovation our adversaries are racing toward. Our progressive deployment is calculated: each stage compounds the access, judgment and capital discipline the next stage requires.' },
+          ]},
+          { title:'Services', body:'Where operational trust is earned, and expertise compounds into revenue.', divisions: [
+            { tag:'S-01', name:'Advisory', imgId:'img-advisory', staticImg:'assets/advisory-blueprint.png', imgPlaceholder:'Advisory / consulting photo', lead:'The front line of operational credibility.', body:'Svalin Advisory embeds directly in the decisions that matter: defense strategy, systems integration, digital transformation, autonomy and AI, capability assessment, technical due diligence and concept-of-operations design. It is our primary channel for revenue today, and the closest vantage point onto what operators actually need from SynOS tomorrow.' },
+            { tag:'S-02', name:'Academy', imgId:'img-academy', staticImg:'assets/academy-blueprint.png', imgPlaceholder:'Academy / training photo', lead:'Where operational knowledge becomes institutional advantage.', body:'Svalin Academy trains the operators, commanders and engineers who will run the systems we build: autonomous operations, drone command, mission planning, applied AI and simulation, delivered through executive programs and hands-on exercises. Its curriculum is drawn directly from what Labs, Software, Systems and Advisory learn in the field, not the other way around.' },
+          ]},
+        ],
+      },
+      seq: {
+        eyebrow:'02 / Sequence',
+        h2:'Strategic deployment phases',
+        intro:'This is not a rollout schedule. It is a deliberate sequence of execution: validate doctrine, secure operational superiority, and scale the ecosystem only once each phase has proven itself under real conditions.',
+        activeTag:'Where we are now',
+        parallelTag:'Scaling the ecosystem',
+        parallelIntro:'Once software commands the field, the matrix expands without hesitation. Academy institutionalizes our doctrine, Systems consolidates the hardware architecture, Labs secures the intellectual-property edge in contested environments, and Ventures operates as a geopolitical instrument securing Europe’s defense supply chain.',
+        phases: [
+          { num:'01', title:'Svalin Industries, the group', active:false, completed:true, hasSteps:false,
+            intro:'Establishing the foundation. The operating matrix is born, engineered to unify software, hardware and doctrine under a single architecture of power. Every division has its place within that architecture, activated only when the sequence calls for it.' },
+          { num:'02', title:'Media', active:false, completed:true, hasSteps:true,
+            intro:'Shaping the doctrine. Before technology deploys, we command the narrative. Svalin Media builds the intelligence and analysis that define the debate on autonomy across the NATO ecosystem, establishing the authority that precedes every operational engagement.',
+            steps:['Open-source intelligence','Strategic analysis','Doctrine formulation','Tactical dissemination'],
+            note:'Its purpose is to command the narrative and define the doctrine of multi-domain operations across Europe.' },
+          { num:'03', title:'Advisory', active:false, completed:true, hasSteps:true,
+            intro:'Tactical validation and execution. Svalin Advisory deploys directly against the most critical bottlenecks facing allied forces and industry, converting unresolved problems from the battlefield into the operational foundation our software is built on.',
+            steps:['Vulnerability assessment','C2 systems integration','Tactical deployment','Field validation'],
+            note:'We convert battlefield intelligence into algorithmic superiority for our software.' },
+          { num:'04', title:'SynOS and Software', active:true, hasSteps:true,
+            intro:'Deploying the cognitive core. This is where the group is concentrated today: operationalizing SynOS, turning field-validated prototypes into the definitive digital infrastructure for asynchronous, multi-domain operations.',
+            steps:['Operational gap identification','Tactical validation','Cognitive core deployment','Multi-domain superiority'] },
+          { num:'05', title:'Labs', active:false, hasSteps:true,
+            intro:'Once there\u2019s enough technical activity to justify it, Labs becomes a unit of its own.',
+            steps:['Threat mitigation research','GNSS-denied navigation','Electronic warfare systems','Intellectual property generation'] },
+          { num:'06', title:'Systems', active:false, hasSteps:true,
+            intro:'With software and integration needs proven out, we can move toward hardware.',
+            steps:['Agnostic platform integration','Tactical edge computing','Proprietary hardware architecture','Payload & sensor integration'],
+            note:'We secure software superiority before scaling the physical architecture.' },
+          { num:'07', title:'Academy', active:false, hasSteps:true,
+            intro:'Academy shows up once we have knowledge, products, clients and methods worth teaching.',
+            steps:['Tactical instruction','Cognitive warfare simulation','Autonomous fleet orchestration','Asynchronous command training'] },
+          { num:'08', title:'Ventures', active:false, hasSteps:true,
+            intro:'Ventures is one of the last pieces to come together.',
+            steps:['Geopolitical intelligence','Dual-use acceleration','Supply chain consolidation','Strategic co-investment'],
+            note:'We deploy capital as a strategic weapon to secure European technological sovereignty.' },
+        ],
+      },
+      cta: { h2:'Follow along as we build', body:'We\u2019re early in this sequence, focused on SynOS and Svalin Software first. If you want to partner with us, invest, or join the team building it, we\u2019d like to hear from you.', link:'Get in touch' },
+      footer: { copyright:'© Svalin Industries 2026. All rights reserved.', tagline:'Born in Defense · Deployed in Industry', motto:'The foundation of modern defense', colProduct:'Product', colPage:'This Page', home:'Home', civil:'Civil Industry' },
+    };
+    const es = {
+      ui: { dark:'Oscuro', light:'Claro' },
+      nav: { structure:'Estructura', sequence:'Secuencia', tech:'SynOS', civil:'Civil', advisory:'Advisory', contact:'Contacto' },
+      hero: {
+        back:'← Volver a Svalin Industries',
+        eyebrow:'// Roadmap',
+        title:'Hacia dónde vamos',
+        subtitle:'Svalin Industries no es una empresa de software. Es un grupo tecnológico de defensa europeo construido para ser la base de la defensa moderna: el fundamento desde el que fuerzas aliadas, instituciones y socios industriales planifican, deciden y actúan en todos los dominios del conflicto.',
+        subtitle2:'Esa base es un ecosistema integrado, no un catálogo de productos. La tecnología profunda, software y hardware construidos para mantener la ventaja en entornos disputados, da las herramientas al operador. La doctrina, transmitida a través de media y formación, convierte esas herramientas en práctica y conocimiento compartido. La ejecución, a través de advisory y servicios sobre el terreno, pone a ambas a trabajar en condiciones operativas reales. Cada división tiene un mandato propio, pero ninguna funciona sola: juntas cubren todo el arco, desde la investigación hasta el despliegue.',
+        subtitle3:'No abrimos las siete divisiones a la vez, y eso es deliberado. Nuestro despliegue sigue la misma lógica que cualquier operación seria: consolidar el objetivo inmediato antes de comprometerse con el siguiente. Hoy eso significa resolver los problemas tácticos más urgentes en mando, control y software de misión a través de SynOS, mientras nuestro trabajo de advisory genera los ingresos, las relaciones y el conocimiento operativo para financiar lo que viene después. Solo una vez consolidado ese terreno nos comprometemos con el hardware, la infraestructura de formación y los vehículos de capital que llevan al grupo a su siguiente fase. Lo que sigue en esta página es esa secuencia completa: qué está operativo hoy, qué viene después, y por qué.',
+      },
+      struct: {
+        eyebrow:'01 / Estructura',
+        h2:'Siete divisiones, tres grupos',
+        intro:'Un ecosistema de defensa integrado, no un conjunto de departamentos aislados: diseñado para cubrir todo el espectro del conflicto moderno, desde la investigación y la doctrina hasta la ejecución sobre el terreno.',
+        groups: [
+          { title:'Technology', body:'Investigación, software y hardware.', divisions: [
+            { tag:'T-01', name:'Software', imgId:'img-software', staticImg:'assets/software-blueprint.png', imgPlaceholder:'Software / pantalla de SynOS', lead:'La arquitectura cognitiva de la defensa moderna.', body:'Svalin Software construye la infraestructura digital para operaciones multidominio: mando y control, planificación de misiones, ISR, Common Operating Picture, simulación e integración de sensores. SynOS es el cerebro que orquesta enjambres asíncronos desde un único panel de mando estratégico.' },
+            { tag:'T-02', name:'Systems', imgId:'img-systems', staticImg:'assets/systems-blueprint.png', imgPlaceholder:'Foto de hardware / plataforma', lead:'Una ventaja táctica deliberada.', body:'Svalin Systems es agresivamente pragmática: dominamos primero la integración de plataformas agnósticas y probadas en combate, asegurando la superioridad operativa hoy, antes de avanzar hacia hardware propietario mañana. Payloads, sensores, edge computing, estaciones de control y sistemas anti-dron se integran bajo el estándar que exige la misión.' },
+            { tag:'T-03', name:'Labs', imgId:'img-labs', staticImg:'assets/labs-blueprint.png', imgPlaceholder:'Foto o diagrama de Labs', lead:'La vanguardia de la propiedad intelectual militar.', body:'Svalin Labs existe para resolver los cuellos de botella críticos del conflicto moderno, navegación sin GNSS, guerra electrónica, autonomía, antes de que lleguen al campo de batalla. Cada programa se diseña para asegurar la supervivencia en entornos hostiles y alimentar la propiedad intelectual que Software y Systems despliegan después.' },
+          ]},
+          { title:'Ecosystem', body:'El motor que da forma a la doctrina militar y asegura la cadena de suministro tecnológico europeo.', divisions: [
+            { tag:'E-01', name:'Media', imgId:'img-media', staticImg:'assets/media-blueprint.png', imgPlaceholder:'Foto de media / redacción', lead:'Donde se escribe la doctrina de la guerra moderna.', body:'Svalin Media no es una función de marketing: es nuestro brazo de inteligencia y doctrina. Aquí definimos el debate sobre amenazas asimétricas, sistemas autónomos y el futuro del conflicto multidominio, moldeando la narrativa en la que opera el sector defensa y construyendo la autoridad, el acceso y las relaciones que se derivan de marcar esos términos.' },
+            { tag:'E-02', name:'Ventures', imgId:'img-ventures', staticImg:'assets/ventures-blueprint.png', imgPlaceholder:'Foto de inversión / ventures', lead:'Un instrumento geopolítico, no un fondo de venture capital.', body:'Svalin Ventures identifica, acelera e invierte en tecnología de doble uso, sensores, IA, materiales avanzados, para asegurar la soberanía tecnológica europea y capturar la innovación que persiguen nuestros adversarios. Nuestro despliegue progresivo es calculado: cada etapa acumula el acceso, el criterio y la disciplina de capital que exige la siguiente.' },
+          ]},
+          { title:'Services', body:'Donde se gana la confianza operativa, y la experiencia se convierte en ingresos.', divisions: [
+            { tag:'S-01', name:'Advisory', imgId:'img-advisory', staticImg:'assets/advisory-blueprint.png', imgPlaceholder:'Foto de consultoría', lead:'La primera línea de la credibilidad operativa.', body:'Svalin Advisory se integra directamente en las decisiones que importan: estrategia de defensa, integración de sistemas, transformación digital, autonomía e IA, evaluación de capacidades, due diligence técnica y diseño de conceptos de operación. Es hoy nuestro principal canal de ingresos, y el punto de observación más cercano a lo que los operadores necesitan realmente de SynOS.' },
+            { tag:'S-02', name:'Academy', imgId:'img-academy', staticImg:'assets/academy-blueprint.png', imgPlaceholder:'Foto de formación', lead:'Donde el conocimiento operativo se convierte en ventaja institucional.', body:'Svalin Academy forma a los operadores, mandos e ingenieros que manejarán los sistemas que construimos: operaciones autónomas, mando de drones, planificación de misiones, IA aplicada y simulación, a través de programas ejecutivos y ejercicios prácticos. Su temario procede directamente de lo que aprenden Labs, Software, Systems y Advisory sobre el terreno, y no al revés.' },
+          ]},
+        ],
+      },
+      seq: {
+        eyebrow:'02 / Secuencia',
+        h2:'Fases de despliegue estratégico',
+        intro:'Esto no es un calendario de lanzamiento. Es una secuencia de ejecución deliberada: validamos doctrina, aseguramos la superioridad operativa y escalamos el ecosistema solo cuando cada fase ha demostrado su valor en condiciones reales.',
+        activeTag:'Dónde estamos ahora',
+        parallelTag:'Escalado del ecosistema',
+        parallelIntro:'Una vez que el software domina el campo, la matriz se expande sin vacilar. Academy institucionaliza nuestra doctrina, Systems consolida la arquitectura de hardware, Labs asegura la vanguardia de la propiedad intelectual en entornos hostiles, y Ventures actúa como instrumento geopolítico para asegurar la cadena de suministro de defensa europea.',
+        phases: [
+          { num:'01', title:'Svalin Industries, el grupo', active:false, completed:true, hasSteps:false,
+            intro:'Establecer los cimientos. Nace la matriz operativa, diseñada para unificar software, hardware y doctrina bajo una misma arquitectura de poder. Cada división tiene su lugar en esa arquitectura, y se activa solo cuando la secuencia lo exige.' },
+          { num:'02', title:'Media', active:false, completed:true, hasSteps:true,
+            intro:'Moldear la doctrina. Antes de desplegar tecnología, dominamos la narrativa. Svalin Media construye la inteligencia y el análisis que definen el debate sobre la autonomía en el ecosistema OTAN, estableciendo la autoridad que precede a cada despliegue operativo.',
+            steps:['Inteligencia de fuentes abiertas','Análisis estratégico','Formulación de doctrina','Diseminación táctica'],
+            note:'Su propósito es dominar la narrativa y definir la doctrina de las operaciones multidominio en Europa.' },
+          { num:'03', title:'Advisory', active:false, completed:true, hasSteps:true,
+            intro:'Validación táctica y ejecución. Svalin Advisory se despliega directamente contra los cuellos de botella más críticos de las fuerzas aliadas y la industria, convirtiendo los problemas sin resolver del frente en el cimiento operativo de nuestro software.',
+            steps:['Auditoría de vulnerabilidades','Integración de sistemas C2','Despliegue táctico','Validación sobre el terreno'],
+            note:'Transformamos la inteligencia del campo de batalla en superioridad algorítmica para nuestro software.' },
+          { num:'04', title:'SynOS y Software', active:true, hasSteps:true,
+            intro:'Despliegue del núcleo cognitivo. Aquí concentramos hoy al grupo: operacionalizando SynOS, convirtiendo prototipos validados en el terreno en la infraestructura digital definitiva para operaciones multidominio asíncronas.',
+            steps:['Identificación de brechas operativas','Validación táctica','Despliegue del núcleo cognitivo','Superioridad multidominio'] },
+          { num:'05', title:'Labs', active:false, hasSteps:true,
+            intro:'Cuando hay suficiente actividad técnica para justificarlo, Labs se convierte en una unidad propia.',
+            steps:['Mitigación de amenazas','Navegación sin GNSS','Guerra electrónica','Generación de propiedad intelectual'] },
+          { num:'06', title:'Systems', active:false, hasSteps:true,
+            intro:'Con las necesidades de software e integración ya validadas, podemos avanzar hacia el hardware.',
+            steps:['Integración agnóstica de plataformas','Computación táctica en el borde','Arquitecturas de hardware propietario','Integración de payloads y sensores'],
+            note:'Aseguramos la superioridad del software antes de escalar la arquitectura física.' },
+          { num:'07', title:'Academy', active:false, hasSteps:true,
+            intro:'Academy aparece cuando ya tenemos conocimiento, productos, clientes y métodos que merece la pena enseñar.',
+            steps:['Instrucción táctica','Simulación de guerra cognitiva','Orquestación de flotas autónomas','Mando asíncrono'] },
+          { num:'08', title:'Ventures', active:false, hasSteps:true,
+            intro:'Ventures es una de las últimas piezas en encajar.',
+            steps:['Inteligencia geopolítica','Aceleración de doble uso','Consolidación de cadena de suministro','Coinversión estratégica'],
+            note:'Desplegamos capital como un arma estratégica para asegurar la soberanía tecnológica europea.' },
+        ],
+      },
+      cta: { h2:'Sigue el proceso con nosotros', body:'Estamos al principio de esta secuencia, centrados primero en SynOS y Svalin Software. Si quieres colaborar con nosotros, invertir o unirte al equipo que lo está construyendo, nos gustaría saber de ti.', link:'Contacta con nosotros' },
+      footer: { copyright:'© Svalin Industries 2026. Todos los derechos reservados.', tagline:'Nacido en Defensa · Desplegado en la Industria', motto:'The foundation of modern defense', colProduct:'Producto', colPage:'Esta Página', home:'Inicio', civil:'Industria Civil' },
+    };
+    return { en, es };
+  }
+
+  detectTheme() { const h = new Date().getHours(); return (h >= 19 || h < 7) ? 'dark' : 'light'; }
+
+  componentDidMount() {
+    let th, lg;
+    try { th = localStorage.getItem('sv_theme'); lg = localStorage.getItem('sv_lang'); } catch (e) {}
+    const theme = (th === 'light' || th === 'dark') ? th : this.detectTheme();
+    const lang = (lg === 'en' || lg === 'es') ? lg : 'en';
+    this.setState({ theme, lang });
+    try { document.title = 'Roadmap — Svalin Industries'; } catch (e) {}
+    this._onWinResize = () => this.setState(s => ({ vw: window.innerWidth, menuOpen: window.innerWidth >= 860 ? false : s.menuOpen }));
+    addEventListener('resize', this._onWinResize);
+    this._onScroll = () => { const show = window.scrollY > 500; this.setState(s => s.showScrollTop === show ? null : { showScrollTop: show }); };
+    addEventListener('scroll', this._onScroll, { passive: true });
+    this.applyTheme();
+  }
+  componentDidUpdate() {
+    if (this.state.theme !== this._lastTheme) { this._lastTheme = this.state.theme; this.applyTheme(); }
+  }
+  componentWillUnmount() {
+    if (this._onWinResize) removeEventListener('resize', this._onWinResize);
+    if (this._onScroll) removeEventListener('scroll', this._onScroll);
+  }
+
+  applyTheme() {
+    const el = this.rootRef.current; if (!el) return;
+    const map = this.themes()[this.state.theme] || this.themes().light;
+    Object.entries(map).forEach(([k, v]) => el.style.setProperty(k, v));
+    document.body.style.background = map['--bg'];
+    document.body.style.color = map['--text'];
+  }
+
+  toggleTheme() { this.setState(s => { const n = s.theme === 'light' ? 'dark' : 'light'; try { localStorage.setItem('sv_theme', n); } catch (e) {} return { theme: n }; }); }
+  toggleLang() { this.setState(s => { const n = s.lang === 'en' ? 'es' : 'en'; try { localStorage.setItem('sv_lang', n); } catch (e) {} return { lang: n }; }); }
+  toggleMenu() { this.setState(s => ({ menuOpen: !s.menuOpen })); }
+  closeMenu() { if (this.state.menuOpen) this.setState({ menuOpen: false }); }
+  scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+  renderVals() {
+    if (!this._dictCache) this._dictCache = this.dict();
+    const t = this._dictCache[this.state.lang] || this._dictCache.en;
+    const isMobile = this.state.vw < 860;
+    const parallelOrder = ['Academy', 'Systems', 'Labs', 'Ventures'];
+    const seqPhases = t.seq.phases.map((ph, i) => {
+      const side = i % 2 === 0 ? 'left' : 'right';
+      const nodeBase = "position:relative;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:var(--bg);flex:none;";
+      const nodeVariant = ph.active ? 'border:1px solid var(--accent);color:var(--accent)' : 'border:1px solid var(--line2);color:var(--text2)';
+      return {
+        ...ph,
+        side,
+        contentCol: side === 'left' ? '1' : '3',
+        textAlign: side === 'left' ? 'right' : 'left',
+        cardAlignStyle: side === 'left' ? 'margin-left:auto' : 'margin-right:auto',
+        cornerSide: side === 'left' ? 'right' : 'left',
+        cornerBorderSide: side === 'left' ? 'border-right' : 'border-left',
+        connectorProp: side === 'left' ? 'right' : 'left',
+        badgeSide: side === 'left' ? 'left' : 'right',
+        showCheck: !!(ph.completed || ph.active),
+        stepsJustify: side === 'left' ? 'justify-content:flex-end' : 'justify-content:flex-start',
+        nodeStyle: nodeBase + nodeVariant,
+      };
+    });
+    const orderedPhases = seqPhases.slice(0, 4);
+    const parallelPhases = seqPhases.slice(4).slice().sort((a, b) => parallelOrder.indexOf(a.title) - parallelOrder.indexOf(b.title));
+    return {
+      rootRef: this.rootRef,
+      t, seqPhases, orderedPhases, parallelPhases,
+      isDesktopSeq: !isMobile,
+      isMobileSeq: isMobile,
+      langBtnLabel: this.state.lang === 'en' ? 'ES' : 'EN',
+      themeLabel: this.state.theme === 'light' ? t.ui.dark : t.ui.light,
+      themeDot: this.state.theme === 'light' ? 'transparent' : 'var(--accent)',
+      toggleTheme: () => this.toggleTheme(),
+      toggleLang: () => this.toggleLang(),
+      closeMenu: () => this.closeMenu(),
+      toggleMenu: () => this.toggleMenu(),
+      menuIcon: this.state.menuOpen ? '✕' : '☰',
+      scrollToTop: () => this.scrollToTop(),
+      scrollTopStyle: 'position:fixed;right:24px;bottom:24px;z-index:50;width:46px;height:46px;border:1px solid var(--accent);background:var(--accent);color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.22);transition:opacity .25s,transform .25s;opacity:' + (this.state.showScrollTop ? '1' : '0') + ';pointer-events:' + (this.state.showScrollTop ? 'auto' : 'none') + ';transform:translateY(' + (this.state.showScrollTop ? '0' : '10px') + ')',
+      navLinksStyle: isMobile
+        ? ('position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:20px;padding:24px clamp(20px,4vw,56px) 30px;background:var(--navbg);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);box-shadow:0 20px 40px rgba(0,0,0,.12);display:' + (this.state.menuOpen ? 'flex' : 'none'))
+        : 'display:flex;align-items:center;gap:clamp(10px,2vw,26px)',
+      hamburgerStyle: 'align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--line2);background:none;color:var(--text);font-size:18px;cursor:pointer;display:' + (isMobile ? 'inline-flex' : 'none'),
+    };
+  }
+}
+</script>
+</body>
+</html>
