@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-604FVZKPVW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-604FVZKPVW');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SynOS — Svalin Industries</title>
+<meta name="description" content="SynOS is Svalin Industries' agnostic AI and asynchrony engine, the cognitive core that commands aerial, ground and maritime autonomous systems from a single tactical console.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://svalinindustries.com/synos.html">
+<meta name="theme-color" content="#0a0b0c">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Svalin Industries">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="SynOS — Svalin Industries">
+<meta property="og:description" content="SynOS is Svalin Industries' agnostic AI and asynchrony engine, the cognitive core that commands aerial, ground and maritime autonomous systems from a single tactical console.">
+<meta property="og:url" content="https://svalinindustries.com/synos.html">
+<meta property="og:image" content="https://svalinindustries.com/assets/lockup-light.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SynOS — Svalin Industries">
+<meta name="twitter:description" content="SynOS is Svalin Industries' agnostic AI and asynchrony engine, the cognitive core that commands aerial, ground and maritime autonomous systems from a single tactical console.">
+<meta name="twitter:image" content="https://svalinindustries.com/assets/lockup-light.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"SynOS — Svalin Industries","description":"SynOS is Svalin Industries' agnostic AI and asynchrony engine, the cognitive core that commands aerial, ground and maritime autonomous systems from a single tactical console.","url":"https://svalinindustries.com/synos.html","isPartOf":{"@type":"WebSite","name":"Svalin Industries","url":"https://svalinindustries.com/"},"publisher":{"@type":"Organization","name":"Svalin Industries","url":"https://svalinindustries.com/","logo":"https://svalinindustries.com/assets/lockup-light.png"}}</script>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  :root{--bg:#f4f2ee;--bg2:#ffffff;--text:#15181b;--text2:#3d4247;--muted:#63696e;--faint:#9a9ea2;--line:rgba(0,0,0,.10);--line2:rgba(0,0,0,.18);--accent:#c67e12;--grid:rgba(0,0,0,.05);--navbg:rgba(244,242,238,.8);--logo-filter:invert(1)}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Poppins',system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background .4s ease,color .4s ease}
+  @keyframes synosReveal{from{opacity:0;transform:translateY(18px);filter:blur(6px);letter-spacing:.02em}to{opacity:1;transform:none;filter:none}}
+  .synos-reveal{opacity:0;animation:synosReveal 1.1s cubic-bezier(.2,.7,.2,1) forwards}
+  @media (prefers-reduced-motion:reduce){.synos-reveal{animation:none;opacity:1}}
+  ::selection{background:var(--accent);color:#fff}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{opacity:.75}
+  .mono{font-family:'IBM Plex Mono',monospace}
+  .corner{position:relative}
+  .corner .cmark{position:absolute;width:8px;height:8px;border-color:var(--accent);opacity:.55}
+  .c-tl{top:-1px;left:0;border-top:1.5px solid var(--accent);border-left:1.5px solid var(--accent)}
+  .c-tr{top:-1px;right:0;border-top:1.5px solid var(--accent);border-right:1.5px solid var(--accent)}
+  .c-bl{bottom:-1px;left:0;border-bottom:1.5px solid var(--accent);border-left:1.5px solid var(--accent)}
+  .c-br{bottom:-1px;right:0;border-bottom:1.5px solid var(--accent);border-right:1.5px solid var(--accent)}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;background:none;border:1.5px solid var(--accent);color:var(--accent);font-family:'Poppins',sans-serif;font-size:14px;text-transform:uppercase;font-weight:700;cursor:pointer}
+  .btn:hover{background:var(--accent);color:#fff;opacity:1}
+  .btn-ghost{border-color:var(--line2);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);background:none}
+  .icon-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid var(--line2);background:none;color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;cursor:pointer}
+  .icon-btn:hover{border-color:var(--accent);color:var(--accent);opacity:1}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase}
+  .duo{filter:grayscale(1) sepia(1) hue-rotate(160deg) saturate(2.4) brightness(0.95);width:100%;height:100%}
+  @keyframes synosSweep{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+  .threat-burst{transform-box:fill-box;transform-origin:center;animation:synosBurst .6s ease-out forwards}
+  @keyframes synosBurst{from{transform:scale(0.4);opacity:1}to{transform:scale(3.4);opacity:0}}
+  .tracer-line{stroke-dasharray:1.2 1;animation:synosTracer .3s linear infinite}
+  @keyframes synosTracer{to{stroke-dashoffset:-4}}
+  .tracer-impact{transform-box:fill-box;transform-origin:center;animation:synosImpact .4s ease-in-out infinite}
+  @keyframes synosImpact{0%,100%{opacity:.3;transform:scale(0.8)}50%{opacity:1;transform:scale(1.5)}}
+  .nav-links{display:flex;align-items:center;gap:clamp(8px,1.6vw,18px);flex-wrap:wrap}
+  .nav-burger{display:none;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--line2);background:none;color:var(--text);font-size:18px;cursor:pointer;flex-shrink:0}
+  @media (max-width:860px){
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:18px;padding:22px clamp(20px,4vw,56px) 28px;background:var(--navbg);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav-links.open{display:flex}
+    .nav-burger{display:flex}
+  }
+  @media (max-width:720px){
+    .sim-shell{aspect-ratio:4/5 !important}
+    .sim-stats{display:none !important}
+  }
+</style>
+</head>
+<body>
+
+<nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px clamp(20px,4vw,56px);background:var(--navbg);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-wrap:wrap">
+  <a href="index.html#top" style="display:flex;align-items:center;gap:12px;color:var(--text)">
+    <img src="assets/lockup-light.png" alt="Svalin Industries" style="height:32px;width:auto;display:block;filter:var(--logo-filter)">
+    <span class="mono" style="font-size:10px;letter-spacing:.28em;color:var(--muted);text-transform:uppercase;border-left:1px solid var(--line2);padding-left:12px">Industries</span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#arquitectura" data-i18n="nav.arch" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--text2)">Arquitectura</a>
+    <a href="#vehiculos" data-i18n="nav.veh" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--text2)">Vehículos</a>
+    <a href="civil.html" data-i18n="nav.civil" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--accent)">Civil</a>
+    <a href="roadmap.html" data-i18n="nav.roadmap" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--accent)">Roadmap</a>
+    <button class="icon-btn" id="langBtn" title="Language"><span style="font-size:12px">◍</span><span id="langLabel">EN</span></button>
+    <button class="icon-btn" id="themeBtn" title="Theme"><span id="themeDot" style="width:9px;height:9px;border-radius:50%;border:1.5px solid var(--accent)"></span><span id="themeLabel">Dark</span></button>
+    <a href="index.html#contact" data-i18n="nav.contacto" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:none;border:1.5px solid var(--accent);color:var(--accent);font-family:'Poppins',sans-serif;font-size:13px;text-transform:uppercase;font-weight:700">Contacto</a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Menu">☰</button>
+</nav>
+
+<header style="position:relative;padding:clamp(60px,8vw,110px) clamp(20px,4vw,56px) clamp(50px,7vw,90px);max-width:1200px;margin:0 auto">
+  <a href="index.html" class="mono" data-i18n="hero.back" style="font-size:12px;letter-spacing:.1em;color:var(--muted)">← Volver a Svalin Industries</a>
+  <div style="display:flex;align-items:center;gap:14px;margin:26px 0 0">
+    <span style="width:9px;height:9px;background:var(--accent);border-radius:50%"></span>
+    <span class="eyebrow" data-i18n="hero.eyebrow">// Núcleo Tecnológico</span>
+  </div>
+  <div style="margin-top:30px;display:flex;flex-wrap:wrap;align-items:flex-end;gap:clamp(16px,2.4vw,36px)">
+    <div class="synos-reveal" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(56px,8vw,112px);line-height:.95;letter-spacing:-.035em;color:var(--text)">Syn<span style="color:var(--accent)">OS</span></div>
+    <div class="synos-reveal" style="animation-delay:.3s;display:flex;align-items:center;gap:clamp(14px,1.6vw,22px);padding-bottom:clamp(6px,.9vw,14px)"><span style="width:1.5px;height:clamp(28px,3vw,42px);background:var(--accent);flex-shrink:0"></span><span data-i18n="hero.slogan" style="font-family:'Poppins',sans-serif;font-weight:500;font-size:clamp(18px,2vw,26px);line-height:1.15;color:var(--text2)">Sistema de sistemas</span></div>
+  </div>
+  <div class="synos-reveal" style="animation-delay:.5s;margin-top:clamp(28px,3.4vw,44px);padding-top:clamp(24px,3vw,36px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(20px,4vw,64px);align-items:start">
+    <h1 data-i18n="hero.title" style="margin:0;font-weight:600;font-size:clamp(26px,3vw,40px);line-height:1.12;letter-spacing:-.015em;max-width:18ch;text-wrap:balance">El motor cognitivo detrás de cada enjambre</h1>
+    <div>
+      <p data-i18n="hero.sub" style="margin:0;max-width:52ch;font-size:clamp(15px,1.3vw,17px);line-height:1.65;color:var(--text2)">SynOS es el motor agnóstico de IA y asincronía de Svalin Industries.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:26px">
+        <a href="#arquitectura" class="btn" data-i18n="hero.cta">Ver arquitectura</a>
+      </div>
+    </div>
+  </div>
+  <svg aria-hidden="true" width="160" height="52" viewBox="0 0 160 52" style="position:absolute;right:clamp(20px,4vw,56px);bottom:0;transform:translateY(50%);pointer-events:none">
+    <line x1="14" y1="52" x2="58" y2="0" stroke="var(--accent)" stroke-width="1.4" opacity="0.5"/>
+    <line x1="72" y1="52" x2="116" y2="0" stroke="var(--accent)" stroke-width="1.4" opacity="0.28"/>
+    <circle cx="58" cy="0" r="2.4" fill="var(--accent)" opacity="0.7"/>
+    <circle cx="116" cy="0" r="2.4" fill="var(--accent)" opacity="0.4"/>
+  </svg>
+</header>
+
+<section style="padding:clamp(50px,6vw,70px) clamp(20px,4vw,56px);background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div style="max-width:1200px;margin:0 auto">
+    <span class="eyebrow" data-i18n="s1.eyebrow">01 / Qué es SynOS</span>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(32px,5vw,64px);margin-top:24px">
+      <h2 data-i18n="s1.h2" style="margin:0;font-weight:600;font-size:clamp(26px,3.2vw,40px);line-height:1.15;letter-spacing:-.01em;max-width:16ch">No es un vehículo. Es la mente que los comanda.</h2>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <p data-i18n="s1.p1" style="margin:0;font-size:16px;line-height:1.75;color:var(--text2)"></p>
+        <p data-i18n="s1.p2" style="margin:0;font-size:16px;line-height:1.75;color:var(--muted)"></p>
+        <p data-i18n="s1.p3" style="margin:0;font-size:16px;line-height:1.75;color:var(--muted)"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="arquitectura" style="padding:clamp(70px,9vw,120px) clamp(20px,4vw,56px)">
+  <div style="max-width:1400px;margin:0 auto">
+    <div style="margin-bottom:56px">
+      <span class="eyebrow" data-i18n="s2.eyebrow">02 / Arquitectura</span>
+      <h2 data-i18n="s2.h2" style="margin:16px 0 0;font-weight:600;font-size:clamp(28px,3.6vw,50px);line-height:1.05;letter-spacing:-.015em;max-width:20ch"></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,3vw,48px)">
+      <div class="corner" style="border-top:1px solid var(--line2);padding:24px 18px 4px">
+        <span class="cmark c-tl"></span><span class="cmark c-tr"></span>
+        <span class="mono" style="font-size:12px;color:var(--faint)">01</span>
+        <h3 data-i18n="s2.f1t" style="margin:16px 0 12px;font-weight:600;font-size:19px"></h3>
+        <p data-i18n="s2.f1b" style="margin:0;font-size:14.5px;line-height:1.68;color:var(--muted)"></p>
+      </div>
+      <div class="corner" style="border-top:1px solid var(--line2);padding:24px 18px 4px">
+        <span class="cmark c-tl"></span><span class="cmark c-tr"></span>
+        <span class="mono" style="font-size:12px;color:var(--faint)">02</span>
+        <h3 data-i18n="s2.f2t" style="margin:16px 0 12px;font-weight:600;font-size:19px"></h3>
+        <p data-i18n="s2.f2b" style="margin:0;font-size:14.5px;line-height:1.68;color:var(--muted)"></p>
+      </div>
+      <div class="corner" style="border-top:1px solid var(--line2);padding:24px 18px 4px">
+        <span class="cmark c-tl"></span><span class="cmark c-tr"></span>
+        <span class="mono" style="font-size:12px;color:var(--faint)">03</span>
+        <h3 data-i18n="s2.f3t" style="margin:16px 0 12px;font-weight:600;font-size:19px"></h3>
+        <p data-i18n="s2.f3b" style="margin:0;font-size:14.5px;line-height:1.68;color:var(--muted)"></p>
+      </div>
+      <div class="corner" style="border-top:1px solid var(--line2);padding:24px 18px 4px">
+        <span class="cmark c-tl"></span><span class="cmark c-tr"></span>
+        <span class="mono" style="font-size:12px;color:var(--faint)">04</span>
+        <h3 data-i18n="s2.f4t" style="margin:16px 0 12px;font-weight:600;font-size:19px"></h3>
+        <p data-i18n="s2.f4b" style="margin:0;font-size:14.5px;line-height:1.68;color:var(--muted)"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:clamp(70px,9vw,120px) clamp(20px,4vw,56px);background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);background-image:radial-gradient(var(--grid) 1px,transparent 1.5px);background-size:26px 26px">
+  <div style="max-width:1400px;margin:0 auto">
+    <div style="margin-bottom:56px">
+      <span class="eyebrow" data-i18n="s3.eyebrow">03 / Cómo Funciona</span>
+      <h2 data-i18n="s3.h2" style="margin:16px 0 0;font-weight:600;font-size:clamp(28px,3.6vw,50px);line-height:1.05;letter-spacing:-.015em;max-width:24ch"></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)">
+      <div style="background:var(--bg);padding:clamp(28px,3.5vw,40px)">
+        <span class="mono" style="font-size:11px;color:var(--accent);letter-spacing:.14em" data-i18n="s3.step1">PASO 01</span>
+        <h3 data-i18n="s3.t1" style="margin:16px 0 10px;font-weight:600;font-size:18px"></h3>
+        <p data-i18n="s3.b1" style="margin:0;font-size:14px;line-height:1.65;color:var(--muted)"></p>
+      </div>
+      <div style="background:var(--bg);padding:clamp(28px,3.5vw,40px)">
+        <span class="mono" style="font-size:11px;color:var(--accent);letter-spacing:.14em" data-i18n="s3.step2">PASO 02</span>
+        <h3 data-i18n="s3.t2" style="margin:16px 0 10px;font-weight:600;font-size:18px"></h3>
+        <p data-i18n="s3.b2" style="margin:0;font-size:14px;line-height:1.65;color:var(--muted)"></p>
+      </div>
+      <div style="background:var(--bg);padding:clamp(28px,3.5vw,40px)">
+        <span class="mono" style="font-size:11px;color:var(--accent);letter-spacing:.14em" data-i18n="s3.step3">PASO 03</span>
+        <h3 data-i18n="s3.t3" style="margin:16px 0 10px;font-weight:600;font-size:18px"></h3>
+        <p data-i18n="s3.b3" style="margin:0;font-size:14px;line-height:1.65;color:var(--muted)"></p>
+      </div>
+      <div style="background:var(--bg);padding:clamp(28px,3.5vw,40px)">
+        <span class="mono" style="font-size:11px;color:var(--accent);letter-spacing:.14em" data-i18n="s3.step4">PASO 04</span>
+        <h3 data-i18n="s3.t4" style="margin:16px 0 10px;font-weight:600;font-size:18px"></h3>
+        <p data-i18n="s3.b4" style="margin:0;font-size:14px;line-height:1.65;color:var(--muted)"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:clamp(70px,9vw,120px) clamp(20px,4vw,56px)">
+  <div style="max-width:1300px;margin:0 auto">
+    <div style="margin-bottom:44px;max-width:70ch">
+      <span class="eyebrow" data-i18n="s4.eyebrow">04 / Panel de Mando</span>
+      <h2 data-i18n="s4.h2" style="margin:16px 0 18px;font-weight:600;font-size:clamp(28px,3.6vw,48px);line-height:1.08;letter-spacing:-.015em"></h2>
+      <p data-i18n="s4.p" style="margin:0;font-size:16px;line-height:1.72;color:var(--muted)"></p>
+    </div>
+    <div class="corner" style="border:1px solid var(--line2)">
+      <span class="cmark c-tl"></span><span class="cmark c-tr"></span><span class="cmark c-bl"></span><span class="cmark c-br"></span>
+      <div class="sim-shell" style="position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#0b0d10;font-family:'IBM Plex Mono',monospace">
+        <canvas id="synosSim" role="img" aria-label="SynOS autonomous multi-domain simulation" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+        <div style="position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:clamp(14px,2vw,26px);pointer-events:none">
+          <div style="min-width:0">
+            <div style="display:flex;align-items:center;gap:10px;font-size:10px;letter-spacing:.22em;color:rgba(233,162,59,.85)"><span style="width:6px;height:6px;border-radius:50%;background:#7fd88a;box-shadow:0 0 8px #7fd88a"></span>SYNOS &middot; AUTONOMOUS OPS</div>
+            <div style="margin-top:14px;display:flex;align-items:baseline;gap:12px"><span id="simPhaseIdx" style="font-size:12px;color:rgba(255,255,255,.4)">01</span><span id="simPhaseName" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(18px,2.6vw,32px);line-height:1.1;color:#fff;letter-spacing:.02em"></span></div>
+            <div id="simPhaseSub" style="margin-top:8px;font-size:11px;line-height:1.5;color:rgba(255,255,255,.6);letter-spacing:.04em"></div>
+          </div>
+          <div class="sim-stats" style="flex-shrink:0;text-align:right;font-size:10px;letter-spacing:.14em;color:rgba(255,255,255,.45);line-height:2">
+            <div id="simClock" style="color:#e9a23b;font-size:12px">T+00:00</div>
+            <div><span data-i18n="sim.air">AIR</span> <span style="color:#8fd6c9">08</span> &middot; <span data-i18n="sim.land">LAND</span> <span style="color:#8fd6c9">06</span> &middot; <span data-i18n="sim.sea">SEA</span> <span style="color:#8fd6c9">06</span></div>
+            <div><span data-i18n="sim.cov">COVERAGE</span> <span id="simCov" style="color:#fff">0%</span> &middot; <span data-i18n="sim.links">LINKS</span> <span id="simLinks" style="color:#fff">0</span></div>
+          </div>
+        </div>
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:0 clamp(14px,2vw,26px) clamp(12px,1.6vw,20px);pointer-events:none">
+          <div id="simBar" style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px"></div>
+          <div style="margin-top:10px;display:flex;justify-content:space-between;gap:12px;font-size:8.5px;letter-spacing:.14em;color:rgba(255,255,255,.3)"><span data-i18n="sim.notice">TACTICAL SIMULATION &middot; NOT A REAL SYSTEM</span><span>AIR &middot; LAND &middot; SEA</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="mono" data-i18n="s4.caption" style="margin:14px 0 0;font-size:11px;color:var(--faint)">Secuencia aut&oacute;noma: despliegue, cobertura, detecci&oacute;n, respuesta y reagrupaci&oacute;n. Datos simulados.</p>
+  </div>
+</section>
+
+<section style="padding:clamp(70px,9vw,120px) clamp(20px,4vw,56px);background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div style="max-width:1400px;margin:0 auto">
+    <div style="margin-bottom:56px">
+      <span class="eyebrow" data-i18n="s5.eyebrow">05 / Doble Uso</span>
+      <h2 data-i18n="s5.h2" style="margin:16px 0 0;font-weight:600;font-size:clamp(28px,3.6vw,50px);line-height:1.05;letter-spacing:-.015em"></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:clamp(24px,3vw,48px)">
+      <div class="corner" style="border:1px solid var(--line2);padding:clamp(28px,3.5vw,40px)">
+        <span class="cmark c-tl"></span><span class="cmark c-tr"></span><span class="cmark c-bl"></span><span class="cmark c-br"></span>
+        <span class="mono" style="font-size:11px;color:var(--accent);letter-spacing:.14em">CORE DEFENSE</span>
+        <h3 data-i18n="s5.d1t" style="margin:16px 0 14px;font-weight:600;font-size:22px"></h3>
+        <p data-i18n="s5.d1b" style="margin:0 0 20px;font-size:14.5px;line-height:1.68;color:var(--muted)"></p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span class="mono" style="font-size:11px;padding:6px 10px;border:1px solid var(--line2);color:var(--text2)">Threat Board</span>
+          <span class="mono" style="font-size:11px;padding:6px 10px;border:1px solid var(--line2);color:var(--text2)">Hostiles</span>
+          <span class="mono" style="font-size:11px;padding:6px 10px;border:1px solid var(--line2);color:var(--text2)" data-i18n="s5.tag.interception">Interceptación</span>
+          <span class="mono" style="font-size:11px;padding:6px 10px;border:1px solid var(--line2);color:var(--text2)">RTB</span>
+          <span class="mono" style="font-size:11px;padding:6px 10px;border:1px solid var(--line2);color:var(--text2)">ROE</span>
+        </div>
+      </div>
+      <div class="corner" style="border:1px solid var(--line2);padding:clamp(28px,3.5vw,40px)">
+        <span class="cmark c-tl"></span><span class="cmark c-tr"></span><span class="cmark c-bl"></span><span class="cmark c-br"></span>
+        <span class="mono" style="font-size:11px;color:var(--accent);letter-spacing:.14em">TACTICAL INDUSTRY</span>
+        <h3 data-i18n="s5.d2t" style="margin:16px 0 14px;font-weight:600;font-size:22px"></h3>
+        <p data-i18n="s5.d2b" style="margin:0 0 20px;font-size:14.5px;line-height:1.68;color:var(--muted)"></p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span class="mono" style="font-size:11px;padding:6px 10px;border:1px solid var(--line2);color:var(--text2)">Incident Board</span>
+          <span class="mono" style="font-size:11px;padding:6px 10px;border:1px solid var(--line2);color:var(--text2)" data-i18n="s5.tag.risks">Riesgos</span>
+          <span class="mono" style="font-size:11px;padding:6px 10px;border:1px solid var(--line2);color:var(--text2)" data-i18n="s5.tag.zones">Zonas de Operación</span>
+          <span class="mono" style="font-size:11px;padding:6px 10px;border:1px solid var(--line2);color:var(--text2)" data-i18n="s5.tag.autotasks">Tareas Autónomas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="vehiculos" style="padding:clamp(70px,9vw,120px) clamp(20px,4vw,56px)">
+  <div style="max-width:1400px;margin:0 auto">
+    <div style="margin-bottom:44px;max-width:70ch">
+      <span class="eyebrow" data-i18n="s6.eyebrow">06 / Vehículos y Plataformas</span>
+      <h2 data-i18n="s6.h2" style="margin:16px 0 18px;font-weight:600;font-size:clamp(28px,3.6vw,48px);line-height:1.08;letter-spacing:-.015em"></h2>
+      <p data-i18n="s6.p" style="margin:0;font-size:16px;line-height:1.72;color:var(--muted)"></p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(20px,3vw,32px)">
+      <div class="corner" style="border:1px solid var(--line2)">
+        <span class="cmark c-tl"></span><span class="cmark c-tr"></span><span class="cmark c-bl"></span><span class="cmark c-br"></span>
+        <div style="position:relative;width:100%;height:260px;background:var(--bg2);overflow:hidden">
+          <img src="assets/vehicle-air.png" alt="Aerial UAV swarm" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div style="padding:16px 18px;border-top:1px solid var(--line2)">
+          <span class="mono" data-i18n="veh.air" style="font-size:11px;color:var(--accent);letter-spacing:.12em">D-01 · AIRE</span>
+          <p data-i18n="veh.air.body" style="margin:8px 0 0;font-size:13px;line-height:1.55;color:var(--muted)"></p>
+        </div>
+      </div>
+      <div class="corner" style="border:1px solid var(--line2)">
+        <span class="cmark c-tl"></span><span class="cmark c-tr"></span><span class="cmark c-bl"></span><span class="cmark c-br"></span>
+        <div style="position:relative;width:100%;height:260px;background:var(--bg2);overflow:hidden">
+          <img src="assets/vehicle-land.png" alt="Tracked UGV swarm" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div style="padding:16px 18px;border-top:1px solid var(--line2)">
+          <span class="mono" data-i18n="veh.land" style="font-size:11px;color:var(--accent);letter-spacing:.12em">D-02 · TIERRA</span>
+          <p data-i18n="veh.land.body" style="margin:8px 0 0;font-size:13px;line-height:1.55;color:var(--muted)"></p>
+        </div>
+      </div>
+      <div class="corner" style="border:1px solid var(--line2)">
+        <span class="cmark c-tl"></span><span class="cmark c-tr"></span><span class="cmark c-bl"></span><span class="cmark c-br"></span>
+        <div style="position:relative;width:100%;height:260px;background:var(--bg2);overflow:hidden">
+          <img src="assets/vehicle-sea.png" alt="Surface and subsea vessel swarm" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div style="padding:16px 18px;border-top:1px solid var(--line2)">
+          <span class="mono" data-i18n="veh.sea" style="font-size:11px;color:var(--accent);letter-spacing:.12em">D-03 · MAR</span>
+          <p data-i18n="veh.sea.body" style="margin:8px 0 0;font-size:13px;line-height:1.55;color:var(--muted)"></p>
+        </div>
+      </div>
+    </div>
+    <p data-i18n="veh.fusion" style="margin:28px 0 0;max-width:80ch;font-size:15px;line-height:1.68;color:var(--muted)"></p>
+    <p data-i18n="veh.humans" style="margin:18px 0 0;max-width:80ch;font-size:15px;line-height:1.68;color:var(--muted)"></p>
+  </div>
+</section>
+
+<section id="contact" style="padding:clamp(70px,9vw,110px) clamp(20px,4vw,56px);background:var(--bg2);border-top:1px solid var(--line);text-align:center">
+  <div style="max-width:720px;margin:0 auto">
+    <h2 data-i18n="cta.h2" style="margin:0;font-weight:600;font-size:clamp(28px,3.6vw,46px);line-height:1.1;letter-spacing:-.015em"></h2>
+    <p data-i18n="cta.p" style="margin:20px 0 0;font-size:16px;line-height:1.6;color:var(--muted)"></p>
+    <div style="display:flex;justify-content:center;gap:14px;margin-top:32px;flex-wrap:wrap">
+      <a href="index.html#contact" class="btn" data-i18n="cta.btn">Contactar con Svalin</a>
+    </div>
+  </div>
+</section>
+
+<footer style="position:relative;padding:clamp(50px,6vw,80px) clamp(20px,4vw,56px) 40px;border-top:1px solid var(--line)">
+  <span style="position:absolute;top:-1px;left:0;right:0;height:2px;background:var(--accent)"></span>
+  <div style="max-width:1400px;margin:0 auto">
+    <div style="display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;padding-bottom:50px;border-bottom:1px solid var(--line)">
+      <div style="max-width:34ch">
+        <img src="assets/lockup-light.png" alt="Svalin Industries" style="height:30px;width:auto;display:block;margin-bottom:18px;filter:var(--logo-filter)">
+        <p class="mono" data-i18n="footer.motto" style="margin:0;font-size:clamp(18px,2.2vw,26px);color:var(--accent);letter-spacing:.02em">The foundation of modern defense</p>
+        <div style="display:flex;gap:12px;margin-top:22px">
+          <a href="https://linkedin.com/company/svalinind" target="_blank" rel="noopener" aria-label="LinkedIn" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line2);color:var(--text)">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div style="display:flex;gap:clamp(40px,6vw,90px);flex-wrap:wrap">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span class="mono" data-i18n="footer.colProduct" style="font-size:11px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase">Product</span>
+          <a href="index.html" data-i18n="footer.home" style="font-size:14px;color:var(--text2)">Home</a>
+          <a href="roadmap.html" data-i18n="nav.roadmap" style="font-size:14px;color:var(--text2)">Roadmap</a>
+          <a href="civil.html" data-i18n="footer.civil" style="font-size:14px;color:var(--text2)">Civil Industry</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span class="mono" data-i18n="footer.colPage" style="font-size:11px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase">This Page</span>
+          <a href="#arquitectura" data-i18n="nav.arch" style="font-size:14px;color:var(--text2)">Arquitectura</a>
+          <a href="#vehiculos" data-i18n="nav.veh" style="font-size:14px;color:var(--text2)">Vehículos</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;padding-top:26px">
+      <span class="mono" data-i18n="footer.copy" style="font-size:12px;color:var(--faint)">© Svalin Industries 2026. Todos los derechos reservados.</span>
+      <span class="mono" data-i18n="footer.tag" style="font-size:12px;color:var(--faint)">Nacido en Defensa · Desplegado en la Industria</span>
+    </div>
+  </div>
+</footer>
+
+<button id="scrollTopBtn" aria-label="Scroll to top" style="position:fixed;right:24px;bottom:24px;z-index:50;width:46px;height:46px;border:1px solid var(--accent);background:var(--accent);color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.22);opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .25s,transform .25s">↑</button>
+
+<script>
+const THEMES = {
+  light:{'--bg':'#f4f2ee','--bg2':'#ffffff','--text':'#15181b','--text2':'#3d4247','--muted':'#63696e','--faint':'#9a9ea2','--line':'rgba(0,0,0,.10)','--line2':'rgba(0,0,0,.18)','--accent':'#c67e12','--grid':'rgba(0,0,0,.05)','--navbg':'rgba(244,242,238,.8)','--logo-filter':'invert(1)'},
+  dark:{'--bg':'#0a0b0c','--bg2':'#0d0f10','--text':'#eceded','--text2':'#b7bbbe','--muted':'#868b8f','--faint':'#5f6468','--line':'rgba(255,255,255,.08)','--line2':'rgba(255,255,255,.18)','--accent':'#e9a23b','--grid':'rgba(255,255,255,.04)','--navbg':'rgba(10,11,12,.72)','--logo-filter':'none'},
+};
+
+const I18N = {
+  es: {
+    'nav.arch':'Arquitectura','nav.veh':'Vehículos','nav.roadmap':'Roadmap','nav.civil':'Civil','nav.contacto':'Contacto',
+    'hero.back':'← Volver a Svalin Industries',
+    'hero.eyebrow':'// Núcleo Tecnológico',
+    'hero.title':'El motor cognitivo detrás de cada enjambre',
+    'hero.sub':'SynOS es el motor agnóstico de IA y asincronía de Svalin Industries: la arquitectura cognitiva que orquesta sistemas autónomos en aire, tierra y mar, y los unifica en enjambres inteligentes dirigidos desde un único panel de mando estratégico. Diseñado con rigor militar para el espacio OTAN, la misma arquitectura se adapta para proteger y automatizar infraestructuras críticas del sector civil e industrial.',
+    'hero.cta':'Ver arquitectura',
+    's1.eyebrow':'01 / Qué es SynOS',
+    's1.h2':'No es un vehículo. Es la mente que los comanda.',
+    's1.p1':'SynOS no está atado a un chasis, un sensor o un fabricante. Es una capa de software de orquestación que se instala sobre cualquier flota de vehículos no tripulados, heterogénea o no, y la convierte en un único enjambre coordinado, capaz de razonar sobre datos asíncronos y multidominio en tiempo real, sin importar de qué proveedor proceda cada plataforma.',
+    's1.p2':'La unidad mínima de trabajo en SynOS no es el vehículo individual, sino la intención del operador. Un mando humano define un objetivo (por ejemplo, "explora esta cuadrícula" o "protege este perímetro") y el motor descompone esa orden en tareas atómicas, las negocia entre los nodos disponibles según su posición, autonomía y capacidad de carga útil, y devuelve la inteligencia recogida fusionada a un único panel: un single pane of glass.',
+    's1.p3':'Técnicamente, SynOS combina tres capas: una capa de percepción que normaliza los flujos de sensores de cada vehículo a un formato común; una capa de razonamiento asíncrono que planifica y renegocia tareas sin depender de un reloj global compartido; y una capa de mando que expone al operador humano una interfaz única de intención y veto, preservando siempre la autoridad humana sobre la fuerza letal o crítica.',
+    's2.eyebrow':'02 / Arquitectura',
+    's2.h2':'Cuatro principios de diseño',
+    's2.f1t':'Single Pane of Glass',
+    's2.f1b':'Un único panel de mando estratégico agrega la telemetría, el vídeo, las alertas y el estado de salud de cada vehículo del enjambre en una sola vista táctica. El operador no cambia entre consolas por fabricante: ve un enjambre, no una colección de máquinas. Cada evento relevante, una detección, una pérdida de enlace, una batería crítica, se prioriza automáticamente y se presenta en el orden en que exige atención humana.',
+    's2.f2t':'Motor Agnóstico de IA y Asincronía',
+    's2.f2b':'El núcleo de planificación de SynOS no asume una latencia, una frecuencia de actualización ni un protocolo de radio concretos. Cada vehículo publica su estado cuando puede, no en un ciclo fijo, y el motor recompone el cuadro táctico con los datos disponibles en cada instante. Esta asincronía es lo que permite integrar un dron de bajo coste junto a un vehículo táctico pesado sin forzar a ambos al ritmo del más lento.',
+    's2.f3t':'Resiliente y Auto-reparable',
+    's2.f3b':'Bajo interferencias, denegación de GPS o enlaces degradados, cada vehículo conserva una copia local del plan de misión y de las reglas de decisión que le corresponden. Si el enlace con el mando se corta, el enjambre no se detiene: continúa ejecutando la última intención válida, redistribuye las tareas del nodo perdido entre los vehículos vecinos por malla local, y resincroniza toda la inteligencia acumulada en cuanto el enlace se restablece.',
+    's2.f4t':'Doble Uso por Diseño',
+    's2.f4b':'La misma arquitectura de percepción, planificación y mando que opera bajo los estándares de interoperabilidad de la OTAN se reconfigura, cambiando de vocabulario y de reglas de negocio, no de motor, para el sector civil. SynOS Tactical Industry protege puertos, plantas energéticas y grandes operaciones logísticas con la misma resiliencia algorítmica que protege una frontera.',
+    's3.eyebrow':'03 / Cómo Funciona',
+    's3.h2':'De la intención a la ejecución, en cuatro pasos',
+    's3.step1':'PASO 01', 's3.t1':'Intención',
+    's3.b1':'El operador marca un objetivo en el panel de mando: un área a vigilar, un perímetro a proteger, un objetivo a interceptar. No pilota un vehículo concreto, define qué debe conseguirse y bajo qué restricciones (zonas prohibidas, reglas de enfrentamiento, ventanas de tiempo).',
+    's3.step2':'PASO 02', 's3.t2':'Descomposición',
+    's3.b2':'SynOS traduce la intención en un conjunto de tareas concretas, rutas de vuelo o navegación, patrones de barrido, puntos de vigilancia, y las subasta entre los vehículos disponibles según su posición, autonomía restante y carga útil, optimizando el conjunto del enjambre y no cada vehículo por separado.',
+    's3.step3':'PASO 03', 's3.t3':'Ejecución en Enjambre',
+    's3.b3':'Los vehículos ejecutan sus tareas de forma asíncrona, comunicándose entre sí por una malla local de baja latencia. Si un nodo detecta algo relevante, lo comparte con sus vecinos inmediatos antes de que la información llegue, si llega, al mando central.',
+    's3.step4':'PASO 04', 's3.t4':'Sincronización',
+    's3.b4':'La inteligencia recogida por cada vehículo, imágenes, detecciones, telemetría de estado, se fusiona en un modelo táctico único y regresa al operador en el single pane of glass, priorizada por relevancia y urgencia.',
+    'hero.slogan':'Sistema de sistemas',
+    's4.eyebrow':'04 / Panel de Mando',
+    's4.h2':'Una sola pantalla, todos los dominios',
+    's4.p':'El panel de mando de SynOS reemplaza las consolas independientes por fabricante o dominio con una única interfaz táctica: mapa común, cola de alertas priorizadas, estado de salud del enjambre y controles de intención. Esta es la superficie donde el operador humano retiene la autoridad final sobre la misión.',
+    's4.caption':'Secuencia autónoma: despliegue, cobertura, detección, respuesta y reagrupación. Datos simulados.',
+    'sim.air':'AIRE','sim.land':'TIERRA','sim.sea':'MAR','sim.cov':'COBERTURA','sim.links':'ENLACES','sim.notice':'SIMULACIÓN TÁCTICA · NO ES UN SISTEMA REAL',
+    'veh.air':'D-01 · AIRE','veh.land':'D-02 · TIERRA','veh.sea':'D-03 · MAR',
+    'veh.air.body':'Coordina enjambres de UAV de ala fija y multirrotor desde un mismo panel: reasignación de rutas y cobertura de área en tiempo real, sin pilotar cada aparato.',
+    'veh.land.body':'Dirige flotas de UGV como una sola unidad: avance coordinado, mantenimiento de perimetro y transporte de carga con mínima supervisión humana.',
+    'veh.sea.body':'Gestiona superficie y subsuperficie a la vez: barridos, patrullas portuarias e inspección autónoma sincronizadas con el resto del enjambre.',
+    'veh.fusion':'Los tres dominios no operan de forma aislada: en una misma misión pueden combinarse UAV, UGV y vehículos marítimos, coordinados como un único enjambre multi-dominio.',
+    'veh.humans':'SynOS está pensado para sustituir las tareas en las que un sistema no tripulado ofrece una ventaja clara, mayor alcance, resistencia o seguridad, y no para reemplazar el criterio humano en todos los frentes. En las operaciones que van a seguir dependiendo de personas, SynOS no las sustituye: las apoya, entregando la información y el mando que necesitan para decidir mejor.',
+    's5.eyebrow':'05 / Doble Uso',
+    's5.h2':'Dos productos, un mismo núcleo',
+    's5.d1t':'SynOS Core Defense',
+    's5.d1b':'Orquestación de enjambres para ISR (inteligencia, vigilancia y reconocimiento), protección perimetral y misiones de búsqueda y saturación de objetivos. Al servicio de Fuerzas Armadas, Mando Conjunto de la OTAN, Salvamento Marítimo y agencias de protección fronteriza. El vocabulario y las reglas de decisión están calibrados para el teatro de operaciones.',
+    's5.d2t':'SynOS Tactical Industry',
+    's5.d2b':'La misma inteligencia artificial de grado militar aplicada a la vigilancia de infraestructuras críticas, el mapeo masivo y el control de grandes operaciones logísticas. Al servicio de grandes constructoras internacionales, latifundios, operadores portuarios, plantas energéticas y firmas de seguridad corporativa.',
+    's5.tag.interception':'Interceptación','s5.tag.risks':'Riesgos','s5.tag.zones':'Zonas de Operación','s5.tag.autotasks':'Tareas Autónomas',
+    's6.eyebrow':'06 / Vehículos y Plataformas',
+    's6.h2':'La misma misión, ahora sin tripular',
+    's6.p':'UAV, UGV y vehículos de superficie/subsuperficie asumen operaciones que hoy siguen dependiendo de una tripulación humana, ejecutándolas con mayor alcance, resistencia y seguridad, dirigidos por SynOS desde un único panel táctico.',
+    'cta.h2':'¿Listo para desplegar SynOS?',
+    'cta.p':'Hablemos de tu caso de uso, sea defensa, infraestructura crítica o logística a gran escala.',
+    'cta.btn':'Contactar con Svalin',
+    'footer.copy':'© Svalin Industries 2026. Todos los derechos reservados.',
+    'footer.tag':'Nacido en Defensa · Desplegado en la Industria',
+    'footer.motto':'The foundation of modern defense',
+    'footer.colProduct':'Producto',
+    'footer.colPage':'Esta Página',
+    'footer.home':'Inicio',
+    'footer.civil':'Industria Civil',
+  },
+  en: {
+    'nav.arch':'Architecture','nav.veh':'Platforms','nav.roadmap':'Roadmap','nav.civil':'Civil','nav.contacto':'Contact',
+    'hero.back':'← Back to Svalin Industries',
+    'hero.eyebrow':'// Core Technology',
+    'hero.title':'The cognitive engine behind every swarm',
+    'hero.sub':"SynOS is Svalin Industries' agnostic AI and asynchrony engine: the cognitive architecture that orchestrates autonomous systems across air, land and sea, unifying them into intelligent swarms directed from a single strategic command panel. Engineered with military rigor for the NATO space, the same architecture adapts to protect and automate critical infrastructure across the civil and industrial sector.",
+    'hero.cta':'View architecture',
+    's1.eyebrow':'01 / What is SynOS',
+    's1.h2':"It's not a vehicle. It's the mind that commands them.",
+    's1.p1':"SynOS is not tied to a chassis, a sensor or a manufacturer. It is an orchestration software layer installed on top of any fleet of unmanned vehicles, heterogeneous or not, turning it into a single coordinated swarm capable of reasoning over asynchronous, multi-domain data in real time, regardless of which vendor built each platform.",
+    's1.p2':'The minimum unit of work in SynOS is not the individual vehicle but the operator\u2019s intent. A human command sets an objective (for example, "scout this grid" or "hold this perimeter") and the engine decomposes that order into atomic tasks, negotiates them among the available nodes based on position, remaining autonomy and payload capacity, and returns the fused intelligence to a single panel: a single pane of glass.',
+    's1.p3':'Technically, SynOS combines three layers: a perception layer that normalizes each vehicle\u2019s sensor feeds into a common format; an asynchronous reasoning layer that plans and renegotiates tasks without depending on a shared global clock; and a command layer that exposes the human operator a single interface of intent and veto, always preserving human authority over lethal or critical force.',
+    's2.eyebrow':'02 / Architecture',
+    's2.h2':'Four design principles',
+    's2.f1t':'Single Pane of Glass',
+    's2.f1b':"A single strategic command panel aggregates telemetry, video, alerts and health status from every vehicle in the swarm into one tactical view. The operator doesn't switch between vendor-specific consoles: they see a swarm, not a collection of machines. Every relevant event, a detection, a lost link, a critical battery, is automatically prioritized and surfaced in the order it demands human attention.",
+    's2.f2t':'Agnostic AI & Asynchrony Engine',
+    's2.f2b':"SynOS's planning core assumes no fixed latency, update rate or radio protocol. Each vehicle publishes its state whenever it can, not on a fixed cycle, and the engine recomposes the tactical picture from whatever data is available at each instant. This asynchrony is what lets a low-cost drone operate alongside a heavy tactical vehicle without forcing either to the pace of the slowest.",
+    's2.f3t':'Resilient & Self-Healing',
+    's2.f3b':"Under jamming, GPS denial or degraded links, each vehicle keeps a local copy of the mission plan and the decision rules that apply to it. If the link to command drops, the swarm doesn't stop: it keeps executing the last valid intent, redistributes the lost node's tasks among neighboring vehicles over a local mesh, and resynchronizes all accumulated intelligence the moment the link returns.",
+    's2.f4t':'Dual-Use by Design',
+    's2.f4b':"The same perception, planning and command architecture that operates under NATO interoperability standards reconfigures, changing vocabulary and business rules, not engine, for the civil sector. SynOS Tactical Industry protects ports, energy plants and large-scale logistics operations with the same algorithmic resilience that protects a border.",
+    's3.eyebrow':'03 / How It Works',
+    's3.h2':'From intent to execution, in four steps',
+    's3.step1':'STEP 01', 's3.t1':'Intent',
+    's3.b1':"The operator marks an objective on the command panel: an area to monitor, a perimeter to protect, a target to intercept. They don't pilot a specific vehicle, they define what must be achieved and under what constraints (no-go zones, rules of engagement, time windows).",
+    's3.step2':'STEP 02', 's3.t2':'Decomposition',
+    's3.b2':"SynOS translates the intent into a set of concrete tasks, flight or navigation routes, sweep patterns, watch points, and auctions them among the available vehicles based on position, remaining autonomy and payload, optimizing the swarm as a whole rather than each vehicle in isolation.",
+    's3.step3':'STEP 03', 's3.t3':'Swarm Execution',
+    's3.b3':'Vehicles execute their tasks asynchronously, communicating with each other over a low-latency local mesh. If a node detects something relevant, it shares it with its immediate neighbors before the information reaches, if it reaches at all, central command.',
+    's3.step4':'STEP 04', 's3.t4':'Synchronization',
+    's3.b4':'The intelligence gathered by each vehicle, imagery, detections, status telemetry, is fused into a single tactical model and returned to the operator on the single pane of glass, prioritized by relevance and urgency.',
+    'hero.slogan':'System of systems',
+    's4.eyebrow':'04 / Command Panel',
+    's4.h2':'One screen, every domain',
+    's4.p':"SynOS's command panel replaces consoles tied to a single vendor or domain with one tactical interface: a common map, a prioritized alert queue, swarm health status and intent controls. This is the surface where the human operator retains final authority over the mission.",
+    's4.caption':'Autonomous sequence: deployment, coverage, detection, response and regroup. Simulated data.',
+    'sim.air':'AIR','sim.land':'LAND','sim.sea':'SEA','sim.cov':'COVERAGE','sim.links':'LINKS','sim.notice':'TACTICAL SIMULATION · NOT A REAL SYSTEM',
+    'veh.air':'D-01 · AIR','veh.land':'D-02 · LAND','veh.sea':'D-03 · SEA',
+    'veh.air.body':'Coordinate fixed-wing and multirotor UAVs from a single panel: real-time re-tasking and area coverage across the fleet, with no need to fly each unit by hand.',
+    'veh.land.body':'Direct UGV fleets as one unit: synchronized advance, perimeter hold and payload transport with minimal human oversight.',
+    'veh.sea.body':'Manage surface and subsea assets together: sweeps, harbor patrols and autonomous inspection synchronized with the rest of the swarm.',
+    'veh.fusion':'The three domains do not operate in isolation: a single mission can blend UAVs, UGVs and maritime vehicles, coordinated as one multi-domain swarm.',
+    'veh.humans':'SynOS is built to replace the tasks where an unmanned system offers a clear advantage, greater range, endurance or safety, not to replace human judgment across the board. In operations that will keep depending on people, SynOS does not stand in for them: it supports them, delivering the information and command they need to decide better.',
+    's5.eyebrow':'05 / Dual-Use',
+    's5.h2':'Two products, one core',
+    's5.d1t':'SynOS Core Defense',
+    's5.d1b':'Swarm orchestration for ISR (intelligence, surveillance and reconnaissance), perimeter protection and search-and-saturation missions. Serving Armed Forces, NATO Joint Command, maritime rescue and border-protection agencies. Vocabulary and decision rules are calibrated for the theater of operations.',
+    's5.d2t':'SynOS Tactical Industry',
+    's5.d2b':'The same military-grade AI applied to critical-infrastructure monitoring, massive mapping and control of large-scale logistics operations. Serving major international construction firms, large estates, port operators, energy plants and corporate security firms.',
+    's5.tag.interception':'Interception','s5.tag.risks':'Risks','s5.tag.zones':'Operation Zones','s5.tag.autotasks':'Autonomous Tasks',
+    's6.eyebrow':'06 / Vehicles & Platforms',
+    's6.h2':'The same missions, now unmanned',
+    's6.p':'UAVs, UGVs and surface/subsea vessels take on operations that still rely on a human crew today, executing them with greater range, endurance and safety, directed by SynOS from a single tactical panel.',
+    'cta.h2':'Ready to deploy SynOS?',
+    'cta.p':'Let\u2019s talk about your use case, whether defense, critical infrastructure or large-scale logistics.',
+    'cta.btn':'Contact Svalin',
+    'footer.copy':'© Svalin Industries 2026. All rights reserved.',
+    'footer.tag':'Born in Defense · Deployed in Industry',
+    'footer.motto':'The foundation of modern defense',
+    'footer.colProduct':'Product',
+    'footer.colPage':'This Page',
+    'footer.home':'Home',
+    'footer.civil':'Civil Industry',
+  }
+};
+
+function applyI18n(lang){
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (I18N[lang] && I18N[lang][key] != null) el.textContent = I18N[lang][key];
+  });
+}
+function applyTheme(theme){
+  const map = THEMES[theme] || THEMES.light;
+  Object.entries(map).forEach(([k,v]) => document.documentElement.style.setProperty(k, v));
+  document.body.style.background = map['--bg'];
+  document.body.style.color = map['--text'];
+  document.getElementById('themeLabel').textContent = theme === 'light' ? (currentLang==='es'?'Oscuro':'Dark') : (currentLang==='es'?'Claro':'Light');
+  document.getElementById('themeDot').style.background = theme === 'light' ? 'transparent' : 'var(--accent)';
+}
+
+let currentLang = 'en', currentTheme = 'light';
+try { currentLang = localStorage.getItem('sv_lang') === 'en' ? 'en' : (localStorage.getItem('sv_lang') === 'es' ? 'es' : currentLang); } catch(e){}
+try { currentTheme = localStorage.getItem('sv_theme') === 'dark' ? 'dark' : (localStorage.getItem('sv_theme') === 'light' ? 'light' : currentTheme); } catch(e){}
+
+document.getElementById('langLabel').textContent = currentLang === 'es' ? 'EN' : 'ES';
+applyI18n(currentLang);
+applyTheme(currentTheme);
+
+document.getElementById('langBtn').addEventListener('click', () => {
+  currentLang = currentLang === 'es' ? 'en' : 'es';
+  try { localStorage.setItem('sv_lang', currentLang); } catch(e){}
+  document.getElementById('langLabel').textContent = currentLang === 'es' ? 'EN' : 'ES';
+  applyI18n(currentLang);
+  applyTheme(currentTheme);
+});
+document.getElementById('themeBtn').addEventListener('click', () => {
+  currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+  try { localStorage.setItem('sv_theme', currentTheme); } catch(e){}
+  applyTheme(currentTheme);
+});
+
+(function(){
+const cv=document.getElementById('synosSim'); if(!cv) return;
+const ctx=cv.getContext('2d');
+const AMB='233,162,59',TEAL='143,214,201',RED='224,90,78';
+const PH={es:{n:['DESPLIEGUE','COBERTURA DE ÁREA','DETECCIÓN','RESPUESTA COORDINADA','NEUTRALIZACIÓN','REAGRUPACIÓN'],s:['SynOS asigna sectores a cada dominio','Barrido autónomo con reparto dinámico de celdas','Contacto no identificado · clasificando','Cerco multidominio sin intervención del operador','Amenaza neutralizada · enjambre intacto','Formación restablecida · lista para nueva misión'],cls:'CLASIFICANDO',hos:'HOSTIL',neu:'NEUTRALIZADO'},
+en:{n:['DEPLOYMENT','AREA COVERAGE','DETECTION','COORDINATED RESPONSE','NEUTRALIZATION','REGROUP'],s:['SynOS assigns sectors to each domain','Autonomous sweep with dynamic cell allocation','Unidentified contact · classifying','Multi-domain encirclement, no operator input','Threat neutralized · swarm intact','Formation restored · ready for next mission'],cls:'CLASSIFYING',hos:'HOSTILE',neu:'NEUTRALIZED'}};
+const DUR=[5,8,4,5,2.5,6.5],TOTAL=DUR.reduce((a,b)=>a+b,0);
+let W=1,H=1,KX=1;
+function resize(){const r=cv.getBoundingClientRect(),d=Math.min(2,window.devicePixelRatio||1);W=Math.max(1,r.width);H=Math.max(1,r.height);cv.width=Math.round(W*d);cv.height=Math.round(H*d);ctx.setTransform(d,0,0,d,0,0);KX=Math.min(W*0.43,H*0.85);}
+if(window.ResizeObserver) new ResizeObserver(resize).observe(cv); else addEventListener('resize',resize); resize();
+const coast=v=>0.38-0.32*Math.sin(v*2.2+0.6);
+const HUB={u:-0.15,v:0.15},PORT={u:0.42,v:0.5};
+let cam=0;
+function P(u,v,h){const c=Math.cos(cam),sn=Math.sin(cam),x=u*c-v*sn,y=u*sn+v*c,z=(y+1.3)/2.6,sc=0.55+0.65*z;return {x:W/2+x*KX*sc,y:H*0.14+z*H*0.8-(h||0)*H*0.9*sc,s:sc};}
+const A=[];
+function mk(d,n){for(let i=0;i<n;i++){const o=d==='sea'?PORT:HUB;A.push({d,i,u:o.u+(Math.random()-.5)*.05,v:o.v+(Math.random()-.5)*.05,vu:0,vv:0,tu:o.u,tv:o.v,h:d==='air'?0.05+Math.random()*0.035:0,tr:[]});}}
+mk('air',8);mk('land',6);mk('sea',6);
+function home(a){if(a.d==='air'){const g=a.i/8*Math.PI*2+0.4;return {u:HUB.u+Math.cos(g)*0.6,v:HUB.v+Math.sin(g)*0.55};}
+ if(a.d==='land') return {u:-0.85+(a.i%3)*0.32,v:-0.55+Math.floor(a.i/3)*0.85};
+ const vv=[0,0.45,0.9][Math.floor(a.i/2)];return {u:coast(vv)+0.2+(a.i%2)*0.28,v:vv};}
+const G=18,cov=new Float32Array(G*G);
+let tt=0,clock=0,cycle=0,lastPh=-1,T=null,sparks=[],links=0,hudKey='',hudT=0;
+function startThreat(){const sea=cycle%2===0;T=sea?{d:'sea',u:0.95,v:0.95,gu:0.55,gv:0.42}:{d:'land',u:-0.95,v:-0.95,gu:-0.45,gv:-0.35};T.id='TRK-'+String(17+cycle*23%80);T.path=[];T.resp=A.filter(a=>a.d==='air'||a.d===T.d);}
+function phase(){let x=tt;for(let i=0;i<DUR.length;i++){if(x<DUR[i])return [i,x];x-=DUR[i];}return [5,DUR[5]];}
+function update(dt){
+ clock+=dt;tt+=dt;if(tt>=TOTAL){tt-=TOTAL;cycle++;}
+ cam=0.11*Math.sin(clock*0.07);
+ const [ph,pt]=phase();
+ if(ph!==lastPh){if(ph===2)startThreat();if(ph===4&&T){sparks=[];for(let k=0;k<28;k++)sparks.push({a:Math.random()*Math.PI*2,sp:0.2+Math.random()*0.5,h:Math.random()*0.08});}if(ph===0)T=null;lastPh=ph;}
+ if(T&&(ph===2||ph===3)){const k=ph===2?0.28:0.12;T.u+=(T.gu-T.u)*k*dt;T.v+=(T.gv-T.v)*k*dt;T.path.push([T.u,T.v]);if(T.path.length>80)T.path.shift();}
+ A.forEach(a=>{let t=home(a);
+  if(ph===1||ph===2){if(a.d==='air')t={u:-0.88+(a.i+0.5)*(1.76/8),v:Math.sin(pt*0.55+a.i*0.9)*0.85};else{const g=clock*0.6+a.i*1.3;t={u:t.u+Math.cos(g)*0.12,v:t.v+Math.sin(g)*0.12};}}
+  if(ph===2&&T&&a.d==='air'&&a.i<3)t={u:T.u+Math.cos(a.i*2.1+pt)*0.26,v:T.v+Math.sin(a.i*2.1+pt)*0.26};
+  if((ph===3||ph===4)&&T&&T.resp.includes(a)){const idx=T.resp.indexOf(a),N=T.resp.length,r=ph===3?0.32-0.18*Math.min(1,pt/DUR[3]):0.14+0.1*Math.min(1,pt);const g=idx/N*Math.PI*2+clock*0.5;t={u:T.u+Math.cos(g)*r,v:T.v+Math.sin(g)*r*0.9};}
+  if(ph===5){if(a.d==='air')t={u:HUB.u+(a.i-3.5)*0.11,v:HUB.v-0.5+Math.abs(a.i-3.5)*0.07};else if(a.d==='land')t={u:-0.9+a.i*0.12,v:0.75};else t={u:0.58,v:-0.05+a.i*0.1};}
+  a.tu=t.u;a.tv=t.v;
+  const k=a.d==='air'?2.6:1.6,dm=a.d==='air'?2.2:2.0;let au=(a.tu-a.u)*k-a.vu*dm,av=(a.tv-a.v)*k-a.vv*dm;
+  A.forEach(b=>{if(b===a||b.d!==a.d)return;const du=a.u-b.u,dv=a.v-b.v,d=Math.hypot(du,dv);if(d<0.07&&d>0){au+=du/d*(0.07-d)*30;av+=dv/d*(0.07-d)*30;}});
+  a.vu+=au*dt;a.vv+=av*dt;a.u+=a.vu*dt;a.v+=a.vv*dt;
+  if(a.d==='land'){const c=coast(a.v)-0.03;if(a.u>c){a.u=c;a.vu=Math.min(0,a.vu);}}
+  if(a.d==='sea'){const c=coast(a.v)+0.03;if(a.u<c){a.u=c;a.vu=Math.max(0,a.vu);}}
+  a.u=Math.max(-1,Math.min(1,a.u));a.v=Math.max(-1,Math.min(1,a.v));
+  a.tr.push([a.u,a.v]);if(a.tr.length>28)a.tr.shift();
+ });
+ if(ph===1||ph===2){A.forEach(a=>{if(a.d!=='air')return;const r=0.12;const i0=Math.max(0,Math.floor((a.u-r+1)/2*G)),i1=Math.min(G-1,Math.floor((a.u+r+1)/2*G)),j0=Math.max(0,Math.floor((a.v-r+1)/2*G)),j1=Math.min(G-1,Math.floor((a.v+r+1)/2*G));
+  for(let i=i0;i<=i1;i++)for(let j=j0;j<=j1;j++){const cu=-1+(i+0.5)*2/G,cvv=-1+(j+0.5)*2/G;if(Math.hypot(cu-a.u,cvv-a.v)<r)cov[j*G+i]=Math.min(1,cov[j*G+i]+dt*1.8);}});}
+ if(ph===5||ph===0)for(let i=0;i<cov.length;i++)cov[i]*=(1-dt*0.5);
+ return [ph,pt];
+}
+function poly(pts,close){ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));if(close)ctx.closePath();}
+function circ(u,v,r,h,n){const o=[];n=n||36;for(let k=0;k<=n;k++){const g=k/n*Math.PI*2;o.push(P(u+Math.cos(g)*r,v+Math.sin(g)*r,h));}return o;}
+function draw(ph,pt){
+ const L=PH[(typeof currentLang!=='undefined'&&currentLang==='es')?'es':'en'];
+ ctx.fillStyle='#0b0d10';ctx.fillRect(0,0,W,H);
+ const hp=P(HUB.u,HUB.v,0);
+ let g=ctx.createRadialGradient(hp.x,hp.y,0,hp.x,hp.y,Math.max(W,H)*0.6);g.addColorStop(0,'rgba('+AMB+',0.07)');g.addColorStop(1,'rgba('+AMB+',0)');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+ const sea=[];for(let v=-1.6;v<=1.61;v+=0.1)sea.push(P(coast(v),v));sea.push(P(1.8,1.6),P(1.8,-1.6));poly(sea,true);ctx.fillStyle='rgba(61,102,132,0.2)';ctx.fill();
+ [0.12,0.26,0.44].forEach(o=>{const l=[];for(let v=-1.6;v<=1.61;v+=0.1)l.push(P(coast(v)+o,v));poly(l);ctx.strokeStyle='rgba('+TEAL+',0.08)';ctx.lineWidth=1;ctx.stroke();});
+ for(let k=0;k<6;k++){const l=[];for(let u=-1.5;u<1;u+=0.05){const v=-1.0+k*0.4+0.08*Math.sin(u*3+k);if(u>coast(v)-0.01)break;l.push(P(u,v));}if(l.length>1){poly(l);ctx.strokeStyle='rgba('+AMB+',0.10)';ctx.stroke();}}
+ for(let q=-1.4;q<=1.41;q+=0.2){const al=0.05*(1-Math.abs(q)/1.6);ctx.strokeStyle='rgba(255,255,255,'+al+')';const a1=[],a2=[];for(let w=-1.4;w<=1.41;w+=0.35){a1.push(P(q,w));a2.push(P(w,q));}poly(a1);ctx.stroke();poly(a2);ctx.stroke();}
+ for(let i=0;i<G;i++)for(let j=0;j<G;j++){const c=cov[j*G+i];if(c<0.02)continue;const u0=-1+i*2/G,v0=-1+j*2/G,d=2/G*0.92;poly([P(u0,v0),P(u0+d,v0),P(u0+d,v0+d),P(u0,v0+d)],true);ctx.fillStyle='rgba('+AMB+','+(c*0.16)+')';ctx.fill();}
+ const cl=[];for(let v=-1.6;v<=1.61;v+=0.05)cl.push(P(coast(v),v));poly(cl);ctx.strokeStyle='rgba('+AMB+',0.5)';ctx.lineWidth=1.2;ctx.stroke();ctx.lineWidth=1;
+ const sw=clock*1.1,wd=[P(HUB.u,HUB.v)];for(let k=0;k<=14;k++){const a=sw-0.55+k/14*0.55;wd.push(P(HUB.u+Math.cos(a)*0.95,HUB.v+Math.sin(a)*0.95));}poly(wd,true);ctx.fillStyle='rgba('+AMB+',0.05)';ctx.fill();
+ poly([hp,P(HUB.u+Math.cos(sw)*0.95,HUB.v+Math.sin(sw)*0.95)]);ctx.strokeStyle='rgba('+AMB+',0.3)';ctx.stroke();
+ [0.1,0.2].forEach(r=>{poly(circ(HUB.u,HUB.v,r,0));ctx.strokeStyle='rgba('+AMB+',0.35)';ctx.stroke();});
+ const pr=(clock%2.6)/2.6;poly(circ(HUB.u,HUB.v,0.06+pr*0.55,0));ctx.strokeStyle='rgba('+AMB+','+(0.4*(1-pr))+')';ctx.stroke();
+ A.forEach(a=>{a.p=P(a.u,a.v,a.h);a.g=P(a.u,a.v,0);});
+ links=0;ctx.lineWidth=0.8;
+ for(let x=0;x<A.length;x++)for(let y=x+1;y<A.length;y++){const a=A[x],b=A[y],d=Math.hypot(a.u-b.u,a.v-b.v);if(d<0.42){links++;ctx.strokeStyle='rgba('+TEAL+','+((1-d/0.42)*0.3)+')';ctx.beginPath();ctx.moveTo(a.p.x,a.p.y);ctx.lineTo(b.p.x,b.p.y);ctx.stroke();}}
+ const hc={x:hp.x,y:hp.y-6};
+ A.forEach((a,k)=>{ctx.strokeStyle='rgba('+AMB+',0.07)';ctx.beginPath();ctx.moveTo(hc.x,hc.y);ctx.lineTo(a.p.x,a.p.y);ctx.stroke();const f=(clock*0.45+k*0.173)%1,up=k%2===0;const fx=up?f:1-f;ctx.fillStyle='rgba('+AMB+',0.85)';ctx.beginPath();ctx.arc(hc.x+(a.p.x-hc.x)*fx,hc.y+(a.p.y-hc.y)*fx,1.4,0,7);ctx.fill();});
+ A.forEach(a=>{if(a.tr.length<2)return;poly(a.tr.map(t=>P(t[0],t[1],a.h)));ctx.strokeStyle=a.d==='sea'?'rgba(200,230,255,0.25)':'rgba('+TEAL+',0.22)';ctx.stroke();});
+ A.forEach(a=>{if(a.d!=='air')return;ctx.strokeStyle='rgba('+TEAL+',0.18)';ctx.beginPath();ctx.moveTo(a.g.x,a.g.y);ctx.lineTo(a.p.x,a.p.y);ctx.stroke();ctx.fillStyle='rgba('+TEAL+',0.35)';ctx.beginPath();ctx.arc(a.g.x,a.g.y,1.3,0,7);ctx.fill();
+  if(ph===1||ph===2){poly(circ(a.u,a.v,0.12,0,24),true);ctx.fillStyle='rgba('+AMB+',0.04)';ctx.fill();ctx.strokeStyle='rgba('+AMB+',0.2)';ctx.stroke();}});
+ if(T&&ph>=2&&ph<=4){const tp=P(T.u,T.v,0);
+  if(T.path.length>1){poly(T.path.map(q=>P(q[0],q[1])));ctx.strokeStyle='rgba('+RED+',0.35)';ctx.setLineDash([3,4]);ctx.stroke();ctx.setLineDash([]);}
+  if(ph===2){A.filter(a=>a.d==='air'&&a.i<3).forEach(a=>{ctx.strokeStyle='rgba('+RED+',0.5)';ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(a.p.x,a.p.y);ctx.lineTo(tp.x,tp.y);ctx.stroke();ctx.setLineDash([]);});}
+  if(ph===3){const rp=T.resp.map(a=>a.p);poly(rp,true);ctx.strokeStyle='rgba('+AMB+',0.55)';ctx.lineWidth=1.2;ctx.stroke();ctx.lineWidth=1;T.resp.forEach(a=>{ctx.strokeStyle='rgba('+RED+',0.35)';ctx.beginPath();ctx.moveTo(a.p.x,a.p.y);ctx.lineTo(tp.x,tp.y);ctx.stroke();});}
+  if(ph<4){const pu=6+Math.sin(clock*6)*2;ctx.strokeStyle='rgba('+RED+',0.9)';ctx.lineWidth=1.4;ctx.beginPath();ctx.moveTo(tp.x,tp.y-pu);ctx.lineTo(tp.x+pu,tp.y);ctx.lineTo(tp.x,tp.y+pu);ctx.lineTo(tp.x-pu,tp.y);ctx.closePath();ctx.stroke();
+   const rr=14+((clock*1.5)%1)*16;ctx.strokeStyle='rgba('+RED+','+(0.6-((clock*1.5)%1)*0.6)+')';ctx.lineWidth=1;ctx.beginPath();ctx.arc(tp.x,tp.y,rr,0,7);ctx.stroke();
+   const b=20,c=6;ctx.strokeStyle='rgba('+RED+',0.8)';[[-1,-1],[1,-1],[1,1],[-1,1]].forEach(([sx,sy])=>{ctx.beginPath();ctx.moveTo(tp.x+sx*b,tp.y+sy*(b-c));ctx.lineTo(tp.x+sx*b,tp.y+sy*b);ctx.lineTo(tp.x+sx*(b-c),tp.y+sy*b);ctx.stroke();});
+   ctx.font='9px "IBM Plex Mono",monospace';ctx.fillStyle='rgba('+RED+',0.95)';ctx.fillText(T.id+' · '+(ph===2?L.cls+'.'.repeat(1+Math.floor(clock*3)%3):L.hos),tp.x+26,tp.y-12);}
+  if(ph===4){const k=pt/DUR[4];[0,0.25].forEach(o=>{const q=Math.max(0,k-o);if(q<=0)return;poly(circ(T.u,T.v,0.04+q*0.6,0));ctx.strokeStyle='rgba('+AMB+','+(0.8*(1-q))+')';ctx.lineWidth=1.5;ctx.stroke();ctx.lineWidth=1;});
+   sparks.forEach(sp=>{const d=sp.sp*pt,q=P(T.u+Math.cos(sp.a)*d,T.v+Math.sin(sp.a)*d,sp.h*(1-k));ctx.fillStyle='rgba('+AMB+','+(1-k)+')';ctx.fillRect(q.x-1,q.y-1,2,2);});
+   ctx.fillStyle='rgba('+AMB+','+Math.max(0,0.18-pt*0.35)+')';ctx.fillRect(0,0,W,H);
+   ctx.font='9px "IBM Plex Mono",monospace';ctx.fillStyle='rgba('+TEAL+','+(1-k*0.5)+')';ctx.fillText(T.id+' · '+L.neu,tp.x+26,tp.y-12);}
+ }
+ if(ph===5){const air=A.filter(a=>a.d==='air');poly(air.map(a=>a.p));ctx.strokeStyle='rgba('+TEAL+',0.4)';ctx.stroke();}
+ A.forEach(a=>{const nx=P(a.u+a.vu*0.1,a.v+a.vv*0.1,a.h),ang=Math.atan2(nx.y-a.p.y,nx.x-a.p.x)+Math.PI/2,sz=3.5+a.p.s*3;const act=T&&(ph===3||ph===4)&&T.resp.includes(a);const col=act?'rgba('+AMB+',1)':'rgba('+TEAL+',1)';
+  ctx.save();ctx.translate(a.p.x,a.p.y);ctx.shadowColor=col;ctx.shadowBlur=10;ctx.strokeStyle=col;ctx.fillStyle='#0b0d10';ctx.lineWidth=1.4;ctx.beginPath();
+  if(a.d==='air'){ctx.rotate(ang);ctx.moveTo(0,-sz*1.2);ctx.lineTo(sz,sz);ctx.lineTo(-sz,sz);ctx.closePath();}else if(a.d==='land'){ctx.rotate(ang);ctx.rect(-sz*0.8,-sz*0.8,sz*1.6,sz*1.6);}else ctx.arc(0,0,sz*0.9,0,7);
+  ctx.fill();ctx.stroke();ctx.restore();});
+ ctx.save();ctx.translate(hp.x,hp.y);ctx.shadowColor='rgba('+AMB+',1)';ctx.shadowBlur=16;ctx.strokeStyle='rgba('+AMB+',1)';ctx.fillStyle='#0b0d10';ctx.lineWidth=1.6;ctx.beginPath();ctx.moveTo(0,-9);ctx.lineTo(9,0);ctx.lineTo(0,9);ctx.lineTo(-9,0);ctx.closePath();ctx.fill();ctx.stroke();ctx.shadowBlur=0;ctx.fillStyle='rgba('+AMB+',1)';ctx.fillRect(-2,-2,4,4);ctx.restore();
+ ctx.font='9px "IBM Plex Mono",monospace';ctx.fillStyle='rgba('+AMB+',0.9)';ctx.fillText('SYNOS CORE',hp.x+14,hp.y+4);
+ const pp=P(PORT.u,PORT.v);ctx.fillStyle='rgba('+TEAL+',0.6)';ctx.fillText('PORT',pp.x+10,pp.y+16);
+ g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,'rgba(11,13,16,0.92)');g.addColorStop(0.24,'rgba(11,13,16,0)');g.addColorStop(0.82,'rgba(11,13,16,0)');g.addColorStop(1,'rgba(11,13,16,0.92)');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+ g=ctx.createRadialGradient(W/2,H/2,Math.min(W,H)*0.35,W/2,H/2,Math.max(W,H)*0.75);g.addColorStop(0,'rgba(11,13,16,0)');g.addColorStop(1,'rgba(11,13,16,0.85)');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+ return L;
+}
+const bar=document.getElementById('simBar'),segs=[];
+if(bar){for(let i=0;i<6;i++){const w=document.createElement('div');w.style.cssText='min-width:0';const lb=document.createElement('div');lb.style.cssText='font-size:8.5px;letter-spacing:.12em;color:rgba(255,255,255,.35);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:6px;transition:color .3s';const tr=document.createElement('div');tr.style.cssText='height:2px;background:rgba(255,255,255,.12);position:relative;overflow:hidden';const fl=document.createElement('div');fl.style.cssText='position:absolute;left:0;top:0;bottom:0;width:0;background:#e9a23b';tr.appendChild(fl);w.appendChild(lb);w.appendChild(tr);bar.appendChild(w);segs.push({lb,fl});}}
+const $=id=>document.getElementById(id);
+function hud(ph,pt,L,dt){
+ const lang=(typeof currentLang!=='undefined'?currentLang:'en'),key=ph+lang;
+ if(key!==hudKey){hudKey=key;$('simPhaseIdx').textContent=String(ph+1).padStart(2,'0');$('simPhaseName').textContent=L.n[ph];$('simPhaseSub').textContent=L.s[ph];segs.forEach((sg,i)=>{sg.lb.textContent=String(i+1).padStart(2,'0')+' '+L.n[i];sg.lb.style.color=i===ph?'#e9a23b':'rgba(255,255,255,.35)';});}
+ segs.forEach((sg,i)=>{sg.fl.style.width=(i<ph?100:i===ph?pt/DUR[i]*100:0)+'%';});
+ hudT-=dt;if(hudT<=0){hudT=0.25;const m=Math.floor(clock/60),sc=Math.floor(clock%60);$('simClock').textContent='T+'+String(m).padStart(2,'0')+':'+String(sc).padStart(2,'0');let c=0;for(let i=0;i<cov.length;i++)if(cov[i]>0.5)c++;$('simCov').textContent=Math.round(c/cov.length*100)+'%';$('simLinks').textContent=links;}
+}
+let visible=true,last=0;
+if(window.IntersectionObserver)new IntersectionObserver(e=>{visible=e[0].isIntersecting;},{threshold:0.05}).observe(cv);
+function frame(ts){const dt=last?Math.min(0.05,(ts-last)/1000):0;last=ts;if(visible&&!document.hidden){const [ph,pt]=update(dt);const L=draw(ph,pt);hud(ph,pt,L,dt);}requestAnimationFrame(frame);}
+requestAnimationFrame(frame);
+})();
+
+(function(){
+  const navLinks = document.getElementById('navLinks');
+  const burger = document.getElementById('navBurger');
+  if (burger && navLinks) {
+    burger.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      burger.textContent = open ? '\u2715' : '\u2630';
+    });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      burger.textContent = '\u2630';
+    }));
+  }
+})();
+
+</script>
+<script>
+  (function(){
+    const btn = document.getElementById('scrollTopBtn');
+    if (!btn) return;
+    const onScroll = () => {
+      const show = window.scrollY > 500;
+      btn.style.opacity = show ? '1' : '0';
+      btn.style.pointerEvents = show ? 'auto' : 'none';
+      btn.style.transform = show ? 'translateY(0)' : 'translateY(10px)';
+    };
+    addEventListener('scroll', onScroll, { passive: true });
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    onScroll();
+  })();
+</script>
+</body>
+</html>
