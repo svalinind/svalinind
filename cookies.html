@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./consent.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Cookie Policy | Svalin Industries</title>
+<meta name="description" content="Cookies and storage used by svalinindustries.com and how to manage them.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://svalinindustries.com/cookies.html">
+<meta name="theme-color" content="#0a0b0c">
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#f4f2ee;color:#15181b;font-family:'Poppins',system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background .5s ease,color .5s ease}
+  ::selection{background:var(--accent,#c67e12);color:#fff}
+  a{color:var(--accent,#c67e12);text-decoration:none}
+  a:hover{opacity:.75}
+  input,textarea,button{font-family:inherit}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="--bg:#f4f2ee;--bg2:#ffffff;--text:#15181b;--text2:#3d4247;--muted:#63696e;--faint:#9a9ea2;--line:rgba(0,0,0,.10);--line2:rgba(0,0,0,.18);--accent:#c67e12;--grid:rgba(0,0,0,.05);--navbg:rgba(244,242,238,.8);--logo-filter:invert(1);position:relative;background:var(--bg);color:var(--text);transition:background .5s ease,color .5s ease">
+
+  <!-- ===== NAV ===== -->
+  <nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px clamp(20px,4vw,56px);background:var(--navbg);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-wrap:wrap">
+    <a href="index.html" style="display:flex;align-items:center;gap:12px;color:var(--text)">
+      <img src="assets/lockup-light.png" alt="Svalin Industries" style="height:32px;width:auto;display:block;filter:var(--logo-filter)">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.28em;color:var(--muted);text-transform:uppercase;border-left:1px solid var(--line2);padding-left:12px">Industries</span>
+    </a>
+    <div style="{{ navLinksStyle }}">
+      <a href="synos.html" onClick="{{ closeMenu }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--accent)">{{ t.nav.tech }}</a>
+      <a href="systems.html" onClick="{{ closeMenu }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--accent)">Systems</a>
+      <a href="civil.html" onClick="{{ closeMenu }}" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:0;text-transform:uppercase;color:var(--accent)">{{ t.nav.civil }}</a>
+      <button onClick="{{ toggleLang }}" title="Language" style="display:inline-flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid var(--line2);background:none;color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)"><span style="font-size:12px">◍</span>{{ langBtnLabel }}</button>
+      <button onClick="{{ toggleTheme }}" title="Theme" style="display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid var(--line2);background:none;color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)"><span style="width:9px;height:9px;border-radius:50%;border:1.5px solid var(--accent);background:{{ themeDot }}"></span>{{ themeLabel }}</button>
+      <a href="index.html#contact" onClick="{{ closeMenu }}" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:none;border:1.5px solid var(--accent);color:var(--accent);font-family:'Poppins',sans-serif;font-size:13px;letter-spacing:0;text-transform:uppercase;font-weight:700" style-hover="background:var(--accent);color:#fff">{{ t.nav.contact }}</a>
+    </div>
+    <button onClick="{{ toggleMenu }}" aria-label="Menu" style="{{ hamburgerStyle }}">{{ menuIcon }}</button>
+  </nav>
+
+  <header style="position:relative;padding:clamp(60px,8vw,110px) clamp(20px,4vw,56px) clamp(40px,5vw,64px);max-width:1200px;margin:0 auto;background-image:radial-gradient(var(--grid) 1px,transparent 1px);background-size:26px 26px">
+    <a href="index.html" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;color:var(--muted)">{{ t.back }}</a>
+    <div style="display:flex;align-items:center;gap:14px;margin:26px 0 0">
+      <span style="width:9px;height:9px;background:var(--accent);border-radius:50%"></span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase">{{ t.page.eyebrow }}</span>
+    </div>
+    <h1 style="margin:22px 0 0;font-weight:600;font-size:clamp(36px,5.6vw,76px);line-height:1.02;letter-spacing:-.02em;max-width:19ch">{{ t.page.title }}</h1>
+    <p style="margin:26px 0 0;max-width:68ch;font-size:clamp(15px,1.5vw,18px);line-height:1.7;color:var(--text2)">{{ t.page.intro }}</p>
+    <p style="margin:22px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--muted)">{{ t.page.updated }}</p>
+  </header>
+
+  <main data-screen-label="Cookie Policy" style="padding:0 clamp(20px,4vw,56px) clamp(70px,9vw,130px);max-width:1200px;margin:0 auto">
+    <div style="border-top:1px solid var(--line2)">
+      <sc-for list="{{ t.page.sectionsA }}" as="s" hint-placeholder-count="2">
+        <article style="display:flex;flex-wrap:wrap;gap:14px clamp(24px,5vw,80px);padding:clamp(30px,4vw,50px) 0;border-bottom:1px solid var(--line)">
+          <div style="flex:1 1 240px;min-width:0;display:flex;flex-direction:column;gap:12px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;color:var(--accent)">{{ s.num }}</span>
+            <h2 style="margin:0;font-weight:600;font-size:clamp(22px,2.4vw,30px);line-height:1.1;letter-spacing:-.015em">{{ s.h }}</h2>
+          </div>
+          <div style="flex:2 1 420px;min-width:0;display:flex;flex-direction:column;gap:16px;font-size:16px;line-height:1.7;color:var(--text2)">
+            <sc-for list="{{ s.paras }}" as="p" hint-placeholder-count="1"><p style="margin:0;max-width:72ch;text-wrap:pretty">{{ p }}</p></sc-for>
+            <sc-if value="{{ s.items.length }}" hint-placeholder-val="{{ true }}">
+              <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;max-width:72ch">
+                <sc-for list="{{ s.items }}" as="it" hint-placeholder-count="2"><li style="display:flex;gap:14px"><span style="font-family:'IBM Plex Mono',monospace;color:var(--accent);flex:none">—</span><span style="text-wrap:pretty">{{ it }}</span></li></sc-for>
+              </ul>
+            </sc-if>
+            <sc-for list="{{ s.after }}" as="p" hint-placeholder-count="0"><p style="margin:0;max-width:72ch;color:var(--muted);text-wrap:pretty">{{ p }}</p></sc-for>
+          </div>
+        </article>
+      </sc-for>
+      <article style="display:flex;flex-wrap:wrap;gap:14px clamp(24px,5vw,80px);padding:clamp(30px,4vw,50px) 0;border-bottom:1px solid var(--line)">
+        <div style="flex:1 1 240px;min-width:0;display:flex;flex-direction:column;gap:12px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;color:var(--accent)">{{ t.page.tableNum }}</span>
+          <h2 style="margin:0;font-weight:600;font-size:clamp(22px,2.4vw,30px);line-height:1.1;letter-spacing:-.015em">{{ t.page.tableH }}</h2>
+        </div>
+        <div style="flex:2 1 420px;min-width:0;display:flex;flex-direction:column;gap:18px">
+          <div style="display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line2)">
+            <sc-for list="{{ t.page.rows }}" as="r" hint-placeholder-count="5">
+              <div style="background:var(--bg2);padding:18px 20px;display:flex;flex-direction:column;gap:14px">
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--text);overflow-wrap:anywhere">{{ r.name }}</span>
+                <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:12px 20px">
+                  <sc-for list="{{ r.fields }}" as="fd" hint-placeholder-count="5">
+                    <div style="min-width:0;display:flex;flex-direction:column;gap:4px">
+                      <dt style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)">{{ fd.k }}</dt>
+                      <dd style="margin:0;font-size:14px;line-height:1.55;color:var(--text2)">{{ fd.v }}</dd>
+                    </div>
+                  </sc-for>
+                </dl>
+              </div>
+            </sc-for>
+          </div>
+          <p style="margin:0;font-size:14px;line-height:1.65;color:var(--muted);max-width:72ch">{{ t.page.tableNote }} <a href="https://policies.google.com/technologies/cookies" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px">{{ t.page.tableLink }}</a>.</p>
+        </div>
+      </article>
+      <sc-for list="{{ t.page.sectionsB }}" as="s" hint-placeholder-count="2">
+        <article style="display:flex;flex-wrap:wrap;gap:14px clamp(24px,5vw,80px);padding:clamp(30px,4vw,50px) 0;border-bottom:1px solid var(--line)">
+          <div style="flex:1 1 240px;min-width:0;display:flex;flex-direction:column;gap:12px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;color:var(--accent)">{{ s.num }}</span>
+            <h2 style="margin:0;font-weight:600;font-size:clamp(22px,2.4vw,30px);line-height:1.1;letter-spacing:-.015em">{{ s.h }}</h2>
+          </div>
+          <div style="flex:2 1 420px;min-width:0;display:flex;flex-direction:column;gap:16px;font-size:16px;line-height:1.7;color:var(--text2)">
+            <sc-for list="{{ s.paras }}" as="p" hint-placeholder-count="1"><p style="margin:0;max-width:72ch;text-wrap:pretty">{{ p }}</p></sc-for>
+            <sc-if value="{{ s.items.length }}" hint-placeholder-val="{{ true }}">
+              <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;max-width:72ch">
+                <sc-for list="{{ s.items }}" as="it" hint-placeholder-count="2"><li style="display:flex;gap:14px"><span style="font-family:'IBM Plex Mono',monospace;color:var(--accent);flex:none">—</span><span style="text-wrap:pretty">{{ it }}</span></li></sc-for>
+              </ul>
+            </sc-if>
+            <sc-for list="{{ s.after }}" as="p" hint-placeholder-count="0"><p style="margin:0;max-width:72ch;color:var(--muted);text-wrap:pretty">{{ p }}</p></sc-for>
+          </div>
+        </article>
+      </sc-for>
+      <article id="manage" style="display:flex;flex-wrap:wrap;gap:14px clamp(24px,5vw,80px);padding:clamp(30px,4vw,50px) 0;border-bottom:1px solid var(--line)">
+        <div style="flex:1 1 240px;min-width:0;display:flex;flex-direction:column;gap:12px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;color:var(--accent)">{{ t.page.manageNum }}</span>
+          <h2 style="margin:0;font-weight:600;font-size:clamp(22px,2.4vw,30px);line-height:1.1;letter-spacing:-.015em">{{ t.page.manageH }}</h2>
+        </div>
+        <div style="flex:2 1 420px;min-width:0;display:flex;flex-direction:column;gap:18px;font-size:16px;line-height:1.7;color:var(--text2)">
+          <p style="margin:0;max-width:72ch;text-wrap:pretty">{{ t.page.manageP1 }}</p>
+          <div style="position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding:22px 24px;border:1px solid var(--line2);background:var(--bg2)">
+            <span style="position:absolute;top:-1px;left:-1px;width:10px;height:10px;border-top:1.5px solid var(--accent);border-left:1.5px solid var(--accent)"></span>
+            <span style="position:absolute;top:-1px;right:-1px;width:10px;height:10px;border-top:1.5px solid var(--accent);border-right:1.5px solid var(--accent)"></span>
+            <span style="position:absolute;bottom:-1px;left:-1px;width:10px;height:10px;border-bottom:1.5px solid var(--accent);border-left:1.5px solid var(--accent)"></span>
+            <span style="position:absolute;bottom:-1px;right:-1px;width:10px;height:10px;border-bottom:1.5px solid var(--accent);border-right:1.5px solid var(--accent)"></span>
+            <div style="display:flex;flex-direction:column;gap:6px" aria-live="polite">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)">{{ t.page.statusLabel }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--accent);white-space:nowrap">● {{ consentStatus }}</span>
+            </div>
+            <button type="button" onClick="{{ manageCookies }}" aria-haspopup="dialog" style="display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:13px 26px;background:none;border:1.5px solid var(--accent);color:var(--accent);font-family:'Poppins',sans-serif;font-size:14px;letter-spacing:0;text-transform:uppercase;font-weight:700;cursor:pointer" style-hover="background:var(--accent);color:#fff">{{ t.page.manageBtn }} <span style="font-size:15px">&rarr;</span></button>
+          </div>
+          <p style="margin:0;max-width:72ch;color:var(--muted);text-wrap:pretty">{{ t.page.manageP2 }}</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer style="position:relative;padding:clamp(50px,6vw,80px) clamp(20px,4vw,56px) 40px;border-top:1px solid var(--line)">
+    <span style="position:absolute;top:-1px;left:0;right:0;height:2px;background:var(--accent)"></span>
+    <div style="max-width:1400px;margin:0 auto">
+      <div style="display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;padding-bottom:50px;border-bottom:1px solid var(--line)">
+        <div style="max-width:100%">
+          <img src="assets/lockup-light.png" alt="Svalin Industries" style="height:30px;width:auto;display:block;margin-bottom:18px;filter:var(--logo-filter)">
+          <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:clamp(18px,2.2vw,26px);color:var(--accent);letter-spacing:.02em;max-width:22ch;text-wrap:balance">{{ t.footer.motto }}</p>
+          <div style="display:flex;gap:12px;margin-top:22px">
+            <a href="https://linkedin.com/company/svalinind" target="_blank" rel="noopener" aria-label="LinkedIn" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line2);color:var(--text)" style-hover="border-color:var(--accent);color:var(--accent)">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div style="display:flex;gap:clamp(40px,6vw,90px);flex-wrap:wrap">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase">{{ t.footer.colProduct }}</span>
+            <a href="index.html" style="font-size:14px;color:var(--text2)">{{ t.footer.home }}</a>
+            <a href="synos.html" style="font-size:14px;color:var(--text2)">{{ t.nav.tech }}</a>
+            <a href="systems.html" style="font-size:14px;color:var(--text2)">Systems</a>
+            <a href="civil.html" style="font-size:14px;color:var(--text2)">{{ t.footer.civil }}</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase">{{ t.footer.colLegal }}</span>
+            <a href="privacy.html" style="font-size:14px;color:var(--text2)">{{ t.footer.privacy }}</a>
+            <a href="cookies.html" style="font-size:14px;color:var(--text2)">{{ t.footer.cookies }}</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;padding-top:26px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint)">
+        <span>{{ t.footer.copyright }}</span>
+        <span style="display:flex;flex-wrap:wrap;gap:8px 22px"><a href="privacy.html" style="color:var(--muted)" style-hover="color:var(--accent)">{{ t.footer.privacy }}</a><a href="cookies.html" style="color:var(--muted)" style-hover="color:var(--accent)">{{ t.footer.cookies }}</a></span>
+        <span>{{ t.footer.tagline }}</span>
+      </div>
+    </div>
+  </footer>
+
+  <button onClick="{{ scrollToTop }}" aria-label="Scroll to top" style="{{ scrollTopStyle }}">↑</button>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  state = { theme: 'light', lang: 'en', menuOpen: false, vw: (typeof window !== 'undefined' ? window.innerWidth : 1200), showScrollTop: false, consent: null };
+
+  themes() {
+    return {
+      light: {'--bg':'#f4f2ee','--bg2':'#ffffff','--text':'#15181b','--text2':'#3d4247','--muted':'#63696e','--faint':'#9a9ea2','--line':'rgba(0,0,0,.10)','--line2':'rgba(0,0,0,.18)','--accent':'#c67e12','--grid':'rgba(0,0,0,.05)','--navbg':'rgba(244,242,238,.8)','--logo-filter':'invert(1)'},
+      dark: {'--bg':'#0a0b0c','--bg2':'#0d0f10','--text':'#eceded','--text2':'#b7bbbe','--muted':'#868b8f','--faint':'#5f6468','--line':'rgba(255,255,255,.08)','--line2':'rgba(255,255,255,.18)','--accent':'#e9a23b','--grid':'rgba(255,255,255,.04)','--navbg':'rgba(10,11,12,.72)','--logo-filter':'none'},
+    };
+  }
+
+  dict() {
+    return {"es":{"ui":{"dark":"Oscuro","light":"Claro"},"nav":{"tech":"SynOS","civil":"Industria","contact":"Contacto"},"back":"← Volver a Svalin Industries","footer":{"copyright":"© Svalin Industries 2026. Todos los derechos reservados.","tagline":"Autonomous Systems & Swarm Technology","motto":"Autonomous systems that operate as one.","colProduct":"Producto","colLegal":"Legal","home":"Inicio","civil":"Industria","privacy":"Política de Privacidad","cookies":"Política de Cookies"},"page":{"docTitle":"Política de Cookies | Svalin Industries","eyebrow":"// Legal","title":"Política de Cookies","updated":"Última actualización: 2 de octubre de 2026","intro":"Esta política describe las cookies y tecnologías de almacenamiento que utiliza svalinindustries.com, para qué sirven y cómo puedes gestionarlas.","sectionsA":[{"num":"01","h":"Qué son","paras":["Las cookies son pequeños archivos que un sitio web guarda en tu navegador. El almacenamiento local (localStorage) es un mecanismo equivalente que guarda datos en tu dispositivo sin enviarlos al servidor. Esta política cubre ambos."],"items":[],"after":[]},{"num":"02","h":"Categorías","paras":[],"items":["Técnicas: necesarias para que la web funcione y recuerde las opciones que eliges expresamente (idioma, tema claro u oscuro y tu decisión sobre cookies). Están exentas de consentimiento y siempre activas.","Analíticas: permiten medir de forma estadística cómo se usa la web mediante Google Analytics. Solo se activan si las aceptas."],"after":["La web no utiliza cookies publicitarias, de redes sociales ni de personalización."]}],"tableNum":"03","tableH":"Cookies y almacenamiento utilizados","rows":[{"name":"sv_consent","fields":[{"k":"Titular","v":"Propia (Svalin Industries)"},{"k":"Tipo","v":"localStorage"},{"k":"Categoría","v":"Técnica"},{"k":"Duración","v":"12 meses; después se vuelve a solicitar"},{"k":"Finalidad","v":"Guarda tu decisión sobre las cookies analíticas y la fecha en que la tomaste."}]},{"name":"sv_lang","fields":[{"k":"Titular","v":"Propia (Svalin Industries)"},{"k":"Tipo","v":"localStorage"},{"k":"Categoría","v":"Técnica"},{"k":"Duración","v":"Hasta que la borres"},{"k":"Finalidad","v":"Recuerda el idioma elegido (español o inglés)."}]},{"name":"sv_theme","fields":[{"k":"Titular","v":"Propia (Svalin Industries)"},{"k":"Tipo","v":"localStorage"},{"k":"Categoría","v":"Técnica"},{"k":"Duración","v":"Hasta que la borres"},{"k":"Finalidad","v":"Recuerda el tema elegido (claro u oscuro)."}]},{"name":"_ga","fields":[{"k":"Titular","v":"Tercero (Google)"},{"k":"Tipo","v":"Cookie HTTP"},{"k":"Categoría","v":"Analítica"},{"k":"Duración","v":"2 años"},{"k":"Finalidad","v":"Distingue visitantes mediante un identificador aleatorio para generar estadísticas de uso."}]},{"name":"_ga_604FVZKPVW","fields":[{"k":"Titular","v":"Tercero (Google)"},{"k":"Tipo","v":"Cookie HTTP"},{"k":"Categoría","v":"Analítica"},{"k":"Duración","v":"2 años"},{"k":"Finalidad","v":"Mantiene el estado de la sesión en la propiedad de Google Analytics de esta web."}]}],"tableNote":"Las cookies de Google Analytics se guardan en el dominio de esta web, pero las gestiona Google. Solo se instalan si aceptas las cookies analíticas. Más información:","tableLink":"Cómo usa Google las cookies","sectionsB":[{"num":"04","h":"Otras tecnologías de terceros","paras":["Estos servicios no instalan cookies ni guardan datos en tu navegador desde esta web, pero reciben tu dirección IP al cargar la página o enviar el formulario. Se detallan en la Política de Privacidad."],"items":["Google Fonts (Google): tipografías.","unpkg.com: librerías JavaScript.","FormSubmit (formsubmit.co): envío del formulario de contacto."],"after":["Los enlaces a LinkedIn solo te llevan a esa red social. No se carga en esta web ningún contenido ni script de LinkedIn."]}],"manageNum":"05","manageH":"Gestionar tus preferencias","manageP1":"Al entrar por primera vez puedes aceptar, rechazar o configurar las cookies analíticas. Mientras no decidas, Google Analytics no se carga. Puedes cambiar tu decisión en cualquier momento.","manageP2":"Si retiras el consentimiento, Google Analytics deja de enviar datos y se eliminan sus cookies de este dominio. También puedes borrar las cookies y el almacenamiento local desde la configuración de tu navegador.","manageBtn":"Gestionar cookies","statusLabel":"Estado actual","stOn":"Analíticas activadas","stOff":"Analíticas desactivadas","stNone":"Sin decisión"}},"en":{"ui":{"dark":"Dark","light":"Light"},"nav":{"tech":"SynOS","civil":"Industry","contact":"Contact"},"back":"← Back to Svalin Industries","footer":{"copyright":"© Svalin Industries 2026. All rights reserved.","tagline":"Autonomous Systems & Swarm Technology","motto":"Autonomous systems that operate as one.","colProduct":"Product","colLegal":"Legal","home":"Home","civil":"Industry","privacy":"Privacy Policy","cookies":"Cookie Policy"},"page":{"docTitle":"Cookie Policy | Svalin Industries","eyebrow":"// Legal","title":"Cookie Policy","updated":"Last updated: 2 October 2026","intro":"This policy describes the cookies and storage technologies used by svalinindustries.com, what they are for and how you can manage them.","sectionsA":[{"num":"01","h":"What they are","paras":["Cookies are small files a website stores in your browser. Local storage (localStorage) is an equivalent mechanism that stores data on your device without sending it to the server. This policy covers both."],"items":[],"after":[]},{"num":"02","h":"Categories","paras":[],"items":["Technical: required for the site to work and to remember the options you explicitly choose (language, light or dark theme and your cookie decision). They are exempt from consent and always active.","Analytics: measure statistically how the site is used, through Google Analytics. They are only enabled if you accept them."],"after":["The site does not use advertising, social media or personalisation cookies."]}],"tableNum":"03","tableH":"Cookies and storage in use","rows":[{"name":"sv_consent","fields":[{"k":"Owner","v":"First party (Svalin Industries)"},{"k":"Type","v":"localStorage"},{"k":"Category","v":"Technical"},{"k":"Duration","v":"12 months; then requested again"},{"k":"Purpose","v":"Stores your decision on analytics cookies and the date you made it."}]},{"name":"sv_lang","fields":[{"k":"Owner","v":"First party (Svalin Industries)"},{"k":"Type","v":"localStorage"},{"k":"Category","v":"Technical"},{"k":"Duration","v":"Until you delete it"},{"k":"Purpose","v":"Remembers the chosen language (Spanish or English)."}]},{"name":"sv_theme","fields":[{"k":"Owner","v":"First party (Svalin Industries)"},{"k":"Type","v":"localStorage"},{"k":"Category","v":"Technical"},{"k":"Duration","v":"Until you delete it"},{"k":"Purpose","v":"Remembers the chosen theme (light or dark)."}]},{"name":"_ga","fields":[{"k":"Owner","v":"Third party (Google)"},{"k":"Type","v":"HTTP cookie"},{"k":"Category","v":"Analytics"},{"k":"Duration","v":"2 years"},{"k":"Purpose","v":"Distinguishes visitors with a random identifier to produce usage statistics."}]},{"name":"_ga_604FVZKPVW","fields":[{"k":"Owner","v":"Third party (Google)"},{"k":"Type","v":"HTTP cookie"},{"k":"Category","v":"Analytics"},{"k":"Duration","v":"2 years"},{"k":"Purpose","v":"Keeps session state for this site’s Google Analytics property."}]}],"tableNote":"Google Analytics cookies are stored on this site’s domain but managed by Google. They are only set if you accept analytics cookies. More information:","tableLink":"How Google uses cookies","sectionsB":[{"num":"04","h":"Other third-party technologies","paras":["These services set no cookies and store nothing in your browser from this site, but they receive your IP address when the page loads or the form is sent. They are described in the Privacy Policy."],"items":["Google Fonts (Google): fonts.","unpkg.com: JavaScript libraries.","FormSubmit (formsubmit.co): contact form delivery."],"after":["Links to LinkedIn only take you to that network. No LinkedIn content or script is loaded on this site."]}],"manageNum":"05","manageH":"Manage your preferences","manageP1":"On your first visit you can accept, reject or configure analytics cookies. Until you decide, Google Analytics is not loaded. You can change your decision at any time.","manageP2":"If you withdraw consent, Google Analytics stops sending data and its cookies are removed from this domain. You can also delete cookies and local storage from your browser settings.","manageBtn":"Manage cookies","statusLabel":"Current status","stOn":"Analytics enabled","stOff":"Analytics disabled","stNone":"No decision"}}};
+  }
+
+  detectTheme() { const h = new Date().getHours(); return (h >= 19 || h < 7) ? 'dark' : 'light'; }
+  readConsent() { try { return window.SvConsent ? window.SvConsent.get() : null; } catch (e) { return null; } }
+
+  componentDidMount() {
+    let th, lg;
+    try { th = localStorage.getItem('sv_theme'); lg = localStorage.getItem('sv_lang'); } catch (e) {}
+    const theme = (th === 'light' || th === 'dark') ? th : this.detectTheme();
+    const lang = (lg === 'en' || lg === 'es') ? lg : 'en';
+    this.setState({ theme, lang, consent: this.readConsent() });
+    this._onConsent = () => this.setState({ consent: this.readConsent() });
+    addEventListener('svconsentchange', this._onConsent);
+    addEventListener('storage', this._onConsent);
+    this._onWinResize = () => this.setState(s => ({ vw: window.innerWidth, menuOpen: window.innerWidth >= 860 ? false : s.menuOpen }));
+    addEventListener('resize', this._onWinResize);
+    this._onScroll = () => { const show = window.scrollY > 500; this.setState(s => s.showScrollTop === show ? null : { showScrollTop: show }); };
+    addEventListener('scroll', this._onScroll, { passive: true });
+    this.applyTheme();
+    if (window.location.hash === '#manage') setTimeout(() => { const el = document.getElementById('manage'); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 90, behavior: 'auto' }); }, 150);
+  }
+  componentDidUpdate() {
+    if (this.state.theme !== this._lastTheme) { this._lastTheme = this.state.theme; this.applyTheme(); }
+    if (this.state.lang !== this._lastLang) { this._lastLang = this.state.lang; try { const d = this.dict()[this.state.lang]; document.title = d.page.docTitle; document.documentElement.lang = this.state.lang; } catch (e) {} }
+  }
+  componentWillUnmount() {
+    if (this._onWinResize) removeEventListener('resize', this._onWinResize);
+    if (this._onScroll) removeEventListener('scroll', this._onScroll);
+    if (this._onConsent) { removeEventListener('svconsentchange', this._onConsent); removeEventListener('storage', this._onConsent); }
+  }
+
+  applyTheme() {
+    const el = this.rootRef.current; if (!el) return;
+    const map = this.themes()[this.state.theme] || this.themes().light;
+    Object.entries(map).forEach(([k, v]) => el.style.setProperty(k, v));
+    document.body.style.background = map['--bg'];
+    document.body.style.color = map['--text'];
+  }
+
+  toggleTheme() { this.setState(s => { const n = s.theme === 'light' ? 'dark' : 'light'; try { localStorage.setItem('sv_theme', n); } catch (e) {} return { theme: n }; }); }
+  toggleLang() { this.setState(s => { const n = s.lang === 'en' ? 'es' : 'en'; try { localStorage.setItem('sv_lang', n); } catch (e) {} return { lang: n }; }); setTimeout(() => { if (window.SvConsent) window.SvConsent.refresh(); }, 0); }
+  toggleMenu() { this.setState(s => ({ menuOpen: !s.menuOpen })); }
+  closeMenu() { if (this.state.menuOpen) this.setState({ menuOpen: false }); }
+  scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+  renderVals() {
+    if (!this._dictCache) this._dictCache = this.dict();
+    const t = this._dictCache[this.state.lang] || this._dictCache.en;
+    const isMobile = this.state.vw < 860;
+    const c = this.state.consent;
+    return {
+      rootRef: this.rootRef,
+      t,
+      consentStatus: t.page.stOn ? (!c ? t.page.stNone : (c.analytics ? t.page.stOn : t.page.stOff)) : '',
+      manageCookies: () => { if (window.SvConsent) window.SvConsent.open(); },
+      langBtnLabel: this.state.lang === 'en' ? 'ES' : 'EN',
+      themeLabel: this.state.theme === 'light' ? t.ui.dark : t.ui.light,
+      themeDot: this.state.theme === 'light' ? 'transparent' : 'var(--accent)',
+      toggleTheme: () => this.toggleTheme(),
+      toggleLang: () => this.toggleLang(),
+      closeMenu: () => this.closeMenu(),
+      toggleMenu: () => this.toggleMenu(),
+      menuIcon: this.state.menuOpen ? '✕' : '☰',
+      scrollToTop: () => this.scrollToTop(),
+      scrollTopStyle: 'position:fixed;right:24px;bottom:24px;z-index:50;width:46px;height:46px;border:1px solid var(--accent);background:var(--accent);color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.22);transition:opacity .25s,transform .25s;opacity:' + (this.state.showScrollTop ? '1' : '0') + ';pointer-events:' + (this.state.showScrollTop ? 'auto' : 'none') + ';transform:translateY(' + (this.state.showScrollTop ? '0' : '10px') + ')',
+      navLinksStyle: isMobile
+        ? ('position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:20px;padding:24px clamp(20px,4vw,56px) 30px;background:var(--navbg);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);box-shadow:0 20px 40px rgba(0,0,0,.12);display:' + (this.state.menuOpen ? 'flex' : 'none'))
+        : 'display:flex;align-items:center;gap:clamp(10px,2vw,26px)',
+      hamburgerStyle: 'align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--line2);background:none;color:var(--text);font-size:18px;cursor:pointer;display:' + (isMobile ? 'inline-flex' : 'none'),
+    };
+  }
+}
+</script>
+</body>
+</html>
