@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/consent.js"></script>
+<script src="js/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<title>ORCA for Developers | Test drones, autonomy and C-UAS against simulated swarms</title>
+<meta name="description" content="ORCA for Developers: connect your drone, autonomy or counter-drone stack to a simulated world. Inject swarm threats, run thousands of scenarios and get comparable metrics. SaaS, API / SDK or on-premise.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://svalinindustries.com/developers.html">
+<meta name="theme-color" content="#0a0b0c">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Svalin Industries">
+<meta property="og:title" content="ORCA for Developers | Svalin Industries">
+<meta property="og:description" content="Inject swarm threats into your C-UAS stack. Validate drones and autonomy software in thousands of simulated runs.">
+<meta property="og:url" content="https://svalinindustries.com/developers.html">
+<meta property="og:image" content="https://svalinindustries.com/assets/lockup-light.png">
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:'Poppins',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{text-decoration:none;color:var(--accent,#c67e12)}
+  a:hover{opacity:.8}
+  ::selection{background:var(--accent,#c67e12);color:#fff}
+  input[type=range]{accent-color:#e9a23b}
+  @keyframes svBlink{0%,100%{opacity:1}50%{opacity:.25}}
+  @keyframes svCaret{0%,49%{opacity:1}50%,100%{opacity:0}}
+  @keyframes svLineIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  button,input,textarea,select,form,article,a[style*="border"],[style*="border:1px solid"],[style*="border:1.5px solid"],[style*="border:1px dashed"],[style*="border: 1px solid"]{border-radius:2px}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="--bg:#f4f2ee;--bg2:#ffffff;--text:#15181b;--text2:#3d4247;--muted:#63696e;--faint:#9a9ea2;--line:rgba(0,0,0,.10);--line2:rgba(0,0,0,.18);--accent:#c67e12;--grid:rgba(0,0,0,.05);--navbg:rgba(244,242,238,.8);--logo-filter:invert(1);background:var(--bg);color:var(--text);min-height:100vh">
+
+  <!-- NAV -->
+  <nav style="position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px clamp(20px,4vw,56px);background:var(--navbg);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-wrap:wrap">
+    <a href="index.html" style="display:flex;align-items:center;gap:12px;color:var(--text)">
+      <img src="assets/lockup-light.png" alt="Svalin Industries" style="height:32px;width:auto;display:block;filter:var(--logo-filter)">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.28em;color:var(--muted);text-transform:uppercase;border-left:1px solid var(--line2);padding-left:12px">Industries</span>
+    </a>
+    <div style="{{ navLinksStyle }}">
+      <a href="#tracks" onClick="{{ closeMenu }}" style="font-weight:700;font-size:13px;text-transform:uppercase;color:var(--text2)">{{ t.nav.tracks }}</a>
+      <a href="#inject" onClick="{{ closeMenu }}" style="font-weight:700;font-size:13px;text-transform:uppercase;color:var(--text2)">{{ t.nav.inject }}</a>
+      <a href="#integrate" onClick="{{ closeMenu }}" style="font-weight:700;font-size:13px;text-transform:uppercase;color:var(--text2)">{{ t.nav.integrate }}</a>
+      <a href="simulator.html" onClick="{{ closeMenu }}" style="font-weight:700;font-size:13px;text-transform:uppercase;color:var(--accent)">ORCA</a>
+      <a href="civil.html" onClick="{{ closeMenu }}" style="font-weight:700;font-size:13px;text-transform:uppercase;color:var(--accent)">{{ t.nav.civil }}</a>
+      <button onClick="{{ toggleLang }}" title="Language" style="display:inline-flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid var(--line2);background:none;color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)"><span style="font-size:12px">◍</span>{{ langBtnLabel }}</button>
+      <button onClick="{{ toggleTheme }}" title="Theme" style="display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid var(--line2);background:none;color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)"><span style="width:9px;height:9px;border-radius:50%;border:1.5px solid var(--accent);background:{{ themeDot }}"></span>{{ themeLabel }}</button>
+      <a href="index.html#contact" onClick="{{ closeMenu }}" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border:1.5px solid var(--accent);color:var(--accent);font-size:13px;text-transform:uppercase;font-weight:700" style-hover="background:var(--accent);color:#fff">{{ t.nav.contact }}</a>
+    </div>
+    <button onClick="{{ toggleMenu }}" aria-label="Menu" style="{{ hamburgerStyle }}">{{ menuIcon }}</button>
+  </nav>
+
+  <!-- HERO -->
+  <header data-screen-label="Hero" style="position:relative;min-height:88vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;background:#07090b;color:#eceded">
+    <canvas ref="{{ heroRef }}" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,#07090b 8%,rgba(7,9,11,.55) 48%,rgba(7,9,11,.15) 100%);pointer-events:none"></div>
+    <div style="position:relative;width:100%;max-width:1400px;margin:0 auto;padding:clamp(60px,8vw,110px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,5vw,72px);align-items:center">
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px">
+          <span style="width:9px;height:9px;background:#e9a23b;border-radius:50%;animation:svBlink 1.8s ease-in-out infinite;box-shadow:0 0 14px #e9a23b"></span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.3em;color:#9a9ea2;text-transform:uppercase">{{ t.hero.eyebrow }}</span>
+        </div>
+        <h1 style="margin:0;font-weight:600;font-size:clamp(36px,5.6vw,80px);line-height:1;letter-spacing:-.02em;max-width:14ch;color:#fff;text-wrap:balance">{{ t.hero.title }}</h1>
+        <p style="margin:28px 0 0;max-width:56ch;font-size:clamp(15px,1.4vw,18px);line-height:1.65;color:#b7bbbe;text-wrap:pretty">{{ t.hero.sub }}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:36px">
+          <a href="index.html#contact" style="display:inline-flex;align-items:center;gap:10px;padding:15px 28px;background:#e9a23b;border:1.5px solid #e9a23b;color:#07090b;font-size:14px;text-transform:uppercase;font-weight:700" style-hover="background:transparent;color:#e9a23b">{{ t.hero.cta1 }} <span>&rarr;</span></a>
+          <a href="#inject" style="display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border:1.5px solid rgba(255,255,255,.28);color:#fff;font-size:14px;text-transform:uppercase;font-weight:700" style-hover="border-color:#e9a23b;color:#e9a23b">{{ t.hero.cta2 }}</a>
+        </div>
+      </div>
+      <!-- terminal artifact -->
+      <div style="position:relative;border:1px solid rgba(255,255,255,.16);background:rgba(7,9,11,.82);backdrop-filter:blur(6px);box-shadow:0 30px 80px rgba(0,0,0,.5)">
+        <span style="position:absolute;top:-1px;left:-1px;width:12px;height:12px;border-top:1.5px solid #e9a23b;border-left:1.5px solid #e9a23b"></span>
+        <span style="position:absolute;top:-1px;right:-1px;width:12px;height:12px;border-top:1.5px solid #e9a23b;border-right:1.5px solid #e9a23b"></span>
+        <span style="position:absolute;bottom:-1px;left:-1px;width:12px;height:12px;border-bottom:1.5px solid #e9a23b;border-left:1.5px solid #e9a23b"></span>
+        <span style="position:absolute;bottom:-1px;right:-1px;width:12px;height:12px;border-bottom:1.5px solid #e9a23b;border-right:1.5px solid #e9a23b"></span>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.1);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#868b8f;text-transform:uppercase">
+          <span style="display:flex;align-items:center;gap:7px"><span style="width:8px;height:8px;border:1px solid #5f6468"></span><span style="width:8px;height:8px;border:1px solid #5f6468"></span><span style="width:8px;height:8px;border:1px solid #5f6468"></span><span style="margin-left:8px">{{ t.hero.termTitle }}</span></span>
+          <span style="display:flex;align-items:center;gap:7px;color:#e9a23b"><span style="width:6px;height:6px;border-radius:50%;background:#e9a23b;animation:svBlink 1.2s infinite"></span>{{ t.hero.live }}</span>
+        </div>
+        <div style="padding:16px 18px 18px;min-height:300px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.85;overflow:hidden">
+          <sc-for list="{{ logs }}" as="l" hint-placeholder-count="8">
+            <div style="display:flex;gap:12px;white-space:nowrap;animation:svLineIn .35s ease-out">
+              <span style="color:#5f6468">{{ l.time }}</span>
+              <span style="color:{{ l.color }};min-width:58px">{{ l.tag }}</span>
+              <span style="color:#d9d7d0;overflow:hidden;text-overflow:ellipsis">{{ l.text }}</span>
+            </div>
+          </sc-for>
+          <div style="display:flex;gap:10px;margin-top:4px;color:#e9a23b"><span>&gt;</span><span style="width:8px;height:16px;background:#e9a23b;animation:svCaret 1s infinite"></span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.1)">
+          <sc-for list="{{ t.hero.specs }}" as="s" hint-placeholder-count="4">
+            <div style="padding:12px 14px;border-right:1px solid rgba(255,255,255,.08)">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:#5f6468;text-transform:uppercase">{{ s.k }}</div>
+              <div style="margin-top:4px;font-size:13px;font-weight:600;color:#eceded">{{ s.v }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 01 TRACKS -->
+  <section id="tracks" data-screen-label="Tracks" style="padding:clamp(70px,9vw,140px) clamp(20px,4vw,56px);max-width:1400px;margin:0 auto">
+    <div data-reveal style="display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:56px">
+      <div style="max-width:62ch">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase">{{ t.tracks.eyebrow }}</span>
+        <h2 style="margin:16px 0 0;font-weight:600;font-size:clamp(28px,3.8vw,52px);line-height:1.04;letter-spacing:-.015em;text-wrap:balance">{{ t.tracks.h2 }}</h2>
+      </div>
+      <p style="max-width:44ch;margin:0;font-size:16px;line-height:1.6;color:var(--muted)">{{ t.tracks.intro }}</p>
+    </div>
+    <div style="display:grid;grid-template-columns:{{ tracksCols }};gap:1px;background:var(--line);border:1px solid var(--line)">
+      <sc-for list="{{ t.tracks.items }}" as="tr" hint-placeholder-count="2">
+        <article data-reveal style="position:relative;background:var(--bg2);padding:clamp(28px,3.5vw,48px);display:flex;flex-direction:column;gap:22px">
+          <span style="position:absolute;top:12px;left:12px;width:10px;height:10px;border-top:1.5px solid var(--accent);border-left:1.5px solid var(--accent)"></span>
+          <span style="position:absolute;bottom:12px;right:12px;width:10px;height:10px;border-bottom:1.5px solid var(--accent);border-right:1.5px solid var(--accent)"></span>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">{{ tr.tag }}</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:44px;font-weight:500;color:var(--line2);line-height:1">{{ tr.letter }}</span>
+          </div>
+          <h3 style="margin:0;font-weight:600;font-size:clamp(22px,2.4vw,30px);line-height:1.15;letter-spacing:-.01em">{{ tr.title }}</h3>
+          <p style="margin:0;font-size:15.5px;line-height:1.68;color:var(--muted)">{{ tr.body }}</p>
+          <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;border-top:1px solid var(--line)">
+            <sc-for list="{{ tr.items }}" as="it" hint-placeholder-count="4">
+              <li style="display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.5;color:var(--text2)"><span style="color:var(--accent);font-family:'IBM Plex Mono',monospace">→</span><span>{{ it }}</span></li>
+            </sc-for>
+          </ul>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:auto">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:var(--faint);text-transform:uppercase;margin-right:4px">{{ tr.outLabel }}</span>
+            <sc-for list="{{ tr.outs }}" as="o" hint-placeholder-count="3">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text2);border:1px solid var(--line2);padding:5px 10px;white-space:nowrap">{{ o }}</span>
+            </sc-for>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- 02 THREAT INJECTION -->
+  <section id="inject" data-screen-label="Threat injection" style="position:relative;padding:clamp(70px,9vw,140px) clamp(20px,4vw,56px);background:#0a0b0c;color:#eceded;overflow:hidden;background-image:repeating-linear-gradient(0deg,transparent 0 39px,rgba(255,255,255,.05) 39px 40px),repeating-linear-gradient(90deg,transparent 0 39px,rgba(255,255,255,.05) 39px 40px)">
+    <div style="max-width:1400px;margin:0 auto">
+      <div data-reveal style="max-width:68ch;margin-bottom:56px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:#e9a23b;text-transform:uppercase">{{ t.inject.eyebrow }}</span>
+        <h2 style="margin:16px 0 0;font-weight:600;font-size:clamp(28px,3.8vw,52px);line-height:1.04;letter-spacing:-.015em;color:#fff;text-wrap:balance">{{ t.inject.h2 }}</h2>
+        <p style="margin:22px 0 0;font-size:16px;line-height:1.65;color:#b7bbbe">{{ t.inject.p }}</p>
+      </div>
+<div style="border:1px solid rgba(255,255,255,.14);background:#0a0b0c;border-radius:2px;overflow:hidden">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.1);background:#0d0f11">
+          <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase">
+            <span style="color:#d9d7d0">{{ t.inject.panel }}</span>
+            <span style="display:inline-flex;align-items:center;gap:8px;padding:5px 10px;border:1px solid {{ statusColor }};color:{{ statusColor }}"><span style="width:6px;height:6px;border-radius:50%;background:{{ statusColor }}"></span>{{ statusLabel }}</span>
+            <span style="color:#5f6468">RUN #{{ runNo }}</span>
+            <span style="color:#5f6468">SEED {{ seed }}</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+            <button onClick="{{ togglePause }}" style="display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid rgba(255,255,255,.2);background:none;color:#eceded;font-family:'IBM Plex Mono',monospace;font-size:11.5px;cursor:pointer" style-hover="border-color:#e9a23b;color:#e9a23b"><span>{{ pauseIcon }}</span>{{ pauseLabel }}</button>
+            <div style="display:flex;border:1px solid rgba(255,255,255,.2)">
+              <sc-for list="{{ speedOpts }}" as="sp" hint-placeholder-count="3">
+                <button onClick="{{ sp.pick }}" style="padding:8px 11px;border:none;border-right:1px solid rgba(255,255,255,.1);font-family:'IBM Plex Mono',monospace;font-size:11.5px;cursor:pointer;background:{{ sp.bg }};color:{{ sp.fg }}">{{ sp.n }}</button>
+              </sc-for>
+            </div>
+            <button onClick="{{ replaySeed }}" style="display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid rgba(255,255,255,.2);background:none;color:#eceded;font-family:'IBM Plex Mono',monospace;font-size:11.5px;cursor:pointer" style-hover="border-color:#e9a23b;color:#e9a23b">&#8634; {{ t.inject.replay }}</button>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:{{ injectCols }};gap:1px;background:rgba(255,255,255,.1)">
+          <div style="background:#0a0b0c;padding:clamp(20px,2.4vw,28px);display:flex;flex-direction:column;gap:26px">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase;margin-bottom:12px">{{ t.inject.lProfile }}</div>
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <sc-for list="{{ profiles }}" as="p" hint-placeholder-count="5">
+                  <button onClick="{{ p.toggle }}" style="display:flex;align-items:center;gap:12px;width:100%;padding:10px 12px;text-align:left;cursor:pointer;border:1px solid {{ p.bd }};background:{{ p.bg }};color:{{ p.fg }}" style-hover="border-color:#e9a23b">
+                    <span style="flex:none;width:14px;height:14px;border:1px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:10px;line-height:1">{{ p.check }}</span>
+                    <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px">{{ p.label }}</span><span style="font-size:11.5px;color:#868b8f;line-height:1.35">{{ p.desc }}</span></span>
+                  </button>
+                </sc-for>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:baseline;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase;margin-bottom:10px"><span>{{ t.inject.lAgents }}</span><span style="color:#fff;font-size:18px;letter-spacing:0">{{ agents }}</span></div>
+              <input type="range" min="4" max="80" step="2" value="{{ agents }}" onChange="{{ onAgents }}" style="width:100%">
+              <div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#5f6468;margin-top:4px"><span>4</span><span>80</span></div>
+            </div>
+            <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:14px;row-gap:10px;align-items:end">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase">{{ t.inject.lWaves }}</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase">{{ t.inject.lEffectors }}</div>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(255,255,255,.18)"><sc-for list="{{ waveOpts }}" as="w" hint-placeholder-count="3"><button onClick="{{ w.pick }}" style="padding:9px 0;border:none;border-right:1px solid rgba(255,255,255,.1);font-family:'IBM Plex Mono',monospace;font-size:12.5px;cursor:pointer;background:{{ w.bg }};color:{{ w.fg }}">{{ w.n }}</button></sc-for></div>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(255,255,255,.18)"><sc-for list="{{ effOpts }}" as="w" hint-placeholder-count="3"><button onClick="{{ w.pick }}" style="padding:9px 0;border:none;border-right:1px solid rgba(255,255,255,.1);font-family:'IBM Plex Mono',monospace;font-size:12.5px;cursor:pointer;background:{{ w.bg }};color:{{ w.fg }}">{{ w.n }}</button></sc-for></div>
+            </div>
+            <button onClick="{{ injectNow }}" style="margin-top:auto;display:flex;align-items:center;justify-content:center;gap:10px;padding:15px;background:#e9a23b;border:1.5px solid #e9a23b;color:#07090b;font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;cursor:pointer" style-hover="background:transparent;color:#e9a23b">{{ t.inject.btn }} <span>&rarr;</span></button>
+          </div>
+          <div style="background:#07090b;display:flex;flex-direction:column">
+            <div style="padding:clamp(12px,2vw,24px)">
+              <div style="position:relative;width:100%;max-width:620px;margin:0 auto;aspect-ratio:1/1">
+                <canvas ref="{{ radarRef }}" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+              </div>
+            </div>
+            <div style="margin-top:auto;border-top:1px solid rgba(255,255,255,.1);padding:12px 16px 14px">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase;font-size:9.5px;margin-bottom:8px">{{ t.inject.events }}</div>
+              <div style="display:flex;flex-direction:column;gap:3px;min-height:126px;font-family:'IBM Plex Mono',monospace;font-size:11.5px">
+                <sc-for list="{{ events }}" as="e" hint-placeholder-count="6">
+                  <div style="display:flex;gap:12px;white-space:nowrap;animation:svLineIn .3s ease-out"><span style="color:#5f6468;min-width:58px">{{ e.time }}</span><span style="color:{{ e.color }};min-width:56px">{{ e.tag }}</span><span style="color:#b7bbbe;overflow:hidden;text-overflow:ellipsis">{{ e.text }}</span></div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+          <div style="grid-column:{{ metricsSpan }};background:#0a0b0c;display:flex;flex-direction:column">
+            <div style="padding:16px 18px 10px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase">{{ t.inject.mTitle }}</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.08);border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)">
+              <div style="background:#0a0b0c;padding:14px 16px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase;font-size:9.5px">{{ t.inject.mLaunched }}</div><div ref="{{ mLaunched }}" style="margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:24px;color:#fff">0</div></div>
+              <div style="background:#0a0b0c;padding:14px 16px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase;font-size:9.5px">{{ t.inject.mDetected }}</div><div ref="{{ mDetected }}" style="margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:24px;color:#fff">0</div></div>
+              <div style="background:#0a0b0c;padding:14px 16px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase;font-size:9.5px">{{ t.inject.mNeutral }}</div><div ref="{{ mNeutral }}" style="margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:24px;color:#e9a23b">0</div></div>
+              <div style="background:#0a0b0c;padding:14px 16px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase;font-size:9.5px">{{ t.inject.mLeak }}</div><div ref="{{ mLeak }}" style="margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:24px;color:#e0483e">0</div></div>
+              <div style="background:#0a0b0c;padding:14px 16px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase;font-size:9.5px">{{ t.inject.mTime }}</div><div ref="{{ mTime }}" style="margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:24px;color:#fff">–</div></div>
+              <div style="background:#0a0b0c;padding:14px 16px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase;font-size:9.5px">{{ t.inject.mShots }}</div><div ref="{{ mShots }}" style="margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:24px;color:#fff">0</div></div>
+            </div>
+            <div style="padding:18px">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase">{{ t.inject.byLayer }}</span><span ref="{{ mRate }}" style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#fff">–</span></div>
+              <div style="display:flex;height:10px;background:rgba(255,255,255,.07);overflow:hidden">
+                <div ref="{{ bEW }}" style="width:0%;background:#9fb3c8;transition:width .3s"></div>
+                <div ref="{{ bEff }}" style="width:0%;background:#e9a23b;transition:width .3s"></div>
+                <div ref="{{ bLeak }}" style="width:0%;background:#e0483e;transition:width .3s"></div>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#868b8f">
+                <span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;background:#9fb3c8"></span>{{ t.inject.lgEW }} <span ref="{{ cEW }}" style="color:#d9d7d0">0</span></span>
+                <span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;background:#e9a23b"></span>{{ t.inject.lgEff }} <span ref="{{ cEff }}" style="color:#d9d7d0">0</span></span>
+                <span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;background:#e0483e"></span>{{ t.inject.lgLeak }} <span ref="{{ cLeak }}" style="color:#d9d7d0">0</span></span>
+              </div>
+            </div>
+            <div style="padding:0 18px 18px;border-top:1px solid rgba(255,255,255,.08)">
+              <div style="padding:16px 0 10px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase">{{ t.inject.history }}</div>
+              <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:0 0 8px;border-bottom:1px solid rgba(255,255,255,.1);font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#5f6468;text-transform:uppercase">
+                <sc-for list="{{ t.inject.hCols }}" as="hc" hint-placeholder-count="4"><span>{{ hc }}</span></sc-for>
+              </div>
+              <sc-if value="{{ noHistory }}" hint-placeholder-val="{{ true }}"><p style="margin:10px 0 0;font-size:12.5px;line-height:1.5;color:#5f6468">{{ t.inject.noHistory }}</p></sc-if>
+              <sc-for list="{{ history }}" as="hr" hint-placeholder-count="0">
+                <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06);font-family:'IBM Plex Mono',monospace;font-size:12px;color:#b7bbbe;animation:svLineIn .35s ease-out">
+                  <span style="color:#868b8f">#{{ hr.run }}</span><span>{{ hr.agents }}</span><span style="color:{{ hr.rateColor }}">{{ hr.rate }}</span><span style="color:{{ hr.leakColor }}">{{ hr.leak }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <p style="margin:auto 0 0;padding:14px 18px;border-top:1px solid rgba(255,255,255,.08);font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.12em;color:#5f6468;text-transform:uppercase">{{ t.inject.note }}</p>
+          </div>
+        </div>
+      </div>
+      <sc-if value="{{ hasReport }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:24px;border:1px solid rgba(233,162,59,.45);background:#0a0b0c;border-radius:2px;animation:svLineIn .5s ease-out">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.1);background:#0d0f11">
+          <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase">
+            <span style="color:#e9a23b">{{ t.inject.rTitle }}</span>
+            <span style="color:#d9d7d0">RUN #{{ report.run }}</span>
+            <span style="color:#5f6468">SEED {{ report.seed }}</span>
+            <span style="color:#5f6468">{{ report.duration }}</span>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button onClick="{{ replayReport }}" style="display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid rgba(255,255,255,.2);background:none;color:#eceded;font-family:'IBM Plex Mono',monospace;font-size:11.5px;cursor:pointer" style-hover="border-color:#e9a23b;color:#e9a23b">&#8634; {{ t.inject.replay }}</button>
+            <button onClick="{{ downloadReport }}" style="display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid #e9a23b;background:#e9a23b;color:#07090b;font-family:'IBM Plex Mono',monospace;font-size:11.5px;cursor:pointer" style-hover="background:transparent;color:#e9a23b">&#8615; {{ t.inject.rDownload }}</button>
+          </div>
+        </div>
+        <div style="padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.1);display:flex;gap:14px;align-items:flex-start">
+          <span style="flex:none;margin-top:6px;width:8px;height:8px;background:{{ report.verdictColor }}"></span>
+          <p style="margin:0;font-size:clamp(15px,1.4vw,18px);line-height:1.55;color:#eceded;text-wrap:pretty">{{ report.verdict }}</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.1)">
+          <div style="background:#0a0b0c;padding:18px 18px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase;font-size:9.5px">{{ t.inject.mRate }}</div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:clamp(22px,2.4vw,30px);color:#e9a23b">{{ report.rate }}</div></div>
+          <div style="background:#0a0b0c;padding:18px 18px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase;font-size:9.5px">{{ t.inject.mLeak }}</div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:clamp(22px,2.4vw,30px);color:{{ report.leakColor }}">{{ report.leak }}</div></div>
+          <div style="background:#0a0b0c;padding:18px 18px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase;font-size:9.5px">{{ t.inject.mTime }}</div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:clamp(22px,2.4vw,30px);color:#fff">{{ report.mtd }}</div></div>
+          <div style="background:#0a0b0c;padding:18px 18px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase;font-size:9.5px">{{ t.inject.rPerKill }}</div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:clamp(22px,2.4vw,30px);color:#fff">{{ report.perKill }}</div></div>
+          <div style="background:#0a0b0c;padding:18px 18px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase;font-size:9.5px">{{ t.inject.rPeak }}</div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:clamp(22px,2.4vw,30px);color:#fff">{{ report.peak }}</div></div>
+        </div>
+        <div style="display:grid;grid-template-columns:{{ reportCols }};gap:1px;background:rgba(255,255,255,.08)">
+          <div style="background:#0a0b0c;padding:20px">
+            <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase">
+              <span>{{ t.inject.rTimeline }}</span>
+              <span style="display:flex;gap:14px;letter-spacing:.06em"><span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;background:#e0483e"></span>{{ t.inject.rDet }}</span><span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;background:#e9a23b"></span>{{ t.inject.rKill }}</span><span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:2px;background:#fff"></span>{{ t.inject.rLeakMark }}</span></span>
+            </div>
+            <div style="position:relative;height:140px;display:flex;align-items:flex-end;gap:2px;border-bottom:1px solid rgba(255,255,255,.2);background-image:repeating-linear-gradient(0deg,transparent 0 34px,rgba(255,255,255,.05) 34px 35px)">
+              <sc-for list="{{ report.bins }}" as="b" hint-placeholder-count="20">
+                <div style="position:relative;flex:1;height:100%;display:flex;align-items:flex-end;gap:1px">
+                  <div style="flex:1;height:{{ b.d }};background:#e0483e;opacity:.85"></div>
+                  <div style="flex:1;height:{{ b.k }};background:#e9a23b"></div>
+                  <div style="position:absolute;left:0;right:0;top:0;height:2px;background:#fff;opacity:{{ b.l }}"></div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#5f6468"><span>T+0s</span><span>{{ report.duration }}</span></div>
+          </div>
+          <div style="background:#0a0b0c;padding:20px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase;margin-bottom:12px">{{ t.inject.rByType }}</div>
+            <div style="display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:6px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.12);font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.08em;color:#5f6468;text-transform:uppercase">
+              <sc-for list="{{ t.inject.rTypeCols }}" as="tc" hint-placeholder-count="5"><span>{{ tc }}</span></sc-for>
+            </div>
+            <sc-for list="{{ report.types }}" as="ty" hint-placeholder-count="3">
+              <div style="display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:6px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#d9d7d0">
+                <span style="color:#fff">{{ ty.name }}</span><span>{{ ty.n }}</span><span>{{ ty.det }}</span><span style="color:#e9a23b">{{ ty.neu }}</span><span style="color:{{ ty.leakColor }}">{{ ty.leak }}</span>
+              </div>
+            </sc-for>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#868b8f;text-transform:uppercase;margin:20px 0 10px">{{ t.inject.rConfig }}</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px">
+              <sc-for list="{{ report.cfg }}" as="cf" hint-placeholder-count="4"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#b7bbbe;border:1px solid rgba(255,255,255,.18);padding:5px 9px">{{ cf }}</span></sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <!-- 03 INTEGRATION -->
+  <section id="integrate" data-screen-label="Integration" style="padding:clamp(70px,9vw,140px) clamp(20px,4vw,56px);background:var(--bg2);border-bottom:1px solid var(--line)">
+    <div style="max-width:1400px;margin:0 auto">
+      <div data-reveal style="max-width:68ch;margin-bottom:56px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase">{{ t.integ.eyebrow }}</span>
+        <h2 style="margin:16px 0 0;font-weight:600;font-size:clamp(28px,3.8vw,52px);line-height:1.04;letter-spacing:-.015em;text-wrap:balance">{{ t.integ.h2 }}</h2>
+        <p style="margin:22px 0 0;font-size:16px;line-height:1.65;color:var(--muted)">{{ t.integ.p }}</p>
+      </div>
+      <!-- pipeline diagram -->
+      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:0;margin-bottom:clamp(40px,5vw,64px);border:1px solid var(--line2)">
+        <sc-for list="{{ t.integ.blocks }}" as="b" hint-placeholder-count="3">
+          <div style="position:relative;padding:26px 24px;border-right:1px solid var(--line2);background:var(--bg)">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:var(--accent);text-transform:uppercase">{{ b.k }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--faint)">{{ b.flow }}</span>
+            </div>
+            <h3 style="margin:0 0 14px;font-weight:600;font-size:19px">{{ b.title }}</h3>
+            <div style="display:flex;flex-wrap:wrap;gap:6px">
+              <sc-for list="{{ b.items }}" as="it" hint-placeholder-count="4">
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text2);border:1px solid var(--line2);background:var(--bg2);padding:5px 9px;white-space:nowrap">{{ it }}</span>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(32px,4vw,56px);align-items:start">
+        <div data-reveal style="display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line2)">
+          <sc-for list="{{ t.integ.modes }}" as="m" hint-placeholder-count="3">
+            <div style="display:grid;grid-template-columns:72px minmax(0,1fr);gap:18px;padding:24px 0;border-bottom:1px solid var(--line2)">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:var(--accent)">{{ m.k }}</span>
+              <div>
+                <h4 style="margin:0 0 8px;font-weight:600;font-size:17px">{{ m.title }}</h4>
+                <p style="margin:0;font-size:14.5px;line-height:1.62;color:var(--muted)">{{ m.body }}</p>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <!-- code artifact -->
+        <div data-reveal style="position:relative;background:#0a0b0c;border:1px solid #1f2225;color:#d9d7d0;box-shadow:0 24px 60px rgba(0,0,0,.18)">
+          <span style="position:absolute;top:-1px;left:-1px;width:12px;height:12px;border-top:1.5px solid #e9a23b;border-left:1.5px solid #e9a23b"></span>
+          <span style="position:absolute;bottom:-1px;right:-1px;width:12px;height:12px;border-bottom:1.5px solid #e9a23b;border-right:1.5px solid #e9a23b"></span>
+          <div style="display:flex;align-items:stretch;border-bottom:1px solid rgba(255,255,255,.1)">
+            <sc-for list="{{ codeTabs }}" as="ct" hint-placeholder-count="3">
+              <button onClick="{{ ct.pick }}" style="padding:13px 18px;border:none;border-right:1px solid rgba(255,255,255,.08);border-bottom:2px solid {{ ct.line }};background:none;font-family:'IBM Plex Mono',monospace;font-size:12px;cursor:pointer;color:{{ ct.fg }}">{{ ct.label }}</button>
+            </sc-for>
+            <span style="margin-left:auto;align-self:center;padding:0 16px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#5f6468;text-transform:uppercase">{{ codeFile }}</span>
+          </div>
+          <div style="padding:18px 0;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.75;overflow-x:auto">
+            <sc-for list="{{ codeLines }}" as="ln" hint-placeholder-count="14">
+              <div style="display:flex;white-space:pre">
+                <span style="flex:none;width:44px;padding-right:14px;text-align:right;color:#3d4247;user-select:none">{{ ln.n }}</span>
+                <sc-for list="{{ ln.segs }}" as="sg" hint-placeholder-count="1"><span style="color:{{ sg.c }}">{{ sg.t }}</span></sc-for>
+              </div>
+            </sc-for>
+          </div>
+          <div style="padding:12px 18px;border-top:1px solid rgba(255,255,255,.08);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5f6468;text-transform:uppercase">{{ t.integ.codeNote }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 METRICS -->
+  <section id="metrics" data-screen-label="Metrics" style="padding:clamp(70px,9vw,140px) clamp(20px,4vw,56px);max-width:1400px;margin:0 auto">
+    <div data-reveal style="max-width:68ch;margin-bottom:56px">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase">{{ t.metrics.eyebrow }}</span>
+      <h2 style="margin:16px 0 0;font-weight:600;font-size:clamp(28px,3.8vw,52px);line-height:1.04;letter-spacing:-.015em;text-wrap:balance">{{ t.metrics.h2 }}</h2>
+      <p style="margin:22px 0 0;font-size:16px;line-height:1.65;color:var(--muted)">{{ t.metrics.p }}</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,4vw,56px);align-items:start">
+      <div style="display:grid;grid-template-columns:{{ metricCols }};gap:1px;background:var(--line);border:1px solid var(--line)">
+        <sc-for list="{{ t.metrics.list }}" as="m" hint-placeholder-count="6">
+          <div data-reveal style="background:var(--bg2);padding:22px 22px 24px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent)">{{ m.n }}</span>
+            <h4 style="margin:10px 0 8px;font-weight:600;font-size:16.5px">{{ m.name }}</h4>
+            <p style="margin:0;font-size:13.5px;line-height:1.58;color:var(--muted)">{{ m.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+      <!-- build comparison artifact -->
+      <div ref="{{ cmpRef }}" data-reveal style="position:relative;border:1px solid var(--line2);background:var(--bg2);padding:clamp(24px,3vw,36px)">
+        <span style="position:absolute;top:-1px;left:-1px;width:12px;height:12px;border-top:1.5px solid var(--accent);border-left:1.5px solid var(--accent)"></span>
+        <span style="position:absolute;top:-1px;right:-1px;width:12px;height:12px;border-top:1.5px solid var(--accent);border-right:1.5px solid var(--accent)"></span>
+        <span style="position:absolute;bottom:-1px;left:-1px;width:12px;height:12px;border-bottom:1.5px solid var(--accent);border-left:1.5px solid var(--accent)"></span>
+        <span style="position:absolute;bottom:-1px;right:-1px;width:12px;height:12px;border-bottom:1.5px solid var(--accent);border-right:1.5px solid var(--accent)"></span>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:28px">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase">{{ t.metrics.cmpKicker }}</div>
+            <h3 style="margin:8px 0 0;font-weight:600;font-size:21px">{{ t.metrics.cmpTitle }}</h3>
+          </div>
+          <div style="display:flex;gap:16px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted)">
+            <span style="display:flex;align-items:center;gap:7px"><span style="width:12px;height:6px;background:var(--line2)"></span>{{ t.metrics.legendA }}</span>
+            <span style="display:flex;align-items:center;gap:7px"><span style="width:12px;height:6px;background:var(--accent)"></span>{{ t.metrics.legendB }}</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <sc-for list="{{ cmpRows }}" as="r" hint-placeholder-count="4">
+            <div>
+              <div style="display:flex;justify-content:space-between;gap:12px;margin-bottom:10px;font-size:14px"><span style="font-weight:600">{{ r.label }}</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted)">{{ r.hint }}</span></div>
+              <div style="display:grid;grid-template-columns:minmax(0,1fr) 64px;gap:12px;align-items:center;margin-bottom:6px">
+                <div style="height:10px;background:var(--line)"><div style="height:100%;width:{{ r.aw }};background:var(--line2);transition:width 1.2s cubic-bezier(.2,.7,.2,1)"></div></div>
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);text-align:right">{{ r.a }}</span>
+              </div>
+              <div style="display:grid;grid-template-columns:minmax(0,1fr) 64px;gap:12px;align-items:center">
+                <div style="height:10px;background:var(--line)"><div style="height:100%;width:{{ r.bw }};background:var(--accent);transition:width 1.2s cubic-bezier(.2,.7,.2,1) .15s"></div></div>
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--accent);font-weight:600;text-align:right">{{ r.b }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <p style="margin:28px 0 0;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--faint);text-transform:uppercase">{{ t.metrics.note }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 WORKFLOW -->
+  <section data-screen-label="Workflow" style="padding:clamp(70px,9vw,130px) clamp(20px,4vw,56px);background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div style="max-width:1400px;margin:0 auto">
+      <div data-reveal style="margin-bottom:56px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase">{{ t.flow.eyebrow }}</span>
+        <h2 style="margin:16px 0 0;font-weight:600;font-size:clamp(28px,3.8vw,52px);line-height:1.04;letter-spacing:-.015em">{{ t.flow.h2 }}</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:clamp(24px,3vw,40px)">
+        <sc-for list="{{ t.flow.steps }}" as="s" hint-placeholder-count="4">
+          <div data-reveal style="position:relative;border-top:2px solid var(--accent);padding-top:22px">
+            <span style="position:absolute;top:-6px;left:0;width:10px;height:10px;background:var(--accent)"></span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint)">{{ s.n }}</span>
+            <h3 style="margin:12px 0 10px;font-weight:600;font-size:20px">{{ s.title }}</h3>
+            <p style="margin:0;font-size:14.5px;line-height:1.62;color:var(--muted)">{{ s.body }}</p>
+            <div style="margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--text2);background:var(--bg);border:1px solid var(--line);padding:8px 11px">{{ s.cmd }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 ACCESS -->
+  <section data-screen-label="Access" style="padding:clamp(70px,9vw,140px) clamp(20px,4vw,56px);max-width:1400px;margin:0 auto">
+    <div data-reveal style="margin-bottom:56px;max-width:62ch">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase">{{ t.access.eyebrow }}</span>
+      <h2 style="margin:16px 0 0;font-weight:600;font-size:clamp(28px,3.8vw,52px);line-height:1.04;letter-spacing:-.015em">{{ t.access.h2 }}</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:{{ accessCols }};gap:1px;background:var(--line);border:1px solid var(--line)">
+      <sc-for list="{{ t.access.tiers }}" as="a" hint-placeholder-count="3">
+        <div data-reveal style="position:relative;background:var(--bg2);padding:clamp(28px,3vw,40px);display:flex;flex-direction:column;gap:16px">
+          <span style="position:absolute;top:10px;right:10px;width:9px;height:9px;border-top:1.5px solid var(--accent);border-right:1.5px solid var(--accent)"></span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">{{ a.tag }}</span>
+          <h3 style="margin:0;font-weight:600;font-size:24px;line-height:1.15">{{ a.title }}</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.62;color:var(--muted)">{{ a.body }}</p>
+          <div style="margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--text2)">{{ a.for }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section data-screen-label="CTA" style="position:relative;padding:clamp(70px,9vw,140px) clamp(20px,4vw,56px);background:#0a0b0c;color:#eceded;overflow:hidden">
+    <div style="position:absolute;inset:0;background-image:repeating-radial-gradient(circle at 88% 115%,transparent 0 55px,rgba(255,255,255,.06) 55px 56px);pointer-events:none"></div>
+    <div style="position:relative;max-width:1100px;margin:0 auto">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:#e9a23b;text-transform:uppercase">{{ t.cta.eyebrow }}</span>
+      <h2 style="margin:18px 0 0;font-weight:600;font-size:clamp(32px,5vw,72px);line-height:1;letter-spacing:-.02em;color:#fff;max-width:18ch;text-wrap:balance">{{ t.cta.h2 }}</h2>
+      <p style="margin:26px 0 0;max-width:56ch;font-size:16px;line-height:1.65;color:#b7bbbe">{{ t.cta.p }}</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:36px">
+        <a href="index.html#contact" style="display:inline-flex;align-items:center;gap:10px;padding:15px 28px;background:#e9a23b;border:1.5px solid #e9a23b;color:#07090b;font-size:14px;text-transform:uppercase;font-weight:700" style-hover="background:transparent;color:#e9a23b">{{ t.cta.btn1 }} <span>&rarr;</span></a>
+        <a href="simulator.html" style="display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border:1.5px solid rgba(255,255,255,.28);color:#fff;font-size:14px;text-transform:uppercase;font-weight:700" style-hover="border-color:#e9a23b;color:#e9a23b">{{ t.cta.btn2 }}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="position:relative;padding:clamp(50px,6vw,80px) clamp(20px,4vw,56px) 40px;border-top:1px solid var(--line)">
+    <span style="position:absolute;top:-1px;left:0;right:0;height:2px;background:var(--accent)"></span>
+    <div style="max-width:1400px;margin:0 auto">
+      <div style="display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;padding-bottom:50px;border-bottom:1px solid var(--line)">
+        <div style="max-width:100%">
+          <img src="assets/lockup-light.png" alt="Svalin Industries" style="height:30px;width:auto;display:block;margin-bottom:18px;filter:var(--logo-filter)">
+          <p style="margin:0 0 22px;font-family:'IBM Plex Mono',monospace;font-size:clamp(20px,2.6vw,30px);color:var(--accent);letter-spacing:.02em;max-width:22ch;white-space:pre-line">{{ t.footer.motto }}</p>
+          <div style="display:flex;gap:12px">
+            <a href="https://linkedin.com/company/svalinind" target="_blank" rel="noopener" aria-label="LinkedIn" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line2);color:var(--text)" style-hover="border-color:var(--accent);color:var(--accent)">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+            </a>
+          </div>
+        </div>
+        <div style="display:flex;gap:clamp(40px,6vw,90px);flex-wrap:wrap">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase">{{ t.footer.colProduct }}</span>
+            <a href="index.html" style="font-size:14px;color:var(--text2)">{{ t.footer.home }}</a>
+            <a href="simulator.html" style="font-size:14px;color:var(--text2)">ORCA</a>
+            <a href="civil.html" style="font-size:14px;color:var(--text2)">{{ t.nav.civil }}</a>
+            <a href="developers.html" style="font-size:14px;color:var(--text2)">{{ t.nav.dev }}</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase">{{ t.footer.colPage }}</span>
+            <a href="#tracks" style="font-size:14px;color:var(--text2)">{{ t.nav.tracks }}</a>
+            <a href="#inject" style="font-size:14px;color:var(--text2)">{{ t.nav.inject }}</a>
+            <a href="#integrate" style="font-size:14px;color:var(--text2)">{{ t.nav.integrate }}</a>
+            <a href="#metrics" style="font-size:14px;color:var(--text2)">{{ t.nav.metrics }}</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;padding-top:26px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint)">
+        <span>{{ t.footer.copyright }}</span>
+        <span style="display:flex;flex-wrap:wrap;gap:8px 22px"><a href="privacy.html" style="color:var(--muted)">{{ t.footer.privacy }}</a><a href="cookies.html" style="color:var(--muted)">{{ t.footer.cookies }}</a></span>
+        <span>{{ t.footer.tagline }}</span>
+      </div>
+    </div>
+  </footer>
+
+  <button onClick="{{ scrollToTop }}" aria-label="Scroll to top" style="{{ scrollTopStyle }}">↑</button>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  rootRef = React.createRef(); heroRef = React.createRef(); radarRef = React.createRef(); cmpRef = React.createRef();
+  mLaunched = React.createRef(); mDetected = React.createRef(); mNeutral = React.createRef(); mLeak = React.createRef(); mTime = React.createRef(); mShots = React.createRef(); mRate = React.createRef(); bEW = React.createRef(); bEff = React.createRef(); bLeak = React.createRef(); cEW = React.createRef(); cEff = React.createRef(); cLeak = React.createRef();
+  state = { theme: 'dark', lang: 'en', menuOpen: false, vw: (typeof window !== 'undefined' ? window.innerWidth : 1200), showScrollTop: false,
+    prof: { sat: true, decoy: false, low: false, multi: false, fw: true }, agents: 16, waves: 2, effectors: 3, runNo: 1, seed: 7341, paused: false, speed: 1, simStatus: 'run', events: [], history: [], report: null, codeTab: 0, logs: [], cmpIn: false };
+
+  themes() {
+    return {
+      light: {'--bg':'#f4f2ee','--bg2':'#ffffff','--text':'#15181b','--text2':'#3d4247','--muted':'#63696e','--faint':'#9a9ea2','--line':'rgba(0,0,0,.10)','--line2':'rgba(0,0,0,.18)','--accent':'#c67e12','--grid':'rgba(0,0,0,.05)','--navbg':'rgba(244,242,238,.8)','--logo-filter':'invert(1)'},
+      dark: {'--bg':'#0a0b0c','--bg2':'#0d0f10','--text':'#eceded','--text2':'#b7bbbe','--muted':'#868b8f','--faint':'#5f6468','--line':'rgba(255,255,255,.08)','--line2':'rgba(255,255,255,.18)','--accent':'#e9a23b','--grid':'rgba(255,255,255,.04)','--navbg':'rgba(10,11,12,.72)','--logo-filter':'none'},
+    };
+  }
+
+  dict() {
+    const en = {
+      ui: { dark: 'Dark', light: 'Light' },
+      nav: { tracks: 'Who it is for', inject: 'Threat injection', integrate: 'Integration', metrics: 'Metrics', civil: 'Industry', dev: 'Developers', contact: 'Contact' },
+      hero: { eyebrow: '// ORCA for Developers', title: 'Test against the swarm before the field does.', sub: 'ORCA gives drone, autonomy and counter-drone teams a simulated world to plug into. Inject threats into your C-UAS stack, validate flight and swarm software across thousands of runs, and get comparable metrics on every build.', cta1: 'Request developer access', cta2: 'Try threat injection', termTitle: 'orca-sdk · session 0x3F2A', live: 'Live', specs: [{ k: 'Loop', v: 'SIL · HIL' }, { k: 'Scale', v: '1000s of runs' }, { k: 'Replay', v: 'Deterministic' }, { k: 'Deploy', v: 'Cloud · On-prem' }] },
+      tracks: { eyebrow: '01 / Who it is for', h2: 'Two kinds of builders. One simulated battlespace.', intro: 'Whether you build the drones or the systems that stop them, ORCA is the test range that never closes.', items: [
+        { letter: 'A', tag: 'Track A · Drones & autonomy', title: 'You build drones, swarms or autonomy software', body: 'Put your flight, navigation and swarm logic through conditions that are expensive, dangerous or impossible to reproduce in the field, before the first prototype flies.', items: ['Swarm behaviour and coordination logic at scale', 'Navigation under GNSS denial, jamming and spoofing', 'Link loss, latency and mesh degradation', 'Sensor models: radar, RF and EO/IR', 'Wind, battery and terrain on real elevation data'], outLabel: 'You get', outs: ['Regression suite', 'Failure replays', 'Field-trial plan'] },
+        { letter: 'B', tag: 'Track B · Counter-drone', title: 'You build C-UAS sensors, effectors or C2', body: 'ORCA acts as the adversary. It injects simulated threats into your detection, tracking, classification and engagement chain, and measures where and why your defence fails.', items: ['Synthetic tracks and sensor data fed to your stack', 'Saturation, decoys and low-altitude infiltration', 'Mixed threats: multirotor, fixed-wing, USV and UGV', 'Red team at scale to find the saturation point', 'Same scenario, every build, comparable results'], outLabel: 'You get', outs: ['Leaker analysis', 'Saturation point', 'Effector cost'] }] },
+      inject: { eyebrow: '02 / Threat injection', h2: 'Compose a threat. Send it at the defence. See what gets through.', p: 'This is the core loop for C-UAS teams. Pick a threat profile, size the swarm and send it at a layered defence. Every run has a seed, so any result can be replayed exactly. In ORCA the defence is your real system; here it is a simplified model to show the idea.', panel: 'Threat composer', lProfile: 'Threat profile', lAgents: 'Agents', lWaves: 'Waves', lEffectors: 'Effector channels', btn: 'Inject threat', mTitle: 'Run metrics', mLaunched: 'Agents launched', mDetected: 'Detected', mNeutral: 'Neutralised', mLeak: 'Leakers', mTime: 'Mean time to detect', mRate: 'Neutralisation rate', lgUnd: 'Undetected threat', lgTrk: 'Tracked threat', lgDecoy: 'Decoy', lgEng: 'Effector engagement', note: 'Illustrative simulation · generated data', profiles: { sat: 'Saturation', fw: 'Fixed-wing mix', decoy: 'Decoys', low: 'Low altitude', multi: 'Multi-axis' }, rings: ['DETECTION', 'IDENTIFICATION', 'EW', 'EFFECTORS'], asset: 'ASSET', mShots: 'Shots fired', byLayer: 'Neutralised by layer', lgEW: 'EW', lgEff: 'Effectors', lgLeak: 'Leaked', history: 'Run history', hCols: ['Run', 'Agents', 'Neutr.', 'Leakers'], noHistory: 'Completed runs appear here so you can compare configurations.', events: 'Event log', pause: 'Pause', play: 'Play', replay: 'Replay seed', status: { run: 'Running', paused: 'Paused', done: 'Complete' }, done: 'RUN COMPLETE', neutr: 'neutralised', leakers: 'leakers', next: 'Next run in', rTitle: 'Run report', rDownload: 'Download JSON', rPerKill: 'Shots per kill', rPeak: 'Peak simultaneous tracks', rTimeline: 'Timeline', rDet: 'Detections', rKill: 'Kills', rLeakMark: 'Leak', rByType: 'By threat type', rTypeCols: ['Type', 'Sent', 'Det.', 'Neutr.', 'Leak'], rConfig: 'Configuration', seeReport: 'Report below ↓', vHeld: 'Defence held. {rate} of threats neutralised with no leakers. Peak load was {peak} simultaneous tracks at T+{peakT}s.', vLeak: '{leak} leaker(s) reached the asset, mainly from bearing {brg}°. The defence was under most pressure at T+{peakT}s with {peak} simultaneous tracks. {spk} shots per kill.', cfgAgents: 'agents', cfgWaves: 'waves', cfgEff: 'effectors', descs: { sat: 'All agents of a wave arrive at once', fw: 'Faster aircraft that ignore EW', decoy: 'Cheap agents that draw fire', low: 'Hidden until the inner layers', multi: 'Threats from every bearing' }, types: { mr: 'multirotor', fw: 'fixed-wing', decoy: 'decoy' } },
+      integ: { eyebrow: '03 / Integration', h2: 'Plug your stack into the simulation.', p: 'ORCA sits between your software and a simulated world. It streams synthetic sensor data out to your system and takes your commands and effector actions back in, so your code runs exactly as it would in the field.', blocks: [
+        { k: 'Your system', flow: '↔', title: 'Your stack, unchanged', items: ['C-UAS C2', 'Tracker / classifier', 'Autopilot', 'Swarm logic', 'Hardware under test'] },
+        { k: 'ORCA bridge', flow: '↔', title: 'API / SDK bridge', items: ['Sensor streams out', 'Commands in', 'Time sync', 'Scenario control'] },
+        { k: 'ORCA engine', flow: '■', title: 'The simulated world', items: ['Flight dynamics', 'Radar · RF · EO/IR', 'EW · links', 'Terrain · weather', 'Swarm rules'] }],
+        modes: [{ k: 'SIL', title: 'Software-in-the-loop', body: 'Your detection, tracking or autonomy software runs against ORCA in real time or faster, on your workstation or in a CI pipeline.' }, { k: 'HIL', title: 'Hardware-in-the-loop', body: 'Connect real flight controllers, sensors or C2 consoles. ORCA feeds them the simulated scenario as if it were live.' }, { k: 'CI', title: 'Regression on every build', body: 'Run the same scenario set on each release and compare metrics run by run, so a regression is caught before the next field trial.' }],
+        codeNote: 'Illustrative example · final SDK interface may differ' },
+      metrics: { eyebrow: '04 / Metrics', h2: 'Every run, measured. Every build, compared.', p: 'Each run is recorded and returns the same set of metrics, so results are comparable across scenarios, versions and teams.', list: [
+        { n: 'M-01', name: 'Time to detect', desc: 'From the moment a threat enters the scenario to first detection.' }, { n: 'M-02', name: 'Reaction time', desc: "From detection to the defender's first action." }, { n: 'M-03', name: 'Neutralisation rate', desc: 'Threats neutralised over the total launched, per layer.' }, { n: 'M-04', name: 'Leakers', desc: 'Threats that reach the asset, and the layer they passed through.' }, { n: 'M-05', name: 'Saturation point', desc: 'Number of simultaneous agents at which the defence starts to fail.' }, { n: 'M-06', name: 'Effector expenditure', desc: 'Interceptors, munitions or EW time used per threat.' }],
+        cmpKicker: 'Batch report · 2,000 runs per build', cmpTitle: 'Build comparison', legendA: 'Build 1.3', legendB: 'Build 1.4',
+        rows: [{ label: 'Neutralisation rate', hint: 'higher is better', a: '71%', b: '89%', aw: 71, bw: 89 }, { label: 'Leakers per run', hint: 'lower is better', a: '6.2', b: '2.1', aw: 100, bw: 34 }, { label: 'Time to detect', hint: 'lower is better', a: '4.8 s', b: '3.1 s', aw: 100, bw: 65 }, { label: 'Saturation point', hint: 'higher is better', a: '36', b: '64', aw: 56, bw: 100 }],
+        note: 'Illustrative data' },
+      flow: { eyebrow: '05 / Workflow', h2: 'From first scenario to fixed build', steps: [
+        { n: '01', title: 'Connect your stack', body: 'Point your software or hardware at the ORCA bridge. No changes to your code paths.', cmd: '$ orca connect --target udp://10.0.0.12' },
+        { n: '02', title: 'Inject the threat', body: 'Define the adversary: numbers, platforms, tactics, waves and electronic warfare.', cmd: '$ orca inject --profile saturation -n 48' },
+        { n: '03', title: 'Scale the runs', body: 'Sweep parameters across thousands of runs to find the combinations nobody anticipated.', cmd: '$ orca sweep --runs 2000 --vary count' },
+        { n: '04', title: 'Measure and fix', body: 'Compare metrics, replay every failure step by step, fix and run again.', cmd: '$ orca replay run_0412 --step' }] },
+      access: { eyebrow: '06 / Access', h2: 'Choose how you work with ORCA', tiers: [
+        { tag: 'SaaS', title: 'Cloud subscription', body: 'Run scenarios from the browser and scale runs on demand. The fastest way to start testing.', for: 'For: drone startups, integrators, R&D teams' },
+        { tag: 'API / SDK', title: 'Developer access', body: 'Drive ORCA from your own tools and pipelines. Connect your software, automate sweeps and pull results.', for: 'For: autonomy and C-UAS engineering teams' },
+        { tag: 'On-premise', title: 'Air-gapped deployment', body: 'The full pipeline on your own infrastructure, including isolated networks, with custom development where needed.', for: 'For: defence primes, manufacturers, armed forces' }] },
+      cta: { eyebrow: '07 / Get access', h2: 'Find the gap before someone else does.', p: 'Tell us what you are building and what you need to test. We will set up a first scenario with your team.', btn1: 'Request developer access', btn2: 'See ORCA' },
+      footer: { copyright: '© Svalin Industries 2026. All rights reserved.', tagline: 'Autonomous Systems & Swarm Technology', motto: 'Simulate.\nValidate.\nAdvance.', colProduct: 'Product', colPage: 'This Page', home: 'Home', privacy: 'Privacy Policy', cookies: 'Cookie Policy' },
+      log: { inject: 'inject', sensor: 'sensor', cuas: 'cuas', result: 'result', leak: 'leak', batch: 'batch' },
+    };
+    const es = {
+      ui: { dark: 'Oscuro', light: 'Claro' },
+      nav: { tracks: 'Para quién', inject: 'Inyección de amenazas', integrate: 'Integración', metrics: 'Métricas', civil: 'Industria', dev: 'Developers', contact: 'Contacto' },
+      hero: { eyebrow: '// ORCA para Developers', title: 'Prueba contra el enjambre antes de que lo haga el campo.', sub: 'ORCA ofrece a los equipos de drones, autonomía y antidrón un mundo simulado al que conectarse. Inyecta amenazas en tu sistema C-UAS, valida software de vuelo y de enjambre en miles de ejecuciones y obtén métricas comparables en cada versión.', cta1: 'Solicitar acceso developer', cta2: 'Probar inyección de amenazas', termTitle: 'orca-sdk · sesión 0x3F2A', live: 'En vivo', specs: [{ k: 'Bucle', v: 'SIL · HIL' }, { k: 'Escala', v: 'Miles de runs' }, { k: 'Replay', v: 'Determinista' }, { k: 'Despliegue', v: 'Cloud · On-prem' }] },
+      tracks: { eyebrow: '01 / Para quién', h2: 'Dos tipos de equipos. Un mismo campo de pruebas simulado.', intro: 'Tanto si construyes los drones como los sistemas que los detienen, ORCA es el campo de pruebas que nunca cierra.', items: [
+        { letter: 'A', tag: 'Línea A · Drones y autonomía', title: 'Desarrollas drones, enjambres o software de autonomía', body: 'Somete tu lógica de vuelo, navegación y enjambre a condiciones caras, peligrosas o imposibles de reproducir en campo, antes de que vuele el primer prototipo.', items: ['Comportamiento y coordinación de enjambre a escala', 'Navegación con denegación, interferencia y spoofing GNSS', 'Pérdida de enlace, latencia y degradación de la malla', 'Modelos de sensor: radar, RF y EO/IR', 'Viento, batería y terreno sobre datos de elevación reales'], outLabel: 'Obtienes', outs: ['Suite de regresión', 'Replays de fallos', 'Plan de pruebas de campo'] },
+        { letter: 'B', tag: 'Línea B · Antidrón', title: 'Desarrollas sensores, efectores o C2 C-UAS', body: 'ORCA hace de adversario. Inyecta amenazas simuladas en tu cadena de detección, seguimiento, clasificación y neutralización, y mide dónde y por qué falla tu defensa.', items: ['Trazas y datos de sensor sintéticos enviados a tu sistema', 'Saturación, señuelos e infiltración a baja cota', 'Amenazas mixtas: multirrotor, ala fija, USV y UGV', 'Red team a escala para encontrar el punto de saturación', 'Mismo escenario en cada versión, resultados comparables'], outLabel: 'Obtienes', outs: ['Análisis de fugas', 'Punto de saturación', 'Coste de efectores'] }] },
+      inject: { eyebrow: '02 / Inyección de amenazas', h2: 'Compón una amenaza. Lánzala contra la defensa. Mira qué pasa.', p: 'Este es el bucle central para los equipos C-UAS. Elige un perfil de amenaza, dimensiona el enjambre y lánzalo contra una defensa por capas. Cada ejecución tiene una semilla, así que cualquier resultado se puede repetir exactamente. En ORCA la defensa es tu sistema real; aquí es un modelo simplificado para mostrar la idea.', panel: 'Compositor de amenazas', lProfile: 'Perfil de amenaza', lAgents: 'Agentes', lWaves: 'Oleadas', lEffectors: 'Canales de efector', btn: 'Inyectar amenaza', mTitle: 'Métricas de la ejecución', mLaunched: 'Agentes lanzados', mDetected: 'Detectados', mNeutral: 'Neutralizados', mLeak: 'Fugas', mTime: 'Tiempo medio de detección', mRate: 'Tasa de neutralización', lgUnd: 'Amenaza no detectada', lgTrk: 'Amenaza en seguimiento', lgDecoy: 'Señuelo', lgEng: 'Enfrentamiento de efector', note: 'Simulación ilustrativa · datos generados', profiles: { sat: 'Saturación', fw: 'Mezcla ala fija', decoy: 'Señuelos', low: 'Baja cota', multi: 'Multieje' }, rings: ['DETECCIÓN', 'IDENTIFICACIÓN', 'GE', 'EFECTORES'], asset: 'ACTIVO', mShots: 'Disparos', byLayer: 'Neutralizados por capa', lgEW: 'GE', lgEff: 'Efectores', lgLeak: 'Fugas', history: 'Historial de ejecuciones', hCols: ['Run', 'Agentes', 'Neutr.', 'Fugas'], noHistory: 'Las ejecuciones completadas aparecen aquí para comparar configuraciones.', events: 'Registro de eventos', pause: 'Pausa', play: 'Reanudar', replay: 'Repetir semilla', status: { run: 'En curso', paused: 'En pausa', done: 'Completada' }, done: 'EJECUCIÓN COMPLETADA', neutr: 'neutralizado', leakers: 'fugas', next: 'Siguiente en', rTitle: 'Informe de ejecución', rDownload: 'Descargar JSON', rPerKill: 'Disparos por baja', rPeak: 'Pico de trazas simultáneas', rTimeline: 'Línea temporal', rDet: 'Detecciones', rKill: 'Bajas', rLeakMark: 'Fuga', rByType: 'Por tipo de amenaza', rTypeCols: ['Tipo', 'Env.', 'Det.', 'Neutr.', 'Fugas'], rConfig: 'Configuración', seeReport: 'Informe abajo ↓', vHeld: 'La defensa aguantó. {rate} de las amenazas neutralizadas y ninguna fuga. El pico de carga fue de {peak} trazas simultáneas en T+{peakT}s.', vLeak: '{leak} fuga(s) alcanzaron el activo, principalmente por el rumbo {brg}°. El momento de mayor presión fue T+{peakT}s con {peak} trazas simultáneas. {spk} disparos por baja.', cfgAgents: 'agentes', cfgWaves: 'oleadas', cfgEff: 'efectores', descs: { sat: 'Toda la oleada llega a la vez', fw: 'Aeronaves rápidas inmunes a GE', decoy: 'Agentes baratos que atraen disparos', low: 'Ocultos hasta las capas interiores', multi: 'Amenazas desde todas las direcciones' }, types: { mr: 'multirrotor', fw: 'ala fija', decoy: 'señuelo' } },
+      integ: { eyebrow: '03 / Integración', h2: 'Conecta tu sistema a la simulación.', p: 'ORCA se sitúa entre tu software y un mundo simulado. Envía datos de sensor sintéticos a tu sistema y recibe tus comandos y acciones de efector, de modo que tu código se ejecuta igual que en campo.', blocks: [
+        { k: 'Tu sistema', flow: '↔', title: 'Tu sistema, sin cambios', items: ['C2 C-UAS', 'Tracker / clasificador', 'Autopiloto', 'Lógica de enjambre', 'Hardware bajo prueba'] },
+        { k: 'Bridge ORCA', flow: '↔', title: 'Bridge API / SDK', items: ['Flujos de sensor', 'Comandos', 'Sincronía temporal', 'Control de escenario'] },
+        { k: 'Motor ORCA', flow: '■', title: 'El mundo simulado', items: ['Dinámica de vuelo', 'Radar · RF · EO/IR', 'GE · enlaces', 'Terreno · meteo', 'Reglas de enjambre'] }],
+        modes: [{ k: 'SIL', title: 'Software-in-the-loop', body: 'Tu software de detección, seguimiento o autonomía se ejecuta contra ORCA en tiempo real o más rápido, en tu equipo o en un pipeline de CI.' }, { k: 'HIL', title: 'Hardware-in-the-loop', body: 'Conecta controladoras de vuelo, sensores o consolas C2 reales. ORCA les alimenta el escenario simulado como si fuera real.' }, { k: 'CI', title: 'Regresión en cada versión', body: 'Ejecuta el mismo conjunto de escenarios en cada release y compara métricas ejecución a ejecución, para detectar una regresión antes de la siguiente prueba de campo.' }],
+        codeNote: 'Ejemplo ilustrativo · la interfaz final del SDK puede variar' },
+      metrics: { eyebrow: '04 / Métricas', h2: 'Cada ejecución, medida. Cada versión, comparada.', p: 'Cada ejecución queda grabada y devuelve el mismo conjunto de métricas, para comparar resultados entre escenarios, versiones y equipos.', list: [
+        { n: 'M-01', name: 'Tiempo de detección', desc: 'Desde que la amenaza entra en el escenario hasta la primera detección.' }, { n: 'M-02', name: 'Tiempo de reacción', desc: 'Desde la detección hasta la primera acción del defensor.' }, { n: 'M-03', name: 'Tasa de neutralización', desc: 'Amenazas neutralizadas sobre el total lanzado, por capa.' }, { n: 'M-04', name: 'Fugas', desc: 'Amenazas que alcanzan el activo y la capa por la que pasaron.' }, { n: 'M-05', name: 'Punto de saturación', desc: 'Número de agentes simultáneos a partir del cual la defensa empieza a fallar.' }, { n: 'M-06', name: 'Gasto de efectores', desc: 'Interceptores, munición o tiempo de GE empleados por amenaza.' }],
+        cmpKicker: 'Informe de lote · 2.000 ejecuciones por versión', cmpTitle: 'Comparativa de versiones', legendA: 'Versión 1.3', legendB: 'Versión 1.4',
+        rows: [{ label: 'Tasa de neutralización', hint: 'más es mejor', a: '71%', b: '89%', aw: 71, bw: 89 }, { label: 'Fugas por ejecución', hint: 'menos es mejor', a: '6,2', b: '2,1', aw: 100, bw: 34 }, { label: 'Tiempo de detección', hint: 'menos es mejor', a: '4,8 s', b: '3,1 s', aw: 100, bw: 65 }, { label: 'Punto de saturación', hint: 'más es mejor', a: '36', b: '64', aw: 56, bw: 100 }],
+        note: 'Datos ilustrativos' },
+      flow: { eyebrow: '05 / Flujo de trabajo', h2: 'Del primer escenario a la versión corregida', steps: [
+        { n: '01', title: 'Conecta tu sistema', body: 'Apunta tu software o hardware al bridge de ORCA. Sin cambios en tu código.', cmd: '$ orca connect --target udp://10.0.0.12' },
+        { n: '02', title: 'Inyecta la amenaza', body: 'Define al adversario: número, plataformas, tácticas, oleadas y guerra electrónica.', cmd: '$ orca inject --profile saturation -n 48' },
+        { n: '03', title: 'Escala las ejecuciones', body: 'Barre parámetros en miles de ejecuciones para encontrar las combinaciones que nadie anticipó.', cmd: '$ orca sweep --runs 2000 --vary count' },
+        { n: '04', title: 'Mide y corrige', body: 'Compara métricas, repite cada fallo paso a paso, corrige y vuelve a ejecutar.', cmd: '$ orca replay run_0412 --step' }] },
+      access: { eyebrow: '06 / Acceso', h2: 'Elige cómo trabajar con ORCA', tiers: [
+        { tag: 'SaaS', title: 'Suscripción cloud', body: 'Ejecuta escenarios desde el navegador y escala ejecuciones bajo demanda. La forma más rápida de empezar a probar.', for: 'Para: startups de drones, integradores, equipos de I+D' },
+        { tag: 'API / SDK', title: 'Acceso developer', body: 'Controla ORCA desde tus herramientas y pipelines. Conecta tu software, automatiza barridos y extrae resultados.', for: 'Para: equipos de ingeniería de autonomía y C-UAS' },
+        { tag: 'On-premise', title: 'Despliegue air-gapped', body: 'Todo el pipeline en tu propia infraestructura, también en redes aisladas, con desarrollo a medida cuando haga falta.', for: 'Para: contratistas de defensa, fabricantes, fuerzas armadas' }] },
+      cta: { eyebrow: '07 / Acceso', h2: 'Encuentra el hueco antes de que lo encuentre otro.', p: 'Cuéntanos qué estás desarrollando y qué necesitas probar. Prepararemos un primer escenario con tu equipo.', btn1: 'Solicitar acceso developer', btn2: 'Ver ORCA' },
+      footer: { copyright: '© Svalin Industries 2026. Todos los derechos reservados.', tagline: 'Autonomous Systems & Swarm Technology', motto: 'Simula.\nValida.\nAvanza.', colProduct: 'Producto', colPage: 'Esta Página', home: 'Inicio', privacy: 'Política de Privacidad', cookies: 'Política de Cookies' },
+      log: { inject: 'inject', sensor: 'sensor', cuas: 'cuas', result: 'result', leak: 'leak', batch: 'batch' },
+    };
+    return { en, es };
+  }
+
+  code() {
+    return [
+      { label: 'Python', file: 'cuas_redteam.py', src: [
+        'import orca', '',
+        'sim = orca.connect("orca.local", project="cuas-site-07")', '',
+        'scenario = sim.scenario("port-perimeter")',
+        'scenario.threats.add(profile="multirotor", count=48,',
+        '                     tactic="saturation", waves=3)',
+        'scenario.threats.add(profile="fixed_wing", count=6,',
+        '                     tactic="low_altitude")',
+        'scenario.environment(wind="NE 6m/s", ew="gnss_jamming")', '',
+        '# stream synthetic radar + EO/IR into your C-UAS stack',
+        'sim.bridge(sensors=["radar_3d", "eo_ir"],',
+        '           target="udp://10.0.0.12:5600")', '',
+        'batch = scenario.sweep(runs=2000, vary=["count", "approach"])',
+        'report = batch.run()',
+        'print(report.leakers, report.saturation_point)'] },
+      { label: 'Scenario', file: 'port-perimeter.yaml', src: [
+        'scenario: port-perimeter', 'terrain: dem/site_07', 'weather:', '  wind: NE 6m/s', '  ew: gnss_jamming', '',
+        'defence:', '  sensors: [radar_3d, rf_detector, eo_ir]', '  effectors: [jammer, interceptor_x2]', '  bridge: udp://10.0.0.12:5600', '',
+        'threats:', '  - profile: multirotor', '    count: 48', '    tactic: saturation', '    waves: 3', '  - profile: usv', '    count: 2', '    approach: harbour_mouth', '',
+        'runs: 2000', 'seed: 7341'] },
+      { label: 'REST', file: 'POST /v1/runs', src: [
+        'POST /v1/runs', '{', '  "scenario": "port-perimeter",', '  "sweep": { "count": [24, 48, 96], "approach": "random" },', '  "runs": 2000,', '  "replay": true', '}', '',
+        '# 202 Accepted', '{', '  "batch_id": "b_8f21",', '  "status": "queued",', '  "eta_s": 340', '}'] },
+    ];
+  }
+
+  tokenize(line) {
+    const segs = []; const re = /("[^"]*"|#.*$|\b\d[\d.]*\b|\b(?:import|from|print|POST|GET|true|false)\b|^\s*[\w_-]+(?=:)|- )/g;
+    let last = 0, m;
+    while ((m = re.exec(line))) {
+      if (m.index > last) segs.push({ t: line.slice(last, m.index), c: '#d9d7d0' });
+      const s = m[0]; let c = '#d9d7d0';
+      if (s[0] === '#') c = '#5f6468'; else if (s[0] === '"') c = '#e9a23b'; else if (/^\d/.test(s)) c = '#f0c27a'; else if (/^(import|from|print|POST|GET|true|false)$/.test(s)) c = '#e0483e'; else if (s === '- ') c = '#868b8f'; else c = '#9fb3c8';
+      segs.push({ t: s, c }); last = m.index + s.length;
+      if (s.length === 0) re.lastIndex++;
+    }
+    if (last < line.length) segs.push({ t: line.slice(last), c: '#d9d7d0' });
+    if (!segs.length) segs.push({ t: ' ', c: '#d9d7d0' });
+    return segs;
+  }
+
+  detectTheme() { const h = new Date().getHours(); return (h >= 19 || h < 7) ? 'dark' : 'light'; }
+
+  componentDidMount() {
+    let th, lg;
+    try { th = localStorage.getItem('sv_theme'); lg = localStorage.getItem('sv_lang'); } catch (e) {}
+    const theme = (th === 'light' || th === 'dark') ? th : this.detectTheme();
+    const lang = (lg === 'en' || lg === 'es') ? lg : 'en';
+    this.setState({ theme, lang });
+    try { document.title = 'ORCA for Developers | Svalin Industries'; } catch (e) {}
+    this._onWinResize = () => this.setState(s => ({ vw: window.innerWidth, menuOpen: window.innerWidth >= 860 ? false : s.menuOpen }));
+    addEventListener('resize', this._onWinResize);
+    this._onScroll = () => { const show = window.scrollY > 500; this.setState(s => s.showScrollTop === show ? null : { showScrollTop: show }); };
+    addEventListener('scroll', this._onScroll, { passive: true });
+    this.applyTheme();
+    this.initReveals();
+    this.initHero();
+    this.initRadar();
+    this.initLogs();
+    if ('IntersectionObserver' in window && this.cmpRef.current) {
+      this._cmpIO = new IntersectionObserver(e => { if (e[0].isIntersecting) { this.setState({ cmpIn: true }); this._cmpIO.disconnect(); } }, { threshold: .3 });
+      this._cmpIO.observe(this.cmpRef.current);
+    } else this.setState({ cmpIn: true });
+  }
+  componentDidUpdate() { if (this.state.theme !== this._lastTheme) { this._lastTheme = this.state.theme; this.applyTheme(); } }
+  componentWillUnmount() {
+    [this._heroRaf, this._radarRaf].forEach(r => r && cancelAnimationFrame(r));
+    clearInterval(this._logTimer);
+    removeEventListener('resize', this._onWinResize); removeEventListener('scroll', this._onScroll);
+    if (this._onResizeCanvas) removeEventListener('resize', this._onResizeCanvas); if (this._ro) this._ro.disconnect();
+  }
+  applyTheme() {
+    const el = this.rootRef.current; if (!el) return;
+    const map = this.themes()[this.state.theme] || this.themes().light;
+    Object.entries(map).forEach(([k, v]) => el.style.setProperty(k, v));
+    document.body.style.background = map['--bg']; document.body.style.color = map['--text'];
+  }
+  toggleTheme() { this.setState(s => { const n = s.theme === 'light' ? 'dark' : 'light'; try { localStorage.setItem('sv_theme', n); } catch (e) {} return { theme: n }; }); }
+  toggleLang() { this.setState(s => { const n = s.lang === 'en' ? 'es' : 'en'; try { localStorage.setItem('sv_lang', n); } catch (e) {} return { lang: n }; }); setTimeout(() => { if (window.SvConsent) window.SvConsent.refresh(); }, 0); }
+
+  initReveals() {
+    const root = this.rootRef.current; if (!root) return;
+    const els = root.querySelectorAll('[data-reveal]');
+    if (!('IntersectionObserver' in window)) return;
+    els.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(24px)'; el.style.transition = 'opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)'; });
+    const io = new IntersectionObserver(ents => ents.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'none'; io.unobserve(e.target); } }), { threshold: .1 });
+    els.forEach(el => io.observe(el));
+  }
+
+  initLogs() {
+    const T = () => { this._lt = (this._lt || 0) + 1 + Math.floor(Math.random() * 3); const s = this._lt; return 'T+' + String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); };
+    const id = () => 'TRK-' + String(Math.floor(Math.random() * 900) + 100);
+    let run = 412;
+    const gens = [
+      () => ({ tag: 'inject', color: '#e9a23b', text: 'wave=' + (1 + Math.floor(Math.random() * 3)) + ' agents=' + (24 + 4 * Math.floor(Math.random() * 12)) + ' profile=saturation' }),
+      () => ({ tag: 'sensor', color: '#9fb3c8', text: 'radar_3d → tracks=' + (20 + Math.floor(Math.random() * 40)) + ' latency=' + (30 + Math.floor(Math.random() * 30)) + 'ms' }),
+      () => ({ tag: 'sensor', color: '#9fb3c8', text: 'eo_ir → frame ' + (1000 + Math.floor(Math.random() * 9000)) + ' · 3 candidates' }),
+      () => ({ tag: 'cuas', color: '#d9d7d0', text: 'engage ' + id() + ' effector=' + (Math.random() < .5 ? 'jammer' : 'interceptor') }),
+      () => ({ tag: 'result', color: '#e9a23b', text: id() + ' neutralised · layer=' + (Math.random() < .5 ? 'EW' : 'EFFECTOR') }),
+      () => ({ tag: 'leak', color: '#e0483e', text: id() + ' reached asset · replay flagged' }),
+      () => ({ tag: 'batch', color: '#868b8f', text: 'run ' + (run++) + '/2000 complete · seed ' + (7000 + Math.floor(Math.random() * 999)) }),
+    ];
+    const weights = [1, 2, 1, 2, 2, .6, 1.2];
+    const pick = () => { const tot = weights.reduce((a, b) => a + b, 0); let r = Math.random() * tot; for (let i = 0; i < gens.length; i++) { r -= weights[i]; if (r <= 0) return gens[i](); } return gens[0](); };
+    const seed = []; for (let i = 0; i < 9; i++) seed.push({ time: T(), ...pick(), k: Math.random() });
+    this.setState({ logs: seed });
+    this._logTimer = setInterval(() => { if (document.hidden) return; this.setState(s => ({ logs: [...s.logs.slice(-9), { time: T(), ...pick(), k: Math.random() }] })); }, 1150);
+  }
+
+  initHero() {
+    const cv = this.heroRef.current; if (!cv) return;
+    const ctx = cv.getContext('2d'); let w = 0, h = 0, dpr = 1;
+    const resize = () => { dpr = Math.min(1.5, devicePixelRatio || 1); w = cv.clientWidth; h = cv.clientHeight; cv.width = w * dpr; cv.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); };
+    resize(); addEventListener('resize', resize);
+    const N = 46;
+    const ag = Array.from({ length: N }, () => ({ x: .55 + Math.random() * .4, y: .2 + Math.random() * .6, vx: 0, vy: 0, ph: Math.random() * 6.28, trk: Math.random() < .14 }));
+    const hostile = [];
+    let t = 0, last = 0, visible = true;
+    if ('IntersectionObserver' in window) new IntersectionObserver(e => { visible = e[0].isIntersecting; }).observe(cv);
+    const loop = (now) => {
+      this._heroRaf = requestAnimationFrame(loop);
+      if (!visible || document.hidden || now - last < 22) return; last = now; t += .016;
+      ctx.clearRect(0, 0, w, h);
+      ctx.strokeStyle = 'rgba(255,255,255,.05)'; ctx.lineWidth = 1;
+      const pcx = w * .74, pcy = h * .5, maxR = Math.hypot(w, h);
+      for (let r = 70; r < maxR; r += 70) { ctx.beginPath(); ctx.arc(pcx, pcy, r, 0, Math.PI * 2); ctx.stroke(); }
+      for (let d = 0; d < 360; d += 15) { const a = d * Math.PI / 180; ctx.beginPath(); ctx.moveTo(pcx + Math.cos(a) * 70, pcy + Math.sin(a) * 70); ctx.lineTo(pcx + Math.cos(a) * maxR, pcy + Math.sin(a) * maxR); ctx.stroke(); }
+      const tx = .74 + Math.cos(t * .35) * .13, ty = .5 + Math.sin(t * .7) * .2;
+      ag.forEach((a, i) => {
+        const ox = Math.cos(a.ph + t * .6) * .07, oy = Math.sin(a.ph * 1.3 + t * .5) * .1;
+        a.vx += ((tx + ox) - a.x) * .0009; a.vy += ((ty + oy) - a.y) * .0009;
+        a.vx *= .95; a.vy *= .95; a.x += a.vx; a.y += a.vy;
+      });
+      const px = ag.map(a => a.x * w), py = ag.map(a => a.y * h);
+      for (let i = 0; i < N; i++) for (let j = i + 1; j < N; j++) {
+        const d = Math.hypot(px[i] - px[j], py[i] - py[j]);
+        if (d < 90) { ctx.strokeStyle = 'rgba(233,162,59,' + (1 - d / 90) * .22 + ')'; ctx.beginPath(); ctx.moveTo(px[i], py[i]); ctx.lineTo(px[j], py[j]); ctx.stroke(); }
+      }
+      ag.forEach((a, i) => {
+        const x = px[i], y = py[i], ang = Math.atan2(a.vy, a.vx);
+        ctx.save(); ctx.translate(x, y); ctx.rotate(ang + Math.PI / 2);
+        ctx.beginPath(); ctx.moveTo(0, -5); ctx.lineTo(4, 4); ctx.lineTo(-4, 4); ctx.closePath();
+        ctx.strokeStyle = 'rgba(233,162,59,.75)'; ctx.lineWidth = 1.2; ctx.stroke(); ctx.restore();
+        if (a.trk) {
+          const s = 13; ctx.strokeStyle = 'rgba(224,72,62,.8)'; ctx.lineWidth = 1;
+          [[-1, -1], [1, -1], [-1, 1], [1, 1]].forEach(([sx, sy]) => { ctx.beginPath(); ctx.moveTo(x + sx * s, y + sy * (s - 5)); ctx.lineTo(x + sx * s, y + sy * s); ctx.lineTo(x + sx * (s - 5), y + sy * s); ctx.stroke(); });
+          ctx.font = "9px 'IBM Plex Mono', monospace"; ctx.fillStyle = 'rgba(224,72,62,.85)'; ctx.fillText('TRK-' + (100 + i * 7), x + s + 4, y - s + 6);
+        }
+      });
+      // scan line
+      const sx = ((t * 120) % (w * 1.2)) - w * .1;
+      const g = ctx.createLinearGradient(sx - 80, 0, sx, 0); g.addColorStop(0, 'rgba(233,162,59,0)'); g.addColorStop(1, 'rgba(233,162,59,.08)');
+      ctx.fillStyle = g; ctx.fillRect(sx - 80, 0, 80, h);
+      ctx.strokeStyle = 'rgba(233,162,59,.25)'; ctx.beginPath(); ctx.moveTo(sx, 0); ctx.lineTo(sx, h); ctx.stroke();
+    };
+    this._heroRaf = requestAnimationFrame(loop);
+  }
+
+  initRadar() {
+    const cv = this.radarRef.current; if (!cv) return;
+    const ctx = cv.getContext('2d'); let S = 0, dpr = 1;
+    const resize = () => { dpr = Math.min(2, devicePixelRatio || 1); S = cv.clientWidth; cv.width = S * dpr; cv.height = S * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); };
+    resize(); this._onResizeCanvas = resize; addEventListener('resize', resize);
+    if ('ResizeObserver' in window) { this._ro = new ResizeObserver(resize); this._ro.observe(cv); }
+    const RING = [.92, .72, .5, .3];
+    const DT = 1 / 60;
+    const mul = (a) => () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+    const L = () => (this._dictCache && this._dictCache[this.state.lang] && this._dictCache[this.state.lang].inject) || {};
+    const build = (seed) => {
+      const st = this.state, p = st.prof, N = st.agents, W = st.waves, Rn = mul(seed);
+      const base = Rn() * Math.PI * 2, th = [];
+      for (let i = 0; i < N; i++) {
+        const wave = i % W, ang = p.multi ? Rn() * Math.PI * 2 : base + (Rn() - .5) * 1.0, r = Rn();
+        const type = p.decoy && r < .25 ? 'decoy' : (p.fw && r > .78 ? 'fw' : 'mr');
+        th.push({ id: 'T' + String(i + 1).padStart(2, '0'), a: ang, r: 1.06 + Rn() * .08, type, low: p.low && Rn() < .5, spawn: wave * 6 + (p.sat ? Rn() * .8 : Rn() * 4.5), st: 'wait', det: false, tIn: 0, burst: 0, spd: (type === 'fw' ? .13 : .075) * (.85 + Rn() * .3), trail: [], by: null });
+      }
+      const E = st.effectors;
+      const em = Array.from({ length: E }, (_, k) => { const a = base + k * Math.PI * 2 / E + Math.PI / E; return { a, aim: a, tgt: null, t: 0, cool: 0 }; });
+      return { seed, Rn, th, t: 0, em, detT: [], kEW: 0, kEff: 0, leak: 0, shots: 0, end: null, acc: 0, wait: 0, flash: 0, binD: [], binK: [], binL: [], leakA: [], peak: 0, peakT: 0, fx: [], cfg: { prof: { ...st.prof }, agents: N, waves: W, eff: E } };
+    };
+    let sim = build(this.state.seed);
+    this._evBuf = [];
+    const ev = (tag, text, color) => this._evBuf.push({ time: 'T+' + sim.t.toFixed(1), tag, text, color, k: Math.random() });
+    this.newRun = (seed) => {
+      const s = seed == null ? Math.floor(1000 + Math.random() * 8999) : seed;
+      sim = build(s); this._evBuf = [];
+      this.setState(st => ({ seed: s, runNo: st.runNo + 1, simStatus: st.paused ? 'paused' : 'run', events: [] }));
+    };
+    const finish = (s) => {
+      const real = s.th.filter(o => o.type !== 'decoy').length;
+      const rate = real ? Math.round((s.kEW + s.kEff) / real * 100) : 0;
+      const lab = L(), types = lab.types || { mr: 'multirotor', fw: 'fixed-wing', decoy: 'decoy' };
+      const dur = Math.ceil(s.t), nb = Math.min(36, Math.max(8, dur)), per = dur / nb;
+      const bins = []; let mx = 1;
+      for (let b = 0; b < nb; b++) bins.push({ d: 0, k: 0, l: 0 }); for (let sec = 0; sec <= dur; sec++) { const b = Math.min(nb - 1, Math.floor(sec / per)); bins[b].d += s.binD[sec] || 0; bins[b].k += s.binK[sec] || 0; bins[b].l = bins[b].l || s.binL[sec] || 0; } bins.forEach(b => { mx = Math.max(mx, b.d, b.k); });
+      const binsOut = bins.map(b => ({ d: (b.d / mx * 100) + '%', k: (b.k / mx * 100) + '%', l: b.l ? 1 : 0 }));
+      const tlist = ['mr', 'fw', 'decoy'].map(k => { const g = s.th.filter(o => o.type === k); if (!g.length) return null; const lk = g.filter(o => o.st === 'leak').length; return { name: types[k], n: g.length, det: g.filter(o => o.det).length, neu: g.filter(o => o.st === 'down').length, leak: lk, leakColor: lk ? '#e0483e' : '#868b8f' }; }).filter(Boolean);
+      let brg = 0; if (s.leakA.length) { const sx = s.leakA.reduce((a, v) => a + Math.cos(v), 0), sy = s.leakA.reduce((a, v) => a + Math.sin(v), 0); brg = Math.round(((Math.atan2(sy, sx) * 180 / Math.PI + 90) % 360 + 360) % 360); }
+      const kills = s.kEW + s.kEff, spk = s.kEff ? (s.shots / s.kEff).toFixed(1) : '–';
+      const fill = (str) => str.replace('{rate}', rate + '%').replace('{peak}', s.peak).replace('{peakT}', s.peakT.toFixed(1)).replace('{leak}', s.leak).replace('{brg}', String(brg).padStart(3, '0')).replace('{spk}', spk);
+      const verdict = s.leak ? fill(lab.vLeak || '') : fill(lab.vHeld || '');
+      const profs = Object.keys(s.cfg.prof).filter(k => s.cfg.prof[k]).map(k => (lab.profiles || {})[k] || k);
+      const report = { run: this.state.runNo, seed: s.seed, duration: s.t.toFixed(1) + ' s', rate: rate + '%', leak: s.leak, leakColor: s.leak ? '#e0483e' : '#868b8f', mtd: s.detT.length ? (s.detT.reduce((a, b) => a + b, 0) / s.detT.length).toFixed(1) + ' s' : '–', perKill: spk, peak: s.peak, bins: binsOut, types: tlist, verdict, verdictColor: s.leak ? '#e0483e' : '#e9a23b', cfg: [s.cfg.agents + ' ' + (lab.cfgAgents || 'agents'), s.cfg.waves + ' ' + (lab.cfgWaves || 'waves'), s.cfg.eff + ' ' + (lab.cfgEff || 'effectors'), ...profs], raw: { run: this.state.runNo, seed: s.seed, config: s.cfg, duration_s: +s.t.toFixed(2), neutralisation_rate: rate / 100, leakers: s.leak, kills_ew: s.kEW, kills_effector: s.kEff, shots: s.shots, peak_tracks: s.peak, peak_t: +s.peakT.toFixed(2), detect_times_s: s.detT.map(v => +v.toFixed(2)), leak_bearings_deg: s.leakA.map(a => Math.round(((a * 180 / Math.PI + 90) % 360 + 360) % 360)) } };
+      this.setState({ report });
+      this.setState(st => ({ simStatus: 'done', history: [{ run: st.runNo, agents: st.agents, rate: rate + '%', leak: s.leak, rateColor: rate >= 85 ? '#e9a23b' : '#d9d7d0', leakColor: s.leak ? '#e0483e' : '#868b8f', k: Math.random() }, ...st.history].slice(0, 5) }));
+    };
+    const step = () => {
+      const s = sim, Rn = s.Rn; s.t += DT;
+      const types = L().types || { mr: 'multirotor', fw: 'fixed-wing', decoy: 'decoy' };
+      s.th.forEach(o => {
+        if (o.st === 'wait') { if (s.t >= o.spawn) { o.st = 'in'; o.tIn = s.t; } return; }
+        if (o.st === 'down' || o.st === 'leak' || o.st === 'gone') { o.burst += DT; return; }
+        o.r -= o.spd * DT;
+        if (Math.floor(s.t * 8) !== Math.floor((s.t - DT) * 8)) { o.trail.push([o.a, o.r]); if (o.trail.length > 8) o.trail.shift(); }
+        const detR = o.low ? .58 : RING[0];
+        if (!o.det && o.r < detR && Rn() < 2.4 * DT) { o.det = true; s.detT.push(s.t - o.tIn); o.st = 'trk'; const bi = Math.floor(s.t); s.binD[bi] = (s.binD[bi] || 0) + 1; ev('DETECT', o.id + ' · ' + types[o.type], '#e0483e'); }
+        if (o.st === 'trk' && o.type !== 'fw' && o.r < RING[2] && o.r > RING[3] && Rn() < .3 * DT) { o.st = 'down'; o.by = 'EW'; o.burst = 0; if (o.type !== 'decoy') { s.kEW++; const bi = Math.floor(s.t); s.binK[bi] = (s.binK[bi] || 0) + 1; } ev('KILL', o.id + ' · EW', '#9fb3c8'); }
+        if (o.r < .06 && (o.st === 'in' || o.st === 'trk' || o.st === 'eng')) {
+          if (o.type === 'decoy') o.st = 'gone';
+          else { o.st = 'leak'; o.burst = 0; s.leak++; s.flash = 1; s.leakA.push(o.a); s.binL[Math.floor(s.t)] = 1; ev('LEAK', o.id + ' → ASSET', '#e0483e'); }
+        }
+      });
+      s.em.forEach((e, k) => {
+        if (e.tgt) {
+          e.t += DT;
+          if (e.tgt.st !== 'eng') { e.tgt = null; return; }
+          if (e.t > 1.0) {
+            s.shots++; { const [ex, ey] = [Math.cos(e.a) * .13, Math.sin(e.a) * .13]; s.fx.push({ x0: ex, y0: ey, x1: Math.cos(e.tgt.a) * e.tgt.r, y1: Math.sin(e.tgt.a) * e.tgt.r, t: 0 }); }
+            if (Rn() < .8) { e.tgt.st = 'down'; e.tgt.by = 'EFF'; e.tgt.burst = 0; if (e.tgt.type === 'decoy') ev('KILL', e.tgt.id + ' · ' + types.decoy, '#868b8f'); else { s.kEff++; const bi = Math.floor(s.t); s.binK[bi] = (s.binK[bi] || 0) + 1; ev('KILL', e.tgt.id + ' · EFF-' + (k + 1), '#e9a23b'); } }
+            else { e.tgt.st = 'trk'; ev('MISS', e.tgt.id + ' · EFF-' + (k + 1), '#868b8f'); }
+            e.tgt = null; e.cool = .35;
+          }
+        } else if ((e.cool -= DT) <= 0) {
+          let best = null; s.th.forEach(o => { if (o.st === 'trk' && o.r < .66 && (!best || o.r < best.r)) best = o; });
+          if (best) { best.st = 'eng'; e.tgt = best; e.t = 0; ev('ENGAGE', best.id + ' · EFF-' + (k + 1), '#d9d7d0'); }
+        }
+      });
+      s.flash = Math.max(0, s.flash - DT * 1.4);
+      const trk = s.th.reduce((n, o) => n + ((o.st === 'trk' || o.st === 'eng') ? 1 : 0), 0); if (trk > s.peak) { s.peak = trk; s.peakT = s.t; }
+      s.em.forEach(e => { const tgtA = e.tgt ? Math.atan2(Math.sin(e.tgt.a) * e.tgt.r - Math.sin(e.a) * .13, Math.cos(e.tgt.a) * e.tgt.r - Math.cos(e.a) * .13) : e.a + Math.sin(s.t * .8 + e.a * 3) * .7; let d = tgtA - e.aim; while (d > Math.PI) d -= Math.PI * 2; while (d < -Math.PI) d += Math.PI * 2; e.aim += d * Math.min(1, DT * 9); });
+      s.fx.forEach(f => f.t += DT); s.fx = s.fx.filter(f => f.t < .35);
+      const live = s.th.some(o => o.st === 'wait' || o.st === 'in' || o.st === 'trk' || o.st === 'eng');
+      if (!live && s.end === null) { s.end = s.t; finish(s); }
+    };
+    const pos = (a, r, c, Rr) => [c + Math.cos(a) * r * Rr, c + Math.sin(a) * r * Rr];
+    const annulus = (c, ro, ri, fill) => { ctx.beginPath(); ctx.arc(c, c, ro, 0, Math.PI * 2); ctx.arc(c, c, ri, 0, Math.PI * 2, true); ctx.fillStyle = fill; ctx.fill(); };
+    let last = performance.now(), visible = true, uiT = 0, evT = 0, sweep = 0;
+    if ('IntersectionObserver' in window) new IntersectionObserver(e => { visible = e[0].isIntersecting; }).observe(cv);
+    const loop = (now) => {
+      this._radarRaf = requestAnimationFrame(loop);
+      const real = Math.min(.1, (now - last) / 1000); last = now;
+      if (!visible || document.hidden || !S) return;
+      const st = this.state, s = sim;
+      if (!st.paused) {
+        s.acc += real * st.speed; let n = 0;
+        while (s.acc >= DT && n < 30) { step(); s.acc -= DT; n++; }
+        sweep += real * 1.3 * st.speed;
+        if (s.end !== null) { s.wait += real; if (s.wait > 10) this.newRun(); }
+      }
+      const c = S / 2, Rr = S / 2 * .86, lab = L();
+      ctx.clearRect(0, 0, S, S); ctx.fillStyle = '#07090b'; ctx.fillRect(0, 0, S, S);
+      ctx.strokeStyle = 'rgba(255,255,255,.035)'; ctx.lineWidth = 1;
+      for (let x = (S % 28) / 2; x < S; x += 28) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, S); ctx.stroke(); ctx.beginPath(); ctx.moveTo(0, x); ctx.lineTo(S, x); ctx.stroke(); }
+      annulus(c, RING[0] * Rr, RING[1] * Rr, 'rgba(233,162,59,.025)');
+      annulus(c, RING[1] * Rr, RING[2] * Rr, 'rgba(233,162,59,.04)');
+      annulus(c, RING[2] * Rr, RING[3] * Rr, 'rgba(159,179,200,.06)');
+      annulus(c, RING[3] * Rr, 0, 'rgba(233,162,59,.07)');
+      const names = lab.rings || ['DETECTION', 'IDENTIFICATION', 'EW', 'EFFECTORS'];
+      RING.forEach((rr, i) => {
+        ctx.beginPath(); ctx.arc(c, c, rr * Rr, 0, Math.PI * 2);
+        ctx.setLineDash(i === 2 ? [3, 4] : []); ctx.strokeStyle = i === 2 ? 'rgba(159,179,200,.45)' : 'rgba(233,162,59,' + (.22 + i * .08) + ')'; ctx.stroke(); ctx.setLineDash([]);
+        ctx.font = "500 9px 'IBM Plex Mono', monospace"; ctx.textAlign = 'center'; ctx.fillStyle = i === 2 ? 'rgba(159,179,200,.8)' : 'rgba(233,162,59,.7)';
+        ctx.fillText(names[i], c, c - rr * Rr + 13);
+      });
+      for (let d = 0; d < 360; d += 10) {
+        const a = d * Math.PI / 180 - Math.PI / 2, r1 = Rr * 1.0, r2 = Rr * (d % 30 === 0 ? 1.045 : 1.022);
+        ctx.strokeStyle = 'rgba(255,255,255,' + (d % 30 === 0 ? .35 : .15) + ')';
+        ctx.beginPath(); ctx.moveTo(c + Math.cos(a) * r1, c + Math.sin(a) * r1); ctx.lineTo(c + Math.cos(a) * r2, c + Math.sin(a) * r2); ctx.stroke();
+        if (d % 90 === 0) { ctx.fillStyle = 'rgba(255,255,255,.5)'; ctx.font = "9px 'IBM Plex Mono', monospace"; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(String(d).padStart(3, '0'), c + Math.cos(a) * Rr * 1.1, c + Math.sin(a) * Rr * 1.1); ctx.textBaseline = 'alphabetic'; }
+      }
+      ctx.beginPath(); ctx.arc(c, c, Rr, 0, Math.PI * 2); ctx.strokeStyle = 'rgba(255,255,255,.22)'; ctx.stroke();
+      ctx.strokeStyle = 'rgba(255,255,255,.05)'; ctx.beginPath(); ctx.moveTo(c, c - Rr); ctx.lineTo(c, c + Rr); ctx.moveTo(c - Rr, c); ctx.lineTo(c + Rr, c); ctx.stroke();
+      const sa = sweep % (Math.PI * 2);
+      if (ctx.createConicGradient) { const g = ctx.createConicGradient(sa - .7, c, c); g.addColorStop(0, 'rgba(233,162,59,0)'); g.addColorStop(.11, 'rgba(233,162,59,.16)'); g.addColorStop(.1112, 'rgba(233,162,59,0)'); g.addColorStop(1, 'rgba(233,162,59,0)'); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(c, c, Rr, 0, Math.PI * 2); ctx.fill(); }
+      ctx.strokeStyle = 'rgba(233,162,59,.55)'; ctx.beginPath(); ctx.moveTo(c, c); ctx.lineTo(c + Math.cos(sa) * Rr, c + Math.sin(sa) * Rr); ctx.stroke();
+      // trails
+      s.th.forEach(o => { if (o.st === 'wait' || o.st === 'gone' || o.st === 'down' || o.st === 'leak') return; o.trail.forEach((p, i) => { const [x, y] = pos(p[0], p[1], c, Rr); ctx.fillStyle = (o.det ? 'rgba(224,72,62,' : 'rgba(160,165,170,') + (.08 + i * .05) + ')'; ctx.fillRect(x - 1, y - 1, 2, 2); }); });
+      // effector emplacements + engagements
+      s.em.forEach((e, k) => {
+        const [ex, ey] = pos(e.a, .13, c, Rr);
+        ctx.save(); ctx.translate(ex, ey); ctx.rotate(e.aim);
+        ctx.strokeStyle = 'rgba(233,162,59,.12)'; ctx.fillStyle = 'rgba(233,162,59,.05)'; ctx.beginPath(); ctx.moveTo(0, 0); ctx.arc(0, 0, Rr * .2, -.35, .35); ctx.closePath(); ctx.fill(); ctx.stroke();
+        ctx.restore();
+        if (e.tgt) {
+          const [tx, ty] = pos(e.tgt.a, e.tgt.r, c, Rr), lp = Math.min(1, e.t / 1.0);
+          ctx.setLineDash([2, 4]); ctx.strokeStyle = 'rgba(233,162,59,.55)'; ctx.beginPath(); ctx.moveTo(ex, ey); ctx.lineTo(tx, ty); ctx.stroke(); ctx.setLineDash([]);
+          ctx.strokeStyle = 'rgba(233,162,59,.9)'; ctx.beginPath(); ctx.arc(tx, ty, 13 - lp * 6, -Math.PI / 2, -Math.PI / 2 + lp * Math.PI * 2); ctx.lineWidth = 1.6; ctx.stroke(); ctx.lineWidth = 1;
+          const r0 = 13 - lp * 6; ctx.beginPath(); [[0, -1], [1, 0], [0, 1], [-1, 0]].forEach(([dx, dy]) => { ctx.moveTo(tx + dx * (r0 + 2), ty + dy * (r0 + 2)); ctx.lineTo(tx + dx * (r0 + 6), ty + dy * (r0 + 6)); }); ctx.stroke();
+        }
+        ctx.save(); ctx.translate(ex, ey);
+        ctx.beginPath(); ctx.arc(0, 0, 8, 0, Math.PI * 2); ctx.fillStyle = '#0b0d10'; ctx.fill(); ctx.strokeStyle = e.tgt ? '#e9a23b' : 'rgba(233,162,59,.7)'; ctx.lineWidth = 1.3; ctx.stroke();
+        if (e.tgt) { ctx.beginPath(); ctx.arc(0, 0, 11, -Math.PI / 2, -Math.PI / 2 + Math.min(1, e.t) * Math.PI * 2); ctx.strokeStyle = 'rgba(233,162,59,.8)'; ctx.stroke(); }
+        ctx.rotate(e.aim); ctx.lineWidth = 2.4; ctx.strokeStyle = '#e9a23b'; ctx.beginPath(); ctx.moveTo(3, 0); ctx.lineTo(13, 0); ctx.stroke();
+        ctx.lineWidth = 1; ctx.fillStyle = '#e9a23b'; ctx.fillRect(-3, -3, 6, 6);
+        ctx.restore();
+        ctx.font = "500 8.5px 'IBM Plex Mono', monospace"; ctx.textAlign = 'center'; ctx.fillStyle = 'rgba(233,162,59,.8)';
+        const [lx, ly] = pos(e.a, .13 + 22 / Rr, c, Rr); ctx.fillText('E' + (k + 1), lx, ly + 3);
+      });
+      s.fx.forEach(f => {
+        const p = f.t / .35, x0 = c + f.x0 * Rr, y0 = c + f.y0 * Rr, x1 = c + f.x1 * Rr, y1 = c + f.y1 * Rr;
+        const px = x0 + (x1 - x0) * Math.min(1, p * 1.6), py = y0 + (y1 - y0) * Math.min(1, p * 1.6);
+        const tx = x0 + (x1 - x0) * Math.max(0, p * 1.6 - .25), ty = y0 + (y1 - y0) * Math.max(0, p * 1.6 - .25);
+        ctx.strokeStyle = 'rgba(255,220,160,' + (1 - p) + ')'; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(tx, ty); ctx.lineTo(px, py); ctx.stroke(); ctx.lineWidth = 1;
+        if (p < .3) { ctx.fillStyle = 'rgba(255,220,160,' + (1 - p / .3) + ')'; ctx.beginPath(); ctx.arc(x0, y0, 4 + p * 10, 0, Math.PI * 2); ctx.fill(); }
+      });
+      // threats
+      s.th.forEach(o => {
+        if (o.st === 'wait' || o.st === 'gone') return;
+        const [x, y] = pos(o.a, o.r, c, Rr);
+        if (o.st === 'down') {
+          if (o.burst < .7) { const b = o.burst / .7; ctx.strokeStyle = (o.by === 'EW' ? 'rgba(159,179,200,' : 'rgba(233,162,59,') + (1 - b) + ')'; ctx.beginPath(); ctx.arc(x, y, 3 + b * 15, 0, Math.PI * 2); ctx.stroke(); }
+          if (o.burst < 3) { ctx.strokeStyle = 'rgba(233,162,59,' + (.5 * (1 - o.burst / 3)) + ')'; ctx.beginPath(); ctx.moveTo(x - 3, y - 3); ctx.lineTo(x + 3, y + 3); ctx.moveTo(x + 3, y - 3); ctx.lineTo(x - 3, y + 3); ctx.stroke(); }
+          return;
+        }
+        if (o.st === 'leak') return;
+        const col = o.det ? 'rgba(224,72,62,.95)' : 'rgba(160,165,170,.75)';
+        ctx.strokeStyle = col; ctx.lineWidth = 1.3;
+        if (o.type === 'decoy') { ctx.setLineDash([2, 2]); ctx.beginPath(); ctx.arc(x, y, 4.5, 0, Math.PI * 2); ctx.stroke(); ctx.setLineDash([]); }
+        else { ctx.save(); ctx.translate(x, y); ctx.rotate(o.a - Math.PI / 2); ctx.beginPath(); if (o.type === 'fw') { ctx.moveTo(0, 7); ctx.lineTo(6, -4); ctx.lineTo(0, -1); ctx.lineTo(-6, -4); ctx.closePath(); } else { ctx.moveTo(0, 6); ctx.lineTo(4.5, -3.5); ctx.lineTo(-4.5, -3.5); ctx.closePath(); } ctx.stroke(); ctx.restore(); }
+        ctx.lineWidth = 1;
+        if (o.det) {
+          const b = 11; ctx.strokeStyle = 'rgba(224,72,62,.55)';
+          [[-1, -1], [1, -1], [-1, 1], [1, 1]].forEach(([sx, sy]) => { ctx.beginPath(); ctx.moveTo(x + sx * b, y + sy * (b - 4)); ctx.lineTo(x + sx * b, y + sy * b); ctx.lineTo(x + sx * (b - 4), y + sy * b); ctx.stroke(); });
+          ctx.font = "9px 'IBM Plex Mono', monospace"; ctx.textAlign = 'left'; ctx.fillStyle = 'rgba(224,72,62,.9)'; ctx.fillText(o.id + (o.type === 'fw' ? ' FW' : o.type === 'decoy' ? ' ?' : ''), x + 14, y - 6);
+        } else if (o.low) { ctx.font = "8px 'IBM Plex Mono', monospace"; ctx.textAlign = 'left'; ctx.fillStyle = 'rgba(160,165,170,.6)'; ctx.fillText('LOW', x + 8, y + 3); }
+      });
+      // asset
+      if (s.flash > 0) { ctx.strokeStyle = 'rgba(224,72,62,' + s.flash + ')'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(c, c, 12 + (1 - s.flash) * 34, 0, Math.PI * 2); ctx.stroke(); ctx.lineWidth = 1; }
+      ctx.fillStyle = s.flash > .3 ? '#e0483e' : '#e9a23b'; ctx.fillRect(c - 5, c - 5, 10, 10);
+      ctx.strokeStyle = 'rgba(233,162,59,.6)'; ctx.strokeRect(c - 9.5, c - 9.5, 19, 19);
+      // HUD
+      ctx.font = "10px 'IBM Plex Mono', monospace"; ctx.fillStyle = 'rgba(255,255,255,.5)'; ctx.textAlign = 'left';
+      ctx.fillText('T+' + s.t.toFixed(1) + 's', 10, 18); ctx.fillText(st.speed + '×', 10, 32);
+      ctx.textAlign = 'right'; ctx.fillText((lab.asset || 'ASSET') + ' · R 0.00', S - 10, 18);
+      if (s.end !== null) {
+        const real = s.th.filter(o => o.type !== 'decoy').length, rate = real ? Math.round((s.kEW + s.kEff) / real * 100) : 0;
+        const bw = Math.min(S - 40, 300), bh = 74, bx = c - bw / 2, by = c + Rr * .45;
+        ctx.fillStyle = 'rgba(7,9,11,.88)'; ctx.fillRect(bx, by, bw, bh); ctx.strokeStyle = 'rgba(233,162,59,.7)'; ctx.strokeRect(bx + .5, by + .5, bw - 1, bh - 1);
+        ctx.textAlign = 'center'; ctx.fillStyle = '#e9a23b'; ctx.font = "600 11px 'IBM Plex Mono', monospace"; ctx.fillText(lab.done || 'RUN COMPLETE', c, by + 22);
+        ctx.fillStyle = '#eceded'; ctx.font = "13px 'IBM Plex Mono', monospace"; ctx.fillText(rate + '% ' + (lab.neutr || 'neutralised') + ' · ' + s.leak + ' ' + (lab.leakers || 'leakers'), c, by + 42);
+        ctx.fillStyle = '#5f6468'; ctx.font = "10px 'IBM Plex Mono', monospace"; ctx.fillText((lab.seeReport || 'Report below') + ' · ' + (lab.next || 'Next run in') + ' ' + Math.max(0, 10 - s.wait).toFixed(0) + 's', c, by + 60);
+      }
+      ctx.textAlign = 'left';
+      // UI
+      uiT += real; evT += real;
+      if (evT > .25 && this._evBuf.length) { evT = 0; const buf = this._evBuf.splice(0); this.setState(x => ({ events: [...x.events, ...buf].slice(-6) })); }
+      if (uiT > .2) {
+        uiT = 0;
+        const realAll = s.th.filter(o => o.type !== 'decoy' && o.st !== 'wait').length;
+        const set = (r, v) => { if (r.current) r.current.textContent = v; };
+        set(this.mLaunched, s.th.filter(o => o.st !== 'wait').length);
+        set(this.mDetected, s.th.filter(o => o.det).length);
+        set(this.mNeutral, s.kEW + s.kEff); set(this.mLeak, s.leak); set(this.mShots, s.shots);
+        set(this.mTime, s.detT.length ? (s.detT.reduce((a, b) => a + b, 0) / s.detT.length).toFixed(1) + ' s' : '–');
+        const pc = v => realAll ? (v / realAll * 100) : 0;
+        set(this.mRate, realAll ? Math.round(pc(s.kEW + s.kEff)) + '%' : '–');
+        if (this.bEW.current) this.bEW.current.style.width = pc(s.kEW) + '%';
+        if (this.bEff.current) this.bEff.current.style.width = pc(s.kEff) + '%';
+        if (this.bLeak.current) this.bLeak.current.style.width = pc(s.leak) + '%';
+        set(this.cEW, s.kEW); set(this.cEff, s.kEff); set(this.cLeak, s.leak);
+      }
+    };
+    this._radarRaf = requestAnimationFrame(loop);
+  }
+
+  renderVals() {
+    if (!this._dictCache) this._dictCache = this.dict();
+    const t = this._dictCache[this.state.lang] || this._dictCache.en;
+    const isMobile = this.state.vw < 860;
+    const st = this.state;
+    const restart = () => setTimeout(() => this.newRun && this.newRun(), 0);
+    const profiles = ['sat', 'fw', 'decoy', 'low', 'multi'].map(k => {
+      const on = !!st.prof[k];
+      return { label: t.inject.profiles[k], desc: t.inject.descs[k], check: on ? '✓' : '', bd: on ? 'rgba(233,162,59,.7)' : 'rgba(255,255,255,.14)', bg: on ? 'rgba(233,162,59,.08)' : 'transparent', fg: on ? '#e9a23b' : '#b7bbbe',
+        toggle: () => { this.setState(s => ({ prof: { ...s.prof, [k]: !s.prof[k] } })); restart(); } };
+    });
+    const opt = (vals, cur, key) => vals.map(n => ({ n, bg: n === cur ? '#e9a23b' : 'transparent', fg: n === cur ? '#07090b' : '#b7bbbe', pick: () => { this.setState({ [key]: n }); restart(); } }));
+    const tabs = this.code();
+    const cur = tabs[st.codeTab] || tabs[0];
+    const codeLines = cur.src.map((l, i) => ({ n: i + 1, segs: this.tokenize(l) }));
+    const codeTabs = tabs.map((tb, i) => ({ label: tb.label, fg: i === st.codeTab ? '#fff' : '#868b8f', line: i === st.codeTab ? '#e9a23b' : 'transparent', pick: () => this.setState({ codeTab: i }) }));
+    const cmpRows = t.metrics.rows.map(r => ({ ...r, aw: (st.cmpIn ? r.aw : 0) + '%', bw: (st.cmpIn ? r.bw : 0) + '%' }));
+    return {
+      rootRef: this.rootRef, heroRef: this.heroRef, radarRef: this.radarRef, cmpRef: this.cmpRef,
+      mLaunched: this.mLaunched, mDetected: this.mDetected, mNeutral: this.mNeutral, mLeak: this.mLeak, mTime: this.mTime, mRate: this.mRate, mShots: this.mShots, bEW: this.bEW, bEff: this.bEff, bLeak: this.bLeak, cEW: this.cEW, cEff: this.cEff, cLeak: this.cLeak,
+      t, logs: st.logs, profiles, agents: st.agents, runNo: st.runNo,
+      waveOpts: opt([1, 2, 3], st.waves, 'waves'), effOpts: opt([2, 3, 4], st.effectors, 'effectors'),
+      onAgents: (e) => { const v = parseInt(e.target.value, 10); this.setState({ agents: v }); clearTimeout(this._agT); this._agT = setTimeout(() => this.newRun && this.newRun(), 250); },
+      injectNow: () => restart(),
+      replaySeed: () => this.newRun && this.newRun(st.seed),
+      togglePause: () => this.setState(s => ({ paused: !s.paused, simStatus: !s.paused ? 'paused' : (s.simStatus === 'paused' ? 'run' : s.simStatus) })),
+      pauseLabel: st.paused ? t.inject.play : t.inject.pause, pauseIcon: st.paused ? '▶' : '❚❚',
+      statusLabel: t.inject.status[st.paused ? 'paused' : st.simStatus], statusColor: st.paused ? '#868b8f' : (st.simStatus === 'done' ? '#9fb3c8' : '#e9a23b'),
+      speedOpts: [1, 2, 4].map(n => ({ n: n + '×', bg: st.speed === n ? '#e9a23b' : 'transparent', fg: st.speed === n ? '#07090b' : '#b7bbbe', pick: () => this.setState({ speed: n }) })),
+      seed: st.seed, events: st.events, history: st.history, noHistory: !st.history.length,
+      report: st.report || { bins: [], types: [], cfg: [] }, hasReport: !!st.report,
+      reportCols: st.vw >= 960 ? 'minmax(0,1.3fr) minmax(0,1fr)' : 'minmax(0,1fr)',
+      replayReport: () => st.report && this.newRun && this.newRun(st.report.seed),
+      downloadReport: () => { if (!st.report) return; const b = new Blob([JSON.stringify(st.report.raw, null, 2)], { type: 'application/json' }); const u = URL.createObjectURL(b); const a = document.createElement('a'); a.href = u; a.download = 'orca-run-' + st.report.run + '-seed-' + st.report.seed + '.json'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(u), 1000); },
+      codeTabs, codeLines, codeFile: cur.file, cmpRows,
+      injectCols: st.vw >= 1180 ? '270px minmax(0,1fr) 290px' : (st.vw >= 760 ? 'minmax(0,1fr) minmax(0,1fr)' : 'minmax(0,1fr)'),
+      metricsSpan: st.vw >= 1180 ? 'auto' : '1 / -1',
+      metricCols: st.vw >= 560 ? 'repeat(2,minmax(0,1fr))' : 'minmax(0,1fr)',
+      accessCols: st.vw >= 980 ? 'repeat(3,minmax(0,1fr))' : 'minmax(0,1fr)',
+      tracksCols: st.vw >= 960 ? 'repeat(2,minmax(0,1fr))' : 'minmax(0,1fr)',
+      langBtnLabel: st.lang === 'en' ? 'ES' : 'EN',
+      themeLabel: st.theme === 'light' ? t.ui.dark : t.ui.light,
+      themeDot: st.theme === 'light' ? 'transparent' : 'var(--accent)',
+      toggleTheme: () => this.toggleTheme(), toggleLang: () => this.toggleLang(),
+      closeMenu: () => { if (st.menuOpen) this.setState({ menuOpen: false }); },
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      scrollToTop: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+      menuIcon: st.menuOpen ? '✕' : '☰',
+      scrollTopStyle: 'position:fixed;right:24px;bottom:24px;z-index:50;width:46px;height:46px;border:1px solid var(--accent);background:var(--accent);color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity .25s;opacity:' + (st.showScrollTop ? '1' : '0') + ';pointer-events:' + (st.showScrollTop ? 'auto' : 'none'),
+      navLinksStyle: isMobile
+        ? ('position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:20px;padding:24px clamp(20px,4vw,56px) 30px;background:var(--navbg);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:' + (st.menuOpen ? 'flex' : 'none'))
+        : 'display:flex;align-items:center;gap:clamp(10px,2vw,26px)',
+      hamburgerStyle: 'align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--line2);background:none;color:var(--text);font-size:18px;cursor:pointer;display:' + (isMobile ? 'inline-flex' : 'none'),
+    };
+  }
+}
+</script>
+</body>
+</html>

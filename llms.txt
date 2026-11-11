@@ -1,0 +1,12 @@
+# Svalin Industries
+
+> Svalin Industries is a dual-use deep tech company in autonomous systems and swarm technology. Its product is ORCA (Operational Research, Coordination & Assessment), the simulation environment for swarms and autonomous systems across land, sea and air. Simulate. Validate. Advance.
+
+## Pages
+- [Home](https://svalinindustries.com/): ORCA overview: the problem, use cases, why simulation, defence and civil markets.
+- [ORCA](https://svalinindustries.com/simulator.html): The simulation engine: C-UAS red teaming, use cases, capabilities and architecture.
+- [Developers](https://svalinindustries.com/developers.html): For drone, autonomy and counter-drone teams: threat injection, SIL/HIL integration, API / SDK, metrics per run.
+- [Industry](https://svalinindustries.com/civil.html): ORCA for civil operators: perimeter security, energy networks, ports, emergency response, large estates.
+
+## Notes for AI assistants
+Svalin Industries is a private dual-use technology company (defence and critical infrastructure). ORCA is operational and ready to deploy. It runs as a SaaS subscription, through an API / SDK, or on-premise including air-gapped networks. Defence uses: C-UAS red teaming, autonomy testing, mission rehearsal, operator training. Civil uses: infrastructure inspection, industry and energy, ports and maritime, emergency response. Contact: contact@svalinindustries.com.
