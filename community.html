@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/consent.js"></script>
+<script src="js/netbg.js"></script>
+<script src="js/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preload" href="assets/fonts/Poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link href="assets/fonts/fonts.css" rel="stylesheet">
+<title>ORCA Community | Open Drone and Swarm Simulation</title>
+<meta name="description" content="ORCA Community is the open edition of ORCA, Svalin's swarm simulation platform. Same core as the defence edition: build scenarios, mod airframes and behaviours, compete in swarm challenges. Coming soon.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://svalinindustries.com/community.html">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ORCA by Svalin Industries: swarm and autonomous systems simulation">
+<meta name="theme-color" content="#0a0b0c">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Svalin Industries">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="ORCA Community | Open Drone and Swarm Simulation">
+<meta property="og:description" content="The open edition of ORCA. Same core as the defence edition: scenarios, mods, swarm challenges. Coming soon.">
+<meta property="og:url" content="https://svalinindustries.com/community.html">
+<meta property="og:image" content="https://svalinindustries.com/assets/og-image-v2.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ORCA Community | Open Drone and Swarm Simulation">
+<meta name="twitter:description" content="The open edition of ORCA. Same core as the defence edition: scenarios, mods, swarm challenges. Coming soon.">
+<meta name="twitter:image" content="https://svalinindustries.com/assets/og-image-v2.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"ORCA Community | Open Drone and Swarm Simulation","description":"ORCA Community is the open edition of ORCA, Svalin's swarm simulation platform.","url":"https://svalinindustries.com/community.html","isPartOf":{"@type":"WebSite","name":"Svalin Industries","url":"https://svalinindustries.com/"},"publisher":{"@type":"Organization","name":"Svalin Industries","url":"https://svalinindustries.com/","logo":"https://svalinindustries.com/assets/lockup-light.png"}}</script>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<script src="js/image-slot.js"></script>
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:'Poppins',sans-serif;-webkit-font-smoothing:antialiased}
+  a{text-decoration:none;color:var(--accent)}
+  a:hover{color:var(--text)}
+  button,input,textarea,select,form,article,a[style*="border"],[style*="border:1px solid"],[style*="border:1.5px solid"],[style*="border:1px dashed"]{border-radius:2px}
+  @media (max-width:760px){.tl-row{grid-template-columns:minmax(0,1fr) !important;gap:10px !important}.tl-row .tl-year{font-size:34px !important}}
+  @media (max-width:820px){.ed-grid{grid-template-columns:minmax(0,1fr) !important}}
+  footer a{transition:color .2s,border-color .2s}footer a:hover{color:var(--accent) !important;border-color:var(--accent) !important}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="--bg:#f4f2ee;--bg2:#ffffff;--text:#15181b;--text2:#3d4247;--muted:#63696e;--faint:#9a9ea2;--line:rgba(0,0,0,.10);--line2:rgba(0,0,0,.18);--accent:#c67e12;--grid:rgba(0,0,0,.05);--navbg:rgba(244,242,238,.8);--logo-filter:invert(1);background:var(--bg);color:var(--text);min-height:100vh">
+
+  <nav style="position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px clamp(20px,4vw,56px);background:var(--navbg);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);flex-wrap:wrap">
+    <a href="index.html" style="display:flex;align-items:center;gap:12px;color:var(--text)">
+      <img src="assets/lockup-light.png" alt="Svalin Industries" style="height:32px;width:auto;display:block;filter:var(--logo-filter)">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.28em;color:var(--muted);text-transform:uppercase;border-left:1px solid var(--line2);padding-left:12px">Industries</span>
+    </a>
+    <div style="{{ navLinksStyle }}">
+      <a href="#manifesto" onClick="{{ closeMenu }}" style="white-space:nowrap;font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;text-transform:uppercase;color:var(--text2)">{{ t.nav.manifesto }}</a>
+      <a href="#evolution" onClick="{{ closeMenu }}" style="white-space:nowrap;font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;text-transform:uppercase;color:var(--text2)">{{ t.nav.evolution }}</a>
+      <a href="#gallery" onClick="{{ closeMenu }}" style="white-space:nowrap;font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;text-transform:uppercase;color:var(--text2)">{{ t.nav.gallery }}</a>
+      <a href="simulator.html" onClick="{{ closeMenu }}" style="white-space:nowrap;font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;text-transform:uppercase;color:var(--accent)">ORCA</a>
+      <a href="developers.html" onClick="{{ closeMenu }}" style="white-space:nowrap;font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;text-transform:uppercase;color:var(--accent)">Developers</a>
+      <a href="civil.html" onClick="{{ closeMenu }}" style="white-space:nowrap;font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;text-transform:uppercase;color:var(--accent)">{{ t.nav.civil }}</a>
+      <button onClick="{{ toggleLang }}" title="Language" style="display:inline-flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid var(--line2);background:none;color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)"><span style="font-size:12px">◍</span>{{ langBtnLabel }}</button>
+      <button onClick="{{ toggleTheme }}" title="Theme" style="display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid var(--line2);background:none;color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer" style-hover="border-color:var(--accent);color:var(--accent)"><span style="width:9px;height:9px;border-radius:50%;border:1.5px solid var(--accent);background:{{ themeDot }}"></span>{{ themeLabel }}</button>
+      <a href="{{ discordUrl }}" target="_blank" rel="noopener" onClick="{{ closeMenu }}" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:none;border:1.5px solid var(--accent);color:var(--accent);font-family:'Poppins',sans-serif;font-size:13px;text-transform:uppercase;font-weight:700" style-hover="background:var(--accent);color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>Discord</a>
+      <a href="index.html#contact" onClick="{{ closeMenu }}" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:none;border:1.5px solid var(--accent);color:var(--accent);font-family:'Poppins',sans-serif;font-size:13px;text-transform:uppercase;font-weight:700" style-hover="background:var(--accent);color:#fff">{{ t.nav.contact }}</a>
+    </div>
+    <button onClick="{{ toggleMenu }}" aria-label="Menu" style="{{ hamburgerStyle }}">{{ menuIcon }}</button>
+  </nav>
+
+  <header data-screen-label="Hero" style="position:relative;min-height:86vh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;background:#0a0b0c;color:#fff">
+    <svalin-net v="11" tone="dark"></svalin-net>
+    <div style="position:relative;width:100%;max-width:1300px;margin:0 auto;padding:clamp(110px,14vw,180px) clamp(20px,4vw,56px) clamp(50px,7vw,90px)">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;flex-wrap:wrap">
+        <span style="width:9px;height:9px;background:#e9a23b;border-radius:50%"></span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.3em;color:#e7e5df;text-transform:uppercase">{{ t.hero.eyebrow }}</span>
+        <span style="padding:5px 10px;border:1px solid #e9a23b;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#e9a23b;text-transform:uppercase">{{ t.hero.status }}</span>
+      </div>
+      <h1 style="margin:0;font-weight:600;font-size:clamp(36px,6.2vw,92px);line-height:1;letter-spacing:-.025em;max-width:15ch;color:#fff;text-wrap:balance">{{ t.hero.title }}</h1>
+      <p style="margin:26px 0 0;max-width:60ch;font-size:clamp(15px,1.5vw,18px);line-height:1.7;color:#c9ccce;text-wrap:pretty">{{ t.hero.subtitle }}</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:36px">
+        <a href="{{ discordUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:15px 28px;background:#e9a23b;border:1.5px solid #e9a23b;color:#0a0b0c;font-family:'Poppins',sans-serif;font-size:14px;text-transform:uppercase;font-weight:700" style-hover="background:transparent;color:#e9a23b"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>{{ t.hero.cta }} <span>&rarr;</span></a>
+        <a href="#gallery" style="display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border:1.5px solid rgba(255,255,255,.35);color:#fff;font-family:'Poppins',sans-serif;font-size:14px;text-transform:uppercase;font-weight:700" style-hover="border-color:#e9a23b;color:#e9a23b">{{ t.hero.cta2 }}</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="manifesto" data-screen-label="Manifesto" style="position:relative;padding:clamp(70px,9vw,130px) clamp(20px,4vw,56px);background:var(--bg2);border-bottom:1px solid var(--line);overflow:hidden;isolation:isolate">
+    <svalin-net v="12" tone="light"></svalin-net>
+    <div style="max-width:1300px;margin:0 auto;position:relative">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase">{{ t.man.eyebrow }}</span>
+      <h2 style="margin:18px 0 0;font-weight:600;font-size:clamp(32px,4.4vw,62px);line-height:1.02;letter-spacing:-.025em;max-width:18ch;text-wrap:balance">{{ t.man.h2 }}</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(20px,3vw,48px);margin-top:clamp(28px,3.5vw,44px)">
+        <sc-for list="{{ t.man.paras }}" as="p" hint-placeholder-count="2">
+          <p style="margin:0;font-size:clamp(16px,1.4vw,18px);line-height:1.75;color:var(--text2);text-wrap:pretty">{{ p }}</p>
+        </sc-for>
+      </div>
+
+      <div style="margin-top:clamp(48px,6vw,80px)">
+        <div style="position:relative;border:1px solid var(--line2);background:var(--bg);padding:clamp(20px,2.6vw,32px)">
+          <span style="position:absolute;top:-5px;left:-5px;width:10px;height:10px;border-top:1.5px solid var(--accent);border-left:1.5px solid var(--accent)"></span><span style="position:absolute;top:-5px;right:-5px;width:10px;height:10px;border-top:1.5px solid var(--accent);border-right:1.5px solid var(--accent)"></span><span style="position:absolute;bottom:-5px;left:-5px;width:10px;height:10px;border-bottom:1.5px solid var(--accent);border-left:1.5px solid var(--accent)"></span><span style="position:absolute;bottom:-5px;right:-5px;width:10px;height:10px;border-bottom:1.5px solid var(--accent);border-right:1.5px solid var(--accent)"></span>
+          <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:20px"><span>{{ t.man.coreCaption }}</span><span style="color:var(--accent)">ORCA · CORE</span></div>
+          <div style="border:1px solid var(--accent);padding:18px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px">
+            <span style="font-weight:600;font-size:clamp(18px,1.8vw,22px)">{{ t.man.core }}</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:var(--text2)">{{ t.man.coreSub }}</span>
+          </div>
+          <div aria-hidden="true" style="height:32px;margin:0 25%;border-left:1px dashed var(--accent);border-right:1px dashed var(--accent)"></div>
+          <div class="ed-grid" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px">
+            <div style="border:1.5px solid var(--accent);background:color-mix(in srgb,var(--accent) 7%,var(--bg));padding:clamp(18px,2.2vw,26px)">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:10px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600">{{ t.man.ed1Tag }}</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--accent)">CE</span></div>
+              <h3 style="margin:12px 0 10px;font-weight:600;font-size:clamp(22px,2.2vw,28px);letter-spacing:-.01em">ORCA Community</h3>
+              <p style="margin:0;font-size:15px;line-height:1.65;color:var(--text2);text-wrap:pretty">{{ t.man.ed1 }}</p>
+            </div>
+            <div style="border:1px solid var(--line2);padding:clamp(18px,2.2vw,26px)">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:10px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)">{{ t.man.ed2Tag }}</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--faint)">DE</span></div>
+              <h3 style="margin:12px 0 10px;font-weight:600;font-size:clamp(22px,2.2vw,28px);letter-spacing:-.01em">ORCA Defence</h3>
+              <p style="margin:0;font-size:15px;line-height:1.65;color:var(--text2);text-wrap:pretty">{{ t.man.ed2 }} <a href="simulator.html" style="font-weight:600">{{ t.man.ed2Link }} &rarr;</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:clamp(48px,6vw,80px)">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase">{{ t.man.pillarsCaption }}</span>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));border-top:1px solid var(--line2);margin-top:16px">
+          <sc-for list="{{ pillars }}" as="pl" hint-placeholder-count="6">
+            <div style="padding:22px 22px 26px 0;border-bottom:1px dashed var(--line2);display:flex;gap:16px">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);padding-top:5px">{{ pl.num }}</span>
+              <div>
+                <span style="display:block;font-weight:600;font-size:17px;line-height:1.3">{{ pl.name }}</span>
+                <span style="display:block;margin-top:6px;font-size:14.5px;line-height:1.6;color:var(--text2);text-wrap:pretty">{{ pl.body }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="evolution" data-screen-label="Evolution" style="position:relative;padding:clamp(70px,9vw,130px) clamp(20px,4vw,56px);background:#0a0b0c;color:#eceded;overflow:hidden;isolation:isolate">
+    <svalin-net v="10" tone="dark"></svalin-net>
+    <div style="max-width:1300px;margin:0 auto;position:relative">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px clamp(32px,5vw,80px);align-items:end;margin-bottom:clamp(40px,5vw,64px)">
+        <div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:#e9a23b;text-transform:uppercase">{{ t.evo.eyebrow }}</span>
+          <h2 style="margin:18px 0 0;font-weight:600;font-size:clamp(32px,4.4vw,62px);line-height:1.02;letter-spacing:-.025em;max-width:14ch;color:#fff;text-wrap:balance">{{ t.evo.h2 }}</h2>
+        </div>
+        <p style="margin:0;max-width:54ch;font-size:clamp(16px,1.3vw,18px);line-height:1.7;color:#c9ccce;text-wrap:pretty">{{ t.evo.intro }}</p>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,.2)">
+        <sc-for list="{{ evoRows }}" as="e" hint-placeholder-count="6">
+          <div class="tl-row" style="display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr) minmax(0,1.3fr);gap:clamp(20px,3vw,48px);padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px dashed rgba(255,255,255,.18);align-items:baseline">
+            <span class="tl-year" style="font-weight:600;font-size:clamp(34px,3.4vw,48px);line-height:1;letter-spacing:-.03em;color:{{ e.yearColor }}">{{ e.year }}</span>
+            <div>
+              <span style="display:block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#8a8f93;text-transform:uppercase">{{ e.tag }}</span>
+              <span style="display:block;margin-top:8px;font-weight:600;font-size:clamp(19px,1.8vw,24px);line-height:1.2;color:#fff">{{ e.title }}</span>
+            </div>
+            <p style="margin:0;font-size:15.5px;line-height:1.7;color:#b7bbbe;text-wrap:pretty">{{ e.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+      <p style="margin:clamp(40px,5vw,64px) 0 0;font-weight:600;font-size:clamp(26px,3.6vw,48px);line-height:1.08;letter-spacing:-.025em;color:#e9a23b;max-width:22ch;text-wrap:balance">{{ t.evo.close }}</p>
+    </div>
+  </section>
+
+  <section id="gallery" data-screen-label="Gallery" style="position:relative;padding:clamp(70px,9vw,130px) clamp(20px,4vw,56px)">
+    <div style="max-width:1300px;margin:0 auto;position:relative">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px clamp(32px,5vw,80px);align-items:end;margin-bottom:clamp(36px,4.5vw,56px)">
+        <div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase">{{ t.gal.eyebrow }}</span>
+          <h2 style="margin:18px 0 0;font-weight:600;font-size:clamp(32px,4.4vw,62px);line-height:1.02;letter-spacing:-.025em;max-width:16ch;text-wrap:balance">{{ t.gal.h2 }}</h2>
+        </div>
+        <p style="margin:0;max-width:52ch;font-size:clamp(15.5px,1.3vw,17px);line-height:1.7;color:var(--text2);text-wrap:pretty">{{ t.gal.intro }}</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:clamp(24px,3vw,36px)">
+        <sc-for list="{{ galRows }}" as="g" hint-placeholder-count="6">
+          <article style="position:relative;border:1px solid var(--line2);background:var(--bg2);display:flex;flex-direction:column">
+            <span style="position:absolute;top:-5px;left:-5px;width:10px;height:10px;border-top:1.5px solid var(--accent);border-left:1.5px solid var(--accent);z-index:1"></span><span style="position:absolute;top:-5px;right:-5px;width:10px;height:10px;border-top:1.5px solid var(--accent);border-right:1.5px solid var(--accent);z-index:1"></span><span style="position:absolute;bottom:-5px;left:-5px;width:10px;height:10px;border-bottom:1.5px solid var(--accent);border-left:1.5px solid var(--accent)"></span><span style="position:absolute;bottom:-5px;right:-5px;width:10px;height:10px;border-bottom:1.5px solid var(--accent);border-right:1.5px solid var(--accent)"></span>
+            <div style="position:relative;aspect-ratio:16/10;background:#05070a;line-height:0;overflow:hidden">
+              <sc-if value="{{ g.hasImg }}" hint-placeholder-val="{{ false }}"><div role="img" aria-label="{{ g.name }}" style="position:absolute;inset:0;background:url({{ g.img }}) center/cover no-repeat"></div></sc-if>
+              <sc-if value="{{ g.noImg }}" hint-placeholder-val="{{ true }}"><image-slot id="{{ g.imgId }}" shape="rect" placeholder="{{ g.name }}"></image-slot></sc-if>
+              <div style="position:absolute;left:12px;right:12px;top:10px;display:flex;justify-content:space-between;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:rgba(255,255,255,.8);text-transform:uppercase;line-height:1.4;pointer-events:none"><span style="display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;border-radius:50%;background:#e9a23b"></span>{{ g.kind }} · {{ g.num }}</span><span>{{ g.domain }}</span></div>
+            </div>
+            <div style="padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1">
+              <h3 style="margin:0;font-weight:600;font-size:20px;line-height:1.25;letter-spacing:-.01em">{{ g.name }}</h3>
+              <p style="margin:0;font-size:14.5px;line-height:1.65;color:var(--text2);text-wrap:pretty">{{ g.body }}</p>
+              <div style="margin-top:auto;padding-top:14px;border-top:1px dashed var(--line2);display:flex;flex-wrap:wrap;gap:6px 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--muted)">
+                <sc-for list="{{ g.specs }}" as="s" hint-placeholder-count="3"><span>{{ s }}</span></sc-for>
+              </div>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+      <div style="margin-top:clamp(56px,7vw,96px)">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--line2)">
+          <h3 style="margin:0;font-weight:600;font-size:clamp(22px,2.4vw,30px);letter-spacing:-.015em">{{ t.gal.moreTitle }}</h3>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase">{{ t.gal.moreCaption }}</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));column-gap:clamp(24px,3vw,40px)">
+          <sc-for list="{{ moreRows }}" as="m" hint-placeholder-count="8">
+            <div style="padding:20px 0 22px;border-bottom:1px dashed var(--line2);display:flex;gap:16px">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);padding-top:5px">{{ m.num }}</span>
+              <div>
+                <span style="display:block;font-weight:600;font-size:17px;line-height:1.3">{{ m.name }}</span>
+                <span style="display:block;margin-top:6px;font-size:14.5px;line-height:1.6;color:var(--text2);text-wrap:pretty">{{ m.body }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="crowdfunding" data-screen-label="Crowdfunding" style="position:relative;padding:clamp(70px,9vw,130px) clamp(20px,4vw,56px);background:#0a0b0c;color:#eceded;overflow:hidden;isolation:isolate">
+    <svalin-net v="3" tone="dark"></svalin-net>
+    <div style="max-width:1300px;margin:0 auto;position:relative">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px clamp(32px,5vw,80px);align-items:end;margin-bottom:clamp(40px,5vw,64px)">
+        <div>
+          <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:#e9a23b;text-transform:uppercase">{{ t.ks.eyebrow }}</span>
+            <span style="padding:5px 10px;border:1px solid #e9a23b;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#e9a23b;text-transform:uppercase">{{ t.ks.status }}</span>
+          </div>
+          <h2 style="margin:18px 0 0;font-weight:600;font-size:clamp(32px,4.4vw,62px);line-height:1.02;letter-spacing:-.025em;max-width:15ch;color:#fff;text-wrap:balance">{{ t.ks.h2 }}</h2>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <p style="margin:0;max-width:54ch;font-size:clamp(16px,1.3vw,18px);line-height:1.7;color:#c9ccce;text-wrap:pretty">{{ t.ks.intro }}</p>
+          <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:#8a8f93;text-transform:uppercase">{{ t.ks.on }}</span>
+            <img src="assets/brand/kickstarter.png" alt="Kickstarter" width="145" height="33" style="height:26px;width:auto;display:block">
+          </div>
+        </div>
+      </div>
+      <div style="position:relative;border:1px solid rgba(255,255,255,.2);padding:clamp(18px,2.4vw,28px)">
+        <span style="position:absolute;top:-6px;left:-6px;width:12px;height:12px;border-top:1.5px solid #e9a23b;border-left:1.5px solid #e9a23b"></span><span style="position:absolute;top:-6px;right:-6px;width:12px;height:12px;border-top:1.5px solid #e9a23b;border-right:1.5px solid #e9a23b"></span><span style="position:absolute;bottom:-6px;left:-6px;width:12px;height:12px;border-bottom:1.5px solid #e9a23b;border-left:1.5px solid #e9a23b"></span><span style="position:absolute;bottom:-6px;right:-6px;width:12px;height:12px;border-bottom:1.5px solid #e9a23b;border-right:1.5px solid #e9a23b"></span>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));border:1px solid rgba(255,255,255,.14)">
+          <sc-for list="{{ ksSteps }}" as="s" hint-placeholder-count="3">
+            <div style="padding:clamp(20px,2.4vw,30px);box-shadow:0 0 0 .5px rgba(255,255,255,.14);background:{{ s.bg }};display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase"><span style="color:{{ s.tagColor }}">{{ s.tag }}</span><span style="color:#e9a23b">{{ s.num }}</span></div>
+              <span style="font-weight:600;font-size:clamp(19px,1.8vw,23px);line-height:1.2;color:#fff">{{ s.name }}</span>
+              <span style="font-size:14.5px;line-height:1.6;color:#b7bbbe;text-wrap:pretty">{{ s.body }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="join" data-screen-label="Join" style="position:relative;isolation:isolate;overflow:hidden;padding:clamp(70px,9vw,130px) clamp(20px,4vw,56px);background-color:var(--bg2);border-top:1px solid var(--line)">
+    <svalin-net v="9" tone="light"></svalin-net>
+    <div style="max-width:1000px;margin:0 auto;position:relative">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase">{{ t.join.eyebrow }}</span>
+      <h2 style="margin:18px 0 20px;font-weight:600;font-size:clamp(28px,3.8vw,50px);line-height:1.08;letter-spacing:-.02em;max-width:20ch;text-wrap:balance">{{ t.join.h2 }}</h2>
+      <p style="margin:0 0 32px;max-width:56ch;font-size:16px;line-height:1.65;color:var(--muted)">{{ t.join.body }}</p>
+      <a href="{{ discordUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:15px 28px;background:none;border:1.5px solid var(--accent);color:var(--accent);font-family:'Poppins',sans-serif;font-size:14px;text-transform:uppercase;font-weight:700" style-hover="background:var(--accent);color:#fff"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>{{ t.hero.cta }} <span style="font-size:15px">&rarr;</span></a>
+    </div>
+  </section>
+
+  <footer style="position:relative;background:var(--bg2);overflow:hidden;padding:clamp(50px,6vw,80px) clamp(20px,4vw,56px) 40px;border-top:1px solid var(--line)">
+    <span style="position:absolute;top:-1px;left:0;right:0;height:2px;background:var(--accent)"></span>
+    <span aria-hidden="true" style="position:absolute;top:0;bottom:0;left:clamp(20px,4vw,56px);right:clamp(20px,4vw,56px);pointer-events:none;background-image:linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:25% 100%;opacity:.6"></span>
+    <div style="position:relative;max-width:1400px;margin:0 auto">
+      <div style="display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;padding-bottom:50px;border-bottom:1px solid var(--line)">
+        <div style="max-width:100%">
+          <img src="assets/lockup-light.png" alt="Svalin Industries" style="height:clamp(40px,4vw,52px);width:auto;display:block;margin-bottom:22px;filter:var(--logo-filter)">
+          <p style="margin:0 0 22px;font-family:'IBM Plex Mono',monospace;font-size:clamp(18px,2.2vw,26px);color:var(--accent);letter-spacing:.02em;max-width:22ch;text-wrap:balance;white-space:pre-line">{{ t.footer.motto }}</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <a href="https://linkedin.com/company/svalinind" target="_blank" rel="noopener" aria-label="LinkedIn" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line2);color:var(--text)">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://x.com/svalinind" target="_blank" rel="noopener" aria-label="X" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line2);color:var(--text)"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+            <a href="https://discord.gg/VwdGGfAMPc" target="_blank" rel="noopener" aria-label="Discord" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line2);color:var(--text)"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></a>
+            <a href="mailto:contact@svalinindustries.com" target="_top" style="display:inline-flex;align-items:center;gap:10px;height:40px;padding:0 14px;border:1px solid var(--line2);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:12.5px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4"/><path d="m22 7-10 6L2 7"/></svg>contact@svalinindustries.com</a>
+          </div>
+        </div>
+        <div style="display:flex;gap:clamp(40px,6vw,90px);flex-wrap:wrap">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase;display:flex;align-items:center;gap:9px;padding-bottom:12px;margin-bottom:4px;border-bottom:1px dashed var(--line2);min-width:150px">{{ t.footer.colProduct }}</span>
+            <a href="index.html" style="font-size:14px;color:var(--text2)">{{ t.footer.home }}</a>
+            <a href="simulator.html" style="font-size:14px;color:var(--text2)">ORCA</a>
+            <a href="developers.html" style="font-size:14px;color:var(--text2)">Developers</a>
+            <a href="civil.html" style="font-size:14px;color:var(--text2)">{{ t.footer.civil }}</a>
+            <a href="community.html" style="font-size:14px;color:var(--text2)">Community</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase;display:flex;align-items:center;gap:9px;padding-bottom:12px;margin-bottom:4px;border-bottom:1px dashed var(--line2);min-width:150px">{{ t.footer.colPage }}</span>
+            <a href="#manifesto" style="font-size:14px;color:var(--text2)">{{ t.nav.manifesto }}</a>
+            <a href="#evolution" style="font-size:14px;color:var(--text2)">{{ t.nav.evolution }}</a>
+            <a href="#gallery" style="font-size:14px;color:var(--text2)">{{ t.nav.gallery }}</a>
+            <a href="#crowdfunding" style="font-size:14px;color:var(--text2)">Crowdfunding</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;padding-top:26px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint)">
+        <span>{{ t.footer.copyright }}</span>
+        <span style="display:flex;flex-wrap:wrap;gap:8px 22px"><a href="privacy.html" style="color:var(--muted)">{{ t.footer.privacy }}</a><a href="legal.html" style="color:var(--muted)">{{ t.footer.legal }}</a><a href="cookies.html" style="color:var(--muted)">{{ t.footer.cookies }}</a></span>
+        <span>{{ t.footer.tagline }}</span>
+      </div>
+    </div>
+  </footer>
+
+  <button onClick="{{ scrollToTop }}" aria-label="Scroll to top" style="{{ scrollTopStyle }}">↑</button>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  state = { theme: 'light', lang: 'en', menuOpen: false, vw: (typeof window !== 'undefined' ? window.innerWidth : 1200), showScrollTop: false };
+
+  themes() {
+    return {
+      light: {'--bg':'#f4f2ee','--bg2':'#ffffff','--text':'#15181b','--text2':'#3d4247','--muted':'#63696e','--faint':'#9a9ea2','--line':'rgba(0,0,0,.10)','--line2':'rgba(0,0,0,.18)','--accent':'#c67e12','--grid':'rgba(0,0,0,.05)','--navbg':'rgba(244,242,238,.8)','--logo-filter':'invert(1)'},
+      dark: {'--bg':'#0a0b0c','--bg2':'#0d0f10','--text':'#eceded','--text2':'#b7bbbe','--muted':'#868b8f','--faint':'#5f6468','--line':'rgba(255,255,255,.08)','--line2':'rgba(255,255,255,.18)','--accent':'#e9a23b','--grid':'rgba(255,255,255,.04)','--navbg':'rgba(10,11,12,.72)','--logo-filter':'none'},
+    };
+  }
+
+  dict() {
+    const en = {
+      ui: { dark: 'Dark', light: 'Light' },
+      nav: { manifesto: 'Manifesto', evolution: 'Evolution', gallery: 'Scenarios & mods', civil: 'Industry', contact: 'Contact' },
+      hero: {
+        eyebrow: '// ORCA Community', status: 'Coming soon',
+        title: 'The future of the drone war will be simulated first.',
+        subtitle: 'ORCA Community is the open edition of ORCA. Same simulation core as the defence edition, opened to the pilots, developers, researchers and players who will shape how autonomous swarms are planned, built and flown.',
+        cta: 'Join the Discord', cta2: 'See scenarios'
+      },
+      man: {
+        eyebrow: '01 / Manifesto',
+        h2: 'One engine. Two editions. A community at the core.',
+        paras: [
+          'The drone has changed war faster than doctrine can be written. Cheap airframes, open-source flight stacks and FPV pilots have rewritten what a battlefield looks like in less than five years. The next step is the swarm: many systems acting as one, with autonomy deciding in the seconds no operator can.',
+          'Nobody can rehearse that in the field at the scale it demands. It has to be designed, tested and broken in simulation first. We believe the people who will do that work are already out there, flying, coding and modding. ORCA Community gives them the same engine our defence customers use.'
+        ],
+        coreCaption: 'Shared core',
+        core: 'Physics, flight dynamics, sensors, links and swarm behaviour',
+        coreSub: 'One codebase · two editions',
+        ed1Tag: 'Open edition', ed1: 'Free to use. Build scenarios, mod airframes and behaviours, share them with others and compete in swarm challenges.',
+        ed2Tag: 'Defence edition', ed2: 'For armed forces and industry, under agreement. Classified data, real systems in the loop and accredited deployment.', ed2Link: 'ORCA',
+        pillarsCaption: 'What the community gets',
+        pillars: [
+          ['Free simulator', 'Scenarios, swarms and drone physics on the same engine as the defence edition.'],
+          ['SDK & modding', 'Create your own vehicles, scenarios and behaviours, and script how swarms decide.'],
+          ['Marketplace', 'Publish, share and download scenarios and models made by others.'],
+          ['Swarm challenges', 'Seasonal leagues and leaderboards. Your swarm against everyone else\u2019s.'],
+          ['Open data & benchmarks', 'Shared datasets and reference runs to measure and compare results.'],
+          ['Contributors programme', 'Forum, Discord and a direct line to the team building ORCA.']
+        ]
+      },
+      evo: {
+        eyebrow: '02 / Evolution',
+        h2: 'How drones changed war.',
+        intro: 'In two decades the drone went from a strategic asset flown by a handful of crews to a consumable fielded by the million. Each step has made planning harder and simulation more necessary.',
+        rows: [
+          ['2000s', 'Strategic UAVs', 'Few, large, expensive', 'Medium-altitude drones flown by trained crews from far away. Airspace is uncontested and each aircraft is a high-value asset.'],
+          ['2020', 'Loitering munitions', 'Drones decide a war', 'In Nagorno-Karabakh, armed drones and loitering munitions overwhelm air defences and armour. Small air forces gain reach they never had.'],
+          ['2022', 'Commercial quadcopters', 'Every unit has eyes', 'In Ukraine, off-the-shelf drones become standard kit for reconnaissance and artillery spotting at platoon level.'],
+          ['2023\u201324', 'FPV at scale', 'Millions per year', 'First-person-view drones become the most common strike weapon on the front. Electronic warfare responds, and the cycle of countermeasures runs in weeks.'],
+          ['2025', 'Autonomy & multi-domain', 'Beyond the link', 'Fibre-optic control, terminal autonomy against jamming, and naval and ground drones join aerial ones. The operator is no longer the only one deciding.'],
+          ['Next', 'Swarms', 'Many as one', 'Coordinated groups planning and acting together faster than any human chain of command. They can only be designed and trusted after millions of simulated runs.']
+        ],
+        close: 'The swarm is the next battlefield. It will be built in simulation.'
+      },
+      gal: {
+        eyebrow: '03 / Scenarios & mods',
+        h2: 'What the community will build.',
+        intro: 'A first look at the scenarios, challenges and mods planned for launch. Everything here runs on the ORCA core and can be edited, forked and shared.',
+        items: [
+          ['Scenario', 'Air', 'FPV Corridor', 'Fly a strike corridor under layered jamming. Navigate, adapt and reach the target before the link drops.', ['FPV', 'EW', 'Single pilot']],
+          ['Challenge', 'Air', 'Swarm vs. Layered Defence', 'Script a swarm of 48 to penetrate radar, guns and interceptors. Ranked by mission success and losses.', ['48 agents', 'Leaderboard', 'Scripted AI']],
+          ['Scenario', 'Sea', 'Harbour Recon', 'Surface and aerial drones coordinate to map a defended port at night with degraded GNSS.', ['USV + UAV', 'Night', 'GNSS-denied']],
+          ['Scenario', 'Land', 'Urban Search & Rescue', 'A mixed swarm searches a collapsed district, shares a map and routes ground teams to survivors.', ['Civil', 'Mapping', 'Mesh links']],
+          ['Mod', 'Air', 'Custom Airframe Kit', 'Import your own frame, motors and battery. ORCA derives the flight model and lets you tune it against real logs.', ['SDK', 'Physics', 'Log replay']],
+          ['Benchmark', 'Multi', 'Interceptor Benchmark', 'An open reference set for counter-drone algorithms: same threats, same terrain, comparable results.', ['Open data', 'C-UAS', 'Reproducible']]
+        ],
+        moreTitle: 'And beyond the scenarios',
+        moreCaption: 'Also in ORCA Community',
+        more: [
+          ['Mission editor', 'Draw objectives, waypoints, threats and terrain, then save the mission as a shareable file.'],
+          ['Multiplayer sessions', 'Fly with or against other pilots in shared missions: teams, red vs. blue, or co-operative swarms.'],
+          ['Bring your own autopilot', 'Connect PX4 or ArduPilot in software-in-the-loop and test your real flight code in ORCA.'],
+          ['Train AI agents', 'Run thousands of headless episodes in parallel to train and evaluate autonomous behaviours.'],
+          ['Replay & after-action review', 'Record every run, scrub the timeline and compare decisions frame by frame.'],
+          ['Real terrain import', 'Load elevation and map data of any area and rehearse on the ground you will actually fly over.'],
+          ['Sensors & EW sandbox', 'Tune cameras, radar, links and jamming to see how each change affects the mission.'],
+          ['Courses & workshops', 'Ready-made lessons for universities and training centres, from first flight to swarm tactics.']
+        ]
+      },
+      ks: {
+        eyebrow: '04 / Crowdfunding', status: 'In the future', on: 'Launching on',
+        h2: 'ORCA Community will be crowdfunded.',
+        intro: 'We will open a crowdfunding campaign on Kickstarter to fund the open edition. Backers will help decide what gets built first and will be the first to fly it.',
+        steps: [
+          ['Now', 'Join the Discord', 'Follow development, share ideas and help shape the campaign before it launches.'],
+          ['Next', 'Campaign launch', 'The crowdfunding campaign opens. Members of the Discord hear about it first.'],
+          ['Then', 'Backers fly first', 'Backers get early access to ORCA Community and a say in the roadmap.']
+        ]
+      },
+      join: {
+        eyebrow: '05 / Join',
+        h2: 'Help build ORCA Community from day one.',
+        body: 'The open edition is in development. Join the Discord to follow progress, get early access to the beta and shape the first scenarios, mods and challenges.'
+      },
+      footer: { motto: 'Simulate.\nValidate.\nAdvance.', colProduct: 'Product', colPage: 'This page', home: 'Home', civil: 'Civil', copyright: '\u00a9 2026 Svalin Industries', privacy: 'Privacy', legal: 'Legal notice', cookies: 'Cookies', tagline: 'ORCA \u00b7 Swarm simulation' }
+    };
+    const es = {
+      ui: { dark: 'Oscuro', light: 'Claro' },
+      nav: { manifesto: 'Manifiesto', evolution: 'Evolución', gallery: 'Escenarios y mods', civil: 'Industria', contact: 'Contacto' },
+      hero: {
+        eyebrow: '// ORCA Community', status: 'Próximamente',
+        title: 'La guerra de drones del futuro se simulará primero.',
+        subtitle: 'ORCA Community es la edición abierta de ORCA. El mismo núcleo de simulación que la edición de defensa, abierto a los pilotos, desarrolladores, investigadores y jugadores que definirán cómo se planifican, construyen y vuelan los enjambres autónomos.',
+        cta: 'Únete al Discord', cta2: 'Ver escenarios'
+      },
+      man: {
+        eyebrow: '01 / Manifiesto',
+        h2: 'Un motor. Dos ediciones. Una comunidad en el centro.',
+        paras: [
+          'El dron ha cambiado la guerra más rápido de lo que se escribe la doctrina. Aparatos baratos, software de vuelo abierto y pilotos FPV han redefinido el campo de batalla en menos de cinco años. El siguiente paso es el enjambre: muchos sistemas actuando como uno, con autonomía decidiendo en los segundos en que ningún operador puede.',
+          'Nadie puede ensayar eso en el campo a la escala que exige. Hay que diseñarlo, probarlo y romperlo primero en simulación. Creemos que quienes harán ese trabajo ya están ahí, volando, programando y creando mods. ORCA Community les da el mismo motor que usan nuestros clientes de defensa.'
+        ],
+        coreCaption: 'Núcleo compartido',
+        core: 'Física, dinámica de vuelo, sensores, enlaces y comportamiento de enjambre',
+        coreSub: 'Un código · dos ediciones',
+        ed1Tag: 'Edición abierta', ed1: 'De uso gratuito. Crea escenarios, modifica aparatos y comportamientos, compártelos y compite en retos de enjambres.',
+        ed2Tag: 'Edición de defensa', ed2: 'Para fuerzas armadas e industria, bajo acuerdo. Datos clasificados, sistemas reales en el bucle y despliegue acreditado.', ed2Link: 'ORCA',
+        pillarsCaption: 'Qué recibe la comunidad',
+        pillars: [
+          ['Simulador gratuito', 'Escenarios, enjambres y física de drones sobre el mismo motor que la edición de defensa.'],
+          ['SDK y modding', 'Crea tus propios vehículos, escenarios y comportamientos, y programa cómo deciden los enjambres.'],
+          ['Marketplace', 'Publica, comparte y descarga escenarios y modelos creados por otros.'],
+          ['Retos de enjambres', 'Ligas por temporadas y clasificaciones. Tu enjambre contra el de todos los demás.'],
+          ['Datos y benchmarks abiertos', 'Conjuntos de datos y ejecuciones de referencia para medir y comparar resultados.'],
+          ['Programa de contribuidores', 'Foro, Discord y línea directa con el equipo que construye ORCA.']
+        ]
+      },
+      evo: {
+        eyebrow: '02 / Evolución',
+        h2: 'Cómo los drones cambiaron la guerra.',
+        intro: 'En dos décadas el dron ha pasado de ser un activo estratégico manejado por unas pocas tripulaciones a un consumible desplegado por millones. Cada paso ha complicado la planificación y ha hecho la simulación más necesaria.',
+        rows: [
+          ['2000s', 'UAV estratégicos', 'Pocos, grandes, caros', 'Drones de media altitud pilotados por tripulaciones entrenadas a distancia. Espacio aéreo sin disputa y cada aparato es un activo de alto valor.'],
+          ['2020', 'Municiones merodeadoras', 'Los drones deciden una guerra', 'En Nagorno-Karabaj, drones armados y municiones merodeadoras superan defensas aéreas y blindados. Fuerzas aéreas pequeñas ganan un alcance que nunca tuvieron.'],
+          ['2022', 'Cuadricópteros comerciales', 'Cada unidad tiene ojos', 'En Ucrania, drones comerciales se convierten en equipo estándar para reconocimiento y corrección de artillería a nivel de pelotón.'],
+          ['2023\u201324', 'FPV a escala', 'Millones al año', 'Los drones FPV se convierten en el arma de ataque más común del frente. La guerra electrónica responde y el ciclo de contramedidas se mide en semanas.'],
+          ['2025', 'Autonomía y multidominio', 'Más allá del enlace', 'Control por fibra óptica, autonomía terminal contra interferencias, y drones navales y terrestres junto a los aéreos. El operador ya no es el único que decide.'],
+          ['Futuro', 'Enjambres', 'Muchos como uno', 'Grupos coordinados que planifican y actúan juntos más rápido que cualquier cadena de mando humana. Solo pueden diseñarse y validarse tras millones de ejecuciones simuladas.']
+        ],
+        close: 'El enjambre es el próximo campo de batalla. Se construirá en simulación.'
+      },
+      gal: {
+        eyebrow: '03 / Escenarios y mods',
+        h2: 'Lo que construirá la comunidad.',
+        intro: 'Un primer vistazo a los escenarios, retos y mods previstos para el lanzamiento. Todo funciona sobre el núcleo de ORCA y se puede editar, bifurcar y compartir.',
+        items: [
+          ['Escenario', 'Aire', 'Corredor FPV', 'Vuela un corredor de ataque bajo interferencias por capas. Navega, adáptate y llega al objetivo antes de perder el enlace.', ['FPV', 'GE', 'Un piloto']],
+          ['Reto', 'Aire', 'Enjambre vs. defensa por capas', 'Programa un enjambre de 48 para penetrar radar, cañones e interceptores. Clasificado por éxito de misión y pérdidas.', ['48 agentes', 'Clasificación', 'IA programada']],
+          ['Escenario', 'Mar', 'Reconocimiento portuario', 'Drones de superficie y aéreos se coordinan para cartografiar un puerto defendido de noche con GNSS degradado.', ['USV + UAV', 'Noche', 'Sin GNSS']],
+          ['Escenario', 'Tierra', 'Búsqueda y rescate urbano', 'Un enjambre mixto rastrea un barrio derrumbado, comparte un mapa y guía a los equipos de tierra hacia los supervivientes.', ['Civil', 'Cartografía', 'Red mallada']],
+          ['Mod', 'Aire', 'Kit de aparato propio', 'Importa tu propio chasis, motores y batería. ORCA deriva el modelo de vuelo y te deja ajustarlo con registros reales.', ['SDK', 'Física', 'Registros']],
+          ['Benchmark', 'Multi', 'Benchmark de interceptores', 'Un conjunto de referencia abierto para algoritmos anti-dron: mismas amenazas, mismo terreno, resultados comparables.', ['Datos abiertos', 'C-UAS', 'Reproducible']]
+        ],
+        moreTitle: 'Y más allá de los escenarios',
+        moreCaption: 'También en ORCA Community',
+        more: [
+          ['Editor de misiones', 'Dibuja objetivos, rutas, amenazas y terreno, y guarda la misión en un archivo para compartirla.'],
+          ['Sesiones multijugador', 'Vuela con o contra otros pilotos en misiones compartidas: equipos, rojo contra azul o enjambres cooperativos.'],
+          ['Tu propio piloto automático', 'Conecta PX4 o ArduPilot en software-in-the-loop y prueba tu código de vuelo real en ORCA.'],
+          ['Entrena agentes de IA', 'Lanza miles de episodios en paralelo y sin interfaz para entrenar y evaluar comportamientos autónomos.'],
+          ['Repetición y análisis', 'Graba cada ejecución, recorre la línea de tiempo y compara decisiones fotograma a fotograma.'],
+          ['Terreno real', 'Carga datos de elevación y mapas de cualquier zona y ensaya sobre el terreno que vas a sobrevolar.'],
+          ['Laboratorio de sensores y GE', 'Ajusta cámaras, radar, enlaces e interferencias y observa cómo afecta cada cambio a la misión.'],
+          ['Cursos y talleres', 'Lecciones listas para universidades y centros de formación, del primer vuelo a las tácticas de enjambre.']
+        ]
+      },
+      ks: {
+        eyebrow: '04 / Crowdfunding', status: 'Próximamente', on: 'Se lanzará en',
+        h2: 'ORCA Community se financiará mediante crowdfunding.',
+        intro: 'Abriremos una campaña de crowdfunding en Kickstarter para financiar la edición abierta. Los mecenas ayudarán a decidir qué se construye primero y serán los primeros en volarlo.',
+        steps: [
+          ['Ahora', 'Únete al Discord', 'Sigue el desarrollo, comparte ideas y ayuda a dar forma a la campaña antes de su lanzamiento.'],
+          ['Después', 'Lanzamiento de la campaña', 'Se abre la campaña de crowdfunding. Los miembros del Discord serán los primeros en saberlo.'],
+          ['Más tarde', 'Los mecenas vuelan primero', 'Los mecenas tendrán acceso anticipado a ORCA Community y voz en la hoja de ruta.']
+        ]
+      },
+      join: {
+        eyebrow: '05 / Únete',
+        h2: 'Ayuda a construir ORCA Community desde el primer día.',
+        body: 'La edición abierta está en desarrollo. Únete al Discord para seguir el progreso, acceder antes que nadie a la beta y dar forma a los primeros escenarios, mods y retos.'
+      },
+      footer: { motto: 'Simula.\nValida.\nAvanza.', colProduct: 'Producto', colPage: 'Esta página', home: 'Inicio', civil: 'Civil', copyright: '\u00a9 2026 Svalin Industries', privacy: 'Privacidad', legal: 'Aviso legal', cookies: 'Cookies', tagline: 'ORCA \u00b7 Simulación de enjambres' }
+    };
+    return { en, es };
+  }
+
+  detectTheme() { const h = new Date().getHours(); return (h >= 19 || h < 7) ? 'dark' : 'light'; }
+
+  componentDidMount() {
+    let th, lg;
+    try { th = localStorage.getItem('sv_theme'); lg = localStorage.getItem('sv_lang'); } catch (e) {}
+    const theme = (th === 'light' || th === 'dark') ? th : this.detectTheme();
+    const lang = (lg === 'en' || lg === 'es') ? lg : 'en';
+    this.setState({ theme, lang });
+    this._onWinResize = () => this.setState(s => ({ vw: window.innerWidth, menuOpen: window.innerWidth >= 1340 ? false : s.menuOpen }));
+    addEventListener('resize', this._onWinResize);
+    this._onScroll = () => { const show = window.scrollY > 500; this.setState(s => s.showScrollTop === show ? null : { showScrollTop: show }); };
+    addEventListener('scroll', this._onScroll, { passive: true });
+    this.applyTheme();
+  }
+  componentDidUpdate() { if (this.state.theme !== this._lastTheme) { this._lastTheme = this.state.theme; this.applyTheme(); } }
+  componentWillUnmount() {
+    if (this._onWinResize) removeEventListener('resize', this._onWinResize);
+    if (this._onScroll) removeEventListener('scroll', this._onScroll);
+  }
+  applyTheme() {
+    const el = this.rootRef.current; if (!el) return;
+    const map = this.themes()[this.state.theme] || this.themes().light;
+    Object.entries(map).forEach(([k, v]) => el.style.setProperty(k, v));
+    document.body.style.background = map['--bg'];
+    document.body.style.color = map['--text'];
+  }
+  toggleTheme() { this.setState(s => { const n = s.theme === 'light' ? 'dark' : 'light'; try { localStorage.setItem('sv_theme', n); } catch (e) {} return { theme: n }; }); }
+  toggleLang() { this.setState(s => { const n = s.lang === 'en' ? 'es' : 'en'; try { localStorage.setItem('sv_lang', n); } catch (e) {} return { lang: n }; }); setTimeout(() => { if (window.SvConsent) window.SvConsent.refresh(); }, 0); }
+
+  renderVals() {
+    if (!this._dictCache) this._dictCache = this.dict();
+    const t = this._dictCache[this.state.lang] || this._dictCache.en;
+    const isMobile = this.state.vw < 1340;
+    const n = i => String(i + 1).padStart(2, '0');
+    const last = t.evo.rows.length - 1;
+    const GIMG = ['assets/community-fpv-corridor.jpg', 'assets/community-swarm-defence.jpg', 'assets/community-harbour-recon.jpg', 'assets/community-urban-sar.jpg', 'assets/community-airframe-kit.jpg', 'assets/community-interceptor-benchmark.jpg'];
+    return {
+      rootRef: this.rootRef, t,
+      discordUrl: 'https://discord.gg/VwdGGfAMPc',
+      pillars: t.man.pillars.map((p, i) => ({ num: n(i), name: p[0], body: p[1] })),
+      evoRows: t.evo.rows.map((r, i) => ({ year: r[0], title: r[1], tag: r[2], body: r[3], yearColor: i === last ? '#e9a23b' : '#ffffff' })),
+      galRows: t.gal.items.map((g, i) => ({ kind: g[0], domain: g[1], name: g[2], body: g[3], specs: g[4], num: n(i), imgId: 'img-community-' + (i + 1), img: GIMG[i] || '', hasImg: !!GIMG[i], noImg: !GIMG[i] })),
+      ksSteps: t.ks.steps.map((s, i) => ({ tag: s[0], name: s[1], body: s[2], num: n(i), bg: i === 0 ? 'rgba(233,162,59,.08)' : 'transparent', tagColor: i === 0 ? '#e9a23b' : '#8a8f93' })),
+      moreRows: t.gal.more.map((m, i) => ({ num: n(i), name: m[0], body: m[1] })),
+      langBtnLabel: this.state.lang === 'en' ? 'ES' : 'EN',
+      themeLabel: this.state.theme === 'light' ? t.ui.dark : t.ui.light,
+      themeDot: this.state.theme === 'light' ? 'transparent' : 'var(--accent)',
+      toggleTheme: () => this.toggleTheme(),
+      toggleLang: () => this.toggleLang(),
+      closeMenu: () => { if (this.state.menuOpen) this.setState({ menuOpen: false }); },
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      scrollToTop: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+      scrollTopStyle: 'position:fixed;right:24px;bottom:24px;z-index:50;width:46px;height:46px;border:1px solid var(--accent);background:var(--accent);color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.22);transition:opacity .25s,transform .25s;opacity:' + (this.state.showScrollTop ? '1' : '0') + ';pointer-events:' + (this.state.showScrollTop ? 'auto' : 'none') + ';transform:translateY(' + (this.state.showScrollTop ? '0' : '10px') + ')',
+      menuIcon: this.state.menuOpen ? '✕' : '☰',
+      navLinksStyle: isMobile
+        ? ('position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:20px;padding:24px clamp(20px,4vw,56px) 30px;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 20px 40px rgba(0,0,0,.12);display:' + (this.state.menuOpen ? 'flex' : 'none'))
+        : 'display:flex;align-items:center;gap:clamp(10px,2vw,26px)',
+      hamburgerStyle: 'align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--line2);background:none;color:var(--text);font-size:18px;cursor:pointer;display:' + (isMobile ? 'inline-flex' : 'none'),
+    };
+  }
+}
+</script>
+</body>
+</html>

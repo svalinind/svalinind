@@ -1,0 +1,27 @@
+# Svalin Industries
+
+> Svalin Industries is a dual-use technology company. Its product is ORCA (Operational Research, Coordination & Assessment), a simulation environment for drone swarms and autonomous systems across air, land, sea and subsea. ORCA is used to test, validate and rehearse critical operations before anything flies. Simulate. Validate. Advance.
+
+## Pages
+- [Home](https://svalinindustries.com/): what ORCA is, its four main uses (C-UAS red teaming, autonomy testing, mission rehearsal, operator training), why simulation, defence and civil markets, FAQ and contact.
+- [ORCA](https://svalinindustries.com/simulator.html): the simulation engine in detail: anatomy of an agent, field trial versus simulation, layered C-UAS defence and metrics per run, 18 use cases, capabilities and architecture.
+- [Developers](https://svalinindustries.com/developers.html): for teams building drones, autonomy software or counter-drone systems: threat injection, software- and hardware-in-the-loop (SIL / HIL) integration, API / SDK, metrics per run and access options.
+- [Industry](https://svalinindustries.com/civil.html): ORCA for civil operators: perimeter security, energy networks, ports and maritime operations, emergency response, agriculture and large estates, drone autonomy testing.
+- [Community](https://svalinindustries.com/community.html): ORCA Community, the upcoming open edition of ORCA built on the same core as the defence edition: free simulator, SDK and modding, scenario marketplace, swarm challenges, open data and benchmarks. Includes a timeline of how drones changed warfare, planned scenarios and mods, and a future crowdfunding campaign on Kickstarter. Community hub on Discord.
+- [Legal Notice](https://svalinindustries.com/legal.html)
+- [Privacy Policy](https://svalinindustries.com/privacy.html)
+- [Cookie Policy](https://svalinindustries.com/cookies.html)
+
+## Key facts
+- Product: ORCA, operational and ready to deploy.
+- Domains: aerial, ground, surface and underwater agents in one scenario.
+- Simulates: flight dynamics, sensors (radar, RF, EO/IR), communication links, electronic warfare (jamming, GNSS spoofing), terrain and weather.
+- Every run is recorded, replayable with a fixed seed and comparable across builds and scenarios.
+- Access: SaaS subscription, API / SDK, or on-premise deployment including air-gapped networks.
+- Defence uses: C-UAS red teaming, third-party system validation, autonomy testing, mission rehearsal, operator training, wargaming, naval force protection.
+- Civil uses: critical infrastructure protection, energy networks, ports, airports and events, emergency response and search and rescue, U-space integration, agriculture and commercial fleets.
+- Editions: ORCA Defence (under agreement) and ORCA Community (open edition, coming soon), sharing one simulation core.
+- Simulations and metrics shown on the website are illustrative.
+
+## Contact
+contact@svalinindustries.com · https://linkedin.com/company/svalinind · https://x.com/svalinind · https://discord.gg/VwdGGfAMPc
